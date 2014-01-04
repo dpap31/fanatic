@@ -1,0 +1,19 @@
+<% title = "Sign In" %>
+
+<% flash.each do |name, msg| -%>
+      <%= content_tag :div, msg, class: name %>
+<% end -%>
+
+<% if current_user %>
+  Welcome <%= current_user.name %>!
+  <%= link_to "Sign Out", signout_path %>
+<% else %>
+  <%= link_to "Sign in with Twitter", "/auth/twitter" %>
+<% end %>
+
+<a href="/auth/twitter" class="auth_provider">
+<i class="fa fa-twitter fa-4x"></i>
+</a>
+<a href="/auth/facebook" class="auth_provider">
+<i class="fa fa-facebook fa-4x"></i>
+</a>
