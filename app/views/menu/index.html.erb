@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <title>Fanatic</title> 
+    <link rel="stylesheet" type="text/css" href="/app/assets/stylesheets/menu.css"/>
+  </head>
+
+  <body>
+   <div id="menu">
+    <ul>
+        <li><%= link_to ("Chat")%></li>
+        <li><%= link_to "Posts", controller: 'posts' %>
+        </li>
+        <li><%= link_to ("Feed")%></li>
+    </ul>
+</div>
+   <div class="page"> 
+
+   <div id= "user_landing_fanatic">
+	 <%= link_to image_tag("user_landing_images/user_landing_fanatic.png", :border=>0), "#{}" %>
+   </div>
+
+    <div id= "user_landing_profile">
+      <%= link_to image_tag("user_landing_images/user_landing_profile.png", :border=>0), "#{}" %>
+    </div>
+    
+    <div id= "user_landing_blog">
+      <%= link_to image_tag("user_landing_images/user_landing_blog.png", :border=>0), "#{}" %>
+    </div>
+
+     <div id= "user_landing_game_chat">
+      <%= link_to image_tag("user_landing_images/user_landing_game_chat.png", :border=>0), "#{}" %>
+     </div>
+
+     <div id= "user_landing_feed">
+      <%= link_to image_tag("user_landing_images/user_landing_feed.png", :border=>0), "#{}" %>
+     </div>
+
+     <div id= "user_landing_connect">
+      <%= link_to image_tag("user_landing_images/user_landing_connect.png", :border=>0), "#{}" %>
+     </div>
+
+     <div id= "user_landing_images">
+      <%= link_to image_tag("user_landing_images/user_landing_images.png", :border=>0), "#{}" %>
+     </div>
+
+     <div id= "user_landing_teams">
+      <%= link_to image_tag("user_landing_images/user_landing_teams.png", :border=>0), "#{}" %>
+     </div>
+
+     <div id= "user_landing_settings">
+      <%= link_to image_tag("user_landing_images/user_landing_settings.png", :border=>0), "#{}" %>
+     </div>
+
+     <div id= "user_landing_placeholder">
+      <%= link_to image_tag("user_landing_placeholder.png", :border=>0), "#{}" %>
+     </div>
+
+    </div class="page"> 
+
+  </body>
+
+</html>

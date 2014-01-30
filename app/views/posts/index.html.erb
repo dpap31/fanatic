@@ -1,0 +1,35 @@
+<%= link_to("<< Back to Menu", {:controller => "menu"}, :class => 'back-link') %>
+
+<h1>Listing Posts</h1>
+<%= link_to("New Post", {:action => 'new'}, :class => 'btn btn-default') %>
+  <tbody>
+  <div class="Posts list">  
+<p></p>
+
+<table class="table-hover" summary="Posts list">
+      <th>&nbsp;</th>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Visible</th>
+      <th>URL</th>
+    </tr>
+    <% @posts.each do |post| %>
+      <tr>
+      <td> &nbsp; </td>
+    <td><%= post.title %></td>
+    <td><%= post.content %></td>
+      
+      <td class="center"><%= post.visible ? 'Yes' : 'No' %></td>
+      <td class="center"><%= post.url %></td>
+      <td class="actions">
+
+    <%= link_to("Show", {:action => 'show', :id => post.id}, :class => 'btn btn-info') %>
+    <%= link_to("Edit", {:action => 'edit', :id => post.id}, :class => 'btn btn-warning') %>
+    <%= link_to("Destroy",{:action => 'destroy', :id => post.id}, :class =>"btn btn-danger") %>
+      </tr>
+    <% end %>
+    </div>
+  </table>
+  </tbody>
+
+
