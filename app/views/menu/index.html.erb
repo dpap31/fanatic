@@ -4,62 +4,122 @@
 
   <head>
 
-    <title>Fanatic</title> 
-    <link rel="stylesheet" type="text/css" href="/app/assets/stylesheets/menu.css"/>
+  <title>Fanatic</title> 
+	  <link rel="stylesheet" type="text/css" href="assets/stylesheets/menu.css.scss">
+	  <link rel="script" href="/assets/javascripts/menu.js"/>
+	  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.1.0/pure-min.css">
+	  <link rel="stylesheet" href="http://weloveiconfonts.com/api/?family=fontawesome">
   </head>
 
   <body>
-   <div id="menu">
+<header>
+    <nav>
+    <nav class="pure-menu pure-menu-open pure-menu-horizontal">
+    <a href="#" class="pure-menu-heading">Fanatic</a>
     <ul>
-        <li><%= link_to ("Chat")%></li>
-        <li><%= link_to "Posts", controller: 'posts' %>
-        </li>
-        <li><%= link_to ("Feed")%></li>
+        <li class="pure-menu-selected"><a href="#">Menu</a></li>
+        <li class="pure-menu-selected"><%= link_to "Posts", controller: 'posts' %></a></li>
+        <li class="pure-menu-selected"><%= link_to "Chat"%></a></li>
+        <li class="pure-menu-selected"><%= link_to "Feed"%></a></li>
+        <!-- other items ... -->
     </ul>
-</div>
-   <div class="page"> 
-
-   <div id= "user_landing_fanatic">
-	 <%= link_to image_tag("user_landing_images/user_landing_fanatic.png", :border=>0), "#{}" %>
-   </div>
-
-    <div id= "user_landing_profile">
-      <%= link_to image_tag("user_landing_images/user_landing_profile.png", :border=>0), "#{}" %>
+</nav></nav><!-- this is where our nav menu will go -->
+</header>
+<section class="dashboard">
+    <!-- our dashboard pieces will go here -->
+    <section class="dashboard pure-g-r clearfix">
+    <div class="pure-u-1 dashboard-piece dashboard-piece-redbg dashboard-piece-logo">
+        <h1>
+            <svg x="0px" y="0px" width="132.89669167px" height="120px" viewBox="0 0 73.351 82.791" enable-background="new 0 0 73.351 82.791" xml:space="preserve">
+                <g><path fill="#FFFFFF" d="M7.372,27.487C-1.903,39.206-2.261,55.13,5.369,67.05c6.858-17.611,15.499-37.423,26.14-55.114
+                C21.514,16.159,12.19,21.405,7.372,27.487z M73.333,2.971c-0.11-0.924-0.589-1.7-1.276-2.216C71.4,0.204,70.53-0.084,69.612,0.021
+                c0,0-2.738,0.589-7.093,1.704C41.722,21.698,24.654,48.459,11.43,74.155c0.492,0.427,0.991,0.857,1.512,1.268
+                c14.784,11.696,36.239,9.194,47.936-5.57C74.349,52.822,73.333,2.971,73.333,2.971z"/></g>
+            </svg>
+        </h1>
     </div>
-    
-    <div id= "user_landing_blog">
-      <%= link_to image_tag("user_landing_images/user_landing_blog.png", :border=>0), "#{}" %>
+    <div class="pure-u-1-3 dashboard-piece dashboard-piece-bluebg">
+        <div class="dashboard-content">
+            <h2><i class="fontawesome-twitter"></i></h2>
+            <p class="dashboard-metric">+20 followers<span class="light"><i class="fontawesome-angle-up"></i>6.8%</span></p>
+        </div>
     </div>
-
-     <div id= "user_landing_game_chat">
-      <%= link_to image_tag("user_landing_images/user_landing_game_chat.png", :border=>0), "#{}" %>
-     </div>
-
-     <div id= "user_landing_feed">
-      <%= link_to image_tag("user_landing_images/user_landing_feed.png", :border=>0), "#{}" %>
-     </div>
-
-     <div id= "user_landing_connect">
-      <%= link_to image_tag("user_landing_images/user_landing_connect.png", :border=>0), "#{}" %>
-     </div>
-
-     <div id= "user_landing_images">
-      <%= link_to image_tag("user_landing_images/user_landing_images.png", :border=>0), "#{}" %>
-     </div>
-
-     <div id= "user_landing_teams">
-      <%= link_to image_tag("user_landing_images/user_landing_teams.png", :border=>0), "#{}" %>
-     </div>
-
-     <div id= "user_landing_settings">
-      <%= link_to image_tag("user_landing_images/user_landing_settings.png", :border=>0), "#{}" %>
-     </div>
-
-     <div id= "user_landing_placeholder">
-      <%= link_to image_tag("user_landing_placeholder.png", :border=>0), "#{}" %>
-     </div>
-
-    </div class="page"> 
+    <div class="pure-u-1-3 dashboard-piece dashboard-piece-orangebg">
+        <div class="dashboard-content">
+            <h2><i class="fontawesome-github"></i></h2>
+            <p class="dashboard-metric">
+                142 Commits
+                <div class="light bar-horizontal">
+                    <div class="bar-horizontal-bar" style="width:57%">
+                        57% Capacity
+                    </div>
+                </div>
+            </p>
+        </div>
+    </div>
+    <div class="pure-u-1-3 dashboard-piece dashboard-piece-yellowbg">
+        <div class="dashboard-content">
+            <p class="dashboard-metric">
+                <h2><i class="fontawesome-check"></i></h2>
+                <div class="dashboard-metric">
+                    <strong>63 / 90</strong><br><small>Tasks Complete</small>
+                </div>
+            </p>
+        </div>
+    </div>
+</section>
+</section>
+<section class="dashboard pure-g-r clearfix">
+    <div class="pure-u-2-3 dashboard-piece dashboard-piece-graybg dashboard-piece-events">
+        <div class="dashboard-content">
+            <p class="dashboard-metric">
+                <h2><i class="fontawesome-calendar"></i></h2>
+                <h3>Upcoming Events</h3>
+                <table class="pure-table pure-table-center pure-table-horizontal pure-table-dark">
+                    <thead>
+                        <tr>
+                            <th>With:</th>
+                            <th>Where:</th>
+                            <th>When:</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>John Smith</td>
+                            <td>WDTuts Office</td>
+                            <td>Jun 20, 9:30AM</td>
+                        </tr>
+                        <tr class="pure-table-odd">
+                            <td>George Bluth</td>
+                            <td>Sudden Valley</td>
+                            <td>Jun 23, 4PM</td>
+                        </tr>
+                        <tr>
+                            <td>Michael Scott</td>
+                            <td>Scranton, PA</td>
+                            <td>Jun 24, 2:45PM</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </p>
+        </div>
+    </div>
+    <div class="pure-u-1-3 dashboard-piece dashboard-piece-purplebg weather weather-rain">
+        <div class="dashboard-content">
+            <p class="dashboard-metric">
+                <h2><i class="fontawesome-umbrella"></i></h2>
+                <div class="dashboard-metric">
+                    <strong>80% Chance</strong><br><small>of Precipitation</small>
+                    <div class="light bar-horizontal">
+                        <div class="bar-horizontal-bar" style="width:80%">80%</div>
+                </div>
+                
+        </div>
+    </div>
+<footer>
+    &copy; 2013 Envato
+</footer>
+</section>
 
   </body>
 

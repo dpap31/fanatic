@@ -19,12 +19,15 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
+    @post = Post.find(params[:id])
   end
 
   # POST /posts
   # POST /posts.json
   def create
     @post = Post.new(post_params)
+    @post.user_id = current_user.id
+    @post.user = current_user
 
     respond_to do |format|
       if @post.save
@@ -69,6 +72,12 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params[:post]
+      params.require(:post).permit(:title, :content, :visible, :url, :user_id, :id, :user_name)   
+    end
+     
+     def find_user
+        if params[:user_id]
+          @user = User.find_by_id(params[:user_id, :user_name])
+      end
     end
 end

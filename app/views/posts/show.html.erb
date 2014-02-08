@@ -1,3 +1,52 @@
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+
+<div class="Show Post">
+  <h2>Show Post</h2>
+
+  <table summary="Show post detail view">
+    <tr>
+      <th>Title</th>
+      <td><%= @post.title %></td>
+    </tr>
+	<tr>
+      <th>Content</th>
+      <td><%= @post.content %></td>
+    </tr>
+    <tr>
+      <th>URL</th>
+      <td><%= @post.url %></td>
+    </tr>
+    <tr>
+      <th>Visible</th>
+      <td><%= @post.visible ? 'true' : 'false' %></td>
+    </tr>
+	<tr>
+      <th>Author Name</th>
+      <td><%= @post.user.name %></td>
+    </tr>
+	<tr>
+      <th>Author ID</th>
+      <td><%= @post.user_id %></td>
+    </tr>
+
+    <tr>
+      <th>Created</th>
+      <td><%= @post.created_at %></td>
+    </tr>
+    <tr>
+      <th>Updated</th>
+      <td><%= @post.updated_at %></td>
+    </tr>
+  </table>
+  
+</div>
+<h2>Comments</h2>
+<%= render @post.comments %>
+
+<h2>Add a comment:</h2>
+<%= render "comments/form" %>
+
+
 <p id="notice"><%= notice %></p>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |

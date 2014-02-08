@@ -1,11 +1,14 @@
 FanaticV2::Application.routes.draw do
 
+	root "public#index"
     get "public/index"
     get "menu/index"
     match "/auth/:provider/callback" => "sessions#create", via: [:get, :post]
     get "sessions/authentications"
     match "/signout" => "sessions#destroy", :as => :signout, via: [:get, :post]
-    resources :posts
+    resources :posts do
+      resources :comments
+    end
     
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

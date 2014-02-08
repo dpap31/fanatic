@@ -1,5 +1,11 @@
+<%= link_to '<< Back', posts_path %>
+
 <h1>New post</h1>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', posts_path %>
+<div class="section new">
+  <h2>Create Section</h2>
+  <%= form_for( @post, :url => {:controller => "posts", :action => "create"}) do |f| %>
+  <%= render(partial: "form", locals: {f: f})%>  
+  <%= f.submit "Publish", class: "form-buttons" %>
+<% end %>
+</div>    

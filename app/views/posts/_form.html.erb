@@ -1,17 +1,18 @@
-<%= form_for(@post) do |f| %>
-  <% if @post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+  <table summary="Post form fields">
+  <tr>
+	<%= f.hidden_field :user_id %>
+    <th><%= f.label(:title) %></th>
+    <td><%= f.text_field(:title) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:url) %></th>
+    <td><%= f.text_field(:url) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:visible) %></th>
+    <td><%= f.check_box(:visible) %></td>
+  </tr>
+  <th><%= f.label(:content) %></th>
+  <td><%= f.text_area(:content, size: '200x50') %></td>
 
-      <ul>
-      <% @post.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</table>
