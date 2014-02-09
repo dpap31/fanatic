@@ -1,17 +1,16 @@
-<%= link_to("<< Back to Menu", {:controller => "menu"}, :class => 'back-link') %>
-
 <h1>Listing Posts</h1>
 <%= link_to("New Post", {:action => 'new'}, :class => 'btn btn-default') %>
-  <tbody>
-  <div class="Posts list">  
 <p></p>
+  <tbody>
+  <div class="col-md-8">  
 
-<table class="table-hover" summary="Posts list">
+<table class="table table-hover" summary="Posts list">
       <th>&nbsp;</th>
       <th>Title</th>
       <th>Content</th>
       <th>Visible</th>
       <th>URL</th>
+      <th>Actions</th>
     </tr>
     <% @posts.each do |post| %>
       <tr>

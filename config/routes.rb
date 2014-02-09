@@ -1,13 +1,16 @@
 FanaticV2::Application.routes.draw do
 
+  resources :messages
+
 	root "public#index"
     get "public/index"
-    get "menu/index"
+    match "menu" => 'menu#index', via: [:get, :post]
     match "/auth/:provider/callback" => "sessions#create", via: [:get, :post]
     get "sessions/authentications"
     match "/signout" => "sessions#destroy", :as => :signout, via: [:get, :post]
     resources :posts do
       resources :comments
+      resources :messages
     end
     
   # The priority is based upon order of creation: first created -> highest priority.
