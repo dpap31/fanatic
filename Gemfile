@@ -36,6 +36,8 @@ gem 'thin'
 
 gem 'activeresource'
 
+gem 'nifty-generators'
+
 
     gem 'coffee-rails', '~> 4.0.1'
     gem 'uglifier', '>= 1.2.4'
@@ -59,3 +61,5 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem "mocha", group: :test

@@ -1,5 +1,6 @@
 FanaticV2::Application.routes.draw do
 
+  resources :friendships
   resources :messages
 
 	root "public#index"
@@ -8,6 +9,8 @@ FanaticV2::Application.routes.draw do
     match "/auth/:provider/callback" => "sessions#create", via: [:get, :post]
     get "sessions/authentications"
     match "/signout" => "sessions#destroy", :as => :signout, via: [:get, :post]
+    resources :users
+    resources :friendships
     resources :posts do
       resources :comments
       resources :messages
