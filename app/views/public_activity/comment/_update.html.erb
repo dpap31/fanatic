@@ -1,0 +1,7 @@
+updated comment
+
+<% if activity.trackable %>
+  on <%= link_to activity.trackable.post.title, activity.trackable.post%>
+<% else %>
+  which has since been removed
+<% end %>

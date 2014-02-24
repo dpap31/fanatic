@@ -26,10 +26,6 @@ gem 'omniauth-facebook'
 
 gem 'omniauth-identity'
 
-gem 'nifty-generators'
-
-gem 'jquery-rails'
-
 gem 'private_pub'
 
 gem 'thin'
@@ -37,6 +33,8 @@ gem 'thin'
 gem 'activeresource'
 
 gem 'nifty-generators'
+
+gem 'public_activity'
 
 
     gem 'coffee-rails', '~> 4.0.1'

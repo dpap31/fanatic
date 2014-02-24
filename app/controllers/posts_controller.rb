@@ -37,6 +37,7 @@ class PostsController < ApplicationController
         format.html { render action: 'new' }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
+      @post.create_activity :create, owner: current_user 
     end
   end
 
@@ -51,6 +52,7 @@ class PostsController < ApplicationController
         format.html { render action: 'edit' }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
+      @comment.create_activity :update, owner: current_user 
     end
   end
 
@@ -61,6 +63,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to posts_url }
       format.json { head :no_content }
+      @comment.create_activity :destroy, owner: current_user 
     end
   end
 

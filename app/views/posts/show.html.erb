@@ -1,8 +1,12 @@
+
+<head>
+</head>
+
 <%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
-
-<div class="Show Post">
+<body>
+<div class="col-md-9">
   <h2>Show Post</h2>
-
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="true"></div>
   <table summary="Show post detail view">
     <tr>
       <th>Title</th>
@@ -40,6 +44,7 @@
   </table>
   
 </div>
+<div class="col-md-9">
 <h2>Comments</h2>
 <%= render @post.comments %>
 
@@ -51,3 +56,27 @@
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
+</div>
+
+<div id="fb-root"></div>
+<script>
+$(window).load(function() {
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '249183201915324',
+      status     : true,
+      xfbml      : true
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/all.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+});
+</script>
+
+</body>

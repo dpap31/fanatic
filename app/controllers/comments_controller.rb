@@ -7,12 +7,14 @@ class CommentsController < ApplicationController
       @comment = @post.comments.create(comment_params)
       @comment.user_id = current_user.id
 	  @comment.save
+    @comment.create_activity :create, owner: current_user 
       redirect_to post_path(@post)
     end
     def destroy
         @post = Post.find(params[:post_id])
         @comment = @post.comments.find(params[:id])
         @comment.destroy
+        @comment.create_activity :destroy, owner: current_user 
         redirect_to post_path(@post)
       end
   end
