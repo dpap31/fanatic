@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.where(:user_id => current_user.id).limit(10).order("created_at DESC")
   end
 
   # GET /posts/1
@@ -47,12 +47,10 @@ class PostsController < ApplicationController
     respond_to do |format|
       if @post.update(post_params)
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
-        format.json { head :no_content }
       else
         format.html { render action: 'edit' }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
       end
-      @comment.create_activity :update, owner: current_user 
+      @post.create_activity :update, owner: current_user 
     end
   end
 
@@ -75,7 +73,7 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :content, :visible, :url, :user_id, :id, :user_name)   
+      params.require(:post).permit(:title, :content, :visible, :url, :user_id, :id, :user_name, :name, :image, :remote_image_url)   
     end
      
      def find_user

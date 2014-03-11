@@ -1,3 +1,5 @@
+<i class="glyphicon glyphicon-edit"></i> <%= link_to activity.owner.name, activity.owner if activity.owner %>
+
 updated post
 
 <% if activity.trackable %>
@@ -5,3 +7,4 @@ updated post
 <% else %>
   which has since been removed
 <% end %>
+

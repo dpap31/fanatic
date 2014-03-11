@@ -1,6 +1,8 @@
+@import url(http://weloveiconfonts.com/api/?family=maki);
 
-            .navbar-static-top {
-  margin-bottom:20px;
+/* maki */
+[class*="maki-"]:before {
+  font-family: 'maki', sans-serif;
 }
 
 i {
@@ -8,7 +10,6 @@ i {
 }
 
 .nav > li > a {
-  color:#787878;
 }
   
 footer {

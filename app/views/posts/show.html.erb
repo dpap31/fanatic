@@ -1,82 +1,85 @@
 
 <head>
+  <div id="fb-root"></div>
+  <script>
+    $(document).ready(function() {
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '249183201915324',
+          status     : true,
+          xfbml      : true
+        });
+      };
+
+      (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "//connect.facebook.net/en_US/all.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+    });
+  </script>
 </head>
 
 <%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
 <body>
-<div class="col-md-9">
-  <h2>Show Post</h2>
-    <div class="fb-like" data-send="true" data-width="450" data-show-faces="true"></div>
-  <table summary="Show post detail view">
-    <tr>
-      <th>Title</th>
-      <td><%= @post.title %></td>
-    </tr>
-	<tr>
-      <th>Content</th>
-      <td><%= @post.content %></td>
-    </tr>
-    <tr>
-      <th>URL</th>
-      <td><%= @post.url %></td>
-    </tr>
-    <tr>
-      <th>Visible</th>
-      <td><%= @post.visible ? 'true' : 'false' %></td>
-    </tr>
-	<tr>
-      <th>Author Name</th>
-      <td><%= @post.user.name %></td>
-    </tr>
-	<tr>
-      <th>Author ID</th>
-      <td><%= @post.user_id %></td>
-    </tr>
+  <h2><%= @post.title %></h2>
+   <div class="row">
+   <div class="col-md-4 col-md-push-4">
+      <%= image_tag @post.image.url(:thumb) if @post.image? %>
+      <p></p>
+        <div class="fb-like" data-send="true" data-width="450" data-show-faces="true"></div>
+    <a href="https://twitter.com/share" class="twitter-share-button" data-via="drewpap">Tweet</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    <br>
+    <div>
+    </div>
+    </div>
+ <div class="col-md-5 col-md-pull-4">
+    <table summary="Show post detail view">
+      <tr>
+        <th>Content</th>
+        <td><%= @post.content %></td>
+      </tr>
+      <tr>
+        <th>URL</th>
+        <td><%= @post.url %></td>
+      </tr>
+      <tr>
+        <th>Visible</th>
+        <td><%= @post.visible ? 'true' : 'false' %></td>
+      </tr>
+      <tr>
+        <th>Author Name</th>
+        <td><%= @post.user.name %></td>
+      </tr>
+      <tr>
+        <th>Author ID</th>
+        <td><%= @post.user_id %></td>
+      </tr>
 
-    <tr>
-      <th>Created</th>
-      <td><%= @post.created_at %></td>
-    </tr>
-    <tr>
-      <th>Updated</th>
-      <td><%= @post.updated_at %></td>
-    </tr>
-  </table>
-  
-</div>
-<div class="col-md-9">
-<h2>Comments</h2>
-<%= render @post.comments %>
+      <tr>
+        <th>Created</th>
+        <td><%= @post.created_at %></td>
+      </tr>
+      <tr>
+        <th>Updated</th>
+        <td><%= @post.updated_at %></td>
+      </tr>
+    </table>
+    
+    <h2>Comments</h2>
+    <%= render @post.comments %>
 
-<h2>Add a comment:</h2>
-<%= render "comments/form" %>
+    <h2>Add a comment:</h2>
+    <%= render "comments/form" %>
 
 
-<p id="notice"><%= notice %></p>
+    <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
-</div>
-
-<div id="fb-root"></div>
-<script>
-$(window).load(function() {
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '249183201915324',
-      status     : true,
-      xfbml      : true
-    });
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/all.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-});
-</script>
-
+    <%= link_to 'Edit', edit_post_path(@post) %> |
+    <%= link_to 'Back', posts_path %>
+  </div>
+ </div>
 </body>

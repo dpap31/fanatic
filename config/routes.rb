@@ -1,6 +1,8 @@
 FanaticV2::Application.routes.draw do
 
 
+  resources :search_suggestions
+
   resources :activities
   resources :friendships
   resources :messages

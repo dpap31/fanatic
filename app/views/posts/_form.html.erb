@@ -12,7 +12,13 @@
     <th><%= f.label(:visible) %></th>
     <td><%= f.check_box(:visible) %></td>
   </tr>
+   <%= f.file_field :image %>
+  </p>
+  <p>
+    <%= f.label :remote_image_url, "or image URL" %><br />
+    <%= f.text_field :remote_image_url %>
+  </p>
   <th><%= f.label(:content) %></th>
-  <td><%= f.text_area(:content, size: '200x50') %></td>
+  <td><%= f.text_area(:content, size: '100x50') %></td>
 
 </table>

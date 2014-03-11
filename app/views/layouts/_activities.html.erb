@@ -1,9 +1,8 @@
 <div class="activity">
-   <ul class="list-group">
+   <ul class="activity list-group">
       <% @activities.each do |activity| %>          
-          <li class="list-group-item"><a href="#"><i class="glyphicon glyphicon-flash"></i>
-		  <%= link_to activity.owner.name, activity.owner if activity.owner %>
-          <%= render_activity activity %></a><small>(<%= time_ago_in_words(activity.created_at) %> ago) 	
+       <li class="list-group-item"><a href="#">
+          	<%= render_activity activity %></a><small>(<%= time_ago_in_words(activity.created_at) %> ago) 	
 			</small>          
 		 <% end %>	
 		</li>

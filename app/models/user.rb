@@ -24,4 +24,7 @@ def self.create_with_omniauth(auth)
     end
     end
   end
+searchable do
+  text :name
+  end
 end

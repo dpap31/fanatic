@@ -1,0 +1,15 @@
+
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h4> <span class="maki-football">   NFL Headlines</span></h4>
+	</div>
+	<div class="panel-body">
+		<div class="ESPN_list-group">
+			<% @accordion_headlines_nfl.each do |headline| %>
+			<a href="<%= headline.web_url %>" target="_blank" class="list-group-item"><%= headline.title %>
+				<%end%>   
+			</ul>
+		</a>
+	  </div>
+	</div><!--/panel-->
+</div>

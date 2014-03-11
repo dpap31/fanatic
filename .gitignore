@@ -14,3 +14,8 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+/config/private_pub.yml
+/config/application.yml
+/config/initializers/omniauth.rb
+/config/initializers/secret_token.rb

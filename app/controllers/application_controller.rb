@@ -15,7 +15,7 @@ hide_action :current_user
 private
 
 def activities
-  @activities = PublicActivity::Activity.order("created_at desc")
+  @activities = PublicActivity::Activity.limit(10).order("created_at desc")
 end
 
 end

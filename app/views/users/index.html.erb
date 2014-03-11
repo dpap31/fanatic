@@ -1,5 +1,30 @@
+<head>
+<script type="text/javascript">
+$(function() {
+ $( "#search" ).autocomplete({
+    source: "/search_suggestions",
+    minLength: 2,
+ });
+});
+    </script>
+<%= stylesheet_link_tag "search_suggestions" %>
+
+<script>
+  $(function(){
+    // did the UI load?
+    console.log(jQuery.ui);
+  });
+</script>
+</head>
 <h1>Listing users</h1>
 <div class="col-md-8"> 
+<%= form_tag users_path, :method => :get do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+
 <table class="table table-hover" summary="User list"> 
 		  <tr>
 		      <th>Name</th>

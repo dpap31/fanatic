@@ -1,10 +1,10 @@
 <h1>Editing post</h1>
 
 <%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
-
+<div class="col-md-10">  
 <div class="Post edit">
   <h2>Edit Post</h2>
-<%= form_for @post, as: :post, url: post_path(@post), method: :patch do |f| %>
+<%= form_for @post, :html =>{ :multipart => true}, as: :post, url: post_path(@post), method: :patch do |f| %>
   
 	<%= render(partial: "form", locals: {f:f})%>
     
@@ -16,3 +16,4 @@
 </div>
 <%= link_to 'Show', @post %> |
 <%= link_to 'Back', posts_path %>
+</div>  
