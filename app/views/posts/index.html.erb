@@ -1,9 +1,17 @@
-<h1>Listing Posts</h1>
+<h1>MyPosts</h1>
 <%= link_to("New Post", {:action => 'new'}, :class => 'btn btn-default') %>
-<p></p>
-  <tbody>
-  <div class="col-md-10">  
 
+ <div class="container">
+  <div class="row clearfix">
+    <div class="col-md-10 column">
+      <div class="row">
+      <br />
+        <%= render partial:'postPreview'%>
+        
+
+
+
+  <div class="col-md-10">  
 <table class="table table-hover" summary="Posts list">
       <th>&nbsp;</th>
       <th>Title</th>
@@ -27,8 +35,7 @@
     <%= link_to "Delete", post, :method => :delete, :class =>"btn btn-danger", :confirm => "Are you sure?"%>
       </tr>
     <% end %>
-    </div>
   </table>
-  </tbody>
+  </div>
 
 
