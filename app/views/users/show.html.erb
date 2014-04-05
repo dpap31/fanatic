@@ -25,13 +25,12 @@
   <body>
 
 
-    <div class="container">
-    	<div class="col-lg-6 col-lg-offset-1">
+    	<div class="col-md-6 col-lg-offset-1">
     	
     		<!-- ===== vCard Navigation ===== -->
     		<div class="row w">
     			<div class="col-md-4">
-    				<img class="img-responsive" src=<%= @user.image %> alt="">
+    				<img class="img-responsive" src=<%= @user.image %> height="100" width="100"/>
 					<ul class="nav nav-tabs nav-stacked" id="myTab">
 					  <li class="active"><a href="#about">About</a></li>
 					  <li><a href="/users/<%= current_user.id %>/#profile">Profile</a></li>
