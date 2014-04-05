@@ -1,4 +1,4 @@
-<h1>MyPosts</h1>
+<h1>My Posts</h1>
 <%= link_to("New Post", {:action => 'new'}, :class => 'btn btn-default') %>
 
  <div class="container">
@@ -32,7 +32,8 @@
 
     <%= link_to("Show", {:action => 'show', :id => post.id}, :class => 'btn btn-info') %>
     <%= link_to("Edit", {:action => 'edit', :id => post.id}, :class => 'btn btn-warning') %>
-    <%= link_to "Delete", post, :method => :delete, :class =>"btn btn-danger", :confirm => "Are you sure?"%>
+    <%= link_to "Delete", post, :method => :delete, :class =>"btn btn-danger",  :data => { :confirm => 'Are you sure?' }%>
+
       </tr>
     <% end %>
   </table>
