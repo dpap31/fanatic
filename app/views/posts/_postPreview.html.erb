@@ -1,7 +1,7 @@
 <% @posts.each do |post| %>  
 <div class="col-md-4">
           <div class="thumbnail">
-            <img alt="300x200" src="<%= post.image %>" />
+            <a href="/posts/<%=post.id%>"><img alt="300x200" src="<%= post.image %>" /></a>
             <div class="caption">
               <h3>
                 <%= post.title %>
