@@ -9,6 +9,7 @@ FanaticV2::Application.routes.draw do
 
 	root "public#index"
     get "public/index"
+    #get "/myposts" => 'posts#myposts', via: [:get, :post]
     match "menu" => 'menu#index', via: [:get, :post]
     match "/auth/:provider/callback" => "sessions#create", via: [:get, :post]
     get "sessions/authentications"
@@ -16,6 +17,10 @@ FanaticV2::Application.routes.draw do
     resources :users
     resources :friendships
     resources :posts do
+      collection do
+        get :list
+      end
+      member { post :vote }
       resources :comments
       resources :messages
     end

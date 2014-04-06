@@ -58,6 +58,7 @@ end
 # Use ActiveModel has_secure_password
  gem 'bcrypt-ruby', '~> 3.1.2'
  gem "espn_rb"
+ gem 'activerecord-reputation-system', github: 'NARKOZ/activerecord-reputation-system', branch: 'rails4'
 
 # Use unicorn as the app server
 # gem 'unicorn'

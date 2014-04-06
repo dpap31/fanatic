@@ -1,39 +1,13 @@
-<h1>My Posts</h1>
+<%= stylesheet_link_tag "posts" %>
+<h1>All Posts</h1>
 <%= link_to("New Post", {:action => 'new'}, :class => 'btn btn-default') %>
 
  <div class="container">
-  <div class="row clearfix">
+   <div class="row">
     <div class="col-md-10 column">
-      <div class="row">
-      <br />
         <%= render partial:'postPreview'%>
-        
-  <div class="col-md-10">  
-<table class="table table-hover" summary="Posts list">
-      <th>&nbsp;</th>
-      <th>Title</th>
-      <th>Content</th>
-      <th>Visible</th>
-      <th>URL</th>
-      <th>Actions</th>
-    </tr>
-    <% @posts.each do |post| %>
-      <tr>
-      <td> &nbsp; </td>
-    <td><%= post.title %></td>
-    <td><%= post.content %></td>
-      
-      <td class="center"><%= post.visible ? 'Yes' : 'No' %></td>
-      <td class="center"><%= post.url %></td>
-      <td class="actions">
-
-    <%= link_to("Show", {:action => 'show', :id => post.id}, :class => 'btn btn-info') %>
-    <%= link_to("Edit", {:action => 'edit', :id => post.id}, :class => 'btn btn-warning') %>
-    <%= link_to "Delete", post, :method => :delete, :class =>"btn btn-danger",  :data => { :confirm => 'Are you sure?' }%>
-
-      </tr>
-    <% end %>
-  </table>
+    </div>
   </div>
+</div>
 
 
