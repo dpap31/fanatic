@@ -4,9 +4,12 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.where(:user_id => current_user.id).limit(10).order("created_at DESC")
+    @posts = Post.limit(10).order("created_at DESC")
   end
 
+  def list
+    @posts = Post.where(:user_id => current_user.id).limit(10).order("created_at DESC")
+  end
   # GET /posts/1
   # GET /posts/1.json
   def show
@@ -63,6 +66,13 @@ class PostsController < ApplicationController
       format.html { redirect_to posts_url }
       format.json { head :no_content }
     end
+  end
+
+  def vote
+    value = params[:type] == "up" ? 1 : -1
+    @post = Post.find(params[:id])
+    @post.add_or_update_evaluation(:votes, value, current_user)
+    redirect_to :back, notice: "Thank you for voting"
   end
 
   private
