@@ -74,8 +74,6 @@ ActiveRecord::Schema.define(version: 20140405194324) do
     t.string   "image"
   end
 
-  add_index "posts", ["user_id"], name: "index_posts_on_user_id"
-
   create_table "rs_evaluations", force: true do |t|
     t.string   "reputation_name"
     t.integer  "source_id"

@@ -6,8 +6,7 @@ class CreatePosts < ActiveRecord::Migration
     	t.string "title"
     	t.text "content"
     	t.boolean "visible", :default => false
-      	t.timestamps
+      t.timestamps
     end
-    add_index("posts", "post_id")
   end
 end

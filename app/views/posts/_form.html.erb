@@ -1,24 +1,49 @@
   <table summary="Post form fields">
   <tr>
-	<%= f.hidden_field :user_id %>
-    <th><%= f.label(:title) %></th>
-    <td><%= f.text_field(:title) %></td>
+	  <%= f.hidden_field :user_id %>
+    <th class="sr-only"><%= f.label(:title) %></th>
+    <td><%= f.text_field :title, placeholder: 'Title' %></td>
   </tr>
   <tr>
-    <th><%= f.label(:url) %></th>
+    <th class="sr-only"><%= f.label(:url) %></th>
     <td><%= f.text_field(:url) %></td>
   </tr>
   <tr>
-    <th><%= f.label(:visible) %></th>
+    <th class="sr-only"><%= f.label(:visible) %></th>
     <td><%= f.check_box(:visible) %></td>
   </tr>
+  <tr>
    <%= f.file_field :image %>
-  </p>
-  <p>
-    <%= f.label :remote_image_url, "or image URL" %><br />
-    <%= f.text_field :remote_image_url %>
-  </p>
+    <th class="sr-only"><%= f.label :remote_image_url, "or image URL" %>
+    <td><%= f.text_field :remote_image_url, placeholder: 'Image URL' %>
+    </tr>
+  <tr>
   <th><%= f.label(:content) %></th>
   <td><%= f.text_area(:content, size: '100x50') %></td>
-
+  </tr>
 </table>
+
+
+  <fieldset>
+    <legend><%= controller.action_name.capitalize %> Product</legend>
+
+    <div class="control-group">
+      <%= f.label :title, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :title, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :content, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :content, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to 'Publish', posts_path, :class => 'btn' %>
+    </div>
+  </fieldset>
+
