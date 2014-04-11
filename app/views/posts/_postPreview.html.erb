@@ -15,7 +15,7 @@
                 <%= pluralize post.reputation_for(:votes).to_i, "cheer" %> 
                 <p></p>
                 <%= link_to("Edit", {:action => 'edit', :id => post.id}, :class => 'btn btn-warning') %>
-                <%= link_to "Delete", post_path(post), :method => :delete, :class =>"btn btn-danger", :confirm => "Are you sure?"%>
+                <%= link_to "Delete", post_path(post), :method => :delete, :class =>"btn btn-danger", data: { confirm: "Are you sure?" }%>
                  <%= link_to("Cheer", vote_post_path(post, type: "up"), method: "post", :class => 'btn btn-default') %> 
                   <%= link_to("Boo", vote_post_path(post, type: "down"), method: "post", :class => 'btn btn-default') %> 
               </p>
