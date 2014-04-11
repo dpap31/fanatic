@@ -29,6 +29,11 @@
 	<hr/>
   </div>
 	<div id="alerts"></div>
+     <%= form_for( @post, :html =>{ :multipart => true}, :url => {:controller => "posts", :action => "create"}) do |f| %>
+    <%= f.text_field :title, placeholder: 'Title' %>
+   <%= f.file_field :image %>
+    <div class="sr-only"><%= f.label :remote_image_url %>
+    </div><%= f.text_field :remote_image_url, placeholder: 'Image URL' %>
     <div class="btn-toolbar" data-role="editor-toolbar" data-target="#editor">
       <div class="btn-group">
         <a class="btn dropdown-toggle" data-toggle="dropdown" title="Font"><i class="icon-font"></i><b class="caret"></b></a>
@@ -81,8 +86,6 @@
       </div>
       <input type="text" data-edit="inserttext" id="voiceBtn" x-webkit-speech="">
     </div>
-      <%= form_for( @post, :html =>{ :multipart => true}, :url => {:controller => "posts", :action => "create"}) do |f| %>
-    <%= f.text_field :title, placeholder: 'Title' %></td>
     <div id="editor">
       <%= f.text_area(:content) %>
     </div>
