@@ -32,6 +32,7 @@
      <%= form_for( @post, :html =>{ :multipart => true}, :url => {:controller => "posts", :action => "create"}) do |f| %>
     <%= f.text_field :title, placeholder: 'Title' %>
    <%= f.file_field :image %>
+   <%= f.hidden_field :user_id %>
     <div class="sr-only"><%= f.label :remote_image_url %>
     </div><%= f.text_field :remote_image_url, placeholder: 'Image URL' %>
     <div class="btn-toolbar" data-role="editor-toolbar" data-target="#editor">
@@ -87,15 +88,31 @@
       <input type="text" data-edit="inserttext" id="voiceBtn" x-webkit-speech="">
     </div>
     <div id="editor">
-      <%= f.text_area(:content) %>
     </div>
-    <%= f.submit "Publish", class: "form-buttons" %>
+    <%= f.submit "Publish", class: "form-buttons", id: "form_submit" %>
     <% end %>
     
   </div>
 		</div>
 	</div>
 </div>
+<script>
+function getContent(){
+var form = $('#new_post');
+var element;
+$('[contenteditable=true]').each(function(){
+  element = $(this);
+  form.append($('<input/>', {
+    type:'hidden',
+    name:'post[content]',
+    value:element.html()
+  }));
+});
+};
+var get = document.getElementById('form_submit')
+get.addEventListener('click', getContent)
+
+</script>
 <script>
   $(function(){
     function initToolbarBootstrapBindings() {
