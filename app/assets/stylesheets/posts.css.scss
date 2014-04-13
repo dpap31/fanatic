@@ -1,4 +1,3 @@
-
 .image {
  	width: 250px;
 	border-bottom: 1px solid #ccc;
@@ -48,5 +47,14 @@
 }
 
 #columns:hover .pin:not(:hover) {
-	opacity: 0.4;
+	opacity: 0.6;
+}
+
+#title {
+	float: left;
+	
+}
+#new_button {
+	float: right;
+
 }
