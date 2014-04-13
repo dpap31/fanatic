@@ -1,11 +1,10 @@
 FanaticV2::Application.routes.draw do
 
-
-  resources :search_suggestions
-
   resources :activities
   resources :friendships
   resources :messages
+
+  get "tags/:tag", to: 'posts#index', as: :tag
 
 	root "public#index"
     get "public/index"
@@ -23,6 +22,7 @@ FanaticV2::Application.routes.draw do
       member { post :vote }
       resources :comments
       resources :messages
+      resources :search_suggestions
     end
     
   # The priority is based upon order of creation: first created -> highest priority.

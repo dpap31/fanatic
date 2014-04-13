@@ -56,6 +56,8 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'acts-as-taggable-on'
+
 # Use ActiveModel has_secure_password
  gem 'bcrypt-ruby', '~> 3.1.2'
  gem "espn_rb"

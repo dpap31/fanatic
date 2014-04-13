@@ -4,7 +4,11 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.limit(10).order("created_at DESC")
+  if params[:tag]
+    @posts = Post.tagged_with(params[:tag])
+  else
+  @posts = Post.limit(10).order("created_at DESC")
+  end 
   end
 
   def list
@@ -83,7 +87,7 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :content, :visible, :url, :user_id, :id, :user_name, :name, :image, :remote_image_url)   
+      params.require(:post).permit(:title, :content, :visible, :url, :tag_list, :user_id, :id, :user_name, :name, :image, :remote_image_url)   
     end
      
      def find_user
