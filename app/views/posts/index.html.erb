@@ -1,14 +1,19 @@
 <%= stylesheet_link_tag "posts" %>
-<h1>All Posts</h1>
-<%= link_to("New Post", {:action => 'new'}, :class => 'btn btn-default') %>
-
  <div class="container">
    <div class="row">
     <div class="col-md-10 column">
+      <div id="title">
+     <a href="/posts"><strong><i class="glyphicon glyphicon-star-empty"></i>  All Posts</strong></a> 
+      </div> 
+     <div id="new_button">
+     <a href="/posts/new"><strong><i class="glyphicon glyphicon-plus-sign"></i>  New Post</strong></a>
+     </div>  
+       <br />  
+       <hr>
+           <br />
 	    <div id="columns">
         <%= render partial:'postPreview'%>
         </div>
       </div>
   </div>
 </div>
-

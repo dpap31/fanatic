@@ -52,7 +52,7 @@
         <li><a href="/messages"><i class="glyphicon glyphicon-comment"></i> Chat</a></li>
         <li><a href="/users/<%= current_user.id %>"><i class="glyphicon glyphicon-star"></i> Profile</a></li>
         <li><a href="/users"><i class="glyphicon glyphicon-user"></i> Friends</a></li>
-        <li><a href="posts/list"><i class="glyphicon glyphicon-book"></i> My Posts</a></li>
+        <li><a href="/posts/list"><i class="glyphicon glyphicon-book"></i> My Posts</a></li>
 </ul>
       
       
@@ -76,7 +76,7 @@
         </li>
         <hr>
 </div>
-      <div class="span10">    
+      <div class="col-md-9 column">    
     <% flash.each do |name, msg| %>
       <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
       <a class="close" data-dismiss="alert">×</a>
