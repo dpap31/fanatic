@@ -127,6 +127,7 @@ get.addEventListener('click', getContent)
         $('#voiceBtn').hide();
       }
 	};
+  $( document ).ready(function() {
 	function showErrorAlert (reason, detail) {
 		var msg='';
 		if (reason==='unsupported-file-type') { msg = "Unsupported format " +detail; }
@@ -139,6 +140,7 @@ get.addEventListener('click', getContent)
     initToolbarBootstrapBindings();  
 	$('#editor').wysiwyg({ fileUploadError: showErrorAlert} );
     window.prettyPrint && prettyPrint();
+  });
   });
 </script>
 <script>

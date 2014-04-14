@@ -80,11 +80,22 @@ class PostsController < ApplicationController
   end
 
 def tags 
-  @tags = ActsAsTaggableOn::Tag.where("tags.name LIKE ?", "%#{params[:q]}%") 
-  respond_to do |format|
-    format.json { render :json => @tags.collect{|t| {:id => t.name, :name => t.name }}}
-end
-end
+    query = params[:q]
+    if query[-1,1] == " "
+      query = query.gsub(" ", "")
+      Tag.find_or_create_by_name(query)
+    end
+  @tags = ActsAsTaggableOn::Tag.all
+    @tags = @tags.select { |v| v.name =~ /#{query}/i }
+    respond_to do |format|
+      format.json{ render :json => @tags.map(&:attributes) }
+    end
+  end
+  # @tags = ActsAsTaggableOn::Tag.where("tags.name LIKE ?", "%#{params[:q]}%") 
+  # respond_to do |format|
+  #   format.json { render :json => @tags.collect{|t| {:id => t.name, :name => t.name }}}
+# end
+# end
 
 
   private
