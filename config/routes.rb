@@ -4,11 +4,12 @@ FanaticV2::Application.routes.draw do
   resources :friendships
   resources :messages
 
-  get "tags/:tag", to: 'posts#index', as: :tag
+  get "posts/tags" => "posts#tags", :as => :tags
+  get 'tags/:tag', to: 'posts#index', as: :tag
 
 	root "public#index"
     get "public/index"
-    #get "/myposts" => 'posts#myposts', via: [:get, :post]
+
     match "menu" => 'menu#index', via: [:get, :post]
     match "/auth/:provider/callback" => "sessions#create", via: [:get, :post]
     get "sessions/authentications"

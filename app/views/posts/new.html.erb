@@ -3,7 +3,9 @@
   <head>
     <meta charset="utf-8">
 		<link href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">   
+  <%= javascript_include_tag "posts" %>
   <%= javascript_include_tag "external/jquery.hotkeys.js" %> 
+  <%= javascript_include_tag "external/bootstrap-wysiwyg.js" %> 
 	<%= stylesheet_link_tag "post_new.css" %> 
 
   </head>
@@ -18,7 +20,9 @@
 	<div id="alerts"></div>
      <%= form_for( @post, :html =>{ :multipart => true}, :url => {:controller => "posts", :action => "create"}) do |f| %>
     <%= f.text_field :title, placeholder: 'Title' %>
-    <%= f.text_field :tag_list, placeholder: 'Tag' %>
+    <%= f.text_field :tag_list,
+                 :id => "post_tags",
+                 "data-pre" => @post.tags.map(&:attributes).to_json %>
     <div class="sr-only"><%= f.label :remote_image_url %>
     </div><%= f.text_field :remote_image_url, placeholder: 'Image URL' %>
     <%= f.hidden_field :user_id %>
@@ -80,7 +84,6 @@
 		</div>
 	</div>
 </div>
-<%= javascript_include_tag "external/bootstrap-wysiwyg.js" %> 
 <script>
 function getContent(){
 var form = $('#new_post');
@@ -96,8 +99,8 @@ $('[contenteditable=true]').each(function(){
 };
 var get = document.getElementById('form_submit')
 get.addEventListener('click', getContent)
-
 </script>
+
 <script>
   $(function(){
     function initToolbarBootstrapBindings() {

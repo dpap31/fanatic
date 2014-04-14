@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   if params[:tag]
     @posts = Post.tagged_with(params[:tag])
   else
-  @posts = Post.limit(10).order("created_at DESC")
+    @posts = Post.limit(10).order("created_at DESC")
   end 
   end
 
@@ -78,6 +78,14 @@ class PostsController < ApplicationController
     @post.add_or_update_evaluation(:votes, value, current_user)
     redirect_to :back, notice: "Thank you for voting"
   end
+
+def tags 
+  @tags = ActsAsTaggableOn::Tag.where("tags.name LIKE ?", "%#{params[:q]}%") 
+  respond_to do |format|
+    format.json { render :json => @tags.collect{|t| {:id => t.name, :name => t.name }}}
+end
+end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
