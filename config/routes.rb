@@ -7,6 +7,7 @@ FanaticV2::Application.routes.draw do
   get "posts/tags" => "posts#tags", :as => :tags
   get 'tags/:tag', to: 'posts#index', as: :tag
 
+
 	root "public#index"
     get "public/index"
 
