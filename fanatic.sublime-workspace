@@ -1,0 +1,928 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"uri",
+				"uri_string"
+			],
+			[
+				"API",
+				"API_KEY"
+			],
+			[
+				"secre",
+				"secret_key"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app/controllers/posts_controller.rb",
+			"settings":
+			{
+				"buffer_size": 3065,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/assets/stylesheets/posts.css.scss",
+			"settings":
+			{
+				"buffer_size": 964,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/posts/_form.html.erb",
+			"settings":
+			{
+				"buffer_size": 1439,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"browe",
+				"File: Open In Browser - Testing Server"
+			],
+			[
+				"brow",
+				"File: Open In Browser - Testing Server"
+			],
+			[
+				"browser",
+				"File: Open In Browser - Production Server"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"intsall",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Package Control: Remove Package"
+			],
+			[
+				"prefic",
+				"Autoprefix CSS"
+			],
+			[
+				"css",
+				"Set Syntax: CSS"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Preferences: Browse Packages"
+			],
+			[
+				"tog",
+				"View: Toggle Minimap"
+			],
+			[
+				"toggle",
+				"View: Toggle Minimap"
+			],
+			[
+				"sideba",
+				"View: Toggle Side Bar"
+			],
+			[
+				"ruby",
+				"Set Syntax: Ruby"
+			]
+		],
+		"width": 575.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/dpappas/Sites/fanatic_v2/app/assets/javascripts/activities.js.coffee",
+		"/Users/dpappas/Sites/fanatic_v2/app/assets/stylesheets/posts.css.scss",
+		"/Users/dpappas/Sites/fanatic_v2/.gitattributes",
+		"/Users/dpappas/Sites/fanatic_v2/config.ru",
+		"/Users/dpappas/Sites/fanatic_v2/app/assets/stylesheets/menu.css.scss",
+		"/Users/dpappas/Sites/fanatic_v2/app/assets/stylesheets/profile.css",
+		"/Users/dpappas/Sites/fanatic_v2/db/migrate/20140309035648_create_search_suggestions.rb",
+		"/Users/dpappas/Sites/fanatic_v2/app/controllers/comments_controller.rb",
+		"/Users/dpappas/Sites/fanatic_v2/app/assets/stylesheets/comments.css.scss",
+		"/Users/dpappas/Sites/fanatic_v2/solr/conf/scripts.conf",
+		"/Users/dpappas/Sites/fanatic_v2/app/assets/javascripts/posts.js.coffee",
+		"/Users/dpappas/Sites/fanatic_v2/app/models/post.rb",
+		"/Users/dpappas/Sites/fanatic_v2/app/controllers/activities_controller.rb",
+		"/Users/dpappas/Sites/fanatic_v2/app/controllers/posts_controller.rb",
+		"/Users/dpappas/Sites/fanatic_v2/app/models/friendship.rb",
+		"/Users/dpappas/Sites/fanatic_v2/config/initializers/filter_parameter_logging.rb",
+		"/Users/dpappas/Sites/fanatic_v2/Gemfile",
+		"/Users/dpappas/Sites/fanatic_v2/config/routes.rb",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/posts/_postPreview.html.erb",
+		"/Users/dpappas/Sites/fanatic_v2/app/assets/javascripts/jquery.tokeninput.js",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/posts/new.html.erb",
+		"/Users/dpappas/Sites/fanatic_v2/app/assets/javascripts/application.js",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/menu/index.html.erb",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/activities/index.html.erb",
+		"/Users/dpappas/Sites/fanatic_v2/app/assets/javascripts/menu.js",
+		"/Users/dpappas/Sites/fanatic_v2/tmp/miniprofiler/mp_timers_e07loyg5n7gggyi71tuq",
+		"/Users/dpappas/Sites/fanatic_v2/test/controllers/menu_controller_test.rb",
+		"/Users/dpappas/Sites/fanatic_v2/app/helpers/menu_helper.rb",
+		"/Users/dpappas/Sites/fanatic_v2/app/controllers/menu_controller.rb",
+		"/Users/dpappas/Sites/fanatic_v2/app/assets/javascripts/external/jquery.hotkeys.js",
+		"/Users/dpappas/Sites/fanatic_v2/tmp/cache/assets/development/sprockets/faba39d8b529cd1e910ba6e8886740aa",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/posts/index.html.erb",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/posts/temp_new.html.erb",
+		"/Users/dpappas/Sites/fanatic_v2/app/assets/stylesheets/post_new.css",
+		"/Users/dpappas/Sites/fanatic_v2/config/initializers/wrap_parameters.rb",
+		"/Users/dpappas/Sites/fanatic_v2/tmp/miniprofiler/mp_timers_esupwosynt2xtrmj2dh0",
+		"/Users/dpappas/Sites/fanatic_v2/app/assets/stylesheets/_new_form.css",
+		"/Users/dpappas/Sites/fanatic_v2/tmp/miniprofiler/mp_timers_weucaopaardul0ok2zlb",
+		"/Users/dpappas/Sites/fanatic_v2/app/assets/javascripts/external/google-code-prettify/lang-vb.js",
+		"/Users/dpappas/Sites/fanatic_v2/tmp/miniprofiler/mp_views_127.0.0.1",
+		"/Users/dpappas/Sites/fanatic_v2/config/environment.rb",
+		"/Users/dpappas/Sites/fanatic_v2/db/migrate/20140405194320_add_evaluations_index.rb",
+		"/Users/dpappas/Sites/fanatic_v2/solr/development/data/index/_0_Lucene41_0.pos",
+		"/Users/dpappas/Sites/fanatic_v2/app/helpers/posts_helper.rb",
+		"/Users/dpappas/Sites/fanatic_v2/test/fixtures/posts.yml",
+		"/Users/dpappas/Sites/fanatic_v2/test/models/post_test.rb",
+		"/Users/dpappas/Sites/fanatic_v2/app/assets/javascripts/external/google-code-prettify/lang-matlab.js",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/posts/list.html.erb",
+		"/Users/dpappas/Sites/fanatic_v2/app/assets/stylesheets/application.css.scss",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/identities/new.html.erb",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/layouts/application.html.erb",
+		"/Users/dpappas/Sites/fanatic_v2/app/controllers/application_controller.rb",
+		"/Users/dpappas/Sites/fanatic_v2/app/assets/javascripts/external/google-code-prettify/lang-xq.js",
+		"/Users/dpappas/Sites/Scripts/lynda_api.rb",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/posts/index.json.jbuilder",
+		"/Users/dpappas/Sites/fanatic_v2/tmp/miniprofiler/mp_timers_y2lm556c1r1xv64yp7vd",
+		"/Users/dpappas/Sites/fanatic_v2/tmp/miniprofiler/mp_timers_yplctyymk5a3jbgc26o0",
+		"/Users/dpappas/Sites/fanatic_v2/tmp/miniprofiler/mp_timers_yo4lowbeqlbr4vnux5zw",
+		"/Users/dpappas/Sites/fanatic_v2/tmp/miniprofiler/mp_timers_e06xeobb1eo3oyp4k9di",
+		"/Users/dpappas/Sites/fanatic_v2/tmp/cache/assets/development/sass/83bb5b4d31cd6a4470eb777d4fbf65af2db096d1/application.css.scssc",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/posts/_new_form.html.erb",
+		"/Users/dpappas/Sites/fanatic_v2/app/middleware/search_suggestions.rb",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/posts/_form.html.erb",
+		"/Users/dpappas/Sites/fanatic_v2/app/helpers/application_helper.rb",
+		"/Users/dpappas/Sites/fanatic_v2/config/application.yml",
+		"/Users/dpappas/Sites/fanatic_v2/config/application.rb",
+		"/Users/dpappas/Sites/fanatic_v2/db/seeds.rb",
+		"/Users/dpappas/Sites/fanatic_v2/config/sunspot.yml",
+		"/Users/dpappas/Sites/fanatic_v2/Rakefile",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/public_activity/post/_create.html.erb",
+		"/Users/dpappas/Sites/fanatic_v2/config/initializers/inflections.rb",
+		"/Users/dpappas/Sites/fanatic_v2/app/models/identity.rb",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/public_activity/comment/_update.html.erb",
+		"/Users/dpappas/Sites/fanatic_v2/app/uploaders/image_uploader.rb",
+		"/Users/dpappas/Sites/fanatic_v2/app/models/user.rb",
+		"/Users/dpappas/Sites/fanatic_v2/tmp/miniprofiler/mp_timers_janwr7qsnxf3ptlkhnd",
+		"/Users/dpappas/Sites/fanatic_v2/solr/default/data/index/segments.gen",
+		"/Users/dpappas/Sites/fanatic_v2/app/assets/javascripts/external/google-code-prettify/lang-lua.js",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/users/index.html.erb",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/users/_form.html.erb",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/users/show.html.erb",
+		"/Users/dpappas/Sites/fanatic_v2/test/helpers/posts_helper_test.rb",
+		"/Users/dpappas/Sites/fanatic_v2/app/assets/stylesheets/application.css",
+		"/Users/dpappas/Sites/fanatic_v2/tmp/cache/assets/development/sass/f47f815eb875ef15c0e026f7220c69e9e7d0674c/application.css.scssc",
+		"/Users/dpappas/Desktop/application.html.erb",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/layouts/_header.html.erb",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/layouts/_leftMenu.html.erb",
+		"/Users/dpappas/Sites/fanatic_v2/test/test_helper.rb",
+		"/Users/dpappas/Sites/fanatic_v2/tmp/miniprofiler/mp_timers_e0ldnojksm4gi0gy9pky",
+		"/Users/dpappas/Sites/fanatic_v2/app/models/message.rb",
+		"/Users/dpappas/Sites/fanatic_v2/app/helpers/users_helper.rb",
+		"/Users/dpappas/Sites/fanatic_v2/test/fixtures/users.yml",
+		"/Users/dpappas/Sites/fanatic_v2/private_pub.ru",
+		"/Users/dpappas/Sites/fanatic_v2/config/environments/production.rb",
+		"/Users/dpappas/Sites/fanatic_v2/app/assets/javascripts/external/google-code-prettify/lang-erlang.js",
+		"/Users/dpappas/Sites/fanatic_v2/tmp/miniprofiler/mp_timers_pig3mj5bf4noxi7bwnxy",
+		"/Users/dpappas/Sites/fanatic_v2/solr/development/data/index/_0.fdt",
+		"/Users/dpappas/Sites/fanatic_v2/app/controllers/public_controller.rb",
+		"/Users/dpappas/Sites/fanatic_v2/db/migrate/20140301034738_add_image_to_posts.rb",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/users/new.html.erb",
+		"/Users/dpappas/Sites/fanatic_v2/app/assets/javascripts/external/bootstrap-wysiwyg.js",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/comments/_form.html.erb",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/comments/_comment.html.erb",
+		"/Users/dpappas/Sites/fanatic_v2/config/initializers/omniauth.rb",
+		"/Users/dpappas/Sites/fanatic_v2/config/initializers/session_store.rb",
+		"/Users/dpappas/Sites/_new_form",
+		"/Users/dpappas/Sites/fanatic_v2/tmp/miniprofiler/mp_timers_echm1mc9f29v8ey62t0k",
+		"/Users/dpappas/Desktop/re-write.rb",
+		"/Users/dpappas/Sites/fanatic_v2/db/migrate/20140130032352_create_posts.rb",
+		"/Users/dpappas/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/dpappas/Sites/fanatic_v2/db/migrate/20140104203039_create_users.rb",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/messages/create.js.erb",
+		"/Users/dpappas/Sites/fanatic_v2/db/migrate/20140216202243_create_activities.rb",
+		"/Users/dpappas/Sites/fanatic_v2/db/migrate/20140405194318_create_reputation_system.rb",
+		"/Users/dpappas/Sites/fanatic_v2/app/models/comment.rb",
+		"/Users/dpappas/FederationMetadata.xml",
+		"/Users/dpappas/Dropbox/Sites/fanatic_v2/app/helpers/application_helper.rb",
+		"/Users/dpappas/Dropbox/Sites/fanatic_v2/app/models/user.rb",
+		"/Users/dpappas/Dropbox/Sites/fanatic_v2/app/views/layouts/_header.html.erb",
+		"/Users/dpappas/Dropbox/Sites/fanatic_v2/app/views/posts/index.html.erb",
+		"/Users/dpappas/Dropbox/Sites/fanatic_v2/app/views/posts/show.html.erb",
+		"/Users/dpappas/Dropbox/Sites/fanatic_v2/app/controllers/posts_controller.rb",
+		"/Users/dpappas/Dropbox/Sites/fanatic_v2/app/views/posts/_postPreview.html.erb",
+		"/Users/dpappas/Dropbox/Sites/fanatic_v2/config/routes.rb",
+		"/Users/dpappas/Dropbox/Sites/fanatic_v2/app/models/post.rb",
+		"/Users/dpappas/Dropbox/Sites/fanatic_v2/app/assets/stylesheets/posts.css.scss",
+		"/Users/dpappas/Dropbox/Sites/fanatic_v2/Gemfile",
+		"/Users/dpappas/Dropbox/Sites/fanatic_v2/app/assets/stylesheets/application.css.scss"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"menu",
+			"stylesheet_link_tag",
+			"wysiwyg",
+			"tag_",
+			"tag",
+			"search",
+			"script",
+			"tag",
+			">\n",
+			"body",
+			"jquer",
+			"hidden",
+			"editor",
+			"#editor",
+			"<a href=\"https://github.com/mindmup/bootstrap-wysiwyg/\"><img style=\"position: absolute; top: 0; right: 0; border: 0;\" src=\"https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png\" alt=\"Fork me on GitHub\"></a>",
+			"github",
+			"index",
+			"inex",
+			"    </",
+			"clearfix",
+			"private",
+			"data",
+			"data:",
+			"hel",
+			"====",
+			"<<<<<<<",
+			"title",
+			"face",
+			"trier",
+			"image",
+			"8",
+			"conta",
+			"number",
+			"incommon",
+			"East Carolina",
+			"Carolina",
+			"ECU",
+			"east carolina",
+			"interactive",
+			"User",
+			"email",
+			"family",
+			"user_id",
+			"fanat",
+			" </div>",
+			"post",
+			"enti",
+			"primar",
+			"unscoped",
+			"basic",
+			"common",
+			"%>\n",
+			"comment_path",
+			"target",
+			"division"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app/controllers/posts_controller.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3065,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/assets/stylesheets/posts.css.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 964,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								964
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/views/posts/_form.html.erb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1439,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "fanatic.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				".css",
+				"fanatic_v2/app/assets/stylesheets/posts.css.scss"
+			],
+			[
+				"postscon",
+				"fanatic_v2/app/controllers/posts_controller.rb"
+			],
+			[
+				"controll",
+				"fanatic_v2/app/controllers/activities_controller.rb"
+			],
+			[
+				"menuindex",
+				"fanatic_v2/app/views/menu/index.html.erb"
+			],
+			[
+				"j",
+				"fanatic_v2/app/assets/javascripts/jquery.tokeninput.js"
+			],
+			[
+				"routes",
+				"fanatic_v2/config/routes.rb"
+			],
+			[
+				"postp",
+				"fanatic_v2/app/views/posts/_postPreview.html.erb"
+			],
+			[
+				"app",
+				"fanatic_v2/app/assets/javascripts/application.js"
+			],
+			[
+				"postnew",
+				"fanatic_v2/app/views/posts/new.html.erb"
+			],
+			[
+				"postinde",
+				"fanatic_v2/app/views/posts/index.html.erb"
+			],
+			[
+				"posts",
+				"fanatic_v2/app/assets/javascripts/posts.js.coffee"
+			],
+			[
+				"new",
+				"fanatic_v2/app/views/posts/new.html.erb"
+			],
+			[
+				"posts.",
+				"fanatic_v2/app/assets/javascripts/posts.js.coffee"
+			],
+			[
+				"route",
+				"fanatic_v2/config/routes.rb"
+			],
+			[
+				"post",
+				"fanatic_v2/app/models/post.rb"
+			],
+			[
+				"gme",
+				"fanatic_v2/Gemfile"
+			],
+			[
+				"neew",
+				"fanatic_v2/app/views/posts/new.html.erb"
+			],
+			[
+				"application.css",
+				"fanatic_v2/app/assets/stylesheets/application.css.scss"
+			],
+			[
+				"java",
+				"fanatic_v2/app/assets/javascripts/application.js"
+			],
+			[
+				"li",
+				"fanatic_v2/app/views/posts/list.html.erb"
+			],
+			[
+				"menu.html",
+				"fanatic_v2/app/views/menu/index.html.erb"
+			],
+			[
+				"applicationcss",
+				"fanatic_v2/app/assets/stylesheets/application.css.scss"
+			],
+			[
+				"application",
+				"fanatic_v2/app/views/layouts/application.html.erb"
+			],
+			[
+				"applicationcon",
+				"fanatic_v2/app/controllers/application_controller.rb"
+			],
+			[
+				"postindex",
+				"fanatic_v2/app/views/posts/index.html.erb"
+			],
+			[
+				"index",
+				"fanatic_v2/app/views/activities/index.html.erb"
+			],
+			[
+				"gem",
+				"fanatic_v2/Gemfile"
+			],
+			[
+				"appli",
+				"fanatic_v2/app/controllers/application_controller.rb"
+			],
+			[
+				"rout",
+				"fanatic_v2/config/routes.rb"
+			],
+			[
+				"search",
+				"fanatic_v2/app/middleware/search_suggestions.rb"
+			],
+			[
+				"",
+				"fanatic_v2/config/routes.rb"
+			],
+			[
+				"post/inde",
+				"fanatic_v2/app/views/posts/index.html.erb"
+			],
+			[
+				"updat",
+				"fanatic_v2/app/views/public_activity/comment/_update.html.erb"
+			],
+			[
+				"ja",
+				"fanatic_v2/app/assets/javascripts/application.js"
+			],
+			[
+				"pos",
+				"fanatic_v2/app/models/post.rb"
+			],
+			[
+				"g",
+				"fanatic_v2/Gemfile"
+			],
+			[
+				"application.",
+				"fanatic_v2/app/views/layouts/application.html.erb"
+			],
+			[
+				"applica",
+				"fanatic_v2/app/assets/javascripts/application.js"
+			],
+			[
+				"users/inde",
+				"fanatic_v2/app/views/users/index.html.erb"
+			],
+			[
+				"postspre",
+				"fanatic_v2/app/views/posts/_postPreview.html.erb"
+			],
+			[
+				"posts/in",
+				"fanatic_v2/app/views/posts/index.html.erb"
+			],
+			[
+				"application.j",
+				"fanatic_v2/app/assets/javascripts/application.js"
+			],
+			[
+				"left",
+				"fanatic_v2/app/views/layouts/_leftMenu.html.erb"
+			],
+			[
+				"header",
+				"fanatic_v2/app/views/layouts/_header.html.erb"
+			],
+			[
+				"controoler",
+				"fanatic_v2/app/controllers/posts_controller.rb"
+			],
+			[
+				"user.rb",
+				"fanatic_v2/app/models/user.rb"
+			],
+			[
+				"users",
+				"fanatic_v2/app/views/users/show.html.erb"
+			],
+			[
+				"menu",
+				"fanatic_v2/app/assets/javascripts/menu.js"
+			],
+			[
+				"usershow",
+				"fanatic_v2/app/views/users/show.html.erb"
+			],
+			[
+				"new.css",
+				"fanatic_v2/app/assets/stylesheets/post_new.css"
+			],
+			[
+				"_p",
+				"fanatic_v2/app/views/posts/_postPreview.html.erb"
+			],
+			[
+				"_from",
+				"app/views/comments/_form.html.erb"
+			],
+			[
+				"application.htm",
+				"app/views/layouts/application.html.erb"
+			],
+			[
+				"menu_co",
+				"app/controllers/menu_controller.rb"
+			],
+			[
+				"hea",
+				"app/views/layouts/_header.html.erb"
+			],
+			[
+				"postsinde",
+				"app/views/posts/index.html.erb"
+			],
+			[
+				"_post",
+				"app/views/posts/_postPreview.html.erb"
+			],
+			[
+				"postin",
+				"app/views/posts/index.html.erb"
+			],
+			[
+				"postsho",
+				"app/views/posts/show.html.erb"
+			],
+			[
+				"application_he",
+				"app/helpers/application_helper.rb"
+			],
+			[
+				"head",
+				"app/views/layouts/_header.html.erb"
+			],
+			[
+				"user.r",
+				"app/models/user.rb"
+			],
+			[
+				"le",
+				"app/views/layouts/_leftMenu.html.erb"
+			],
+			[
+				"posts/sho",
+				"app/views/posts/show.html.erb"
+			],
+			[
+				"menu/in",
+				"app/views/menu/index.html.erb"
+			],
+			[
+				"menu/inde",
+				"app/views/menu/index.html.erb"
+			],
+			[
+				"gemfile",
+				"Gemfile"
+			],
+			[
+				"app/assets/stylesheets/application.css.scss",
+				"app/assets/stylesheets/application.css.scss"
+			],
+			[
+				"posts_controller.rb",
+				"app/controllers/posts_controller.rb"
+			],
+			[
+				"_comment.html.erb",
+				"app/views/comments/_comment.html.erb"
+			],
+			[
+				"_leftmenu.html.erb",
+				"app/views/layouts/_leftMenu.html.erb"
+			],
+			[
+				"_nf",
+				"app/views/menu/_nfl_headlines.html.erb"
+			],
+			[
+				"_nba",
+				"app/views/menu/_nba_headlines.html.erb"
+			],
+			[
+				"_nh",
+				"app/views/menu/_nhl_headlines.html.erb"
+			],
+			[
+				"posts/inde",
+				"app/views/posts/index.html.erb"
+			],
+			[
+				"post/sho",
+				"app/views/posts/show.html.erb"
+			],
+			[
+				"public/ind",
+				"app/views/public/index.html.erb"
+			],
+			[
+				"users/sho",
+				"app/views/users/show.html.erb"
+			],
+			[
+				"layou",
+				"app/views/layouts/application.html.erb"
+			],
+			[
+				"application.cs",
+				"app/assets/stylesheets/application.css.scss"
+			],
+			[
+				"_lef",
+				"app/views/layouts/_leftMenu.html.erb"
+			],
+			[
+				"_comm",
+				"app/views/comments/_comment.html.erb"
+			],
+			[
+				"layour",
+				"app/views/layouts/application.html.erb"
+			],
+			[
+				"_",
+				"app/views/comments/_comment.html.erb"
+			],
+			[
+				"postsshow",
+				"app/views/posts/show.html.erb"
+			],
+			[
+				"_come",
+				"app/views/comments/_comment.html.erb"
+			],
+			[
+				"_men",
+				"app/views/layouts/_leftMenu.html.erb"
+			],
+			[
+				"publicin",
+				"app/views/public/index.html.erb"
+			],
+			[
+				"menu/ind",
+				"app/views/menu/index.html.erb"
+			],
+			[
+				"_ac",
+				"app/views/layouts/_activities.html.erb"
+			],
+			[
+				"menuin",
+				"app/views/menu/index.html.erb"
+			],
+			[
+				"sho",
+				"app/views/posts/show.html.erb"
+			],
+			[
+				"menu/i",
+				"app/views/menu/index.html.erb"
+			],
+			[
+				"posts/show",
+				"app/views/posts/show.html.erb"
+			],
+			[
+				"_a",
+				"app/views/layouts/_activities.html.erb"
+			],
+			[
+				"user/show",
+				"app/views/users/show.html.erb"
+			],
+			[
+				"show",
+				"app/views/posts/show.html.erb"
+			],
+			[
+				"menu/inex",
+				"app/views/menu/index.html.erb"
+			],
+			[
+				"inde",
+				"app/views/activities/index.html.erb"
+			],
+			[
+				"post/",
+				"app/views/posts/show.html.erb"
+			],
+			[
+				"comment",
+				"app/controllers/comments_controller.rb"
+			],
+			[
+				"comme",
+				"app/models/comment.rb"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 312.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

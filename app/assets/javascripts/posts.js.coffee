@@ -7,6 +7,5 @@ ready = ->
     theme: "facebook",
     hintText: "Start Taggging..",
     crossDomain: false,
-    propertyToSearch: "tags"
   });
 $(document).ready(ready)

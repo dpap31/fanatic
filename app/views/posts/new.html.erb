@@ -19,9 +19,12 @@
   </div>
 	<div id="alerts"></div>
      <%= form_for( @post, :html =>{ :multipart => true}, :url => {:controller => "posts", :action => "create"}) do |f| %>
-    <%= f.text_field :title, placeholder: 'Title' %>
+    <%= f.text_field :title, placeholder:'Title'%>
+
     <%= f.text_field :tag_list,
+                 "data-role"=>"tagsinput",
                  :id => "post_tags",
+                 "placeholder"=>"Add tags",
                  "data-pre" => @post.tags.map(&:attributes).to_json %>
     <div class="sr-only"><%= f.label :remote_image_url %>
     </div><%= f.text_field :remote_image_url, placeholder: 'Image URL' %>
@@ -74,7 +77,7 @@
       </div>
       <input type="text" data-edit="inserttext" id="voiceBtn" x-webkit-speech="">
     </div>
-    <div id="editor">
+    <div id="editor" contenteditable="true">
     </div>
     <p></p>
     <%= f.submit "Publish", class: "form-buttons", :class => 'btn btn-default', id: "form_submit" %>
@@ -138,7 +141,6 @@ get.addEventListener('click', getContent)
 		 '<strong>File upload error</strong> '+msg+' </div>').prependTo('#alerts');
 	};
     initToolbarBootstrapBindings();  
-	$('#editor').wysiwyg({ fileUploadError: showErrorAlert} );
     window.prettyPrint && prettyPrint();
   });
   });
