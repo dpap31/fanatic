@@ -1,0 +1,10 @@
+{
+	"url": "http://dev-machine.com:3000",
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"path": "/Users/dpappas/Sites"
+		}
+	]
+}

@@ -8,6 +8,7 @@ class PostsController < ApplicationController
     @posts = Post.tagged_with(params[:tag])
   else
     @posts = Post.limit(10).order("created_at DESC")
+    @tags_all = ActsAsTaggableOn::Tag.all
   end 
   end
 
@@ -81,10 +82,6 @@ class PostsController < ApplicationController
 
 def tags 
     query = params[:q]
-    if query[-1,1] == " "
-      query = query.gsub(" ", "")
-      Tag.find_or_create_by_name(query)
-    end
   @tags = ActsAsTaggableOn::Tag.all
     @tags = @tags.select { |v| v.name =~ /#{query}/i }
     respond_to do |format|
