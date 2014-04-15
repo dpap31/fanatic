@@ -11,12 +11,7 @@
        <br />  
        <hr>
            <br />
-<div class="tag-filter">
-<form class="filter_form">
-  <%= select("Tag", "blah", @tags_all.map {|a| [a.name]})%>
-  <input type="submit" value="Filter" />
-  </form>
-</div>
+      
 	    <div id="columns">
         <%= render partial:'postPreview'%>
         </div>

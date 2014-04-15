@@ -88,6 +88,10 @@ def tags
       format.json{ render :json => @tags.map(&:attributes) }
     end
   end
+
+   def filter(tag)
+    @posts = Post.tagged_with(params[:tag])
+  end
   # @tags = ActsAsTaggableOn::Tag.where("tags.name LIKE ?", "%#{params[:q]}%") 
   # respond_to do |format|
   #   format.json { render :json => @tags.collect{|t| {:id => t.name, :name => t.name }}}
