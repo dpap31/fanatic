@@ -11,10 +11,25 @@
        <br />  
        <hr>
            <br />
-      
+  <div>
+<%= select_tag 'dropdown', options_from_collection_for_select(Post.tag_counts, "id", "name") %>
+
+  </div>
 	    <div id="columns">
         <%= render partial:'postPreview'%>
         </div>
       </div>
   </div>
 </div>
+
+<script type="text/javascript">
+      $(function(){
+      $('#dropdown').bind('change', function () {
+         var url = "/tags/" + $( "#dropdown option:selected" ).text()
+          if (url) {
+              window.location.replace(url);
+          }
+          return false;
+      });
+    });
+</script>>
