@@ -1,4 +1,5 @@
 <%= stylesheet_link_tag "posts" %>
+<%= javascript_include_tag "post_index" %>
  <div class="container">
    <div class="row">
     <div class="col-md-10 column">
@@ -8,32 +9,17 @@
      <div id="new_button">
      <a href="/posts/new"><strong><i class="glyphicon glyphicon-plus-sign"></i>  New Post</strong></a>
      </div>  
-       <br />  
+       <br>  
        <hr>
-           <br />
+           <br>
   <div>
 <%= select_tag 'dropdown', options_from_collection_for_select(Post.tag_counts, "id", "name"), {:include_blank  => 'Select', :onblur => "myblur(this);", :onChange=> "submit_selected(this);", :style=> "visibility:visible;" } %>
 
   </div>
-  <br />
+  <br>
 	    <div id="columns">
         <%= render partial:'postPreview'%>
         </div>
       </div>
   </div>
 </div>
-
-<script type="text/javascript">
-      $(document).ready(function() { $("#dropdown").select2({
-        placeholder: "Filter Posts"}); 
-        });
-      $(function(){
-      $('#dropdown').bind('change', function () {
-         var url = "/tags/" + $( "#dropdown option:selected" ).text()
-          if (url) {
-              window.location.replace(url);
-          }
-          return false;
-      });
-    });
-</script>

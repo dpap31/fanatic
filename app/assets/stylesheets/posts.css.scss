@@ -33,6 +33,7 @@
 	-webkit-column-break-inside: avoid;
 	-moz-column-break-inside: avoid;
 	column-break-inside: avoid;
+	page-break-inside: avoid;
 	padding: 15px;
 	padding-bottom: 5px;
 	background: -webkit-linear-gradient(45deg, #FFF, #F9F9F9);
@@ -43,7 +44,7 @@
 .pin p {
 	font: 12px/18px Arial, sans-serif;
 	color: #333;
-	margin: 5;
+	margin: 0;
 }
 
 #columns:hover .pin:not(:hover) {
