@@ -5,7 +5,7 @@ ready = ->
     noResultsText:     "No results, needs to be created.",
     animateDropdown:   false,
     theme: "facebook",
-    hintText: "Start Taggging..",
+    placeholder: 'Add Filter..'
     crossDomain: false,
   });
 $(document).ready(ready)

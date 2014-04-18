@@ -12,9 +12,10 @@
        <hr>
            <br />
   <div>
-<%= select_tag 'dropdown', options_from_collection_for_select(Post.tag_counts "id", "name")%>
+<%= select_tag 'dropdown', options_from_collection_for_select(Post.tag_counts, "id", "name"), {:include_blank  => 'Select', :onblur => "myblur(this);", :onChange=> "submit_selected(this);", :style=> "visibility:visible;" } %>
 
   </div>
+  <br />
 	    <div id="columns">
         <%= render partial:'postPreview'%>
         </div>
@@ -24,7 +25,7 @@
 
 <script type="text/javascript">
       $(document).ready(function() { $("#dropdown").select2({
-        placeholder: "Select a State"}); 
+        placeholder: "Filter Posts"}); 
         });
       $(function(){
       $('#dropdown').bind('change', function () {
