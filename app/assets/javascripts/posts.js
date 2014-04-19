@@ -7,7 +7,7 @@ ready = function() {
     noResultsText: "No results, needs to be created.",
     animateDropdown: false,
     theme: "facebook",
-    placeholder: 'Add Filter',
+    placeholder: 'Add Tags',
     crossDomain: false
   });
 };

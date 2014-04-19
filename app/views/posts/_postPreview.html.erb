@@ -8,18 +8,21 @@
               <h3>
                 <%= post.title %>
               </h3>
-              Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
-              <p>
-                <%= truncate(post.content.to_s, length: 60, separator: '.') %>
-              </p>
-              <p>
+              <div class = 'tags'>
+                <ul class="token-input-token-facebook">
+                <li class="token-input-token-facebook"><%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join('<li class="token-input-token-facebook"> ') %></li></ul>
+                 </div>
+                <div id = 'cheers'>
                 <%= pluralize post.reputation_for(:votes).to_i, "cheer" %> 
-                <p></p>
+                </div>
+              
+                <div class = 'buttons'>
                 <%= link_to("Edit", {:action => 'edit', :id => post.id}, :class => 'btn btn-warning') %>
                 <%= link_to "Delete", post_path(post), :method => :delete, :class =>"btn btn-danger", data: { confirm: "Are you sure?" }%>
                  <%= link_to("Cheer", vote_post_path(post, type: "up"), method: "post", :class => 'btn btn-default') %> 
                   <%= link_to("Boo", vote_post_path(post, type: "down"), method: "post", :class => 'btn btn-default') %> 
               </p>
+            </div>
           </div>
         </div>
     <% end %>
