@@ -27,7 +27,7 @@
     processPrePopulate: false,
 
     // Display settings
-    hintText: "Type in a search term",
+    hintText: "Type in a tag name",
     noResultsText: "No results",
     searchingText: "Searching...",
     deleteText: "&#215;",
