@@ -1,6 +1,5 @@
 
 <head>
-  <div id="fb-root"></div>
   <script>
     $(document).ready(function() {
       window.fbAsyncInit = function() {
@@ -36,7 +35,8 @@
           </div>
         </div>
         <div class="col-md-3 column">
-          <img alt="140x140" src="<%=@post.image.url(:thumb) if @post.image?%>" class="img-circle"/>
+          <img src="<%=@post.image.url(:thumb) if @post.image?%>" />
+                 <div id="fb-root"></div>
                  <div class="fb-like" data-send="true" data-width="450" data-show-faces="true"></div>
     <a href="https://twitter.com/share" class="twitter-share-button" data-via="drewpap">Tweet</a>
     <script>
@@ -45,7 +45,7 @@
         </div>
       </div>
       <p class="lead">
-        <%= @post.content %>
+        <%=raw @post.content %>
       </p>
          <h2>Comments</h2>
     <%= render @post.comments %>
