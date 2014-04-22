@@ -25,26 +25,3 @@
 </table>
 
 
-  <fieldset>
-    <legend><%= controller.action_name.capitalize %> Product</legend>
-
-    <div class="control-group">
-      <%= f.label :title, :class => 'control-label' %>
-      <div class="controls">
-        <%= f.text_field :title, :class => 'text_field' %>
-      </div>
-    </div>
-
-    <div class="control-group">
-      <%= f.label :content, :class => 'control-label' %>
-      <div class="controls">
-        <%= f.text_field :content, :class => 'text_field' %>
-      </div>
-    </div>
-
-    <div class="form-actions">
-      <%= f.submit nil, :class => 'btn btn-primary' %>
-      <%= link_to 'Publish', posts_path, :class => 'btn' %>
-    </div>
-  </fieldset>
-
