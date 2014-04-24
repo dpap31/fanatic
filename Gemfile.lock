@@ -220,8 +220,6 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
-    turbolinks (2.2.1)
-      coffee-rails
     twitter-bootstrap-rails (2.2.8)
       actionpack (>= 3.1)
       execjs
@@ -266,6 +264,5 @@ DEPENDENCIES
   sunspot_rails
   sunspot_solr
   thin
-  turbolinks
   twitter-bootstrap-rails
   uglifier (>= 1.2.4)

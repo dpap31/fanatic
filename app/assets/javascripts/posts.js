@@ -1,3 +1,4 @@
+window.onload = function () {
 var ready;
 
 ready = function() {
@@ -66,4 +67,4 @@ $('[contenteditable=true]').each(function(){
 };
 var get = document.getElementById('form_submit')
 get.addEventListener('click', getContent)
-
+};
