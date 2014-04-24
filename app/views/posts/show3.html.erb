@@ -1,0 +1,93 @@
+
+<head>
+  <script>
+    $(document).ready(function() {
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '249183201915324',
+          status     : true,
+          xfbml      : true
+        });
+      };
+
+      (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "//connect.facebook.net/en_US/all.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+    });
+  </script>
+</head>
+
+<div class="container">
+  <div class="row clearfix">
+    <div class="col-md-10 column">
+      <div class="row clearfix">
+        <div class="col-md-9 column">
+          <div class="page-header">
+            <h1>
+              <%= @post.title %> <small>
+            </h1>
+            <h3><small>By <%= @post.user.name %> </small></h3>
+              <h4><small><em><%= @post.created_at.strftime("%B %d, %Y")%></em></small></h4>
+          </div>
+        </div>
+        <div class="col-md-3 column">
+          <img src="<%=@post.image.url(:thumb) if @post.image?%>" />
+                 <div id="fb-root"></div>
+                 <div class="fb-like" data-send="true" data-width="450" data-show-faces="true"></div>
+    <a href="https://twitter.com/share" class="twitter-share-button" data-via="drewpap">Tweet</a>
+    <script>
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+    </script>
+        </div>
+      </div>
+      <p class="lead">
+        <%=raw @post.content %>
+      </p>
+         <h2>Comments</h2>
+    <%= render @post.comments %>
+
+    <h2>Add a comment:</h2>
+    <%= render "comments/form" %>
+      
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+<body>
+   <div class="row">
+   <div class="col-md-4 col-md-push-4">
+      <p></p>
+    <br>
+    <div>
+    </div>
+    </div>
+ <div class="col-md-5 col-md-pull-4">
+    <table summary="Show post detail view">
+      <tr>
+        <th>Content</th>
+        <td><%= @post.content %></td>
+      </tr>
+      <tr>
+        <th>Author</th>
+        <td><%= @post.user.name %></td>
+      </tr>
+      <tr>
+        <th>Created</th>
+        <td><small><%=time_ago_in_words(@post.created_at) %> ago<small></td>
+      </tr>
+      <tr>
+        <th>Updated</th>
+        <td><%=time_ago_in_words(@post.updated_at)%></td>
+      </tr>
+    </table>
+    
+ 
+
+
+    <p id="notice"><%= notice %></p>
+    <%= link_to 'Edit', edit_post_path(@post) %> |
+    <%= link_to 'Back', posts_path %>
+  </div>
+ </div>
+</body>
