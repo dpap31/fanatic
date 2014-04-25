@@ -1,31 +1,28 @@
 FanaticV2::Application.routes.draw do
+  root "public#index"
+  get "public/index"
+  get "posts/tags" => "posts#tags", :as => :tags
+  get 'tags/:tag', to: 'posts#index', as: :tag
+  get 'users/:id/posts' => 'users#posts', :as => :user_posts
+  match "menu" => 'menu#index', via: [:get, :post]
+  match "/auth/:provider/callback" => "sessions#create", via: [:get, :post]
+  get "sessions/authentications"
+  match "/signout" => "sessions#destroy", :as => :signout, via: [:get, :post]
 
   resources :activities
   resources :friendships
   resources :messages
-
-  get "posts/tags" => "posts#tags", :as => :tags
-  get 'tags/:tag', to: 'posts#index', as: :tag
-
-
-	root "public#index"
-    get "public/index"
-
-    match "menu" => 'menu#index', via: [:get, :post]
-    match "/auth/:provider/callback" => "sessions#create", via: [:get, :post]
-    get "sessions/authentications"
-    match "/signout" => "sessions#destroy", :as => :signout, via: [:get, :post]
-    resources :users
-    resources :friendships
-    resources :posts do
-      collection do
-        get :list
-      end
-      member { post :vote }
-      resources :comments
-      resources :messages
-      resources :search_suggestions
+  resources :users
+  resources :friendships
+  resources :posts do
+    collection do
+      get :list
     end
+    member { post :vote }
+  resources :comments
+  resources :messages
+  resources :search_suggestions
+end
     
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

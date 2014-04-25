@@ -37,7 +37,7 @@
 					Author
 				</dt>
 				<dd>
-					<%= @post.user.name %>
+				 <%= link_to @post.user.name, user_posts_path(@post.user) %>
 				</dd>
 				<dt>
 					Cheers

@@ -64,6 +64,12 @@ class UsersController < ApplicationController
     end
   end
 
+# Used to get all posts created by a specific user
+def posts
+    @user = User.find_by_id(params[:id])
+    @posts = @user.posts
+end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user

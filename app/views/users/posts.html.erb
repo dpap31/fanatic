@@ -1,0 +1,25 @@
+<%= stylesheet_link_tag "posts" %>
+<%= javascript_include_tag "post_index" %>
+ <div class="container">
+   <div class="row">
+    <div class="col-md-10 column">
+      <div id="title">
+     <a href="/posts"><strong><i class="glyphicon glyphicon-star-empty"></i> Posts by {insert username}</strong></a> 
+      </div> 
+     <div id="new_button">
+     <a href="/posts/new"><strong><i class="glyphicon glyphicon-plus-sign"></i>  New Post</strong></a>
+     </div>  
+       <br>  
+       <hr>
+           <br>
+  <div>
+<%= select_tag 'dropdown', options_from_collection_for_select(Post.tag_counts, "id", "name"), {:include_blank  => 'Select', :onblur => "myblur(this);", :onChange=> "submit_selected(this);", :style=> "visibility:visible;" } %>
+
+  </div>
+  <br>
+	    <div id="columns">
+        <%= render partial:'posts/postPreview'%>
+        </div>
+      </div>
+  </div>
+</div>

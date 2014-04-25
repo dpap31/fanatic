@@ -87,16 +87,6 @@ def tags
     end
   end
 
-   def filter(tag)
-    @posts = Post.tagged_with(params[:tag])
-  end
-  # @tags = ActsAsTaggableOn::Tag.where("tags.name LIKE ?", "%#{params[:q]}%") 
-  # respond_to do |format|
-  #   format.json { render :json => @tags.collect{|t| {:id => t.name, :name => t.name }}}
-# end
-# end
-
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
@@ -105,7 +95,7 @@ def tags
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :content, :visible, :url, :tag_list, :user_id, :id, :user_name, :name, :image, :remote_image_url)   
+      params.require(:post).permit(:title, :content, :visible, :url, :tag_list, :user_id, :id, :user_name, :name, :image, :remote_image_url, :user_posts)   
     end
      
      def find_user
