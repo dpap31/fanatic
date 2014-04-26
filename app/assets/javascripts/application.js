@@ -16,6 +16,6 @@
 //= require twitter/bootstrap
 //= require select2
 //= require jquery.tokeninput
-//= require private_pub
+
 
 
