@@ -40,6 +40,12 @@
 				 <%= link_to @post.user.name, user_posts_path(@post.user) %>
 				</dd>
 				<dt>
+					Number of Posts
+				</dt>
+				<dd>
+					<%= pluralize @post.user.posts.count, "post" %>
+				</dd>
+				<dt>
 					Cheers
 				</dt>
 				<dd>

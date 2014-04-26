@@ -28,7 +28,6 @@ gem 'omniauth-facebook'
 
 gem 'omniauth-identity'
 
-gem 'private_pub'
 
 gem 'thin'
 
