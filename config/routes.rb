@@ -12,7 +12,6 @@ FanaticV2::Application.routes.draw do
 
   resources :activities
   resources :friendships
-  resources :messages
   resources :users
   resources :friendships
   resources :posts do

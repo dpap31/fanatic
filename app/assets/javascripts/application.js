@@ -16,6 +16,7 @@
 //= require twitter/bootstrap
 //= require select2
 //= require jquery.tokeninput
+//= require jquery-fileupload/basic
 
 
 
