@@ -12,6 +12,7 @@ gem 'sqlite3'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
+gem 'jquery-fileupload-rails'
 gem 'twitter-bootstrap-rails'
 gem 'select2-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
