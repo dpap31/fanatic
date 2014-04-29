@@ -24,6 +24,9 @@
     background: blue;
 
 }
+#files {
+  float: right;
+}
  input {
     margin: 10px 0px;
  }

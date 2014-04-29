@@ -25,7 +25,7 @@ $(function () {
     $('#fileupload').fileupload({
         dataType: 'json',
         add: function (e, data) {
-            data.context = $('<p/>').text('Uploading...').appendTo('#files');
+            data.context = $('<p/>').text('Image Uploaded').appendTo('#files');
             data.submit();
         },
         done: function (e, data) {
