@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   if params[:tag]
     @posts = Post.tagged_with(params[:tag])
   else
-    @posts = Post.limit(10).order("created_at DESC")
+    @posts = Post.limit(12).order("created_at DESC")
     @tags_all = ActsAsTaggableOn::Tag.all
   end 
   end
