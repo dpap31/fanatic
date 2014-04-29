@@ -1,8 +1,11 @@
 window.onload = function () {
+
+//jQuery File Upload
 $(function () {
     'use strict';
     $('#fileupload').fileupload({
-        dataType: 'json',
+        replaceFileInput: false,
+        url:'nil',
         done: function (e, data) {
             $.each(data.result.files, function (index, file) {
                 $('<p/>').text(file.name).appendTo('#files');
@@ -32,7 +35,7 @@ $(function () {
 });
 
 var ready;
-
+//Token Input
 ready = function() {
   return $("#post_tags").tokenInput("/posts/tags.json", {
     prePopulate: $("#post_tags").data("pre"),
@@ -44,6 +47,7 @@ ready = function() {
     crossDomain: false
   });
 };
+// WYSWIG Text Editor
 $(document).ready(ready);
 $(function(){
     function initToolbarBootstrapBindings() {
