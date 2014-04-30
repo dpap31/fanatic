@@ -36,6 +36,10 @@ $(function () {
 
 var ready;
 //Token Input
+tokenOptions = {
+    allowFreeTagging: true,
+    tokenValue: 'name'
+}
 ready = function() {
   return $("#post_tags").tokenInput("/posts/tags.json", {
     prePopulate: $("#post_tags").data("pre"),
@@ -44,7 +48,9 @@ ready = function() {
     animateDropdown: false,
     theme: "facebook",
     placeholder: 'Add Tags',
-    crossDomain: false
+    crossDomain: false,
+    allowFreeTagging: true,
+    tokenValue: 'name'
   });
 };
 // WYSWIG Text Editor
