@@ -26,9 +26,17 @@
       <ul class="nav navbar-nav navbar-right">
         
         <li class="dropdown">
-          <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#"><i class="glyphicon glyphicon-user"></i> <%= current_user.name %> <span class="caret"></span></a>
+          <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#"><i class="glyphicon glyphicon-user"></i> 
+            <%= if current_user.nil? 
+              "user"
+              else current_user.name
+               end%>
+              <span class="caret"></span></a>
           <ul id="g-account-menu" class="dropdown-menu" role="menu">
-            <li><a href="/users/<%= current_user.id %>">My Profile</a></li>
+            <li><a href="/users/<%= if current_user.nil? 
+              "user"
+              else current_user.id
+               end %>">My Profile</a></li>
           </ul>
         </li>
         <li><a href="/signout"><i class="glyphicon glyphicon-lock"></i> Logout</a></li>
@@ -50,7 +58,10 @@
         <li class="nav-header"></li>
         <li><a href="/posts"><i class="glyphicon glyphicon-envelope"></i> All Posts</a></li>
         <li><a href="/menu/headlines"><i class="glyphicon glyphicon glyphicon-book"></i> Headlines</a></li>
-        <li><a href="/users/<%= current_user.id %>"><i class="glyphicon glyphicon-star"></i> Profile</a></li>
+        <li><a href="/users/<%= if current_user.nil? 
+              "user"
+              else current_user.id
+               end%>"><i class="glyphicon glyphicon-star"></i> Profile</a></li>
         <li><a href="/users"><i class="glyphicon glyphicon-user"></i> Friends</a></li>
         <li><a href="/posts/list"><i class="glyphicon glyphicon-heart-empty"></i> My Posts</a></li>
 </ul>
