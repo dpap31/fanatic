@@ -152,7 +152,7 @@ ActiveRecord::Schema.define(version: 20140503002910) do
     t.datetime "updated_at"
     t.string   "image"
     t.string   "location"
-    t.string   "role"
+    t.string   "role",       default: "author"
   end
 
 end

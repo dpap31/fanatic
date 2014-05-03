@@ -35,14 +35,11 @@ has_reputation :votes,
 end
 
 ROLES = %w[admin moderator author]
-
- def role_symbols
-    [role.to_sym]
+ 
+ def self.role_symbols
+    User.role.to_sym
   end
 
-def role?(role)
-    roles.include? role.to_s
-end
 
 def voted_for?(post)
   evaluations.where(target_type: post.class, target_id: post.id).present?
