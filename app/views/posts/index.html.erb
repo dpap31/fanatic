@@ -6,9 +6,11 @@
       <div id="title">
      <a href="/posts"><strong><i class="glyphicon glyphicon-star-empty"></i>  All Posts</strong></a> 
       </div> 
+     <%if can? :create, @posts %>
      <div id="new_button">
      <a href="/posts/new"><strong><i class="glyphicon glyphicon-plus-sign"></i>  New Post</strong></a>
      </div>  
+     <% end %>
        <br>  
        <hr>
            <br>

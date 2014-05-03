@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-
+load_and_authorize_resource :through => :post
   before_action :find_user
   
     def create

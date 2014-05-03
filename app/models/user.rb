@@ -34,6 +34,16 @@ has_reputation :votes,
   :source => {reputation: :votes, of: :posts}, aggregated_by: :sum
 end
 
+ROLES = %w[admin moderator author]
+
+ def role_symbols
+    [role.to_sym]
+  end
+
+def role?(role)
+    roles.include? role.to_s
+end
+
 def voted_for?(post)
   evaluations.where(target_type: post.class, target_id: post.id).present?
 end
