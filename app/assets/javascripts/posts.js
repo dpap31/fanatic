@@ -44,7 +44,7 @@ ready = function() {
   return $("#post_tags").tokenInput("/posts/tags.json", {
     prePopulate: $("#post_tags").data("pre"),
     preventDuplicates: true,
-    noResultsText: "No results, needs to be created.",
+    noResultsText: "Press Enter to create",
     animateDropdown: false,
     theme: "facebook",
     placeholder: 'Add Tags',

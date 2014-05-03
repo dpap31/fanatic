@@ -8,6 +8,7 @@
               <h3>
                 <%= post.title %>
               </h3>
+              <div class = 'post-info'>
               <div class = 'tags'>
                 <ul class="token-input-token-facebook">
                 <li class="token-input-token-facebook"><%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join('<li class="token-input-token-facebook"> ') %></li></ul>
@@ -15,22 +16,25 @@
                 <div id = 'cheers'>
                 <%= pluralize post.reputation_for(:votes).to_i, "cheer" %> 
                 </div>
-              
+                </div>
+              <div class = 'post-actions'>
                 <div class = 'buttons'>
                 <% if can? :update, post %>
-                <%= link_to("Edit", {:action => 'edit', :id => post.id}, :class => 'btn btn-warning') %>
+                <%= link_to("", {:action => 'edit', :id => post.id}, :class => 'glyphicon glyphicon-edit') %>
                 <% end %>
                 <% if can? :delete, post %>
-                <%= link_to "Delete", post_path(post), :method => :delete, :class =>"btn btn-danger", data: { confirm: "Are you sure?" }%>
+                <%= link_to "", post_path(post), :method => :delete, :class =>"glyphicon glyphicon-trash", data: { confirm: "Are you sure?" }%>
                 <% end %>
+                </div>
+                <div class = 'votes'>
                   <% if can? :vote, post %>
-                 <%= link_to("Cheer", vote_post_path(post, type: "up"), method: "post", :class => 'btn btn-default') %> 
+                 <%= link_to("", vote_post_path(post, type: "up"), method: "post", :class => 'glyphicon glyphicon-thumbs-up') %> 
                  <% end %>
                  <% if can? :vote, post %>
-                  <%= link_to("Boo", vote_post_path(post, type: "down"), method: "post", :class => 'btn btn-default') %> 
+                  <%= link_to("", vote_post_path(post, type: "down"), method: "post", :class => 'glyphicon glyphicon-thumbs-down') %> 
                   <% end %>
-              </p>
-            </div>
+                  </div>
+            </div>  
           </div>
         </div>
     <% end %>
