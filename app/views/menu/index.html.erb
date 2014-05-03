@@ -18,7 +18,9 @@
          <li><a href="#"><i class="glyphicon glyphicon-cog"></i></a></li>
          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-comment"></i><span class="count">3</span></a><ul class="dropdown-menu" role="menu"></ul></li>
          <li><a href="#"><i class="glyphicon glyphicon-user"></i></a></li>
+          <%if can? :create, Post %>
          <li><a title="Add post" data-toggle="modal" href="/posts/new"><span class="glyphicon glyphicon-plus-sign"></span> New Post</a></li>
+         <% end %>
        </ul>
        <a href="#"><strong><i class="glyphicon glyphicon-star-empty"></i>  Featured Posts</strong></a>  
        <hr>

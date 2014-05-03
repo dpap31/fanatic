@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
   if params[:tag]
-    #@posts = Post.tagged_with(params[:tag])
+    @posts = Post.tagged_with(params[:tag])
   else
     @posts = Post.limit(12).order("created_at DESC")
     @tags_all = ActsAsTaggableOn::Tag.all
