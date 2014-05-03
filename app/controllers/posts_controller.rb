@@ -1,11 +1,12 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /posts
   # GET /posts.json
   def index
   if params[:tag]
-    @posts = Post.tagged_with(params[:tag])
+    #@posts = Post.tagged_with(params[:tag])
   else
     @posts = Post.limit(12).order("created_at DESC")
     @tags_all = ActsAsTaggableOn::Tag.all
@@ -22,18 +23,18 @@ class PostsController < ApplicationController
 
   # GET /posts/new
   def new
-    @post = Post.new
+    #@post = Post.new
   end
 
   # GET /posts/1/edit
   def edit
-    @post = Post.find(params[:id])
+    #@post = Post.find(params[:id])
   end
 
   # POST /posts
   # POST /posts.json
   def create
-    @post = Post.new(post_params)
+    #@post = Post.new(post_params)
     @post.user_id = current_user.id
     @post.user = current_user
 
@@ -66,7 +67,7 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
-  @post = Post.find(params[:id])
+  #@post = Post.find(params[:id])
     @post.destroy
     respond_to do |format|
       format.html { redirect_to posts_url }

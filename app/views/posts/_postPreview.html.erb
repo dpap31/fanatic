@@ -17,10 +17,18 @@
                 </div>
               
                 <div class = 'buttons'>
+                <% if can? :update, post %>
                 <%= link_to("Edit", {:action => 'edit', :id => post.id}, :class => 'btn btn-warning') %>
+                <% end %>
+                <% if can? :delete, post %>
                 <%= link_to "Delete", post_path(post), :method => :delete, :class =>"btn btn-danger", data: { confirm: "Are you sure?" }%>
+                <% end %>
+                  <% if can? :vote, post %>
                  <%= link_to("Cheer", vote_post_path(post, type: "up"), method: "post", :class => 'btn btn-default') %> 
+                 <% end %>
+                 <% if can? :vote, post %>
                   <%= link_to("Boo", vote_post_path(post, type: "down"), method: "post", :class => 'btn btn-default') %> 
+                  <% end %>
               </p>
             </div>
           </div>

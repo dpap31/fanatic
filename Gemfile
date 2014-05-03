@@ -29,6 +29,8 @@ gem 'omniauth-facebook'
 
 gem 'omniauth-identity'
 
+gem 'cancancan', '~> 1.7'
+
 
 gem 'thin'
 
