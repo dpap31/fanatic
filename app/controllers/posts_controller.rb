@@ -6,15 +6,15 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
   if params[:tag]
-    @posts = Post.tagged_with(params[:tag])
+    @posts = @posts.tagged_with(params[:tag]).page(params[:page]).per_page(12)
   else
-    @posts = Post.limit(12).order("created_at DESC")
+    @posts = Post.order("created_at DESC").page(params[:page]).per_page(12)
     @tags_all = ActsAsTaggableOn::Tag.all
   end 
   end
 
   def list
-    @posts = Post.where(:user_id => current_user.id).limit(10).order("created_at DESC")
+    @posts = @posts.where(:user_id => current_user.id).order("created_at DESC").page(params[:page]).per_page(12)
   end
   # GET /posts/1
   # GET /posts/1.json
