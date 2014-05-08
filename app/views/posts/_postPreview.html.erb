@@ -1,4 +1,4 @@
-<% @posts.each do |post| %>  
+<% @posts.each do |post| %>
 <div class="pin">
           <div class="image">
             <a href="/posts/<%=post.id%>"><img class= "img-responsive" src="<%= post.image %>" /></a>
@@ -37,4 +37,9 @@
             </div>  
           </div>
         </div>
-    <% end %>
+        <% end %>
+        </div>
+        <div class="text-center">
+        <%= will_paginate @posts, renderer: BootstrapPagination::Rails%>
+      </div>
+

@@ -60,7 +60,8 @@ group :doc do
 end
 
 gem 'acts-as-taggable-on'
-
+gem 'will_paginate'
+gem 'will_paginate-bootstrap'
 # Use ActiveModel has_secure_password
  gem 'bcrypt-ruby', '~> 3.1.2'
  gem "espn_rb"
