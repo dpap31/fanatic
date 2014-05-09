@@ -42,6 +42,7 @@ gem 'mini_magick'
 
 gem 'public_activity'
 gem 'sunspot_rails'
+gem 'friendly_id'
 
 
     gem 'coffee-rails', '~> 4.0.1'

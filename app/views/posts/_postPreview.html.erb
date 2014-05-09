@@ -1,7 +1,7 @@
 <% @posts.each do |post| %>
 <div class="pin">
           <div class="image">
-            <a href="/posts/<%=post.id%>"><img class= "img-responsive" src="<%= post.image %>" /></a>
+            <a href="/posts/<%=post.slug%>"><img class= "img-responsive" src="<%= post.image %>" /></a>
           </div>
             
             <div class="caption">
@@ -20,7 +20,7 @@
               <div class = 'post-actions'>
                 <div class = 'buttons'>
                 <% if can? :update, post %>
-                <%= link_to("", {:action => 'edit', :id => post.id}, :class => 'glyphicon glyphicon-edit') %>
+                <%= link_to("", {:action => 'edit', :id => post.slug}, :class => 'glyphicon glyphicon-edit') %>
                 <% end %>
                 <% if can? :delete, post %>
                 <%= link_to "", post_path(post), :method => :delete, :class =>"glyphicon glyphicon-trash", data: { confirm: "Are you sure?" }%>

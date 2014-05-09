@@ -68,6 +68,8 @@ GEM
     execjs (2.0.2)
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
+    friendly_id (5.0.3)
+      activerecord (>= 4.0.0)
     hashie (2.0.5)
     hike (1.2.3)
     i18n (0.6.9)
@@ -226,6 +228,7 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 4.0.1)
   espn_rb
+  friendly_id
   jbuilder (~> 1.2)
   jquery-fileupload-rails
   jquery-rails
