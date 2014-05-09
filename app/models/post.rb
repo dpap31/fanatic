@@ -5,4 +5,6 @@ class Post < ActiveRecord::Base
   mount_uploader :image, ImageUploader
   has_reputation :votes, source: :user, aggregated_by: :sum
   acts_as_taggable
+  extend FriendlyId
+  friendly_id :title, use: [:slugged, :finders]
 end

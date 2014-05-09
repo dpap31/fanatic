@@ -19,6 +19,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @posts = Post.find(params[:id])
   end
 
   # GET /posts/new
@@ -28,7 +29,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
-    #@post = Post.find(params[:id])
+    @post = Post.find(params[:id])
   end
 
   # POST /posts
@@ -67,7 +68,7 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
-  #@post = Post.find(params[:id])
+    @post = Post.find(params[:id])
     @post.destroy
     respond_to do |format|
       format.html { redirect_to posts_url }
@@ -77,7 +78,7 @@ class PostsController < ApplicationController
 
   def vote
     value = params[:type] == "up" ? 1 : -1
-    @post = Post.find(params[:id])
+    @post = Post.friendly.find(params[:id])
     @post.add_or_update_evaluation(:votes, value, current_user)
     redirect_to :back, notice: "Thank you for voting"
   end

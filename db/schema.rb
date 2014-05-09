@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140503002910) do
+ActiveRecord::Schema.define(version: 20140509003454) do
 
   create_table "activities", force: true do |t|
     t.integer  "trackable_id"
@@ -72,7 +72,10 @@ ActiveRecord::Schema.define(version: 20140503002910) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image"
+    t.string   "slug"
   end
+
+  add_index "posts", ["slug"], name: "index_posts_on_slug"
 
   create_table "rs_evaluations", force: true do |t|
     t.string   "reputation_name"
