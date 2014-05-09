@@ -6,5 +6,5 @@ class Post < ActiveRecord::Base
   has_reputation :votes, source: :user, aggregated_by: :sum
   acts_as_taggable
   extend FriendlyId
-  friendly_id :title, use: [:slugged, :finders]
+  friendly_id :title, use: [:slugged, :finders, :history]
 end
