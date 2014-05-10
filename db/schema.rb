@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140509015249) do
+ActiveRecord::Schema.define(version: 20140510005300) do
 
   create_table "activities", force: true do |t|
     t.integer  "trackable_id"
@@ -168,7 +168,8 @@ ActiveRecord::Schema.define(version: 20140509015249) do
     t.datetime "updated_at"
     t.string   "image"
     t.string   "location"
-    t.string   "role",       default: "author"
+    t.string   "role",        default: "author"
+    t.integer  "login_count", default: 0
   end
 
 end

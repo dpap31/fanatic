@@ -13,6 +13,7 @@ def current_user
 end
 hide_action :current_user
 
+
 private
 
 def check_sign_in

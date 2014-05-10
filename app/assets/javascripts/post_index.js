@@ -41,6 +41,9 @@ $('#dropdown').on("select2-selecting", function(e) {
 });
 });
 
+
+
+
     // // Working Select2 Drop Down w/ out ajax
     //  $(document).ready(function() { $("#dropdown").select2({
     //     placeholder: "Filter Posts"}); 
