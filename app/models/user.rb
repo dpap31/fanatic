@@ -24,6 +24,13 @@ def self.create_with_omniauth(auth)
     end
     end
   end
+ 
+ def increase_login_count
+  self.login_count += 1
+  self.save
+  self
+end
+
 searchable do
   text :name
   end
