@@ -12,8 +12,6 @@ def self.create_with_omniauth(auth)
   create! do |user|
     user.provider = auth["provider"]
     user.uid = auth["uid"]
-    user.name = auth["info"]["name"]
-    #user.image = auth["info"]["image"]
     user.location = auth["info"]["location"]
     if  user.provider == 'twitter'
         user.image = auth['info']['image'].sub("_normal", "")

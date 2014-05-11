@@ -7,6 +7,7 @@ FanaticV2::Application.routes.draw do
   match "menu" => 'menu#index', via: [:get, :post]
   match "menu/headlines" => 'menu#headlines', via: [:get, :post]
   match "/auth/:provider/callback" => "sessions#create", via: [:get, :post]
+  match "onboarding" => 'onboarding#index', via: [:get, :post]
   get "sessions/authentications"
   match "/signout" => "sessions#destroy", :as => :signout, via: [:get, :post]
 

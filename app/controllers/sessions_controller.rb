@@ -7,7 +7,11 @@ def create
   user = User.find_by_provider_and_uid(auth["provider"], auth["uid"]) || User.create_with_omniauth(auth)
   session[:user_id] = user.id
   user.increase_login_count
-  redirect_to controller: 'menu', action: 'index', :notice => "Signed in!"
+  if user.login_count == 1
+	redirect_to controller: 'menu', action: 'headlines', :notice => "Signed in!"
+  else	
+  	redirect_to controller: 'menu', action: 'index', :notice => "Signed in!"
+  end
 end
 
 def destroy

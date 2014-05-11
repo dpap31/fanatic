@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%= javascript_include_tag "onboarding"%>
+  <%= stylesheet_link_tag "//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css", media: "all" %>
+  <%= stylesheet_link_tag "//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" %>
+</head>
+<div class="modal fade onboarding-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+<div id="rootwizard">
+	<div class="navbar">
+	  <div class="navbar-inner">
+	    <div class="container">
+	<ul>
+	  	<li><a href="#tab1" data-toggle="tab">Welcome</a></li>
+		<li><a href="#tab2" data-toggle="tab">Setup</a></li>
+		<li><a href="#tab3" data-toggle="tab">Sports</a></li>
+		<li><a href="#tab4" data-toggle="tab">Teams</a></li>
+	</ul>
+	 </div>
+	  </div>
+	</div>
+	<div id="bar" class="progress progress-striped active">
+	  <div class="bar"></div>
+	</div>
+	<div class="tab-content">
+	    <div class="tab-pane" id="tab1">
+	    Welcome to Fanatic
+	    </div>
+	    <div class="tab-pane" id="tab2">
+	    <%= form_for @user, :html =>{ :multipart => true}, as: :user, url: user_path(@user), method: :patch do |f| %>
+
+    <%= f.text_field :first_name, placeholder:' First Name'%>
+    <%= f.text_field :last_name, placeholder:' Last Name'%>
+    <%= f.text_field :email, placeholder:' Email'%>
+    <%= f.text_field :username, placeholder:' Username'%>
+	    </div>
+		<div class="tab-pane" id="tab3">
+			What are your Favorite sports?
+			Basketball, Football, Soccer, Baseball, Hockey
+
+	    </div>
+		<div class="tab-pane" id="tab4">
+			Who are your Favorite teams?
+			 <%= f.submit "Finish",:class => 'btn btn-default', id: "form_submit" %>
+			 <%end%>	
+	    </div>
+		<ul class="pager wizard">
+		  	<li class="next"><a href="#">Next</a></li>
+		  	<li class="next last" style="display:none;"><a href="#">Last</a></li>
+		</ul>
+	</div>	
+</div>
+    </div>
+  </div>
+</div>
