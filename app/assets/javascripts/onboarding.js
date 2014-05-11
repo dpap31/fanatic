@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
 	$('.onboarding-modal').modal('show');
   	$('#rootwizard').bootstrapWizard({onTabShow: function(tab, navigation, index) {
@@ -16,4 +15,3 @@ $(document).ready(function() {
 		}
 	}});
 });
-
