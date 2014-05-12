@@ -3,10 +3,13 @@ Rails.application.config.middleware.use OmniAuth::Builder do
   {
       :secure_image_url => 'false',
       :image_size => 'large'
-      }
+    }
   
-  provider :facebook, '249183201915324', 'eef7bc0ef405855920d6f2e87ed2ae1d',
-  :image_size => 'large'
+  provider :facebook, '249183201915324', 'eef7bc0ef405855920d6f2e87ed2ae1d',{ 
+  	:image_size => 'square', 
+  	:width => 100,
+  	:height => 100
+  }
     
   provider :identity, on_failed_registration: lambda { |env| IdentitiesController.action(:new).call(env)
   	}

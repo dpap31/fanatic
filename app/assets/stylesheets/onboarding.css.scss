@@ -2,14 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.tab-content{
-
-}
-
 h3 {
 	padding-bottom: 3%;
 	margin-left:auto;
 	margin-right:auto;
+}
+
+#welcome {
+	width: 80%;
+	margin-left:auto;
+	margin-right:auto;	
+
 }
 
 #user_reg {
@@ -19,11 +22,21 @@ h3 {
 
 }
 
-#welcome {
-	width: 80%;
+#personalize {
+	width: 70%;
 	margin-left:auto;
 	margin-right:auto;	
 
+}
+#personalize h3{
+	text-align: center;
+	vertical-align: middle;
+}
+
+#personalize h4{
+	margin-top: 20px;
+	text-align: center;
+	vertical-align: middle;
 }
 
 #sports{
@@ -44,4 +57,15 @@ h3 {
 
 .pager{
 	margin: 20px;
+}
+ .box-shad {
+    -webkit-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+    box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+}
+
+img {
+	display:block;
+ 	margin: auto;
+
 }
