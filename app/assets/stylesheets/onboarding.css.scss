@@ -2,6 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import url(http://weloveiconfonts.com/api/?family=maki);
+
+/* maki */
+[class*="maki-"]:before {
+  font-family: 'maki', sans-serif;
+}
+
 h3 {
 	padding-bottom: 3%;
 	margin-left:auto;
@@ -45,6 +52,23 @@ h3 {
 	margin-right:auto;	
 }
 
+#sports span {
+  background-color:#7fbbda;
+  border-radius: 50%;
+  font-size: 56px;
+  width: 100px;
+  height: 100px;
+}
+
+#sports i {
+  color: white;
+  width:50%;
+  margin-left:auto;
+  margin-right:auto;	
+  vertical-align: middle;
+}
+
+
 #teams {
 	width: 80%;
 	margin-left:auto;
@@ -65,6 +89,8 @@ h3 {
 }
 
 img {
+	height: 80px;
+	width: 80px;
 	display:block;
  	margin: auto;
 
