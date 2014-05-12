@@ -13,12 +13,13 @@ def self.create_with_omniauth(auth)
     user.provider = auth["provider"]
     user.uid = auth["uid"]
     user.location = auth["info"]["location"]
+    user.name = auth["info"]["name"]
     if  user.provider == 'twitter'
         user.image = auth['info']['image'].sub("_normal", "")
     end
 
     if user.provider == 'facebook'
-        user.image = auth['info']['image'] << "?type=large"
+        user.image = auth['info']['image']
     end
     end
   end

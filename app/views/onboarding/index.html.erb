@@ -16,8 +16,9 @@
 	<ul>
 	  	<li><a href="#tab1" data-toggle="tab">Welcome</a></li>
 		<li><a href="#tab2" data-toggle="tab">Setup</a></li>
-		<li><a href="#tab3" data-toggle="tab">Sports</a></li>
-		<li><a href="#tab4" data-toggle="tab">Teams</a></li>
+		<li><a href="#tab3" data-toggle="tab">Personalize</a></li>
+		<li><a href="#tab4" data-toggle="tab">Sports</a></li>
+		<li><a href="#tab5" data-toggle="tab">Teams</a></li>
 	</ul>
 	 </div>
 	  </div>
@@ -49,15 +50,23 @@
       </div>
 	</div>
   </div>
-		<div class="tab-pane" id="tab3">
+  <div class="tab-pane" id="tab3">
+  <div id='personalize'>
+  	<h3>Hi <%=@user.name%></h3>
+		  <img class="img-circle box-shad" alt="" src="<%= @user.image %>">
+	<h4>Tell us who your teams are so we can show you the content you care about.</h4>
+	</div>
+
+	</div>
+		<div class="tab-pane" id="tab4">
 		  <div id='sports'>
 			<h3>What are your favorite sports?</h3>
 			Basketball, Football, Soccer, Baseball, Hockey
 		  </div>
 	    </div>
-		<div class="tab-pane" id="tab4">
+		<div class="tab-pane" id="tab5">
 		<div id='teams'>
-			<h3>Who are your Favorite teams? </h3>
+			<h3>Who are your favorite teams? </h3>
 			<input type="text" class="form-control" placeholder="Warriors, 49ers, Giants">
 			 <%= f.submit "Finish", :class => 'btn btn-primary btn-lg btn-block', id: "form_submit" %>
 			 <%end%>
