@@ -45,22 +45,6 @@
 				<dd>
 					<%= pluralize @post.user.posts.count, "post" %>
 				</dd>
-				<dt>
-					Cheers
-				</dt>
-				<dd>
-					<%= pluralize @post.reputation_for(:votes).to_i, "cheer" %>
-				</dd>
-				<dt>
-					Tags
-				</dt>
-				<div>
-				<dd class = 'tags'>
-                <ul class="token-input-token-facebook">
-                <li class="token-input-token-facebook"><%= raw @post.tag_list.map { |t| link_to t, tag_path(t) }.join('<li class="token-input-token-facebook"> ') %></li></ul>
-
-				</dd>
-				</div>
 				<div id="date">
 				<dt>
 					Created
@@ -69,6 +53,45 @@
 					<small><em><%= @post.created_at.strftime("%B %d, %Y")%></em></small>
 					</div>
 				</dd>
+				<dt>
+					Tags
+				</dt>
+				<div>
+				  <dd class = 'tags'>
+                  <ul class="token-input-token-facebook">
+                  <li class="token-input-token-facebook"><%= raw @post.tag_list.map { |t| link_to t, tag_path(t) }.join('<li class="token-input-token-facebook"> ') %></li></ul>
+
+				   </dd>
+				</div>
+				<dt>
+					Cheers
+				</dt>
+				<dd>
+					<%= pluralize @post.reputation_for(:votes).to_i, "cheer" %>  
+				<div class = 'votes'>
+                  <% if can? :vote, @post %>
+                 <%= link_to("", vote_post_path(@post, type: "up"), method: "post", :class => 'glyphicon glyphicon-thumbs-up') %> 
+                 <% end %>
+                 <% if can? :vote, @post %>
+                  <%= link_to("", vote_post_path(@post, type: "down"), method: "post", :class => 'glyphicon glyphicon-thumbs-down') %> 
+                  <% end %>
+                  </div>
+				</dd>
+				<div class = 'post-actions'>
+                <div class = 'buttons'>
+                <% if can? :update, @post %>
+              <dt>
+				Actions
+			  </dt>
+			  <dd>
+                <%= link_to("", {:action => 'edit', :id => @post.slug}, :class => 'glyphicon glyphicon-edit') %>
+                <% end %>
+                <% if can? :delete, @post %>
+                <%= link_to "", post_path(@post), :method => :delete, :class =>"glyphicon glyphicon-trash", data: { confirm: "Are you sure?" }%>
+                <% end %>
+                </dd>
+                </div>
+            </div> 
 				<div class="share">
 				<dt>
 					Share
@@ -95,7 +118,7 @@
   						<i class="fa fa fa-envelope-o fa-stack-1x fa-inverse"></i></a>
   					</span>
 				</dd>
-			  </div>
+			  </div> 
 			</dl>
 		</div>
     <h2>Add a comment:</h2>

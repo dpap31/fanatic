@@ -17,24 +17,6 @@
                 <%= pluralize post.reputation_for(:votes).to_i, "cheer" %> 
                 </div>
                 </div>
-              <div class = 'post-actions'>
-                <div class = 'buttons'>
-                <% if can? :update, post %>
-                <%= link_to("", {:action => 'edit', :id => post.slug}, :class => 'glyphicon glyphicon-edit') %>
-                <% end %>
-                <% if can? :delete, post %>
-                <%= link_to "", post_path(post), :method => :delete, :class =>"glyphicon glyphicon-trash", data: { confirm: "Are you sure?" }%>
-                <% end %>
-                </div>
-                <div class = 'votes'>
-                  <% if can? :vote, post %>
-                 <%= link_to("", vote_post_path(post, type: "up"), method: "post", :class => 'glyphicon glyphicon-thumbs-up') %> 
-                 <% end %>
-                 <% if can? :vote, post %>
-                  <%= link_to("", vote_post_path(post, type: "down"), method: "post", :class => 'glyphicon glyphicon-thumbs-down') %> 
-                  <% end %>
-                  </div>
-            </div>  
           </div>
         </div>
         <% end %>
