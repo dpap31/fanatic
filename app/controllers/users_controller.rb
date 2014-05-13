@@ -67,7 +67,7 @@ class UsersController < ApplicationController
 # Used to get all posts created by a specific user
 def posts
     @user = User.find_by_id(params[:id])
-    @posts = @user.posts
+    @posts = @user.posts.page(params[:page]).per_page(12)
 end
 
   private

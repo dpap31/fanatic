@@ -13,7 +13,8 @@
        <hr>
            <br>
   <div>
-<%= select_tag 'dropdown', options_from_collection_for_select(Post.tag_counts, "id", "name"), {:include_blank  => 'Select', :onblur => "myblur(this);", :onChange=> "submit_selected(this);", :style=> "visibility:visible;" } %>
+
+<input type="hidden" id="dropdown" style="width:300px" class="input-xlarge" />
 
   </div>
   <br>
