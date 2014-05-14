@@ -80,7 +80,7 @@
 		<div ng-controller="TeamCtrl">
 			<input type="text" class="form-control" placeholder="Warriors, 49ers, Giants" ng-model="query">
 		<ul ng-show='query'>
-		<li ng-repeat="team in teams | filter: query">
+		<li ng-repeat="team in teams | filter: query" class ="animate">
 		{{team.name}}, {{team.location}}
 		</li>
 		</ul>
