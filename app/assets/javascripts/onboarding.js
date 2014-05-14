@@ -15,7 +15,7 @@ $(document).ready(function() {
 		}
 	}});
 });
-var onboardingApp = angular.module('onboardingApp', []);
+var onboardingApp = angular.module('onboardingApp', ['ngAnimate']);
 
 onboardingApp.controller('TeamCtrl', function ($scope, $http) {
   $http.get('/assets/teamdata.json').success(function(data){
