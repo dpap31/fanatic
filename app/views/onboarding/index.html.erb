@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app='onboardingApp'>
 <head>
   <%= javascript_include_tag "onboarding"%>
   <%= stylesheet_link_tag "//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css", media: "all" %>
@@ -76,7 +76,15 @@
 		<div id='teams'>
 			<h3>Who are your favorite teams?</h3>
 				---Angular JS?----
-			<input type="text" class="form-control" placeholder="Warriors, 49ers, Giants">
+
+		<div ng-controller="TeamCtrl">
+			<input type="text" class="form-control" placeholder="Warriors, 49ers, Giants" ng-model="query">
+		<ul ng-show='query'>
+		<li ng-repeat="team in teams | filter: query">
+		{{team.name}}
+		</li>
+		</ul>
+		</div>
 			 <%= f.submit "Finish", :class => 'btn btn-primary btn-lg btn-block', id: "form_submit" %>
 			 <%end%>
 	    </div>
