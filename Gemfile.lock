@@ -40,6 +40,7 @@ GEM
       actionpack (>= 3, < 5)
       activerecord (>= 3, < 5)
       activesupport (>= 3, < 5)
+    angularjs-rails (1.2.16)
     arel (4.0.2)
     atomic (1.1.16)
     bcrypt (3.1.7)
@@ -222,6 +223,7 @@ DEPENDENCIES
   activerecord-reputation-system!
   activeresource
   acts-as-taggable-on
+  angularjs-rails
   bcrypt-ruby (~> 3.1.2)
   bootstrap-sass
   cancancan (~> 1.7)

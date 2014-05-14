@@ -33,6 +33,7 @@ gem 'cancancan', '~> 1.7'
 
 
 gem 'thin'
+gem 'angularjs-rails'
 
 gem 'activeresource'
 
