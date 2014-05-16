@@ -95,8 +95,20 @@ img {
  	margin: auto;
 }
 
-.animate.ng-enter,
-.animate.ng-leave,
+.animate.ng-enter
+{
+  -webkit-transition: 0.5s linear all;
+  -moz-transition: 0.5s linear all;
+  -o-transition: 0.5s linear all;
+  transition: 0.5s linear all;
+}
+.animate.ng-leave
+{
+  -webkit-transition: 0.5s linear all;
+  -moz-transition: 0.5s linear all;
+  -o-transition: 0.5s linear all;
+  transition: 0.5s linear all;
+}
 .animate.ng-move {
   -webkit-transition: 0.5s linear all;
   -moz-transition: 0.5s linear all;
@@ -104,14 +116,23 @@ img {
   transition: 0.5s linear all;
 }
 
-.animate.ng-enter,
+.animate.ng-enter {
+  opacity: 1;
+  height: 0;
+  overflow: hidden;
+}
 .animate.ng-move {
   opacity: 1;
   height: 0;
   overflow: hidden;
 }
 
-.animate.ng-move.ng-move-active,
+.animate.ng-move.ng-move-active
+{
+  opacity: 1;
+  height: 120px;
+}
+
 .animate.ng-enter.ng-enter-active {
   opacity: 1;
   height: 120px;
