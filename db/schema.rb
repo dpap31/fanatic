@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140511005050) do
+ActiveRecord::Schema.define(version: 20140516002852) do
 
   create_table "activities", force: true do |t|
     t.integer  "trackable_id"
@@ -159,6 +159,15 @@ ActiveRecord::Schema.define(version: 20140511005050) do
   end
 
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true
+
+  create_table "teams", force: true do |t|
+    t.string   "espn_uid"
+    t.string   "name"
+    t.string   "abbreviation"
+    t.string   "location"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "provider"

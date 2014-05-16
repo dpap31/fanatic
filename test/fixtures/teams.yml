@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  espn_uid: MyString
+  name: MyString
+  abbreviation: MyString
+  location: MyString
+
+two:
+  espn_uid: MyString
+  name: MyString
+  abbreviation: MyString
+  location: MyString
