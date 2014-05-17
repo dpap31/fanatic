@@ -2,11 +2,15 @@ class TeamsController < ApplicationController
 
 
   def index
+  	 @teams = Team.all
 	 render json: Team.all
   end
 
-  def team_params
+  def new
+  	 @team = Team.new
+  end
 
-    params[:team].permit(:team_ids,{:cuisine_ids => []}),
+  def team_params
+    params[:team].permit(team_ids: [])
   end
  end

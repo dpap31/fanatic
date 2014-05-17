@@ -87,13 +87,13 @@
 		</li>
 		</ul>
 		</div>
-			 <%= f.submit "Finish", :class => 'btn btn-primary btn-lg btn-block', id: "form_submit" %>
-			 <%end%>
-			  <%= form_for(@user) do |f| %>
-  			...
-  			 <%= f.collection_select(:team_ids, Team.all, :id, :name, :prompt => true) %>
-  			...
-  			<%= f.submit "Team Test", :class => 'btn btn-primary btn-lg btn-block', id: "form_submit" %>
+			<%= hidden_field_tag "user[team_ids][]", nil %>
+			<% Team.all.each do |team| %>
+  				<%= check_box_tag "user[team_ids][]", team.id, @user.team_ids.include?(team.id), id: dom_id(team) %>
+  				<%= label_tag dom_id(team), team.name %><br>
+  				<%end%>
+  			<%= f.submit "Finish", :class => 'btn btn-primary btn-lg btn-block', id: "form_submit" %>
+
 			<% end %>
 	    </div>
 	   </div>

@@ -78,6 +78,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params[:user].permit(:id, :username, :first_name, :last_name, :email, :name, :image, :search, :role)
+      params[:user].permit(:id, :username, :first_name, :last_name, :email, :name, :image, :search, :role, team_ids: [])
     end
 end

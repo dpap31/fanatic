@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
  has_many :inverse_friendships, :class_name => "Friendship", :foreign_key => "friend_id"
  has_many :inverse_friends, :through => :inverse_friendships, :source => :user
  has_and_belongs_to_many :teams
+ accepts_nested_attributes_for :teams
 
 def self.create_with_omniauth(auth)
   create! do |user|
