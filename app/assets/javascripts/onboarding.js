@@ -15,13 +15,9 @@ $(document).ready(function() {
 		}
 	}});
 });
-var onboardingApp = angular.module('onboardingApp', ['ngAnimate']);
+var onboardingApp = angular.module('onboardingApp',['ngResource','ngAnimate']);
 
-onboardingApp.controller('TeamCtrl', function ($scope, $http) {
-  $http.get('/assets/teamdata.json').success(function(data){
-    $scope.teams = data;
-  });
-  
-
-});
-
+onboardingApp.controller('TeamCtrl', function($scope, $resource) {
+	Team = $resource('/teams/:id', {id: '@id'})
+	$scope.teams = Team.query();
+	});
