@@ -15,14 +15,14 @@ FanaticV2::Application.routes.draw do
   resources :friendships
   resources :users
   resources :friendships
+  resources :teams
+  resources :search_suggestions
   resources :posts do
     collection do
       get :list
     end
     member { post :vote }
   resources :comments
-  resources :messages
-  resources :search_suggestions
 end
     
   # The priority is based upon order of creation: first created -> highest priority.

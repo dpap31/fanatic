@@ -79,9 +79,11 @@
 
 		<div ng-controller="TeamCtrl">
 			<input type="text" class="form-control" placeholder="Warriors, 49ers, Giants" ng-model="query">
-		<ul ng-show='query'>
-		<li ng-repeat="team in teams | filter: query" class ="animate">
-		{{team.name}}, {{team.location}}
+		<ul class = 'teamlist'ng-show='query'>
+		<li ng-repeat="team in teams | filter: query" class ="animate results">			
+			<img ng-src="assets/{{team.abbreviation}}.png"/>
+			<span id='team_details'><b>{{team.name}}</b>, <em>{{team.location}}</em>
+			</span>
 		</li>
 		</ul>
 		</div>

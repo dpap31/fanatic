@@ -19,6 +19,7 @@
 //= require jquery-fileupload/basic
 //= require jquery.bootstrap.wizard
 //= require angular
+//= require angular-resource
 //= require angular-animate
 
 
