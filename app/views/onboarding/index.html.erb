@@ -89,6 +89,12 @@
 		</div>
 			 <%= f.submit "Finish", :class => 'btn btn-primary btn-lg btn-block', id: "form_submit" %>
 			 <%end%>
+			  <%= form_for(@user) do |f| %>
+  			...
+  			 <%= f.collection_select(:team_ids, Team.all, :id, :name, :prompt => true) %>
+  			...
+  			<%= f.submit "Team Test", :class => 'btn btn-primary btn-lg btn-block', id: "form_submit" %>
+			<% end %>
 	    </div>
 	   </div>
 	  </div>
