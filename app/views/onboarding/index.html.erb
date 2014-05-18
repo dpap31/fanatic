@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag "//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css", media: "all" %>
   <%= stylesheet_link_tag "//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" %>
   <%= stylesheet_link_tag "onboarding" %>
+</script>
 </head>
 <div class="modal fade onboarding-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
@@ -81,7 +82,7 @@
 			<input type="text" class="form-control" placeholder="Warriors, 49ers, Giants" ng-model="query">
 		<ul class = 'teamlist'ng-show='query'>
 		<li ng-repeat="team in teams | filter: query" class ="animate results">			
-			<img ng-src="assets/{{team.abbreviation}}.png"/>
+			<!-- <img ng-src="assets/{{team.abbreviation}}.png"/> -->
 			<span id='team_details'><b>{{team.name}}</b>, <em>{{team.location}}</em>
 			</span>
 		</li>
@@ -92,9 +93,14 @@
   				<%= check_box_tag "user[team_ids][]", team.id, @user.team_ids.include?(team.id), id: dom_id(team) %>
   				<%= label_tag dom_id(team), team.name %><br>
   				<%end%>
-  			<%= f.submit "Finish", :class => 'btn btn-primary btn-lg btn-block', id: "form_submit" %>
+ 
 
+  		 <%= f.label :teams %>
+		  <%= select_tag("user[team_ids][]", options_for_select(Team.all.collect { |team| [team.name, team.id] }, @user.teams.collect { |team| team.id}), {:multiple=>true, :size=>5}) %>
+
+		<%= f.submit "Finish", :class => 'btn btn-primary btn-lg btn-block', id: "form_submit" %>
 			<% end %>
+			
 	    </div>
 	   </div>
 	  </div>
