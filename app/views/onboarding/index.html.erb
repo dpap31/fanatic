@@ -76,27 +76,22 @@
 		<div class="tab-pane" id="tab5">
 		<div id='teams'>
 			<h3>Who are your favorite teams?</h3>
+		  <%= f.label :teams %>
+		  <%= select_tag("user[team_ids][]", options_for_select(Team.all.collect { |team| [team.info.html_safe, team.id] }, @user.teams.collect { |team| team.id}), {:multiple=>true, :size=>5, :class => 'form-control', :placeholder=>"Warriors, 49ers, Giants"}) %>
+
 				---Angular JS?----
 
 		<div ng-controller="TeamCtrl">
 			<input type="text" class="form-control" placeholder="Warriors, 49ers, Giants" ng-model="query">
 		<ul class = 'teamlist'ng-show='query'>
 		<li ng-repeat="team in teams | filter: query" class ="animate results">			
-			<!-- <img ng-src="assets/{{team.abbreviation}}.png"/> -->
+			<!--  <img ng-src="assets/{{team.abbreviation}}.png"/> -->
 			<span id='team_details'><b>{{team.name}}</b>, <em>{{team.location}}</em>
 			</span>
 		</li>
 		</ul>
 		</div>
-			<%= hidden_field_tag "user[team_ids][]", nil %>
-			<% Team.all.each do |team| %>
-  				<%= check_box_tag "user[team_ids][]", team.id, @user.team_ids.include?(team.id), id: dom_id(team) %>
-  				<%= label_tag dom_id(team), team.name %><br>
-  				<%end%>
- 
 
-  		 <%= f.label :teams %>
-		  <%= select_tag("user[team_ids][]", options_for_select(Team.all.collect { |team| [team.name, team.id] }, @user.teams.collect { |team| team.id}), {:multiple=>true, :size=>5}) %>
 
 		<%= f.submit "Finish", :class => 'btn btn-primary btn-lg btn-block', id: "form_submit" %>
 			<% end %>
@@ -112,3 +107,8 @@
     </div>
   </div>
 </div>
+<!-- 	<%= hidden_field_tag "user[team_ids][]", nil %>
+			<% Team.all.each do |team| %>
+  				<%= check_box_tag "user[team_ids][]", team.id, @user.team_ids.include?(team.id), id: dom_id(team) %>
+  				<%= label_tag dom_id(team), team.name %><br>
+  				<%end%> -->
