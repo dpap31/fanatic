@@ -1,4 +1,5 @@
 $(document).ready(function() {
+	$('select#user_team_ids_').select2();
 	$('.onboarding-modal').modal('show');
   	$('#rootwizard').bootstrapWizard({onTabShow: function(tab, navigation, index) {
 		var $total = navigation.find('li').length;
@@ -14,6 +15,7 @@ $(document).ready(function() {
 			$('#rootwizard').find('.pager .finish').hide();
 		}
 	}});
+
 });
 var onboardingApp = angular.module('onboardingApp',['ngResource','ngAnimate']);
 
@@ -21,3 +23,5 @@ onboardingApp.controller('TeamCtrl', function($scope, $resource) {
 	Team = $resource('/teams/:id', {id: '@id'})
 	$scope.teams = Team.query();
 	});
+
+
