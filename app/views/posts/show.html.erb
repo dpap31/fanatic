@@ -21,7 +21,8 @@
 					Author
 				</dt>
 				<dd>
-				 <%= link_to @post.user.name, user_posts_path(@post.user) %>
+				 <%= link_to @post.user.name, user_posts_path(@post.user) %> 
+				 <%= link_to("Follow Author", friendships_path(:friend_id => @post.user), :method => :post) %>
 				</dd>
 				<dt>
 					Number of Posts

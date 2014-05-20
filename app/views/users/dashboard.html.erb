@@ -1,0 +1,38 @@
+<h3><%= @user.name %> Profile</h3>
+<h5><%= @user.location %></h5>
+<h3>Friends</h3>
+<hr>
+<ul>
+<% for friendship in @user.friendships %>
+<li>
+<%=h friendship.friend.name %>
+(<%= link_to "remove", friendship, :method => :delete %>)
+</li>
+<% end %>
+</ul>
+<ul>
+  <% for user in @user.inverse_friends %>
+    <li><%= user.name %></li>
+  <% end %>
+</ul>
+<p><%= link_to "Find Friends", users_path %>
+
+<h3>Teams</h3>
+<hr>
+<% @teams.each do |team| %>
+<%= team.name %>
+<%= team.location %>
+<%= team.abbreviation %>
+
+<% end %>
+
+<h3>My Posts</h3>
+<hr>
+<%= @my_posts.inspect %>
+
+<h3>Fan</h3>
+<hr>
+<%= @fan.inspect %>
+
+
+

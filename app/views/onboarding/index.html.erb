@@ -43,14 +43,16 @@
     <div class="form-group">
     <%= f.text_field :last_name, placeholder:' Last Name', class: 'form-control'%>
     </div>
-    <div class="form-group">
-  <label for="inputEmail">Confirm your email</label>
-    <%= f.text_field :email, placeholder:' Email', class: 'form-control'%>
-    </div>
-    <div class="form-group">
-  <label for="inputUsername">Choose a username</label>
-    <%= f.text_field :username, placeholder:' Username', class: 'form-control'%>
-      </div>
+    <label for="inputEmail">Confirm your email</label>
+    <div class="input-group margin-bottom-sm">
+  	<span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+  	<%= f.text_field :email, placeholder:' Email', class: 'form-control'%>
+	</div>
+	<label for="inputUsername">Choose a username</label>
+    <div class="input-group margin-bottom-sm">
+  	<span class="input-group-addon"><i class="fa  fa-qq fa-fw"></i></span>
+  	<%= f.text_field :username, placeholder:' Username', class: 'form-control'%>
+	</div>
 	</div>
   </div>
   <div class="tab-pane" id="tab3">
@@ -79,18 +81,18 @@
 		  <%= f.label :teams %>
 		  <%= select_tag("user[team_ids][]", options_for_select(Team.all.collect { |team| [team.info.html_safe, team.id] }, @user.teams.collect { |team| team.id}), {:multiple=>true, :size=>5, :class => 'form-control', :placeholder=>"Warriors, 49ers, Giants"}) %>
 
-				---Angular JS?----
+	<!-- 			---Angular JS?----
 
 		<div ng-controller="TeamCtrl">
 			<input type="text" class="form-control" placeholder="Warriors, 49ers, Giants" ng-model="query">
 		<ul class = 'teamlist'ng-show='query'>
 		<li ng-repeat="team in teams | filter: query" class ="animate results">			
-			<!--  <img ng-src="assets/{{team.abbreviation}}.png"/> -->
+		 <img ng-src="assets/{{team.abbreviation}}.png"/>
 			<span id='team_details'><b>{{team.name}}</b>, <em>{{team.location}}</em>
 			</span>
 		</li>
 		</ul>
-		</div>
+		</div> -->
 
 
 		<%= f.submit "Finish", :class => 'btn btn-primary btn-lg btn-block', id: "form_submit" %>

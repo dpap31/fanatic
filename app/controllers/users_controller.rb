@@ -13,11 +13,19 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+
+  end
+
+  def dashboard
+     @user = current_user
+     @teams = current_user.teams
+     @my_posts = current_user.posts.limit(3)
+     @fan = Post.tagged_with('NBA').page(params[:page]).per_page(12)
   end
 
   # GET /users/new
   def new
-    @user = User.new
+    @user = current_user
   end
 
   # GET /users/1/edit
