@@ -4,10 +4,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @search = User.search do
-    fulltext params[:search]
-  end
-    @users = @search.results
+    @users = User.all
   end
 
   # GET /users/1

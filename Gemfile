@@ -31,8 +31,6 @@ gem 'omniauth-identity'
 
 gem 'cancancan', '~> 1.7'
 
-
-gem 'thin'
 gem 'angularjs-rails'
 
 gem 'activeresource'
@@ -42,7 +40,6 @@ gem 'carrierwave'
 gem 'mini_magick'
 
 gem 'public_activity'
-gem 'sunspot_rails'
 gem 'friendly_id'
 
 
@@ -51,10 +48,6 @@ gem 'friendly_id'
     gem 'bootstrap-sass'
     gem 'sass-rails'
     gem 'rack-mini-profiler'
-
-group :development do
-    gem 'sunspot_solr'
-  end
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

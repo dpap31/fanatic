@@ -8,9 +8,9 @@ def create
   session[:user_id] = user.id
   user.increase_login_count
   if user.login_count == 1
-	redirect_to controller: 'onboarding', action: 'index'
-  else	
-  	redirect_to controller: 'menu', action: 'index', :notice => "Signed in!"
+  redirect_to controller: 'onboarding', action: 'index'
+  else  
+    redirect_to controller: 'menu', action: 'index', :notice => "Signed in!"
   end
 end
 

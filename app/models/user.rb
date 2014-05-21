@@ -32,9 +32,6 @@ def self.create_with_omniauth(auth)
   self
 end
 
-searchable do
-  text :name
-  end
   
 has_many :evaluations, class_name: "RSEvaluation", as: :source
 
