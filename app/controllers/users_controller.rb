@@ -20,7 +20,8 @@ class UsersController < ApplicationController
      @user = current_user
      @teams = current_user.teams
      @my_posts = current_user.posts.limit(3)
-     @fan = Post.tagged_with('NBA').page(params[:page]).per_page(12)
+     @my_posts_count = current_user.posts.count
+     @my_posts_cheers = current_user.reputation_for(:votes).to_i
   end
 
   # GET /users/new

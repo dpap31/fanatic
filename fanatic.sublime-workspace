@@ -44,10 +44,58 @@
 	"buffers":
 	[
 		{
+			"file": "app/views/users/dashboard.html.erb",
+			"settings":
+			{
+				"buffer_size": 605,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": ".gitignore",
 			"settings":
 			{
-				"buffer_size": 552,
+				"buffer_size": 572,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/controllers/posts_controller.rb",
+			"settings":
+			{
+				"buffer_size": 2963,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/posts/_postPreview.html.erb",
+			"settings":
+			{
+				"buffer_size": 990,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/controllers/friendships_controller.rb",
+			"settings":
+			{
+				"buffer_size": 602,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/controllers/users_controller.rb",
+			"settings":
+			{
+				"buffer_size": 2252,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/users/show.html.erb",
+			"settings":
+			{
+				"buffer_size": 5259,
 				"line_ending": "Unix"
 			}
 		}
@@ -144,9 +192,39 @@
 	},
 	"file_history":
 	[
+		"/Users/dpappas/Sites/fanatic_v2/.gitattributes",
+		"/Users/dpappas/Sites/dash_things/.gitignore",
+		"/Users/dpappas/Sites/fanatic_v2/Gemfile",
+		"/Users/dpappas/Sites/fanatic_v2/app/models/post.rb",
+		"/Users/dpappas/Sites/fanatic_v2/app/controllers/application_controller.rb",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/posts/_postPreview.html.erb",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/posts/index.html.erb",
+		"/Users/dpappas/Sites/fanatic_v2/tmp/miniprofiler/mp_timers_eaaj2p193c1y1haq7chy",
+		"/Users/dpappas/Sites/fanatic_v2/test/helpers/activities_helper_test.rb",
+		"/Users/dpappas/Sites/fanatic_v2/app/helpers/activities_helper.rb",
+		"/Users/dpappas/Sites/fanatic_v2/app/controllers/teams_controller.rb",
+		"/Users/dpappas/Sites/fanatic_v2/tmp/cache/assets/development/sprockets/ea1a7ef58a616f9c5a331ede5e943638",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/posts/edit.html.erb",
+		"/Users/dpappas/Sites/fanatic_v2/tmp/cache/assets/development/sass/83bb5b4d31cd6a4470eb777d4fbf65af2db096d1/application.css.scssc",
+		"/Users/dpappas/Sites/fanatic_v2/tmp/cache/assets/development/sass/9d0c34e4c79ddaebefa2a317ec16a32db57dfb0a/application.css.scssc",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/layouts/application.html.erb",
+		"/Users/dpappas/Sites/fanatic_v2/app/assets/javascripts/application.js",
+		"/Users/dpappas/Sites/fanatic_v2/config/application.yml",
+		"/Users/dpappas/Sites/dash_things/config/application.rb",
+		"/Users/dpappas/Sites/fanatic_v2/config/application.rb",
+		"/Users/dpappas/Sites/dash_things/app/models/user.rb",
+		"/Users/dpappas/Sites/fanatic_v2/config.ru",
+		"/Users/dpappas/Sites/dash_things/db/migrate/20140519023253_create_users.rb",
+		"/Users/dpappas/Sites/fanatic_v2/app/assets/javascripts/external/google-code-prettify/run_prettify.js",
+		"/Users/dpappas/Sites/fanatic_v2/test/fixtures/friendships.yml",
+		"/Users/dpappas/Sites/fanatic_v2/app/models/friendship.rb",
+		"/Users/dpappas/Sites/fanatic_v2/config/initializers/friendly_id.rb",
+		"/Users/dpappas/Sites/fanatic_v2/fanatic.sublime-project",
+		"/Users/dpappas/Sites/fanatic_v2/app/controllers/posts_controller.rb",
+		"/Users/dpappas/Sites/fanatic_v2/config/routes.rb",
+		"/Users/dpappas/Sites/fanatic_v2/.gitignore",
 		"/Users/dpappas/FederationMetadata.xml",
 		"/Users/dpappas/Sites/dash_things/app/views/layouts/application.html.erb",
-		"/Users/dpappas/Sites/dash_things/app/models/user.rb",
 		"/Users/dpappas/Sites/dash_things/Gemfile",
 		"/Users/dpappas/Sites/dash_things/config/initializers/omniauth.rb",
 		"/Users/dpappas/Sites/dash_things/app/controllers/application_controller.rb",
@@ -156,13 +234,8 @@
 		"/Users/dpappas/Sites/fanatic_v2/app/controllers/sessions_controller.rb",
 		"/Users/dpappas/Sites/fanatic_v2/db/seeds.rb",
 		"/Users/dpappas/Sites/fanatic_v2/app/models/user.rb",
-		"/Users/dpappas/Sites/fanatic_v2/app/views/layouts/application.html.erb",
-		"/Users/dpappas/Sites/fanatic_v2/app/assets/javascripts/application.js",
-		"/Users/dpappas/Sites/fanatic_v2/app/controllers/application_controller.rb",
 		"/Users/dpappas/Sites/fanatic_v2/tmp/miniprofiler/mp_timers_apppb5ldnvxw1d9do8ba",
 		"/Users/dpappas/Sites/dash_things/app/helpers/application_helper.rb",
-		"/Users/dpappas/Sites/fanatic_v2/tmp/cache/assets/development/sass/9d0c34e4c79ddaebefa2a317ec16a32db57dfb0a/application.css.scssc",
-		"/Users/dpappas/Sites/fanatic_v2/tmp/cache/assets/development/sass/83bb5b4d31cd6a4470eb777d4fbf65af2db096d1/application.css.scssc",
 		"/Users/dpappas/Sites/fanatic_v2/app/controllers/users_controller.rb",
 		"/Users/dpappas/Sites/fanatic_v2/app/assets/javascripts/users.js.coffee",
 		"/Users/dpappas/Sites/dash_things/config/routes.rb",
@@ -172,18 +245,12 @@
 		"/Users/dpappas/Sites/dash_things/db/migrate/20140519022940_create_users.rb",
 		"/Users/dpappas/Sites/fanatic_v2/app/views/posts/show.html.erb",
 		"/Users/dpappas/Sites/fanatic_v2/app/views/onboarding/index.html.erb",
-		"/Users/dpappas/Sites/fanatic_v2/config.ru",
 		"/Users/dpappas/Sites/fanatic_v2/log/development (dpappas-lt's conflicted copy 2014-01-04).log",
 		"/Users/dpappas/Sites/fanatic_v2/app/controllers/activities_controller.rb",
 		"/Users/dpappas/Sites/fanatic_v2/app/assets/stylesheets/onboarding.css.scss",
 		"/Users/dpappas/Sites/fanatic_v2/app/assets/javascripts/onboarding.js",
-		"/Users/dpappas/Sites/fanatic_v2/app/controllers/posts_controller.rb",
-		"/Users/dpappas/Sites/fanatic_v2/app/models/post.rb",
 		"/Users/dpappas/Sites/fanatic_v2/app/assets/stylesheets/posts_show.css.scss",
 		"/Users/dpappas/Sites/fanatic_v2/app/models/team.rb",
-		"/Users/dpappas/Sites/fanatic_v2/app/controllers/teams_controller.rb",
-		"/Users/dpappas/Sites/fanatic_v2/app/views/posts/_postPreview.html.erb",
-		"/Users/dpappas/Sites/fanatic_v2/app/views/posts/index.html.erb",
 		"/Users/dpappas/Sites/fanatic_v2/app/views/users/index.html.erb",
 		"/Users/dpappas/Sites/fanatic_v2/app/assets/javascripts/posts.js",
 		"/Users/dpappas/Sites/fanatic_v2/db/migrate/20140517050838_create_teams_users_join.rb",
@@ -201,7 +268,6 @@
 		"/Users/dpappas/Sites/fanatic_v2/tmp/miniprofiler/mp_timers_e08b1nktvjyueputpnei",
 		"/Users/dpappas/Sites/fanatic_v2/app/assets/javascripts/teamdata.json",
 		"/Users/dpappas/Sites/fanatic_v2/app/views/posts/new.html.erb",
-		"/Users/dpappas/Sites/fanatic_v2/.gitattributes",
 		"/Users/dpappas/Sites/fanatic_v2/app/views/menu/_nfl_headlines.html.erb",
 		"/Users/dpappas/Sites/fanatic_v2/app/assets/stylesheets/post_new.css",
 		"/Users/dpappas/Sites/fanatic_v2/app/assets/javascripts/external/bootstrap-wysiwyg.js",
@@ -217,7 +283,6 @@
 		"/Users/dpappas/Sites/fanatic_v2/app/helpers/onboarding_helper.rb",
 		"/Users/dpappas/Sites/fanatic_v2/app/controllers/onboarding_controller.rb",
 		"/Users/dpappas/Sites/fanatic_v2/db/migrate/20140309035648_create_search_suggestions.rb",
-		"/Users/dpappas/Sites/fanatic_v2/config/routes.rb",
 		"/Users/dpappas/Sites/fanatic_v2/app/views/posts/index.json.jbuilder",
 		"/Users/dpappas/Sites/fanatic_v2/app/views/teams/index.html.erb",
 		"/Users/dpappas/Sites/fanatic_v2/test/controllers/activities_controller_test.rb",
@@ -233,9 +298,6 @@
 		"/Users/dpappas/Sites/fanatic_v2/log/development (Drews-MacBook-Air's conflicted copy 2014-01-20).log",
 		"/Users/dpappas/Sites/fanatic_v2/config/database.yml",
 		"/Users/dpappas/Desktop/federationmetadata (12).xml",
-		"/Users/dpappas/Sites/fanatic_v2/Gemfile",
-		"/Users/dpappas/Sites/fanatic_v2/config/application.yml",
-		"/Users/dpappas/Sites/fanatic_v2/config/application.rb",
 		"/Users/dpappas/Sites/fanatic_v2/app/views/posts/list.html.erb",
 		"/Users/dpappas/Sites/fanatic_v2/test/controllers/onboarding_controller_test.rb",
 		"/Users/dpappas/Sites/fanatic_v2/test/helpers/onboarding_helper_test.rb",
@@ -257,21 +319,7 @@
 		"/Users/dpappas/Sites/fanatic_v2/solr/pids/development/sunspot-solr-development.pid",
 		"/Users/dpappas/Sites/fanatic_v2/app/views/menu/headlines.html.erb",
 		"/Users/dpappas/Sites/fanatic_v2/app/views/public/index.html.erb",
-		"/Users/dpappas/Sites/fanatic_v2/app/assets/stylesheets/posts.css.scss",
-		"/Users/dpappas/Sites/fanatic_v2/app/helpers/posts_helper.rb",
-		"/Users/dpappas/Sites/fanatic_v2/config/initializers/secret_token.rb",
-		"/Users/dpappas/Sites/fanatic_v2/app/assets/stylesheets/public.css.scss",
-		"/Users/dpappas/Sites/fanatic_v2/tmp/cache/assets/development/sass/83bb5b4d31cd6a4470eb777d4fbf65af2db096d1/public.css.scssc",
-		"/Users/dpappas/Sites/fanatic_v2/tmp/cache/assets/development/sass/9d0c34e4c79ddaebefa2a317ec16a32db57dfb0a/public.css.scssc",
-		"/Users/dpappas/Sites/fanatic_v2/app/assets/javascripts/public.js.coffee",
-		"/Users/dpappas/Sites/fanatic_v2/app/controllers/public_controller.rb",
-		"/Users/dpappas/Sites/fanatic_v2/solr/development/data/index/write.lock",
-		"/Users/dpappas/Sites/fanatic_v2/solr/development/data/index/_11_Lucene41_0.pos",
-		"/Users/dpappas/Sites/fanatic_v2/config/initializers/omniauth.rb",
-		"/Users/dpappas/Sites/fanatic_v2/app/assets/stylesheets/menu.css.scss",
-		"/Users/dpappas/Sites/fanatic_v2/db/migrate/20140405194322_change_evaluations_index_to_unique.rb",
-		"/Users/dpappas/Sites/fanatic_v2/db/migrate/20140511005050_add_email_and_first_name_and_last_name_and_username_to_user.rb",
-		"/Users/dpappas/Sites/fanatic_v2/app/views/menu/index.html.erb"
+		"/Users/dpappas/Sites/fanatic_v2/app/assets/stylesheets/posts.css.scss"
 	],
 	"find":
 	{
@@ -376,24 +424,53 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": ".gitignore",
+					"file": "app/views/users/dashboard.html.erb",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 552,
+						"buffer_size": 605,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								542,
-								542
+								546,
+								546
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 51.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": ".gitignore",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 572,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								572,
+								572
 							]
 						],
 						"settings":
@@ -405,6 +482,160 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/controllers/posts_controller.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2963,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								213,
+								287
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 131.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/views/posts/_postPreview.html.erb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 990,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								27
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/controllers/friendships_controller.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 602,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 5,
+					"file": "app/controllers/users_controller.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2252,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								479,
+								479
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "app/views/users/show.html.erb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5259,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1706,
+								1767
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 5466.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
 					"type": "text"
 				}
 			]
@@ -427,11 +658,18 @@
 				0,
 				1,
 				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.5,
 			1.0
 		],
 		"rows":
@@ -457,8 +695,40 @@
 		"selected_items":
 		[
 			[
+				"git",
+				"fanatic_v2/.gitignore"
+			],
+			[
+				"posts",
+				"fanatic_v2/app/controllers/posts_controller.rb"
+			],
+			[
+				"postp",
+				"fanatic_v2/app/views/posts/_postPreview.html.erb"
+			],
+			[
+				"inde",
+				"fanatic_v2/app/views/posts/index.html.erb"
+			],
+			[
+				"applicat",
+				"fanatic_v2/app/controllers/application_controller.rb"
+			],
+			[
 				"user",
 				"dash_things/app/models/user.rb"
+			],
+			[
+				"frie",
+				"fanatic_v2/app/controllers/friendships_controller.rb"
+			],
+			[
+				"frien",
+				"fanatic_v2/app/models/friendship.rb"
+			],
+			[
+				"route",
+				"fanatic_v2/config/routes.rb"
 			],
 			[
 				"session",
@@ -507,10 +777,6 @@
 			[
 				"team",
 				"fanatic_v2/app/models/team.rb"
-			],
-			[
-				"postp",
-				"fanatic_v2/app/views/posts/_postPreview.html.erb"
 			],
 			[
 				"index",
@@ -577,10 +843,6 @@
 				"fanatic_v2/app/controllers/posts_controller.rb"
 			],
 			[
-				"route",
-				"fanatic_v2/config/routes.rb"
-			],
-			[
 				"onboard",
 				"fanatic_v2/app/assets/javascripts/onboarding.js"
 			],
@@ -642,10 +904,6 @@
 			],
 			[
 				"postcont",
-				"fanatic_v2/app/controllers/posts_controller.rb"
-			],
-			[
-				"posts",
 				"fanatic_v2/app/controllers/posts_controller.rb"
 			],
 			[
@@ -947,26 +1205,6 @@
 			[
 				"controoler",
 				"fanatic_v2/app/controllers/posts_controller.rb"
-			],
-			[
-				"user.rb",
-				"fanatic_v2/app/models/user.rb"
-			],
-			[
-				"usershow",
-				"fanatic_v2/app/views/users/show.html.erb"
-			],
-			[
-				"new.css",
-				"fanatic_v2/app/assets/stylesheets/post_new.css"
-			],
-			[
-				"_p",
-				"fanatic_v2/app/views/posts/_postPreview.html.erb"
-			],
-			[
-				"_from",
-				"app/views/comments/_form.html.erb"
 			]
 		],
 		"width": 0.0

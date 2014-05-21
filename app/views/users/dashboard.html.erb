@@ -23,16 +23,24 @@
 <%= team.name %>
 <%= team.location %>
 <%= team.abbreviation %>
-
+<%=Post.tagged_with(team.name).page(params[:page]).per_page(3).inspect%>
+<hr>
 <% end %>
+
 
 <h3>My Posts</h3>
 <hr>
 <%= @my_posts.inspect %>
 
-<h3>Fan</h3>
+<h3>Post Count</h3>
+<%= @my_posts_count %>
 <hr>
-<%= @fan.inspect %>
+<h3>Post Cheers</h3>
+<%= @my_posts_cheers %>
+
+<hr>
+
+
 
 
 
