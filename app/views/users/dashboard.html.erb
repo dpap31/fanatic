@@ -1,5 +1,11 @@
+<%= image_tag(@user.image) %>
 <h3><%= @user.name %> Profile</h3>
 <h5><%= @user.location %></h5>
+<h3>Post Count</h3>
+<%= @my_posts_count %>
+<hr>
+<h3>Post Cheers</h3>
+<%= @my_posts_cheers %>
 <h3>Friends</h3>
 <hr>
 <ul>
@@ -31,12 +37,6 @@
 <h3>My Posts</h3>
 <hr>
 <%= @my_posts.inspect %>
-
-<h3>Post Count</h3>
-<%= @my_posts_count %>
-<hr>
-<h3>Post Cheers</h3>
-<%= @my_posts_cheers %>
 
 <hr>
 
