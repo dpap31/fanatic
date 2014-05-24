@@ -13,6 +13,8 @@
 				<%=raw @post.content %>
 			</p>
 			<%= render @post.comments %>
+			<%= render "comments/form" %>
+    		
 		</div>
 		<div class="col-md-4 column">
 			<img alt="140x140" src="<%=@post.image.url(:thumb) if @post.image?%>" />
@@ -21,7 +23,7 @@
 					Author
 				</dt>
 				<dd>
-				 <%= link_to @post.user.name, user_posts_path(@post.user) %> 
+				 <%= link_to @post.user.username, user_posts_path(@post.user) %> 
 				</dd>
 				<dt>
 				</dt>
@@ -114,7 +116,5 @@
 			  </div> 
 			</dl>
 		</div>
-    <h2>Add a comment:</h2>
-    <%= render "comments/form" %>
 	</div>
 </div>

@@ -29,7 +29,7 @@
           <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#"><i class="glyphicon glyphicon-user"></i> 
             <%= if current_user.nil? 
               "user"
-              else current_user.name
+              else current_user.username
                end%>
               <span class="caret"></span></a>
           <ul id="g-account-menu" class="dropdown-menu" role="menu">

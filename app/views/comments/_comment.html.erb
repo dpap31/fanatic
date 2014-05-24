@@ -1,11 +1,12 @@
-<div class="media well">
-         <a href="#" class="pull-left"><img src="<%= comment.user.image %>" class="media-object" alt='' height="42" width="42"/></a>
+<div class="well well-sm media">
+         <a href="#" class="pull-left"><img src="<%=comment.user.image %>" class="media-object" alt='' height="42" width="42"/></a>
         <div class="media-body">
           <h4 class="media-heading">
-            <%= comment.user.name %>
+            <%= comment.user.username %>
           </h4> 
-          <%= comment.body %><p>
-  <%= link_to 'Destroy Comment', [comment.post, comment],
+          <%= comment.body %>
+          <br>
+          <%= link_to 'Destroy Comment', [comment.post, comment],
                method: :delete,
                data: { confirm: 'Are you sure?' } %>
       </div>
