@@ -21,6 +21,11 @@ class PostsController < ApplicationController
   def show
     @posts = Post.find(params[:id])
     @posts_user_id = Post.find(params[:id]).user_id
+    @comment_count = @posts.comments.count.to_i
+    @p = @posts.reputation_for(:votes).to_i + @comment_count
+    @t = ((Time.now - @posts.created_at) / 1.hour).round
+    @hot= (@p - 1) / (@t + 2)**1.5
+
   end
 
   # GET /posts/new
