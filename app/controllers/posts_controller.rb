@@ -1,14 +1,13 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   load_and_authorize_resource
-
   # GET /posts
   # GET /posts.json
   def index
   if params[:tag]
     @posts = @posts.tagged_with(params[:tag]).page(params[:page]).per_page(12)
   else
-    @posts = Post.page(params[:page]).per_page(12).popular
+    @posts = hottness(Post.all).paginate(page: params[:page], :per_page => 12)
     @tags_all = ActsAsTaggableOn::Tag.all
   end 
   end
@@ -21,10 +20,6 @@ class PostsController < ApplicationController
   def show
     @posts = Post.find(params[:id])
     @posts_user_id = Post.find(params[:id]).user_id
-    @comment_count = @posts.comments.count.to_i
-    @p = @posts.reputation_for(:votes).to_i + @comment_count
-    @t = ((Time.now - @posts.created_at) / 1.hour).round
-    @hot= (@p - 1) / (@t + 2)**1.5
 
   end
 
@@ -98,6 +93,10 @@ def tags
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    def hottness(post)
+      post.sort_by {|post| (((((post.reputation_for(:votes).to_i)-1)/((Time.now - post.created_at) / 1.hour).round)+2)**1.5)}.reverse
+    end
+
     def set_post
       @post = Post.friendly.find(params[:id])
     end
@@ -106,10 +105,15 @@ def tags
     def post_params
       params.require(:post).permit(:title, :content, :visible, :url, :tag_list, :user_id, :id, :user_name, :name, :image, :remote_image_url, :user_posts)   
     end
+
+    def hotness
+      sort_by {|post| (((((post.reputation_for(:votes).to_i)-1)/((Time.now - post.created_at) / 1.hour).round)+2)**1.5)}
+    end
      
      def find_user
         if params[:user_id]
           @user = User.find_by_id(params[:user_id, :user_name])
       end
     end
+
 end

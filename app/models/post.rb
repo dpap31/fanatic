@@ -11,4 +11,20 @@ class Post < ActiveRecord::Base
   def self.popular
     reorder('votes desc').find_with_reputation(:votes, :all)
   end 
+  
+ def self.most_voted
+  find_with_reputation(:votes, :all)
+ end
+
+ def self.time_delta
+ 	((Time.now - Post.all.created_at) / 1.hour).round
+ end
+
+  # def self.hot
+  # 	#comment_count = Post.comments.count
+  # 	p = most_voted
+  # 	t = ((Time.now - created_at) / 1.hour).round
+  # 	return (p - 1) / (t + 2)**1.5
+  # end
+
 end
