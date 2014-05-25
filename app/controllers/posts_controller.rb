@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   if params[:tag]
     @posts = @posts.tagged_with(params[:tag]).page(params[:page]).per_page(12)
   else
-    @posts = Post.order("created_at DESC").page(params[:page]).per_page(12)
+    @posts = Post.page(params[:page]).per_page(12).popular
     @tags_all = ActsAsTaggableOn::Tag.all
   end 
   end
