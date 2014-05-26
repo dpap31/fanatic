@@ -5,15 +5,15 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
   if params[:tag]
-    @posts = @posts.tagged_with(params[:tag]).page(params[:page]).per_page(12)
+    @posts = hottness(@posts.tagged_with(params[:tag])).paginate(page: params[:page], :per_page => 12)
   else
-    @posts = hottness(Post.all).paginate(page: params[:page], :per_page => 12)
     @tags_all = ActsAsTaggableOn::Tag.all
+    @posts = hottness(Post.all).paginate(page: params[:page], :per_page => 12)
   end 
   end
 
   def list
-    @posts = @posts.where(:user_id => current_user.id).order("created_at DESC").page(params[:page]).per_page(12)
+    @posts = @posts.where(:user_id => current_user.id).order("created_at DESC").paginate(page: params[:page], :per_page => 12)
   end
   # GET /posts/1
   # GET /posts/1.json
@@ -94,7 +94,7 @@ def tags
   private
     # Use callbacks to share common setup or constraints between actions.
     def hottness(post)
-      post.sort_by {|post| (((((post.reputation_for(:votes).to_i)-1)/((Time.now - post.created_at) / 1.hour).round)+2)**1.5)}.reverse
+      post.sort_by {|p| (((p.reputation_for(:votes).to_i + p.comments.count)-1)/((Time.now - p.created_at) / 1.hour.round+2)**1.5)}.reverse
     end
 
     def set_post
@@ -104,10 +104,6 @@ def tags
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
       params.require(:post).permit(:title, :content, :visible, :url, :tag_list, :user_id, :id, :user_name, :name, :image, :remote_image_url, :user_posts)   
-    end
-
-    def hotness
-      sort_by {|post| (((((post.reputation_for(:votes).to_i)-1)/((Time.now - post.created_at) / 1.hour).round)+2)**1.5)}
     end
      
      def find_user

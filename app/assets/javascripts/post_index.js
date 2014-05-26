@@ -1,22 +1,11 @@
-
 $(document).ready(function(){
 // Select 2 With AJAX
-$(function () {
     $('#dropdown').select2({
         placeholder: "Filter Posts",
-        minimumInputLength: 2,
+        minimumInputLength: 1,
         selectOnBlur: true,
         formatResult: format,
-        createSearchChoice: function(term, data) {
-        if ($(data).filter(function() {
-              return this.name.localeCompare(term) === 0;
-            }).length === 0) {
-              return {
-                id: term,
-                text: term
-              };
-            }
-        },
+    
         ajax: {
             dataType: 'json',
             url: '/posts/tags.json',
@@ -37,7 +26,6 @@ $('#dropdown').on("select2-selecting", function(e) {
               window.location.replace(url);
           }
           return false;
-});
 });
 });
 

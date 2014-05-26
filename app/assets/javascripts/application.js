@@ -11,10 +11,10 @@
 // about supported directives.
 //
 //= require jquery
+//= require select2
 //= require jquery_ujs
 //= require jquery.ui.all
 //= require twitter/bootstrap
-//= require select2
 //= require jquery.tokeninput
 //= require jquery-fileupload/basic
 //= require jquery.bootstrap.wizard
