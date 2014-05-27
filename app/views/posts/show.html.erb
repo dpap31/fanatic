@@ -1,9 +1,16 @@
 <%= stylesheet_link_tag "posts_show" %>
 
-Reputation Score: <%= @p %>
-Comment Count: <%= @comment_count %>
-time_delta: <%= @t %>
-Hot: <%= @hot %>
+Tags: <%= raw @post.tag_list %>
+Tags Table IDs: <%= @post_tag_id%>
+
+<br>
+
+Tagging Table: <%= ActsAsTaggableOn::Tagging.find_all_by_tag_id(@post_tag_id).each do |a|
+	a.created_at
+	a.tag_id
+end
+ %>
+
 
 
 
