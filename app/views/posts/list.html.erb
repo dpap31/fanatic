@@ -1,21 +1,21 @@
 <%= stylesheet_link_tag "posts" %>
- <div class="container">
-   <div class="row">
-    <div class="col-md-10 column">
-     <div id="title">
+<div class="container">
+ <div class="row">
+  <div class="col-md-10 column">
+   <div id="title">
      <a href="/posts"><strong><i class="glyphicon glyphicon-star-empty"></i>  My Posts</strong></a>  
-     </div>
-    <% if can? :create, Post %>
-     <div id="new_button">
+   </div>
+   <% if can? :create, Post %>
+   <div id="new_button">
      <a href="/posts/new"><strong><i class="glyphicon glyphicon-plus-sign"></i>  New Post</strong></a>
-     </div>
-     <% end %>
-     <br />  
-       <hr>
-           <br />
-      <div id="columns">
-        <%= render partial:'postPreview'%>
-        </div>
-      </div>
+   </div>
+   <% end %>
+   <br />  
+   <hr>
+   <br />
+   <div id="columns">
+    <%= render partial:'postPreview'%>
   </div>
+</div>
+</div>
 </div>

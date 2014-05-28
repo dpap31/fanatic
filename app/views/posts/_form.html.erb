@@ -1,10 +1,10 @@
   <table summary="Post form fields">
-  <tr>
-	  <%= f.hidden_field :user_id %>
-    <th class="sr-only"><%= f.label(:title) %></th>
-    <td><%= f.text_field :title, placeholder: 'Title' %></td>
-  </tr>
-  <tr>
+    <tr>
+     <%= f.hidden_field :user_id %>
+     <th class="sr-only"><%= f.label(:title) %></th>
+     <td><%= f.text_field :title, placeholder: 'Title' %></td>
+   </tr>
+   <tr>
     <th class="sr-only"><%= f.label(:url) %></th>
     <td><%= f.text_field(:url) %></td>
     <%= f.text_field :tag_list, placeholder: 'Tag' %>
@@ -15,13 +15,13 @@
   </tr>
   <tr>
    <%= f.file_field :image %>
-    <th class="sr-only"><%= f.label :remote_image_url, "or image URL" %>
+   <th class="sr-only"><%= f.label :remote_image_url, "or image URL" %>
     <td><%= f.text_field :remote_image_url, placeholder: 'Image URL' %>
     </tr>
-  <tr>
-  <th><%= f.label(:content) %></th>
-  <td><%= f.text_area(:content, size: '100x50') %></td>
-  </tr>
-</table>
+    <tr>
+      <th><%= f.label(:content) %></th>
+      <td><%= f.text_area(:content, size: '100x50') %></td>
+    </tr>
+  </table>
 
 

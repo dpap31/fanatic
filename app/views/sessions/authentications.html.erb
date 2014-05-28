@@ -1,21 +1,21 @@
 <% title = "Sign In" %>
 
 <% flash.each do |name, msg| -%>
-      <%= content_tag :div, msg, class: name %>
+<%= content_tag :div, msg, class: name %>
 <% end -%>
 
 <% if current_user %>
-  Welcome <%= current_user.name %>!
-  <%= link_to "Sign Out", signout_path %>
+Welcome <%= current_user.name %>!
+<%= link_to "Sign Out", signout_path %>
 <% else %>
-  <%= link_to "Sign in with Twitter", "/auth/twitter" %>
+<%= link_to "Sign in with Twitter", "/auth/twitter" %>
 <% end %>
 <p></p>
 <% if current_user %>
-  Welcome <%= current_user.name %>!
-  <%= link_to "Sign Out", signout_path %>
+Welcome <%= current_user.name %>!
+<%= link_to "Sign Out", signout_path %>
 <% else %>
-  <%= link_to "Sign in with Facebook", "/auth/facebook" %>
+<%= link_to "Sign in with Facebook", "/auth/facebook" %>
 <% end %>
 
 <p>
@@ -24,20 +24,20 @@
 </p>
 
 <%= form_tag "/auth/identity/callback" do %>
-  <div class="field">
-    <%= label_tag :auth_key, "Email" %><br>
-    <%= text_field_tag :auth_key %>
-  </div>
-  <div class="field">
-    <%= label_tag :password %><br>
-    <%= password_field_tag :password %>
-  </div>
-  <div class="actions"><%= submit_tag "Login" %></div>
+<div class="field">
+  <%= label_tag :auth_key, "Email" %><br>
+  <%= text_field_tag :auth_key %>
+</div>
+<div class="field">
+  <%= label_tag :password %><br>
+  <%= password_field_tag :password %>
+</div>
+<div class="actions"><%= submit_tag "Login" %></div>
 <% end %>
 
 <a href="/auth/twitter" class="auth_provider">
-<i class="fa fa-twitter fa-4x"></i>
+  <i class="fa fa-twitter fa-4x"></i>
 </a>
 <a href="/auth/facebook" class="auth_provider">
-<i class="fa fa-facebook fa-4x"></i>
+  <i class="fa fa-facebook fa-4x"></i>
 </a>

@@ -10,40 +10,40 @@ class User < ActiveRecord::Base
  has_and_belongs_to_many :teams
  accepts_nested_attributes_for :teams
 
-def self.create_with_omniauth(auth)
+ def self.create_with_omniauth(auth)
   create! do |user|
     user.provider = auth["provider"]
     user.uid = auth["uid"]
     user.location = auth["info"]["location"]
     user.name = auth["info"]["name"]
     if  user.provider == 'twitter'
-        user.image = auth['info']['image'].sub("_normal", "")
+      user.image = auth['info']['image'].sub("_normal", "")
     end
 
     if user.provider == 'facebook'
-        user.image = auth['info']['image']
-    end
+      user.image = auth['info']['image']
     end
   end
- 
- def increase_login_count
+end
+
+def increase_login_count
   self.login_count += 1
   self.save
   self
 end
 
-  
+
 has_many :evaluations, class_name: "RSEvaluation", as: :source
 
 has_reputation :votes, 
-  :source => {reputation: :votes, of: :posts}, aggregated_by: :sum
+:source => {reputation: :votes, of: :posts}, aggregated_by: :sum
 end
 
 ROLES = %w[admin moderator author]
- 
- def self.role_symbols
-    User.role.to_sym
-  end
+
+def self.role_symbols
+  User.role.to_sym
+end
 
 
 def voted_for?(post)

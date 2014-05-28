@@ -9,36 +9,36 @@
 <h3>Friends</h3>
 <hr>
 <ul>
-<% for friendship in @user.friendships %>
-<li>
-<%=h friendship.friend.name %>
-(<%= link_to "remove", friendship, :method => :delete %>)
-</li>
-<% end %>
+	<% for friendship in @user.friendships %>
+	<li>
+		<%=h friendship.friend.name %>
+		(<%= link_to "remove", friendship, :method => :delete %>)
+	</li>
+	<% end %>
 </ul>
 <ul>
-  <% for user in @user.inverse_friends %>
-    <li><%= user.name %></li>
-  <% end %>
+	<% for user in @user.inverse_friends %>
+	<li><%= user.name %></li>
+	<% end %>
 </ul>
 <p><%= link_to "Find Friends", users_path %>
 
-<h3>Teams</h3>
-<hr>
-<% @teams.each do |team| %>
-<%= team.name %>
-<%= team.location %>
-<%= team.abbreviation %>
-<%=Post.tagged_with(team.name).page(params[:page]).per_page(3).inspect%>
-<hr>
-<% end %>
+	<h3>Teams</h3>
+	<hr>
+	<% @teams.each do |team| %>
+	<%= team.name %>
+	<%= team.location %>
+	<%= team.abbreviation %>
+	<%=Post.tagged_with(team.name).page(params[:page]).per_page(3).inspect%>
+	<hr>
+	<% end %>
 
 
-<h3>My Posts</h3>
-<hr>
-<%= @my_posts.inspect %>
+	<h3>My Posts</h3>
+	<hr>
+	<%= @my_posts.inspect %>
 
-<hr>
+	<hr>
 
 
 

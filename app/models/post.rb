@@ -12,13 +12,13 @@ class Post < ActiveRecord::Base
     reorder('votes desc').find_with_reputation(:votes, :all)
   end 
   
- def self.most_voted
-  find_with_reputation(:votes, :all)
- end
+  def self.most_voted
+    find_with_reputation(:votes, :all)
+  end
 
- def self.time_delta
- 	((Time.now - Post.all.created_at) / 1.hour).round
- end
+  def self.time_delta
+    ((Time.now - Post.all.created_at) / 1.hour).round
+  end
 
   # def self.hot
   # 	#comment_count = Post.comments.count

@@ -1,27 +1,27 @@
 <% @posts.each do |post| %>
 <div class="pin">
-          <div class="image">
-            <a href="/posts/<%=post.slug%>"><img class= "img-responsive" src="<%= post.image %>" /></a>
-          </div>
-            
-            <div class="caption">
-              <h3>
-                <%= post.title %>
-              </h3>
-              <div class = 'post-info'>
-              <div class = 'tags'>
-                <ul class="token-input-token-facebook">
-                <li class="token-input-token-facebook"><%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join('<li class="token-input-token-facebook"> ') %></li></ul>
-                 </div>
-                <div id = 'cheers'>
-                <%= pluralize post.reputation_for(:votes).to_i, "cheer" %> 
-                </div>
-                </div>
-          </div>
+  <div class="image">
+    <a href="/posts/<%=post.slug%>"><img class= "img-responsive" src="<%= post.image %>" /></a>
+  </div>
+  
+  <div class="caption">
+    <h3>
+      <%= post.title %>
+    </h3>
+    <div class = 'post-info'>
+      <div class = 'tags'>
+        <ul class="token-input-token-facebook">
+          <li class="token-input-token-facebook"><%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join('<li class="token-input-token-facebook"> ') %></li></ul>
         </div>
-        <% end %>
+        <div id = 'cheers'>
+          <%= pluralize post.reputation_for(:votes).to_i, "cheer" %> 
         </div>
-        <div class="text-center">
-        <%= will_paginate @posts, renderer: BootstrapPagination::Rails%>
       </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+<div class="text-center">
+  <%= will_paginate @posts, renderer: BootstrapPagination::Rails%>
+</div>
 

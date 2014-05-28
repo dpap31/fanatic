@@ -3,9 +3,9 @@
 <h1>New post</h1>
 <hr>
 <div class="col-md-10"> 
-  <%= form_for( @post, :html =>{ :multipart => true}, :url => {:controller => "posts", :action => "create"}) do |f| %>
-  <%= render(partial: "new_form", locals: {f: f})%>  
-  <%= f.submit "Publish", class: "form-buttons" %>
-<% end %>
+	<%= form_for( @post, :html =>{ :multipart => true}, :url => {:controller => "posts", :action => "create"}) do |f| %>
+	<%= render(partial: "new_form", locals: {f: f})%>  
+	<%= f.submit "Publish", class: "form-buttons" %>
+	<% end %>
 </div>
 </div>    

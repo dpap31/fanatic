@@ -1,28 +1,28 @@
 <%= javascript_include_tag "post_index" %>
 <%= stylesheet_link_tag "posts" %>
- <div class="container">
-   <div class="row">
-    <div class="col-md-10 column">
-      <div id="title">
+<div class="container">
+ <div class="row">
+  <div class="col-md-10 column">
+    <div id="title">
      <a href="/posts"><strong><i class="glyphicon glyphicon-star-empty"></i>  All Posts</strong></a> 
-      </div> 
+   </div> 
 
-     <div id="new_button">
+   <div id="new_button">
      <%if can? :create, Post %>
      <a href="/posts/new"><strong><i class="glyphicon glyphicon-plus-sign"></i>  New Post</strong></a>
      <% end %>
-     </div>  
-       <br>  
-       <hr>
-           <br>
-  <div>
+   </div>  
+   <br>  
+   <hr>
+   <br>
+   <div>
 
-<input type="hidden" id="dropdown" style="width:300px" class="input-xlarge" />
+    <input type="hidden" id="dropdown" style="width:300px" class="input-xlarge" />
 
   </div>
   <br>
-	     <div id="columns">
-        <%= render partial:'postPreview'%>
-    </div>
+  <div id="columns">
+    <%= render partial:'postPreview'%>
   </div>
+</div>
 </div>

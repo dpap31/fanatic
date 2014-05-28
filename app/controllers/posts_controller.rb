@@ -4,12 +4,12 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-  if params[:tag]
-    @posts = hottness(@posts.tagged_with(params[:tag])).paginate(page: params[:page], :per_page => 12)
-  else
-    @tags_all = ActsAsTaggableOn::Tag.all
-    @posts = hottness(Post.all).paginate(page: params[:page], :per_page => 12)
-  end 
+    if params[:tag]
+      @posts = hottness(@posts.tagged_with(params[:tag])).paginate(page: params[:page], :per_page => 12)
+    else
+      @tags_all = ActsAsTaggableOn::Tag.all
+      @posts = hottness(Post.all).paginate(page: params[:page], :per_page => 12)
+    end 
   end
 
   def list
@@ -83,10 +83,10 @@ class PostsController < ApplicationController
     redirect_to :back, notice: "Thank you for voting"
   end
 
-def tags 
-  @tags = ActsAsTaggableOn::Tag.where("tags.name LIKE ?", "%#{params[:q]}%") 
-  respond_to do |format|
-    format.json { render :json => @tags.collect{|t| {:id => t.name, :name => t.name }}}
+  def tags 
+    @tags = ActsAsTaggableOn::Tag.where("tags.name LIKE ?", "%#{params[:q]}%") 
+    respond_to do |format|
+      format.json { render :json => @tags.collect{|t| {:id => t.name, :name => t.name }}}
     end
   end
 
@@ -104,11 +104,11 @@ def tags
     def post_params
       params.require(:post).permit(:title, :content, :visible, :url, :tag_list, :user_id, :id, :user_name, :name, :image, :remote_image_url, :user_posts)   
     end
-     
-     def find_user
-        if params[:user_id]
-          @user = User.find_by_id(params[:user_id, :user_name])
+    
+    def find_user
+      if params[:user_id]
+        @user = User.find_by_id(params[:user_id, :user_name])
       end
     end
 
-end
+  end

@@ -1,13 +1,13 @@
 <div class="panel panel-default">
 	<div class="panel-heading"><h4> 
-	<span class="maki-basketball"></span>  NBA Headlines</h4></div>
-	<div class="panel-body">
-		<div class="ESPN_list-group"> 
+		<span class="maki-basketball"></span>  NBA Headlines</h4></div>
+		<div class="panel-body">
+			<div class="ESPN_list-group"> 
 
-			<% @accordion_headlines_nba.each do |headline| %>
-			<a href="<%= headline.web_url %>" target="_blank" class="list-group-item"><%= headline.title %>
-				<%end%> 
-		</a>
+				<% @accordion_headlines_nba.each do |headline| %>
+				<a href="<%= headline.web_url %>" target="_blank" class="list-group-item"><%= headline.title %>
+					<%end%> 
+				</a>
+			</div>
+		</div>
 	</div>
-</div>
-</div>

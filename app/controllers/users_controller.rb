@@ -14,12 +14,12 @@ class UsersController < ApplicationController
   end
 
   def dashboard
-     @user = current_user
-     @teams = current_user.teams
-     @my_posts = current_user.posts.limit(3)
-     @my_posts_count = current_user.posts.count
-     @my_posts_cheers = current_user.reputation_for(:votes).to_i
-  end
+   @user = current_user
+   @teams = current_user.teams
+   @my_posts = current_user.posts.limit(3)
+   @my_posts_count = current_user.posts.count
+   @my_posts_cheers = current_user.reputation_for(:votes).to_i
+ end
 
   # GET /users/new
   def new
@@ -72,11 +72,11 @@ class UsersController < ApplicationController
 
 # Used to get all posts created by a specific user
 def posts
-    @user = User.find_by_id(params[:id])
-    @posts = @user.posts.page(params[:page]).per_page(12)
+  @user = User.find_by_id(params[:id])
+  @posts = @user.posts.page(params[:page]).per_page(12)
 end
 
-  private
+private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
@@ -86,4 +86,4 @@ end
     def user_params
       params[:user].permit(:id, :username, :first_name, :last_name, :email, :name, :image, :search, :role, team_ids: [])
     end
-end
+  end

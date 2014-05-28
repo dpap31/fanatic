@@ -1,6 +1,6 @@
 <%= form_for([@post, @post.comments.build]) do |f| %>
 
-    <%= f.text_area :body, :class => 'form-control' %>
-    <br>
-    <%= f.submit "Post Comment", class: "btn btn-default" %>
+<%= f.text_area :body, :class => 'form-control' %>
+<br>
+<%= f.submit "Post Comment", class: "btn btn-default" %>
 <% end %>

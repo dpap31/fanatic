@@ -1,8 +1,7 @@
 class MenuController < ApplicationController
- 
   def index
-
   end
+  
   def headlines
     espn = EspnRb.headlines(:api_key =>ENV["ESPN_API_key"])
 

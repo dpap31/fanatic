@@ -5,22 +5,22 @@ class Ability
   user ||= User.new # guest user
   
   if user.role.to_sym == :admin
-      can :manage, :all
+    can :manage, :all
   else
-      can :read, :all
+    can :read, :all
   end
   if user.role.to_sym == :author
     can :read, :all
     can :create, Comment
     can :destroy, Comment do |comment|
-        comment.try(:user) == user 
+      comment.try(:user) == user 
     end  
     can :create, Post
     can :update, Post do |post|
-        post.try(:user) == user 
+      post.try(:user) == user 
     end
     can :delete, Post do |post|
-        post.try(:user) == user 
+      post.try(:user) == user 
     end
     can :list, Post
     can :tags, Post
@@ -42,5 +42,5 @@ class Ability
     #     can :create, Article
     #     can :update, Article do |article|
     #       article.try(:user) == user
-         end
-       end
+  end
+end

@@ -1,84 +1,84 @@
 <!DOCTYPE html>
 <html ng-app='onboardingApp'>
 <head>
-  <%= javascript_include_tag "onboarding"%>
-  <%= stylesheet_link_tag "//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css", media: "all" %>
-  <%= stylesheet_link_tag "//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" %>
-  <%= stylesheet_link_tag "onboarding" %>
+	<%= javascript_include_tag "onboarding"%>
+	<%= stylesheet_link_tag "//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css", media: "all" %>
+	<%= stylesheet_link_tag "//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" %>
+	<%= stylesheet_link_tag "onboarding" %>
 </script>
 </head>
 <div class="modal fade onboarding-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-keyboard="false" data-backdrop="static">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-<div id="rootwizard">
-	<div class="navbar">
-	  <div class="navbar-inner">
-	    <div class="container">
-	<ul>
-	  	<li><a href="#tab1" data-toggle="tab">Welcome</a></li>
-		<li><a href="#tab2" data-toggle="tab">Setup</a></li>
-		<li><a href="#tab3" data-toggle="tab">Personalize</a></li>
-		<li><a href="#tab4" data-toggle="tab">Sports</a></li>
-		<li><a href="#tab5" data-toggle="tab">Teams</a></li>
-	</ul>
-	 </div>
-	  </div>
-	</div>
-	<div class="tab-content">
-	    <div class="tab-pane" id="tab1">
-	    <div id='welcome'>
-	    <h3> Welcome to Fanatic </h3>
-	    --- Awesome Welcome Graphic Here ----
-	    like Beats Streaming service onboarding http://uxarchive.com/apps/beats_music
-	    </div>
-	    </div>
-	   <div class="tab-pane" id="tab2">
-	  <div id= 'user_reg'>
-	  <h3>Tell us about yourself</h3>
-	    <%= form_for @user, :html =>{ :multipart => true}, as: :user, url: user_path(@user), method: :patch do |f| %>
-<div class="form-group">
-  <label for="inputFirst">My name is</label>
-    <%= f.text_field :first_name, placeholder:' First Name', class: 'form-control'%>
-    </div>
-    <div class="form-group">
-    <%= f.text_field :last_name, placeholder:' Last Name', class: 'form-control'%>
-    </div>
-    <label for="inputEmail">Confirm your email</label>
-    <div class="input-group margin-bottom-sm">
-  	<span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
-  	<%= f.text_field :email, placeholder:' Email', class: 'form-control'%>
-	</div>
-	<label for="inputUsername">Choose a username</label>
-    <div class="input-group margin-bottom-sm">
-  	<span class="input-group-addon"><i class="fa  fa-qq fa-fw"></i></span>
-  	<%= f.text_field :username, placeholder:' Username', class: 'form-control'%>
-	</div>
-	</div>
-  </div>
-  <div class="tab-pane" id="tab3">
-  <div id='personalize'>
-  	<h3>Hi <%=@user.name%></h3>
-		  <img class="img-circle box-shad" alt="" src="<%= @user.image %>">
-	<h4>Tell us who you root for so we can show you the content you care about.</h4>
-	</div>
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div id="rootwizard">
+				<div class="navbar">
+					<div class="navbar-inner">
+						<div class="container">
+							<ul>
+								<li><a href="#tab1" data-toggle="tab">Welcome</a></li>
+								<li><a href="#tab2" data-toggle="tab">Setup</a></li>
+								<li><a href="#tab3" data-toggle="tab">Personalize</a></li>
+								<li><a href="#tab4" data-toggle="tab">Sports</a></li>
+								<li><a href="#tab5" data-toggle="tab">Teams</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="tab-content">
+					<div class="tab-pane" id="tab1">
+						<div id='welcome'>
+							<h3> Welcome to Fanatic </h3>
+							--- Awesome Welcome Graphic Here ----
+							like Beats Streaming service onboarding http://uxarchive.com/apps/beats_music
+						</div>
+					</div>
+					<div class="tab-pane" id="tab2">
+						<div id= 'user_reg'>
+							<h3>Tell us about yourself</h3>
+							<%= form_for @user, :html =>{ :multipart => true}, as: :user, url: user_path(@user), method: :patch do |f| %>
+							<div class="form-group">
+								<label for="inputFirst">My name is</label>
+								<%= f.text_field :first_name, placeholder:' First Name', class: 'form-control'%>
+							</div>
+							<div class="form-group">
+								<%= f.text_field :last_name, placeholder:' Last Name', class: 'form-control'%>
+							</div>
+							<label for="inputEmail">Confirm your email</label>
+							<div class="input-group margin-bottom-sm">
+								<span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+								<%= f.text_field :email, placeholder:' Email', class: 'form-control'%>
+							</div>
+							<label for="inputUsername">Choose a username</label>
+							<div class="input-group margin-bottom-sm">
+								<span class="input-group-addon"><i class="fa  fa-qq fa-fw"></i></span>
+								<%= f.text_field :username, placeholder:' Username', class: 'form-control'%>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="tab3">
+						<div id='personalize'>
+							<h3>Hi <%=@user.name%></h3>
+							<img class="img-circle box-shad" alt="" src="<%= @user.image %>">
+							<h4>Tell us who you root for so we can show you the content you care about.</h4>
+						</div>
 
-	</div>
-		<div class="tab-pane" id="tab4">
-		  <div id='sports'>
-			<h3>Select your favorite sports</h3>
-			Insert sports CSS sprites here, like lynda free account http://www.lynda.com/quickstart:
-			<div>
-			<span class="fa-stack"><i class='maki-baseball'></i></span>
-			<span class="fa-stack"><i class='maki-basketball'></i></span>
-			<span class="fa-stack"><i class='maki-football'></i></span>
-			<span class="fa-stack"><i class='maki-soccer'></i></span>
-			</div>
-		  </div>
-	    </div>
-		<div class="tab-pane" id="tab5">
-		<div id='teams'>
-			<h3>Who are your favorite teams?</h3>
-		  <%= select_tag("user[team_ids][]", options_for_select(Team.all.collect { |team| [team.info.html_safe, team.id] }, @user.teams.collect { |team| team.id}), {:multiple=>true, :size=>5, :class => 'form-control', :placeholder=>"Warriors, 49ers, Giants"}) %>
+					</div>
+					<div class="tab-pane" id="tab4">
+						<div id='sports'>
+							<h3>Select your favorite sports</h3>
+							Insert sports CSS sprites here, like lynda free account http://www.lynda.com/quickstart:
+							<div>
+								<span class="fa-stack"><i class='maki-baseball'></i></span>
+								<span class="fa-stack"><i class='maki-basketball'></i></span>
+								<span class="fa-stack"><i class='maki-football'></i></span>
+								<span class="fa-stack"><i class='maki-soccer'></i></span>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="tab5">
+						<div id='teams'>
+							<h3>Who are your favorite teams?</h3>
+							<%= select_tag("user[team_ids][]", options_for_select(Team.all.collect { |team| [team.info.html_safe, team.id] }, @user.teams.collect { |team| team.id}), {:multiple=>true, :size=>5, :class => 'form-control', :placeholder=>"Warriors, 49ers, Giants"}) %>
 
 	<!-- 			---Angular JS?----
 
@@ -91,22 +91,22 @@
 			</span>
 		</li>
 		</ul>
-		</div> -->
+	</div> -->
 
 
-		<%= f.submit "Finish", :class => 'btn btn-primary btn-lg btn-block', id: "form_submit" %>
-			<% end %>
-			
-	    </div>
-	   </div>
-	  </div>
-		<ul class="pager wizard">
-		  	<li class="next"><a href="#">Next</a></li>
-		</ul>
-	</div>		
+	<%= f.submit "Finish", :class => 'btn btn-primary btn-lg btn-block', id: "form_submit" %>
+	<% end %>
+	
 </div>
-    </div>
-  </div>
+</div>
+</div>
+<ul class="pager wizard">
+	<li class="next"><a href="#">Next</a></li>
+</ul>
+</div>		
+</div>
+</div>
+</div>
 </div>
 <!-- 	<%= hidden_field_tag "user[team_ids][]", nil %>
 			<% Team.all.each do |team| %>

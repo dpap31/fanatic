@@ -1,9 +1,9 @@
 <div class="activity">
-   <ul class="activity list-group">
-      <% @activities.each do |activity| %>          
-       <li class="list-group-item"><a href="#">
-          	<%= render_activity activity %></a><small>(<%= time_ago_in_words(activity.created_at) %> ago) 	
-			</small>          
-		 <% end %>	
-		</li>
-	</ul>
+	<ul class="activity list-group">
+		<% @activities.each do |activity| %>          
+		<li class="list-group-item"><a href="#">
+			<%= render_activity activity %></a><small>(<%= time_ago_in_words(activity.created_at) %> ago) 	
+		</small>          
+		<% end %>	
+	</li>
+</ul>
