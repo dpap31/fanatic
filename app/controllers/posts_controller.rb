@@ -20,9 +20,7 @@ class PostsController < ApplicationController
   def show
     @posts = Post.find(params[:id])
     @posts_user_id = Post.find(params[:id]).user_id
-    @post_tag_id= @post.tags.map do |a| a.id
   end
-end
 
   # GET /posts/new
   def new

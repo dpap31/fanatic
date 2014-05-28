@@ -1,19 +1,8 @@
 <%= stylesheet_link_tag "posts_show" %>
-
-Tags: <%= raw @post.tag_list %>
-Tags Table IDs: <%= @post_tag_id%>
-
-<br>
-
-Tagging Table: <%= ActsAsTaggableOn::Tagging.find_all_by_tag_id(@post_tag_id).each do |a|
-	a.created_at
-	a.tag_id
-end
- %>
-
-
-
-
+<% @trending_tags.each do|tag_id, tag_count|%>
+<li><%= link_to ActsAsTaggableOn::Tag.find_by_id(tag_id).name, tag_path(ActsAsTaggableOn::Tag.find_by_id(tag_id).name)%>
+(<%= tag_count %>)</li>
+<% end %>
 <div class="container">
 	<div class="row clearfix">
 		<div class="col-md-8 column">
