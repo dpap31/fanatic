@@ -18,12 +18,12 @@
    <div>
 
     <input type="hidden" id="dropdown" style="width:300px" class="input-xlarge" />
-   <ul class="nav nav-pills sort_menu">
-      <li class="active">
+    <ul class="nav nav-pills sort_menu">
+      <li class="inactive">
         <%= link_to "Hot", controller: 'posts', action:'index'  %>
         </a>
       </li>
-      <li class="inactive">
+      <li class="active">
         <%= link_to "Recent", controller: 'posts', action:'sort_created'  %>
         </a>
       </li>

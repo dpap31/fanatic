@@ -2,6 +2,7 @@ FanaticV2::Application.routes.draw do
   root "public#index"
   get "public/index"
   get "posts/tags" => "posts#tags", :as => :tags
+  get "posts/sort_created" => "posts#sort_created"
   get 'tags/:tag', to: 'posts#index', as: :tag
   get 'users/:id/posts' => 'users#posts', :as => :user_posts
   match "menu" => 'menu#index', via: [:get, :post]

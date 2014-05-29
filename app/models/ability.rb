@@ -25,6 +25,7 @@ class Ability
     can :list, Post
     can :tags, Post
     can :vote, Post
+    can :sort_created, Post
   else
     can :read, :all
   end

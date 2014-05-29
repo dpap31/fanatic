@@ -1,8 +1,4 @@
 <%= stylesheet_link_tag "posts_show" %>
-<% @trending_tags.each do|tag_id, tag_count|%>
-<li><%= link_to ActsAsTaggableOn::Tag.find_by_id(tag_id).name, tag_path(ActsAsTaggableOn::Tag.find_by_id(tag_id).name)%>
-	(<%= tag_count %>)</li>
-	<% end %>
 	<div class="container">
 		<div class="row clearfix">
 			<div class="col-md-8 column">
