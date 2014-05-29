@@ -11,10 +11,10 @@ class PostsController < ApplicationController
       @posts = hottness(Post.all).paginate(page: params[:page], :per_page => 12)
     end 
   end
-  
+
   def sort_created
     if params[:tag]
-      @posts.tagged_with(params[:tag]).page(params[:page]).per_page(12)
+      @posts = Post.order('created_at DESC').tagged_with(params[:tag]).paginate(page: params[:page], :per_page => 12)
     else
       @tags_all = ActsAsTaggableOn::Tag.all
       @posts = Post.order('created_at DESC').paginate(page: params[:page], :per_page => 12)

@@ -20,11 +20,11 @@
     <input type="hidden" id="dropdown" style="width:300px" class="input-xlarge" />
    <ul class="nav nav-pills sort_menu">
       <li class="active">
-        <%= link_to "Hot", controller: 'posts', action:'index'  %>
+        <%= link_to "Hot", controller: 'posts', action:'index', :params => params.merge(:limit => 5)%>
         </a>
       </li>
       <li class="inactive">
-        <%= link_to "Recent", controller: 'posts', action:'sort_created'  %>
+        <%= link_to "Recent", controller: 'posts', action:'sort_created', :params => params.merge(:limit => 5)  %>
         </a>
       </li>
     </ul>
