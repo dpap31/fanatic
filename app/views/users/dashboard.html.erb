@@ -1,6 +1,122 @@
-<%= image_tag(@user.image) %>
-<h3><%= @user.name %> Profile</h3>
-<h5><%= @user.location %></h5>
+<!DOCTYPE html>
+<html>
+<head>
+	<title><%=@user.name%>'s Fanatic Dashboard</title>
+	<%= stylesheet_link_tag "dashboard" %>
+</head>
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-9 column">
+			<div class='teamname'>
+				<h3><%= @teams.first.name%></h3>
+			</div>
+			<table>
+				<tr>
+					<% Post.tagged_with(@teams.first.name).each do |post| %>
+					<td>
+						<div class="thumbnail">
+							<%= image_tag(post.image, size: "200x200")%>
+							<h3>
+								<%= post.title %>
+							</h3>
+							<p>
+								
+							</p>
+						</div>
+					</div>
+				</td>
+				<% end %>
+			</tr>
+		</table>
+		<div class='teamname'>
+			<h3><%= @teams.second.name%></h3>
+		</div>
+		<table>
+			<tr>
+				<% Post.tagged_with(@teams.second.name).each do |post| %>
+				<td>
+					<div class="thumbnail">
+						<%= image_tag(post.image, size: "200x200")%>
+						<h3>
+							<%= post.title %>
+						</h3>
+						<p>
+							
+						</p>
+					</div>
+				</div>
+			</td>
+			<% end %>
+		</tr>
+	</table>
+	<div class='teamname'>
+		<h3><%=@teams.third.name%></h3>
+	</div>
+	<table>
+		<tr>
+			<% Post.tagged_with(@teams.third.name).each do |post| %>
+			<td>
+				<div class="thumbnail">
+					<%= image_tag(post.image, size: "200x200")%>
+					<h3>
+						<%= post.title %>
+					</h3>
+					<p>
+						
+					</p>
+				</div>
+			</div>
+		</td>
+		<% end %>
+	</tr>
+</table>
+<h3>
+	Recent Activity
+</h3>
+<%= render template: 'layouts/_activities.html.erb'%>
+</div>
+</div>
+<div class="col-md-3 column">
+	<%= image_tag(@user.image, size: "140x140") %>
+	<h3>
+		<%= @user.name %>'s Fanatic Dashboard
+	</h3>
+	<dl>
+		<dt>
+			Post Count
+		</dt>
+		<dd>
+			<%= @my_posts_count %>
+		</dd>
+		<dt>
+			Post Cheers
+		</dt>
+		<dd>
+			<%= @my_posts_cheers %>
+		</dd>
+		<dt>
+			Following
+		</dt>	
+		<dd>
+			<ul>
+				<% for friendship in @user.friendships %>
+				<li>
+					<%=h friendship.friend.image %>
+					(<%= link_to "remove", friendship, :method => :delete %>)
+				</li>
+				<% end %>
+			</dd>
+			<dt>
+				My Teams
+			</dt>
+			<dd>
+				<% @teams.each do |team| %>
+				<%= team.name %>
+				<% end %>
+			</dd>
+		</dl>
+	</div>
+</div>
 <h3>Post Count</h3>
 <%= @my_posts_count %>
 <hr>
@@ -29,9 +145,13 @@
 	<%= team.name %>
 	<%= team.location %>
 	<%= team.abbreviation %>
-	<%=Post.tagged_with(team.name).page(params[:page]).per_page(3).inspect%>
-	<hr>
+	<% Post.tagged_with(team.name).page(params[:page]).per_page(3).each do |post| %>
+	<%= post.title %>
+	<%= post.image %>
 	<% end %>
+	<% end %>
+	<hr>
+	
 
 
 	<h3>My Posts</h3>
@@ -39,6 +159,7 @@
 	<%= @my_posts.inspect %>
 
 	<hr>
+
 
 
 
