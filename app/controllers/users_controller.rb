@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy, :role]
+  before_action :hottness, :set_user, only: [:show, :edit, :update, :destroy, :role]
 
   # GET /users
   # GET /users.json
@@ -77,6 +77,9 @@ def posts
 end
 
 private
+    def hottness(post)
+      post.sort_by {|p| (((p.reputation_for(:votes).to_i + p.comments.count)-1)/((Time.now - p.created_at) / 1.hour.round+2)**1.5)}.reverse
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])

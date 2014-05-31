@@ -7,18 +7,21 @@
 <div class="container">
 	<div class="row clearfix">
 		<div class="col-md-9 column">
+		<h2>Recommended Posts</h2>
+		<hr>
 			<div class='teamname'>
-				<h3><%= @teams.first.name%></h3>
+			<h4><%= link_to "#{@teams.first.location} #{@teams.first.name}", tag_path(@teams.first.name)%></h4>
 			</div>
 			<table>
 				<tr>
-					<% Post.tagged_with(@teams.first.name).each do |post| %>
+					<% Post.tagged_with(@teams.first.name).limit(3).each do |post| %>
 					<td>
+					<%= link_to post_path(post.id) do%>
 						<div class="thumbnail">
 							<%= image_tag(post.image, size: "200x200")%>
-							<h3>
+							<h5>
 								<%= post.title %>
-							</h3>
+							</h5>
 							<p>
 								
 							</p>
@@ -26,22 +29,23 @@
 					</div>
 				</td>
 				<% end %>
+				<% end %>
 			</tr>
 		</table>
 		<div class='teamname'>
-			<h3><%= @teams.second.name%></h3>
+			<h4><%= @teams.second.location%> <%= @teams.second.name%></h4>
 		</div>
 		<table>
 			<tr>
-				<% Post.tagged_with(@teams.second.name).each do |post| %>
+				<% Post.tagged_with(@teams.second.name).limit(3).each do |post| %>
 				<td>
 					<div class="thumbnail">
 						<%= image_tag(post.image, size: "200x200")%>
-						<h3>
+						<h5>
 							<%= post.title %>
-						</h3>
+						</h5>
 						<p>
-							
+
 						</p>
 					</div>
 				</div>
@@ -50,19 +54,19 @@
 		</tr>
 	</table>
 	<div class='teamname'>
-		<h3><%=@teams.third.name%></h3>
+		<h4><%= @teams.third.location%> <%=@teams.third.name%></h4>
 	</div>
 	<table>
 		<tr>
-			<% Post.tagged_with(@teams.third.name).each do |post| %>
+			<% Post.tagged_with(@teams.third.name).limit(3).each do |post| %>
 			<td>
 				<div class="thumbnail">
 					<%= image_tag(post.image, size: "200x200")%>
-					<h3>
+					<h5>
 						<%= post.title %>
-					</h3>
+					</h5>
 					<p>
-						
+
 					</p>
 				</div>
 			</div>
@@ -70,18 +74,36 @@
 		<% end %>
 	</tr>
 </table>
-<h3>
-	Recent Activity
-</h3>
-<%= render template: 'layouts/_activities.html.erb'%>
-</div>
+<div class='teamname'>
+			<h2>My Posts</h2>
+		</div>
+		<table>
+			<tr>
+				<% Post.all.where(:user_id => current_user.id).order("created_at DESC").limit(6).each do |post| %>
+				<td>
+					<div class="thumbnail">
+						<%= image_tag(post.image, size: "200x200")%>
+						<h5>
+							<%= post.title %>
+						</h5>
+						<p>
+
+						</p>
+					</div>
+				</div>
+			</td>
+			<% end %>
+		</tr>
+	</table>
+
 </div>
 <div class="col-md-3 column">
 	<%= image_tag(@user.image, size: "140x140") %>
-	<h3>
-		<%= @user.name %>'s Fanatic Dashboard
-	</h3>
-	<dl>
+	<h4>
+		<%= @user.name %>'s Stats
+	</h4>
+	<hr>
+	<dl class="dl-horizontal">
 		<dt>
 			Post Count
 		</dt>
@@ -113,6 +135,13 @@
 				<% @teams.each do |team| %>
 				<%= team.name %>
 				<% end %>
+			</dd>
+		</dl>
+		<h4>Activity</h4>
+		<hr>
+		<dl>
+			<dd>
+			<%= render template: 'layouts/_activities.html.erb'%>
 			</dd>
 		</dl>
 	</div>
