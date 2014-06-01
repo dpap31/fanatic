@@ -4,8 +4,7 @@ class ApplicationController < ActionController::Base
   include PublicActivity::StoreController
   before_action :check_sign_in, :activities, :trending_tags
   protect_from_forgery with: :exception
-
-  helper_method :current_user
+  helper_method :current_user, :hottness
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
@@ -13,7 +12,10 @@ class ApplicationController < ActionController::Base
   hide_action :current_user
 
   private
-  
+  def hottness(post)
+      post.sort_by {|p| (((p.reputation_for(:votes).to_i + p.comments.count)-1)/((Time.now - p.created_at) / 1.hour.round+2)**1.5)}.reverse
+  end
+
   def check_sign_in
     unless user_signed_in?
       redirect_to controller:'public', action: 'index'

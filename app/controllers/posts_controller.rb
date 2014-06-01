@@ -100,10 +100,6 @@ class PostsController < ApplicationController
   end
 
   private
-    def hottness(post)
-      post.sort_by {|p| (((p.reputation_for(:votes).to_i + p.comments.count)-1)/((Time.now - p.created_at) / 1.hour.round+2)**1.5)}.reverse
-    end
-    
     # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = Post.friendly.find(params[:id])

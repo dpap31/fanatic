@@ -14,7 +14,7 @@
 			</div>
 			<table>
 				<tr>
-					<% Post.tagged_with(@teams.first.name).limit(3).each do |post| %>
+					<% hottness(Post.tagged_with(@teams.first.name)).take(3).each do |post| %>
 					<td>
 					<%= link_to post_path(post.id) do%>
 						<div class="thumbnail">
