@@ -9,8 +9,9 @@
 		<div class="col-md-8 column">
 		<h2>Recommended Posts</h2>
 		<hr>
+	   <%if @teams.first%>
 			<div class='teamname'>
-			<h4><%= link_to "#{@teams.first.location} #{@teams.first.name}", tag_path(@teams.first.name)%></h4>
+			<h4><i class="glyphicon glyphicon-link"></i> <%= link_to "#{@teams.first.location} #{@teams.first.name}",tag_path(@teams.first.name)%></h4>
 			</div>
 			<table>
 				<tr>
@@ -32,55 +33,115 @@
 				<% end %>
 			</tr>
 		</table>
-		<div class='teamname'>
-			<h4><%= @teams.second.location%> <%= @teams.second.name%></h4>
-		</div>
-		<table>
-			<tr>
-				<% Post.tagged_with(@teams.second.name).limit(3).each do |post| %>
-				<td>
-					<div class="thumbnail">
-						<%= image_tag(post.image, size: "200x200")%>
-						<h5>
-							<%= post.title %>
-						</h5>
-						<p>
-
-						</p>
-					</div>
-				</div>
-			</td>
-			<% end %>
-		</tr>
-	</table>
-	<div class='teamname'>
-		<h4><%= @teams.third.location%> <%=@teams.third.name%></h4>
-	</div>
-	<table>
-		<tr>
-			<% Post.tagged_with(@teams.third.name).limit(3).each do |post| %>
-			<td>
-				<div class="thumbnail">
-					<%= image_tag(post.image, size: "200x200")%>
-					<h5>
-						<%= post.title %>
-					</h5>
-					<p>
-
-					</p>
-				</div>
-			</div>
-		</td>
 		<% end %>
-	</tr>
-</table>
-<div class='teamname'>
-			<h2>My Posts</h2>
-		</div>
+		<%if @teams.second%>
+				<div class='teamname'>
+			<h4><i class="glyphicon glyphicon-link"></i> <%= link_to "#{@teams.second.location} #{@teams.second.name}", tag_path(@teams.second.name)%></h4>
+			</div>
+			<table>
+				<tr>
+					<% hottness(Post.tagged_with(@teams.second.name)).take(3).each do |post| %>
+					<td>
+					<%= link_to post_path(post.id) do%>
+						<div class="thumbnail">
+							<%= image_tag(post.image, size: "200x200")%>
+							<h5>
+								<%= post.title %>
+							</h5>
+							<p>
+								
+							</p>
+						</div>
+					</div>
+				</td>
+				<% end %>
+				<% end %>
+			</tr>
+		</table>
+			<% end %>
+		 <%if @teams.third%>
+			<div class='teamname'>
+			<h4> <i class="glyphicon glyphicon-link"></i> <%= link_to "#{@teams.third.location} #{@teams.third.name}", tag_path(@teams.third.name)%></h4>
+			</div>
+			<table>
+				<tr>
+					<% hottness(Post.tagged_with(@teams.third.name)).take(3).each do |post| %>
+					<td>
+					<%= link_to post_path(post.id) do%>
+						<div class="thumbnail">
+							<%= image_tag(post.image, size: "200x200")%>
+							<h5>
+								<%= post.title %>
+							</h5>
+							<p>
+								
+							</p>
+						</div>
+					</div>
+				</td>
+				<% end %>
+				<% end %>
+			</tr>
+		</table>
+	<% end %>
+	<%if @teams.fourth%>
+	<div class='teamname'>
+			<h4><i class="glyphicon glyphicon-link"></i> <%= link_to "#{@teams.fourth.location} #{@teams.fourth.name}", tag_path(@teams.fourth.name)%></h4>
+			</div>
+			<table>
+				<tr>
+					<% hottness(Post.tagged_with(@teams.fourth.name)).take(3).each do |post| %>
+					<td>
+					<%= link_to post_path(post.id) do%>
+						<div class="thumbnail">
+							<%= image_tag(post.image, size: "200x200")%>
+							<h5>
+								<%= post.title %>
+							</h5>
+							<p>
+								
+							</p>
+						</div>
+					</div>
+				</td>
+				<% end %>
+				<% end %>
+			</tr>
+		</table>
+	<% end %>
+	<%if @teams.fifth%>
+	<div class='teamname'>
+			<h4><i class="glyphicon glyphicon-link"></i> <%= link_to "#{@teams.fifth.location} #{@teams.fifth.name}", tag_path(@teams.fifth.name)%></h4>
+			</div>
+			<table>
+				<tr>
+					<% hottness(Post.tagged_with(@teams.fourth.name)).take(3).each do |post| %>
+					<td>
+					<%= link_to post_path(post.id) do%>
+						<div class="thumbnail">
+							<%= image_tag(post.image, size: "200x200")%>
+							<h5>
+								<%= post.title %>
+							</h5>
+							<p>
+								
+							</p>
+						</div>
+					</div>
+				</td>
+				<% end %>
+				<% end %>
+			</tr>
+		</table>
+	<% end %>
+	<%if Post.all.where(:user_id => current_user.id)%>
+			<h2> <i class="glyphicon glyphicon-pencil"></i> <%= link_to "My Posts", user_posts_path(@current_user)%></h2>
+			<hr>
 		<table>
 			<tr>
 				<% Post.all.where(:user_id => current_user.id).order("created_at DESC").limit(6).each do |post| %>
 				<td>
+				<%= link_to post_path(post.id) do %>
 					<div class="thumbnail">
 						<%= image_tag(post.image, size: "200x200")%>
 						<h5>
@@ -93,14 +154,18 @@
 				</div>
 			</td>
 			<% end %>
+			<% end %>
 		</tr>
 	</table>
-
+	<%else%>
+		<h2>My Posts</h2>
+	<%= link_to "Create Post", new_post_path, :class => 'btn btn-primary btn-block'%>
+	<% end %>
 </div>
 <div class="col-md-3 column">
 	<%= image_tag(@user.image, size: "140x140") %>
 	<h4>
-		<%= @user.name %>'s Stats
+		My Stats
 	</h4>
 	<hr>
 	<dl class="dl-horizontal">
@@ -120,23 +185,25 @@
 			Following
 		</dt>	
 		<dd>
-			<ul>
+		<%= @user.friendships.count%>
+		<div class = 'following_images'>
 				<% for friendship in @user.friendships %>
-				<li>
-					<%=h friendship.friend.image %>
-					(<%= link_to "remove", friendship, :method => :delete %>)
-				</li>
+				<div class = 'profile_image'>
+					<%= image_tag(friendship.friend.image, size: '40x40') %>
 				<% end %>
-			</dd>
-			<dt>
-				My Teams
-			</dt>
-			<dd>
-				<% @teams.each do |team| %>
-				<%= team.name %>
-				<% end %>
+				</div>
+				</div>
 			</dd>
 		</dl>
+		<h4>
+			My Teams
+		</h4>
+		<hr>
+			
+				<% @teams.each do |team| %>
+				<li><%= team.name %></li>
+				<% end %>
+			</dd>
 		<h4>Activity</h4>
 		<hr>
 		<dl>
