@@ -115,7 +115,7 @@
 			</div>
 			<table>
 				<tr>
-					<% hottness(Post.tagged_with(@teams.fourth.name)).take(3).each do |post| %>
+					<% hottness(Post.tagged_with(@teams.fifth.name)).take(3).each do |post| %>
 					<td>
 					<%= link_to post_path(post.id) do%>
 						<div class="thumbnail">
@@ -162,8 +162,8 @@
 	<%= link_to "Create Post", new_post_path, :class => 'btn btn-primary btn-block'%>
 	<% end %>
 </div>
-<div class="col-md-3 column">
-	<%= image_tag(@user.image, size: "140x140") %>
+<div class="col-md-3 column pull-left">
+	<%= image_tag(@user.image, size: "140x140", class: 'profile_pic') %>
 	<h4>
 		My Stats
 	</h4>
@@ -176,7 +176,7 @@
 			<%= @my_posts_count %>
 		</dd>
 		<dt>
-			Post Cheers
+			Cheers
 		</dt>
 		<dd>
 			<%= @my_posts_cheers %>
@@ -186,15 +186,14 @@
 		</dt>	
 		<dd>
 		<%= @user.friendships.count%>
+		</dd>
 		<div class = 'following_images'>
-				<% for friendship in @user.friendships %>
-				<div class = 'profile_image'>
-					<%= image_tag(friendship.friend.image, size: '40x40') %>
+				<% for friendship in @user.friendships.take(8) %>
+			<ul id="grid">
+					<li><%= image_tag(friendship.friend.image, size: '40x40') %></li>
 				<% end %>
-				</div>
-				</div>
-			</dd>
-		</dl>
+				</ul>
+			</dl>
 		<h4>
 			My Teams
 		</h4>
@@ -213,49 +212,6 @@
 		</dl>
 	</div>
 </div>
-<h3>Post Count</h3>
-<%= @my_posts_count %>
-<hr>
-<h3>Post Cheers</h3>
-<%= @my_posts_cheers %>
-<h3>Friends</h3>
-<hr>
-<ul>
-	<% for friendship in @user.friendships %>
-	<li>
-		<%=h friendship.friend.name %>
-		(<%= link_to "remove", friendship, :method => :delete %>)
-	</li>
-	<% end %>
-</ul>
-<ul>
-	<% for user in @user.inverse_friends %>
-	<li><%= user.name %></li>
-	<% end %>
-</ul>
-<p><%= link_to "Find Friends", users_path %>
-
-	<h3>Teams</h3>
-	<hr>
-	<% @teams.each do |team| %>
-	<%= team.name %>
-	<%= team.location %>
-	<%= team.abbreviation %>
-	<% Post.tagged_with(team.name).page(params[:page]).per_page(3).each do |post| %>
-	<%= post.title %>
-	<%= post.image %>
-	<% end %>
-	<% end %>
-	<hr>
-	
-
-
-	<h3>My Posts</h3>
-	<hr>
-	<%= @my_posts.inspect %>
-
-	<hr>
-
 
 
 
