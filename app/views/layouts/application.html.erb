@@ -33,10 +33,8 @@
                  end%>
                  <span class="caret"></span></a>
                  <ul id="g-account-menu" class="dropdown-menu" role="menu">
-                  <li><a href="/users/<%= if current_user.nil? 
-                    "user"
-                  else current_user.id
-                   end %>">My Profile</a></li>
+                  <li><a href="/users/<%=current_user.id%>/dashboard"><i class="fa fa-tachometer"> Dashboard</i></a></li>
+                  <li><a href="/users/<%=current_user.id%>/edit"><i class="fa fa-cogs"> Settings</i></a></li>
                  </ul>
                </li>
                <li><a href="/signout"><i class="glyphicon glyphicon-lock"></i> Logout</a></li>

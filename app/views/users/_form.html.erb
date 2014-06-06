@@ -1,17 +1,44 @@
 <%= form_for(@user) do |f| %>
+
+<div id= 'user_reg'>
+	<h3>Tell us about yourself</h3>
+	<div class="form-group">
+		<label for="inputFirst">My name is</label>
+		<%= f.text_field :first_name, placeholder:' First Name', class: 'form-control'%>
+	</div>
+	<div class="form-group">
+		<%= f.text_field :last_name, placeholder:' Last Name', class: 'form-control'%>
+	</div>
+	<label for="inputEmail"> Email</label>
+	<div class="input-group margin-bottom-sm">
+		<span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+		<%= f.text_field :email, placeholder:' Email', class: 'form-control'%>
+	</div>
+	<label for="inputUsername"> Username</label>
+	<div class="input-group margin-bottom-sm">
+		<span class="input-group-addon"><i class="fa  fa-qq fa-fw"></i></span>
+		<%= f.text_field :username, placeholder:' Username', class: 'form-control'%>
+	</div>
+	<label for="inputUsername"> Teams</label>
+	<div>
+	<%= select_tag("user[team_ids][]", options_for_select(Team.all.collect { |team| [team.info.html_safe, team.id] }, @user.teams.collect { |team| team.id}), {:multiple=>true, :size=>5, :class => 'form-control', :placeholder=>"Warriors, 49ers, Giants"}) %>
+	</div>
+</div>
+
+
 <% if @user.errors.any? %>
 <div id="error_explanation">
-  <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+	<h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-  <ul>
-    <% @user.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-    <% end %>
-  </ul>
+	<ul>
+		<% @user.errors.full_messages.each do |msg| %>
+		<li><%= msg %></li>
+		<% end %>
+	</ul>
 </div>
 <% end %>
 
 <div class="actions">
-  <%= f.submit %>
+	<%= f.submit %>
 </div>
 <% end %>
