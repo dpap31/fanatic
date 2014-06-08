@@ -1,7 +1,6 @@
 <%= form_for(@user) do |f| %>
 
 <div id= 'user_reg'>
-	<h3>Tell us about yourself</h3>
 	<div class="form-group">
 		<label for="inputFirst">My name is</label>
 		<%= f.text_field :first_name, placeholder:' First Name', class: 'form-control'%>
@@ -20,8 +19,8 @@
 		<%= f.text_field :username, placeholder:' Username', class: 'form-control'%>
 	</div>
 	<label for="inputUsername"> Teams</label>
-	<div>
-	<%= select_tag("user[team_ids][]", options_for_select(Team.all.collect { |team| [team.info.html_safe, team.id] }, @user.teams.collect { |team| team.id}), {:multiple=>true, :size=>5, :class => 'form-control', :placeholder=>"Warriors, 49ers, Giants"}) %>
+	<div id='teams'>
+		<%= select_tag("user[team_ids][]", options_for_select(Team.all.collect { |team| [team.info.html_safe, team.id] }, @user.teams.collect { |team| team.id}), {:multiple=>true, :size=>5, :class => 'form-control', :placeholder=>"Warriors, 49ers, Giants"}) %>
 	</div>
 </div>
 
@@ -37,8 +36,9 @@
 	</ul>
 </div>
 <% end %>
-
+<br>
 <div class="actions">
-	<%= f.submit %>
+	<%= f.submit "Update", class: 'btn btn-primary btn-lg btn-block'%>
+	
 </div>
 <% end %>
