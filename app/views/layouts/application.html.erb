@@ -49,17 +49,15 @@
 
             <div class="col-sm-2 pull-left">
               <!-- Left column --> 
-              <a href="/menu"><strong><i class="glyphicon glyphicon-link"></i> Menu</strong></a>  
+              <a href="/users/<%=current_user.id%>/dashboard"><strong><i class="glyphicon glyphicon-star"></i> Dashboard</strong></a>  
               
               <hr>
               <ul class="nav nav-pills nav-stacked">
                 <li class="nav-header"></li>
                 <li><a href="/posts"><i class="glyphicon glyphicon-envelope"></i> All Posts</a></li>
                 <li><a href="/menu/headlines"><i class="glyphicon glyphicon glyphicon-book"></i> Headlines</a></li>
-                <li><a href="/users/<%=current_user.id%>/dashboard"
-                else current_user.id
-                 end%><i class="glyphicon glyphicon-star"></i> Dashboard</a></li>
-                 <li><a href="/users/#{current_user.id}/dashboard"><i class="glyphicon glyphicon-user"></i> Friends</a></li>
+                 <li><a href="/users">
+                 <i class="glyphicon glyphicon-user"></i> Friends</a></li>
                  <li><a href="/posts/list"><i class="glyphicon glyphicon-heart-empty"></i> My Posts</a></li>
                </ul>
                

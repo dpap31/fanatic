@@ -1,7 +1,7 @@
 h2 {
   text-align: center;
 }
-.col-md-8 a {
+.col-md-8 #user_teams a {
   text-decoration: none;
   color: inherit;
 }
@@ -31,9 +31,6 @@ td {
 	box-shadow: 0 0 10px #ccc; 
 }
 
-ul {
-	display: inline;
-}
 
 .profile_pic{
 	display: block;
@@ -59,7 +56,7 @@ ul#grid {
 #grid li {
   float: left;
   padding: 0;
-  margin: 0 5px 10px 5px;
+  margin: 0 2px 5px 2px;
   } 
 
 
@@ -71,3 +68,12 @@ ul#grid {
 	margin-left: 4%;
 	width: 20%
 	}
+	
+#title {
+	float: left;
+	
+}
+#new_button {
+	float: right;
+
+}

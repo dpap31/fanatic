@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,9 +7,15 @@
   <title>Fanatic Menu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <%= stylesheet_link_tag "menu" %>
+  <%= javascript_include_tag "menu"%>
   
 </head>
 <body>
+<div id="preloader">
+<div id="spinner_container">
+<div id="spinner"></div>
+</div>
+</div>
   <!-- Main -->
   <div class="container">
     <div class="row">

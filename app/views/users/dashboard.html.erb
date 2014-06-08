@@ -7,8 +7,18 @@
 <div class="container">
 	<div class="row clearfix">
 		<div class="col-md-8 column">
-		<h2>Dashboard</h2>
-		<hr>
+		   <div id="title">
+     <a href="/posts"><strong><i class="glyphicon glyphicon-star-empty"></i>  All Posts</strong></a> 
+   </div> 
+
+   <div id="new_button">
+     <%if can? :create, Post %>
+     <a href="/posts/new"><strong><i class="glyphicon glyphicon-plus-sign"></i>  New Post</strong></a>
+     <% end %>
+   </div>  
+   <br>  
+   <hr>
+   <div id='user_teams'>
 	   <%if @teams.first%>
 			<div class='teamname'>
 			<h4><i class="glyphicon glyphicon-link"></i> <%= link_to "#{@teams.first.location} #{@teams.first.name}",tag_path(@teams.first.name)%></h4>
@@ -161,6 +171,7 @@
 		<h2>My Posts</h2>
 	<%= link_to "Create Post", new_post_path, :class => 'btn btn-primary btn-block'%>
 	<% end %>
+</div>
 </div>
 <div class="col-md-3 column pull-left">
 	<%= image_tag(@user.image, size: "140x140", class: 'profile_pic') %>

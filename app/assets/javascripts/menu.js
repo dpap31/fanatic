@@ -1,3 +1,12 @@
+jQuery.ajaxSetup({
+  beforeSend: function() {
+     $('#spinner_container').show();
+  },
+  complete: function(){
+     $('#spinner_container').hide();
+  },
+  success: function() {}
+});
 
 (function(){
 var to;
