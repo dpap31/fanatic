@@ -43,12 +43,14 @@
          </div>
        </div>
           <!-- sidebar -->
-            <div class="col-sm-2 pull-left" id="sidebar-wrapper">
-              <a href="/users/<%=current_user.id%>/dashboard"><strong><i class="fa fa-tachometer"></i> Dashboard</strong></a>  
-              
-              <hr>
+            <a id="menu-toggle" href="#" class="btn btn-primary btn-lg toggle"><i class="fa fa-bars"></i></a>
+            <a id="menu-close" href="#" class="btn btn-default btn-lg pull-left toggle"><i class="fa fa-times"></i></a>
+            <div class="col-sm-2 pull-left sidebar-nav" id="sidebar-wrapper">          
+              <br>
+              <br>
               <ul class="nav nav-pills nav-stacked">
                 <li class="nav-header"></li>
+                <li><a href="/users/<%=current_user.id%>/dashboard"><strong><i class="fa fa-tachometer"></i> Dashboard</strong></a></li>
                 <li><a href="/posts"><span class="glyphicon glyphicon-th"></span> All Posts</a></li>
                 <li><a href="/menu/headlines"><i class="glyphicon glyphicon-book"></i> Headlines</a></li>
                  <li><a href="/users">
@@ -76,8 +78,7 @@
               <h5><strong><i class="fa fa-tags"></i> Trending Tags</strong></h5></a></li>
               <ul style="list-style: none;">
               <% @trending_tags.each do|tag_id, tag_count|%>
-              <li><%= link_to ActsAsTaggableOn::Tag.find_by_id(tag_id).name, tag_path(ActsAsTaggableOn::Tag.find_by_id(tag_id).name)%>
-                (<%= tag_count %>)</li>
+              <li><%= link_to ActsAsTaggableOn::Tag.find_by_id(tag_id).name, tag_path(ActsAsTaggableOn::Tag.find_by_id(tag_id).name)%></li>
                 <% end %>
                 </ul>
                 </ul>
@@ -95,4 +96,34 @@
           </div>
         </div>
       </body>
+       <script>
+    $("#menu-close").click(function(e) {
+      e.preventDefault();
+      $("#sidebar-wrapper").toggleClass("active");
+    });
+  </script>
+  <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#sidebar-wrapper").toggleClass("active");
+    });
+  </script>
+    <script>
+    $(function() {
+      $('a[href*=#]:not([href=#])').click(function() {
+        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
+          || location.hostname == this.hostname) {
+
+          var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+        if (target.length) {
+          $('html,body').animate({
+            scrollTop: target.offset().top
+          }, 1000);
+          return false;
+        }
+      }
+    });
+    });
+  </script>
       </html>
