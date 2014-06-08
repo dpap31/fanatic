@@ -37,7 +37,6 @@
 								
 							</p>
 						</div>
-					</div>
 				</td>
 				<% end %>
 				<% end %>
@@ -62,7 +61,6 @@
 								
 							</p>
 						</div>
-					</div>
 				</td>
 				<% end %>
 				<% end %>
@@ -87,7 +85,6 @@
 								
 							</p>
 						</div>
-					</div>
 				</td>
 				<% end %>
 				<% end %>
@@ -112,7 +109,6 @@
 								
 							</p>
 						</div>
-					</div>
 				</td>
 				<% end %>
 				<% end %>
@@ -137,7 +133,6 @@
 								
 							</p>
 						</div>
-					</div>
 				</td>
 				<% end %>
 				<% end %>
@@ -161,22 +156,21 @@
 
 						</p>
 					</div>
-				</div>
 			</td>
 			<% end %>
 			<% end %>
 		</tr>
 	</table>
+    </div>
 	<%else%>
 		<h2>My Posts</h2>
 	<%= link_to "Create Post", new_post_path, :class => 'btn btn-primary btn-block'%>
 	<% end %>
 </div>
-</div>
 <div class="col-md-3 column pull-left">
 	<%= image_tag(@user.image, size: "140x140", class: 'profile_pic') %>
 	<h4>
-		My Stats
+		Stats
 	</h4>
 	<hr>
 	<dl class="dl-horizontal">
@@ -206,14 +200,18 @@
 				</ul>
 			</dl>
 		<h4>
-			My Teams
+		<div class = 'team_images'>
+			Teams
 		</h4>
 		<hr>
-			
+		    <ul id="grid">
 				<% @teams.each do |team| %>
-				<li><%= team.name %></li>
-				<% end %>
-			</dd>
+				  <%= link_to tag_path(team.name) do%>
+				    <li><%= image_tag("logos/#{team.id}.gif", size: "90x60")%></li>
+				  <% end %>
+			    <% end %>
+			</ul>	
+		<div>
 		<h4>Activity</h4>
 		<hr>
 		<dl>
@@ -222,7 +220,13 @@
 			</dd>
 		</dl>
 	</div>
-</div>
+	</div>
+	</div>
+ </div>
+</html>
+	
+
+
 
 
 

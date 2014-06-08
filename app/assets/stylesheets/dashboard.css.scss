@@ -13,6 +13,7 @@ h2 {
 table {
 	table-layout: fixed;
 	margin-top: 1%;
+	width: 100%;
 }
 
 td {
@@ -51,6 +52,7 @@ ul#grid {
   padding: 0;
   list-style: none;
   margin: auto 0;
+  margin-bottom: 10%;
   }
 
 #grid li {
@@ -61,13 +63,22 @@ ul#grid {
 
 
 .col-md-3 h4 {
-	padding-top: 10%;
-	text-align: center;
+ 	display: inline-block;
+    margin-top: 10%;
+    margin-bottom: 0%;
+    text-align: center;
+    width: 100%;
 }
 .col-md-3{
 	margin-left: 4%;
 	width: 20%
 	}
+
+.col-md-3 .dl-horizontal dt {
+	width: 90%;
+	text-align: left;
+	margin: 0 auto;
+}
 	
 #title {
 	float: left;
