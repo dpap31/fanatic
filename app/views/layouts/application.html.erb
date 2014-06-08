@@ -40,15 +40,10 @@
                <li><a href="/signout"><i class="glyphicon glyphicon-lock"></i> Logout</a></li>
              </ul>
            </div>
-         </div><!-- /container -->
+         </div>
        </div>
-       <!-- /Header -->
-       <div class="container-full">
-        <div class="row-fluid">
-          <div class="span2">
-
-            <div class="col-sm-2 pull-left">
-              <!-- Left column --> 
+          <!-- sidebar -->
+            <div class="col-sm-2 pull-left" id="sidebar-wrapper">
               <a href="/users/<%=current_user.id%>/dashboard"><strong><i class="fa fa-tachometer"></i> Dashboard</strong></a>  
               
               <hr>
@@ -87,7 +82,8 @@
                 </ul>
                 </ul>
             </div>
-            <div class="col-md-9 column">    
+            <div class="container-full">
+            <div class="col-md-9 column">   
               <% flash.each do |name, msg| %>
               <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
                 <a class="close" data-dismiss="alert">×</a>
