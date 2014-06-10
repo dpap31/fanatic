@@ -43,12 +43,10 @@
          </div>
        </div>
           <!-- sidebar -->
-            <a id="menu-toggle" href="#" class="btn btn-primary btn-lg toggle"><i class="fa fa-bars"></i></a>
-            <a id="menu-close" href="#" class="btn btn-default btn-lg pull-left toggle"><i class="fa fa-times"></i></a>
+           <!-- <a id="menu-toggle" href="#" class="btn btn-primary btn-lg toggle"><i class="fa fa-bars"></i></a>
+            <a id="menu-close" href="#" class="btn btn-default btn-lg pull-left toggle"><i class="fa fa-times"></i></a>-->
             <div class="col-sm-2 pull-left sidebar-nav" id="sidebar-wrapper">          
-              <br>
-              <br>
-              <ul class="nav nav-pills nav-stacked">
+              <ul class="nav nav-pills nav-stacked fanatic-menu">
                 <li class="nav-header"></li>
                 <li><a href="/users/<%=current_user.id%>/dashboard"><strong><i class="fa fa-tachometer"></i> Dashboard</strong></a></li>
                 <li><a href="/posts"><span class="glyphicon glyphicon-th"></span> All Posts</a></li>
@@ -64,26 +62,20 @@
                 <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#userMenu">
                   <h5><strong><i class="glyphicon glyphicon-link"></i> The Pros</strong>
                   </a></li>
-                  
-                  <ul style="list-style: none;" id="userMenu">
                     <li><a href="http://www.espn.com" target="_blank"> ESPN</a></li>
                     <li><a href="http://grantland.com" target="_blank"> Grantland</a></li>
                     <li><a href="http://bleacherreport.com" target="_blank"> Bleacher Report</a></li>
                     <li><a href="http://sports.yahoo.com" target="_blank"> Yahoo Sports</a></li>
                     <li><a href="http://deadspin.com" target="_blank"> Dead Spin</a></li>
-                  </ul>
               <hr>
               
                 <li class="nav-header"> <a href="#" data-target="#trending_tags">
               <h5><strong><i class="fa fa-tags"></i> Trending Tags</strong></h5></a></li>
-              <ul style="list-style: none;">
               <% @trending_tags.each do|tag_id, tag_count|%>
               <li><%= link_to ActsAsTaggableOn::Tag.find_by_id(tag_id).name, tag_path(ActsAsTaggableOn::Tag.find_by_id(tag_id).name)%></li>
                 <% end %>
                 </ul>
-                </ul>
             </div>
-            <div class="container-full">
             <div class="col-md-9 column">   
               <% flash.each do |name, msg| %>
               <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
