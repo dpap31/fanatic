@@ -4,7 +4,10 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+     respond_to do |format|
+    format.json { render :json => User.all } 
+    format.html { render :html => @users = User.all }
+  end
   end
 
   # GET /users/1
