@@ -1,4 +1,8 @@
-<% @posts.each do |post| %>
+<table>
+<% @posts.each_slice(3) do |slice| %>
+<tr>
+<% slice.each do |post| %>
+<td>
 <div class="pin">
   <div class="image">
     <a href="/posts/<%=post.slug%>"><img class= "img-responsive" src="<%= post.image %>" /></a>
@@ -19,7 +23,11 @@
       </div>
     </div>
   </div>
+  </td>
   <% end %>
+  </tr>
+  <% end %>
+  </table>
 </div>
 <div class="text-center">
   <%= will_paginate @posts, renderer: BootstrapPagination::Rails%>
