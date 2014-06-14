@@ -1,23 +1,24 @@
+<!DOCTYPE html>
+<html ng-app='userSearchApp'>
 <head>
-  <script type="text/javascript">
-    $(function() {
-     $( "#search" ).autocomplete({
-      source: "/search_suggestions",
-      minLength: 2,
-    });
-   });
- </script>
- <%= stylesheet_link_tag "search_suggestions" %>
-
- <script>
-  $(function(){
-    // did the UI load?
-    console.log(jQuery.ui);
-  });
+  <%= javascript_include_tag "users"%>
+  <%= stylesheet_link_tag "users" %>
 </script>
 </head>
+
 <h1>Listing users</h1>
-<div class="col-md-8"> 
+
+  <div ng-controller="UserCtrl">
+      <input type="text" class="form-control" placeholder="Search users by name, username, email" ng-model="query">
+    <ul class = 'userlist'ng-show='query'>
+    <li ng-repeat="user in users | filter: query" class ="animate results">     
+     <img ng-src="{{user.image}}"/>
+      <span id='user_details'><b>{{user.name}}</b>, <em>{{user.username}}</em>
+      </span>
+    </li>
+    </ul>
+  </div>
+
   <%= form_tag users_path, :method => :get do %>
   <p>
     <%= text_field_tag :search, params[:search] %>
