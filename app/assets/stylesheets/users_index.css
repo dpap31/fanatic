@@ -2,6 +2,12 @@ h2 {
 	text-align: center;
 }
 
+.form-control {
+  width:80%;
+  text-align: center;
+  margin: 0 auto;
+}
+
 .row {
 	width: 80%; 
 	margin: 0 auto;
@@ -21,7 +27,11 @@ ul img{
   margin-bottom: 10px;
   margin-left: auto;
   margin-right: auto;
-} 
+}
+a.search_results {
+  text-decoration: none;
+  color: inherit;
+}
 
 #user_details {
    display: inline-block;

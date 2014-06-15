@@ -2,22 +2,25 @@
 <html ng-app='userSearchApp'>
 <head>
   <%= javascript_include_tag "users"%>
-  <%= stylesheet_link_tag "users" %>
+  <%= stylesheet_link_tag "users_index" %>
 </script>
 </head>
 
-<h1>Listing users</h1>
+<h2>Search Users</h2>
 
   <div ng-controller="UserCtrl">
       <input type="text" class="form-control" placeholder="Search users by name, username, email" ng-model="query">
     <ul class = 'userlist'ng-show='query'>
-    <li ng-repeat="user in users | filter: query" class ="animate results">     
+    <li ng-repeat="user in users | filter: query" class ="animate results"> 
+    <a href="/users/{{user.id}}/dashboard"
+    <div class= 'search_results'>    
      <img ng-src="{{user.image}}"/>
       <span id='user_details'><b>{{user.name}}</b>, <em>{{user.username}}</em>
       </span>
+    </div>
+    </a>
     </li>
     </ul>
-  </div>
 
   <%= form_tag users_path, :method => :get do %>
   <p>

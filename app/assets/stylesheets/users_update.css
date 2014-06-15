@@ -1,0 +1,13 @@
+h2 {
+	text-align: center;
+}
+
+.row {
+	width: 40%; 
+	margin: 0 auto;
+}
+
+label {
+	margin-top: 10px
+}
+
