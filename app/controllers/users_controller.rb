@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   def dashboard
    @user = current_user
    @teams = current_user.teams
-   @my_posts = current_user.posts.limit(3)
+   @my_posts = current_user.posts.limit(6)
    @my_posts_count = current_user.posts.count
    @my_posts_cheers = current_user.reputation_for(:votes).to_i
  end
