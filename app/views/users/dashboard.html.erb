@@ -219,6 +219,7 @@
 	</div>
 	<div class="col-md-3 column pull-left">
 		<%= image_tag(@user.image, size: "140x140", class: 'profile_pic') %>
+		<div id='stats_widget'>
 		<h4>
 			Stats
 		</h4>
@@ -249,19 +250,20 @@
 					<% end %>
 				</ul>
 			</dl>
-			<h4>
-				<div class = 'team_images'>
-					Teams
-				</h4>
+			</div>
+			<div id= 'team_widget'>
+			<h4>Teams</h4>
 				<hr>
-				<ul id="grid">
+				<div class = 'team_images'>
 					<% @teams.each do |team| %>
-					<li><%= link_to tag_path(team.name) do%>
-						<%= image_tag("logos/#{team.id}.gif", size: "80x55")%></li>
+					<%= link_to tag_path(team.name) do%>
+						<%= image_tag("logos/#{team.id}.gif", size: "80x55")%>
 						<% end %>
 						<% end %>
-					</ul>
-				</dl>	
+					</div>
+				</div>
+
+				<div id= 'activity_widget'>
 				<h4>Activity</h4>
 				<hr>
 				<dl>
@@ -269,7 +271,6 @@
 						<%= render template: 'layouts/_activities.html.erb'%>
 					</dd>
 				</dl>
-			</div>
 		</div>
 	</div>
 	</html>

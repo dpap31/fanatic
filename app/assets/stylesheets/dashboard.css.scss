@@ -47,19 +47,6 @@ td {
 	width: 200px;
 }
 
-ul#grid {
-  padding: 0;
-  list-style: none;
-  margin: auto 0;
-  margin-bottom: 10%;
-  }
-
-#grid li {
-  float: left;
-  padding: 0;
-  margin: 0 2px 5px 2px;
-  } 
-
 .caption {
 	width: 90%;
 }
@@ -78,12 +65,6 @@ ul#grid {
 .col-md-8{
 	width: 75%
 	}
-
-.col-md-3 .dl-horizontal dt {
-	width: 90%;
-	text-align: left;
-	margin: 0 auto;
-}
 	
 #title {
 	float: left;
@@ -190,6 +171,50 @@ body {
 }
 .sort_menu{
 	float:right;	
+}
+
+/*right column divs*/
+
+#stats_widget {
+	margin-top: 20px;
+	background-color:#FFFFFF;
+	border-radius: 10px;
+	box-shadow: 0 0 5px #ccc;
+	padding: 5px;
+}
+.col-md-3 .dl-horizontal dd {
+    margin-left: 5px;
+
+}
+ul#grid {
+  list-style: none;
+  }
+
+#grid li {
+  float: left;
+  padding: 0;
+  margin: 4px 2px 4px 2px;
+  } 
+
+#team_widget {
+	margin-top: 20px;
+	background-color:#FFFFFF;
+	border-radius: 10px; 
+	box-shadow: 0 0 5px #ccc;
+	padding: 5px;
+}
+
+.team_images {
+	width: 100%;
+	text-align: center;
+}
+
+#activity_widget {
+	margin-top: 20px;
+	background-color:#FFFFFF;
+	border-radius: 10px;
+	box-shadow: 0 0 5px #ccc;
+	padding: 5px; 
 }
 
 
