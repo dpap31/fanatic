@@ -252,8 +252,8 @@
 			</dl>
 			</div>
 			<div id= 'team_widget'>
-			<h4>Teams</h4>
-				<hr>
+			<div id= 'team_widget_header'><h4>Teams</h4>
+				<hr></div>
 				<div class = 'team_images'>
 					<% @teams.each do |team| %>
 					<%= link_to tag_path(team.name) do%>
