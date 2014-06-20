@@ -218,8 +218,14 @@
 		<% end %>
 	</div>
 	<div class="col-md-3 column pull-left">
-		<%= image_tag(@user.image, size: "140x140", class: 'profile_pic') %>
-		<div id='stats_widget'>
+		<div id = 'user_widget'>
+		<div id="DashboardProfileCard"> </div>
+		<%= image_tag(@user.image, class: 'profile_pic') %>
+		
+		<div id='first_name'><strong><%= @user.first_name %></strong></div>
+		<div id='username'> <em><%= @user.username %></em></div>
+		</div>
+	<div id='stats_widget'>
 		<h4>
 			Stats
 		</h4>

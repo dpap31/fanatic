@@ -31,16 +31,6 @@ td {
 	box-shadow: 0 0 10px #ccc; 
 }
 
-
-.profile_pic{
-	display: block;
-	-webkit-box-shadow: 7px 7px 25px 1px rgba(50, 50, 50, 0.75);
-	-moz-box-shadow:    7px 7px 25px 1px rgba(50, 50, 50, 0.75);
-	box-shadow:         7px 7px 25px 1px rgba(50, 50, 50, 0.75);
-	margin: 0 auto;
-	margin-top: 30px;
-}
-
 .following_images{
 	margin-top: 10%;
 	display: inline-block;
@@ -174,6 +164,50 @@ body {
 }
 
 /*right column divs*/
+
+ #user_widget{
+ 	height: auto;
+ 	margin-top: 20px;
+	background-color:#FFFFFF;
+	border-radius: 10px; 
+	box-shadow: 0 0 5px #ccc;
+	padding: 0px;
+	position: relative;
+	z-index: -1;
+
+ }
+
+div#DashboardProfileCard{
+    width: 100%;
+	height: 50%;
+	background-color: black;
+	position: absolute;
+	border-radius: 10px 10px 0px 0px;
+	z-index: 0;
+	
+ }
+ #first_name{
+ 	display: absolute;
+ 	float: right;
+ 	margin: 5px;
+ 	padding-top: 80px;
+ 	padding-right: 60px;
+	z-index: 0;
+ }
+  #username{
+ 	padding-left: 100px;
+ }
+
+ .profile_pic{
+	margin-left: 15px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	border: 5px solid white;
+	border-radius: 10px;
+	width: 100px;
+	position: relative;
+	z-index: 1;
+}
 
 #stats_widget {
 	margin-top: 20px;
