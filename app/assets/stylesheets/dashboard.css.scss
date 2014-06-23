@@ -1,9 +1,9 @@
 h2 {
-  text-align: center;
+	text-align: center;
 }
 .col-md-8 #user_teams a {
-  text-decoration: none;
-  color: inherit;
+	text-decoration: none;
+	color: inherit;
 }
 
 .teamname {
@@ -41,21 +41,21 @@ td {
 	width: 90%;
 }
 .col-md-3 h4 {
- 	display: inline-block;
-    margin-top: 10%;
-    margin-bottom: 0%;
-    text-align: center;
-    width: 100%;
+	display: inline-block;
+	margin-top: 10%;
+	margin-bottom: 0%;
+	text-align: center;
+	width: 100%;
 }
 .col-md-3{
 	margin-left: 3%;
 	width: 20%
-	}
+}
 
 .col-md-8{
 	width: 75%
-	}
-	
+}
+
 #title {
 	float: left;
 	
@@ -71,7 +71,7 @@ body {
 } 
 
 .image {
- 	width: 250px;
+	width: 250px;
 	border-bottom: 1px solid #ccc;
 	padding-bottom: 15px;
 	margin-bottom: 5px;
@@ -165,9 +165,10 @@ body {
 
 /*right column divs*/
 
- #user_widget{
- 	height: auto;
- 	margin-top: 20px;
+/*user widget*/
+#user_widget{
+	height: auto;
+	margin-top: 20px;
 	background-color:#FFFFFF;
 	border-radius: 10px; 
 	box-shadow: 0 0 5px #ccc;
@@ -175,36 +176,83 @@ body {
 	position: relative;
 	z-index: -1;
 
- }
+}
 
 div#DashboardProfileCard{
-    width: 100%;
+	width: 100%;
 	height: 50%;
 	background-color: black;
 	position: absolute;
 	border-radius: 10px 10px 0px 0px;
 	z-index: 0;
 	
- }
- #first_name{
- 	position: relative;
- 	font-size: 18px;
- 	left: 160px;
- 	bottom: 22px; 
- 	width: 40%;
+}
+#first_name{
+	position: relative;
+	font-size: 18px;
+	left: 160px;
+	bottom: 0px; 
+	width: 40%;
 	z-index: 0;
- }
-  #username{
-    left: 175px;
- 	bottom: 30px; 
-    width: 40%;
-    position: relative;
- }
+}
+#username{
+	left: 175px;
+	bottom: 5px; 
+	width: 40%;
+	position: relative;
+}
+#posts{
+    width: 30%;
+	display: inline-block;
+	font-size: 25px;
+	text-align: center;
 
- .profile_pic{
+}
+
+#cheers_count{
+	width: 30%;
+	display: inline-block;
+	font-size: 25px;
+	text-align: center;
+
+}
+#following_count{
+	width: 30%;
+	display: inline-block;
+	font-size: 25px;
+	text-align: center;
+
+}
+#following_label{
+    width: 30%;
+    font-size: 10px;
+	display: inline-block;
+	text-align: center;
+	margin: 0 auto;
+
+}
+#posts_label{
+    width: 30%;
+    font-size: 10px;
+	display: inline-block;
+	text-align: center;
+	margin: 0 auto;
+
+}
+
+#cheers_label{
+	width: 30%;
+	font-size: 10px;
+	display: inline-block;
+	text-align: center;
+	margin: 0 auto;
+}
+
+
+.profile_pic{
 	left: 15px;
-	top: 30px;
-	bottom: 15px;
+	top: 40px;
+	margin-bottom: 15px;
 	border: 5px solid white;
 	border-radius: 10px;
 	width: 120px;
@@ -220,18 +268,18 @@ div#DashboardProfileCard{
 	padding: 5px;
 }
 .col-md-3 .dl-horizontal dd {
-    margin-left: 5px;
+	margin-left: 5px;
 
 }
 ul#grid {
-  list-style: none;
-  }
+	list-style: none;
+}
 
 #grid li {
-  float: left;
-  padding: 0;
-  margin: 4px 2px 4px 2px;
-  } 
+	float: left;
+	padding: 0;
+	margin: 4px 2px 4px 2px;
+} 
 
 #team_widget {
 	margin-top: 20px;
@@ -246,7 +294,7 @@ ul#grid {
 	height: 100%;
 	padding:0px 0px;
 	border-radius: 10px;
-    margin:0px auto;
+	margin:0px auto;
 	background-color: #F6F7F8;
 }
 .team_images {
@@ -267,7 +315,7 @@ ul#grid {
 	height: 100%;
 	padding:0px 0px;
 	border-radius: 10px;
-    margin:0px auto;
+	margin:0px auto;
 	background-color: #F6F7F8;
 }
 

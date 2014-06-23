@@ -224,7 +224,15 @@
 		
 		<div id='first_name'><strong><%= @user.first_name %></strong></div>
 		<div id='username'> <em><%= @user.username %></em></div>
+		<div id='posts'> <%= @my_posts_count %></div>
+		<div id='cheers_count'><%= @my_posts_cheers %></div>
+		<div id='following_count'><%= @user.friendships.count%></div>
+		<br>
+		<div id='posts_label'> Posts</div>
+		<div id='cheers_label'>Cheers</div>
+		<div id='following_label'>Following</div>
 		</div>
+
 	<div id='stats_widget'>
 		<h4>
 			Stats
