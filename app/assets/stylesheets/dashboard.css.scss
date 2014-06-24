@@ -257,7 +257,7 @@ div#DashboardProfileCard{
 	margin-bottom: 15px;
 	border: 5px solid white;
 	border-radius: 10px;
-	width: 120px;
+	width: 100px;
 	position: relative;
 	z-index: 1;
 }
@@ -306,7 +306,10 @@ ul#grid {
 	padding-bottom: 20px;
 	text-align: center;
 }
-
+.team_images img{
+	margin-top: 3px;
+	margin-bottom:3px;
+}
 
 /*Activity widget*/
 #activity_widget {

@@ -19,14 +19,34 @@
   <div id="sidebar-wrapper">
     <ul class="sidebar-nav">
       <a id="menu-close" href="#" class="btn btn-default btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
-      <li class="sidebar-brand"><a href="http://startbootstrap.com">Start Bootstrap</a></li>
-      <li><a href="#top">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </div>
+<ul class="nav nav-pills nav-stacked fanatic-menu">
+                <li class="nav-header"></li>
+                <li><a href="/posts"><i class="glyphicon glyphicon-th"> </i> All Posts</a></li>
+                <li><a href="/menu/headlines"><i class="glyphicon glyphicon-book"> </i> Headlines</a></li>
+                 <li><a href="/users">
+                 <i class="fa fa-users"></i> Users</a></li>
+               </ul>
+               
+               
+               <hr>
+               <ul class="list-unstyled" id="userMenu">
+                <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#userMenu">
+                  <h5><strong><i class="glyphicon glyphicon-link"> </i> The Pros</strong>
+                  </a></li>
+                    <li><a href="http://www.espn.com" target="_blank"> ESPN</a></li>
+                    <li><a href="http://grantland.com" target="_blank"> Grantland</a></li>
+                    <li><a href="http://bleacherreport.com" target="_blank"> Bleacher Report</a></li>
+                    <li><a href="http://sports.yahoo.com" target="_blank"> Yahoo Sports</a></li>
+                    <li><a href="http://deadspin.com" target="_blank"> Dead Spin</a></li>
+              <hr>
+              
+                <li class="nav-header"> <a href="#" data-target="#trending_tags">
+              <h5><strong><i class="fa fa-tags"></i> Trending Tags</strong></h5></a></li>
+              <% @trending_tags.each do|tag_id, tag_count|%>
+              <li><%= link_to ActsAsTaggableOn::Tag.find_by_id(tag_id).name, tag_path(ActsAsTaggableOn::Tag.find_by_id(tag_id).name)%></li>
+                <% end %>
+                </ul>
+            </div>
   <!-- /Side Menu -->
   
   <!-- Full Page Image Header Area -->
