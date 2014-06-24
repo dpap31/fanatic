@@ -52,7 +52,7 @@
 			</table>
 			<%if @teams.second%>
 			<div class='teamname'>
-				<h4><i class="glyphicon glyphicon-link"></i> <%= link_to "#{@teams.second.location} #{@teams.second.name}", tag_path(@teams.second.name)%></h4>
+				<h4><%= link_to "#{@teams.second.location} #{@teams.second.name}", tag_path(@teams.second.name)%></h4>
 			</div>
 			<table>
 				<tr>
@@ -84,7 +84,7 @@
 			</table>
 			<%if @teams.third%>
 			<div class='teamname'>
-				<h4> <i class="glyphicon glyphicon-link"></i> <%= link_to "#{@teams.third.location} #{@teams.third.name}", tag_path(@teams.third.name)%></h4>
+				<h4><%= link_to "#{@teams.third.location} #{@teams.third.name}", tag_path(@teams.third.name)%></h4>
 			</div>
 			<table>
 				<tr>
@@ -116,7 +116,7 @@
 			</table>
 			<%if @teams.fourth%>
 			<div class='teamname'>
-				<h4><i class="glyphicon glyphicon-link"></i> <%= link_to "#{@teams.fourth.location} #{@teams.fourth.name}", tag_path(@teams.fourth.name)%></h4>
+				<h4><%= link_to "#{@teams.fourth.location} #{@teams.fourth.name}", tag_path(@teams.fourth.name)%></h4>
 			</div>
 			<table>
 				<tr>
@@ -148,7 +148,7 @@
 			</table>
 			<%if @teams.fifth%>
 			<div class='teamname'>
-				<h4><i class="glyphicon glyphicon-link"></i> <%= link_to "#{@teams.fifth.location} #{@teams.fifth.name}", tag_path(@teams.fifth.name)%></h4>
+				<h4><%= link_to "#{@teams.fifth.location} #{@teams.fifth.name}", tag_path(@teams.fifth.name)%></h4>
 			</div>
 			<table>
 				<tr>
@@ -179,8 +179,7 @@
 				<% end %>
 			</table>
 			<%if Post.all.where(:user_id => current_user.id)%>
-			<h2> <i class="glyphicon glyphicon-pencil"></i> <%= link_to "My Posts", user_posts_path(@current_user)%></h2>
-			<hr>
+			<h4><%= link_to "My Posts", user_posts_path(@current_user)%></h4>
 			<table>
 				<% @my_posts.each_slice(3) do |slice| %>
 				<tr>
@@ -233,40 +232,8 @@
 		<div id='following_label'>Following</div>
 		</div>
 
-	<div id='stats_widget'>
-		<h4>
-			Stats
-		</h4>
-		<hr>
-		<dl class="dl-horizontal">
-			<dt>
-				Post Count
-			</dt>
-			<dd>
-				<%= @my_posts_count %>
-			</dd>
-			<dt>
-				Cheers
-			</dt>
-			<dd>
-				<%= @my_posts_cheers %>
-			</dd>
-			<dt>
-				Following
-			</dt>	
-			<dd>
-				<%= @user.friendships.count%>
-			</dd>
-			<div class = 'following_images'>
-				<ul id="grid">
-					<% for friendship in @user.friendships.take(8) %>
-					<li><%= image_tag(friendship.friend.image, size: '40x40') %></li>
-					<% end %>
-				</ul>
-			</dl>
-			</div>
 			<div id= 'team_widget'>
-			<div id= 'team_widget_header'><h4>Teams</h4>
+			<div id= 'widget_header'><h4>Teams</h4>
 				<hr></div>
 				<div class = 'team_images'>
 					<% @teams.each do |team| %>
@@ -277,9 +244,26 @@
 					</div>
 				</div>
 
+		<div id='following_widget'>
+		<div id= 'widget_header'><h4>
+			Following
+		</h4>
+		<hr>
+		</div>
+			<div class = 'following_images'>
+				<ul id="grid">
+					<% for friendship in @user.friendships.take(8) %>
+					<li><%= image_tag(friendship.friend.image, size: '40x40') %></li>
+					<% end %>
+				</ul>
+			</div>
+		</div>
+
 				<div id= 'activity_widget'>
-				<div id= 'activity_widget_header'><h4>Activity</h4>
-				<hr></div>
+				<div id= 'widget_header'>
+				<h4>Activity</h4>
+				<hr>
+				</div>
 				<dl>
 					<dd>
 						<%= render template: 'layouts/_activities.html.erb'%>

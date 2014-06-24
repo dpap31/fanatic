@@ -32,9 +32,9 @@ td {
 }
 
 .following_images{
-	margin-top: 10%;
+	width:100%;
+	margin: 0 auto;
 	display: inline-block;
-	width: 200px;
 }
 
 .caption {
@@ -190,14 +190,16 @@ div#DashboardProfileCard{
 #first_name{
 	position: relative;
 	font-size: 18px;
+	color: #999999;
 	left: 160px;
-	bottom: 0px; 
+	bottom: 35px; 
 	width: 40%;
 	z-index: 0;
 }
+
 #username{
 	left: 175px;
-	bottom: 5px; 
+	bottom: 27px; 
 	width: 40%;
 	position: relative;
 }
@@ -260,27 +262,37 @@ div#DashboardProfileCard{
 	z-index: 1;
 }
 
-#stats_widget {
+/*Widget header*/
+#widget_header{
+	width:100%;
+	height: 100%;
+	padding:0px 0px;
+	border-radius: 10px 10px 0px 0px;
+	margin:0px auto;
+	background-color: #F6F7F8;
+}
+
+/*Following Widget*/
+#following_widget {
 	margin-top: 20px;
 	background-color:#FFFFFF;
 	border-radius: 10px;
 	box-shadow: 0 0 5px #ccc;
-	padding: 5px;
 }
-.col-md-3 .dl-horizontal dd {
-	margin-left: 5px;
 
-}
 ul#grid {
 	list-style: none;
+	margin: 0 auto;
+    padding: 0px 10px 0px 10px;
+    width: 90%;
 }
-
 #grid li {
 	float: left;
 	padding: 0;
-	margin: 4px 2px 4px 2px;
+	margin: 3px 3px 3px 3px;
 } 
-
+ 
+ /*Team Widget*/
 #team_widget {
 	margin-top: 20px;
 	background-color:#FFFFFF;
@@ -289,20 +301,14 @@ ul#grid {
 	padding: 0px;
 }
 
-#team_widget #team_widget_header{
-	width:100%;
-	height: 100%;
-	padding:0px 0px;
-	border-radius: 10px;
-	margin:0px auto;
-	background-color: #F6F7F8;
-}
 .team_images {
 	width: 100%;
 	padding-bottom: 20px;
 	text-align: center;
 }
 
+
+/*Activity widget*/
 #activity_widget {
 	margin-top: 20px;
 	background-color:#FFFFFF;
@@ -310,14 +316,7 @@ ul#grid {
 	box-shadow: 0 0 5px #ccc;
 	padding: 0px; 
 }
-#activity_widget #activity_widget_header{
-	width:100%;
-	height: 100%;
-	padding:0px 0px;
-	border-radius: 10px;
-	margin:0px auto;
-	background-color: #F6F7F8;
-}
+
 
 #activity_widget ul {
 	list-style: none;
