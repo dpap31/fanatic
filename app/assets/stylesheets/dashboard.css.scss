@@ -23,8 +23,11 @@ td {
 
 .thumbnail {
 	overflow: hidden;
-	text-align: center;
+	margin: 0 auto;
+	position: relative;
+	width: 100%
 }
+
 .thumbnail:hover {
 	-moz-box-shadow: 0 0 10px #ccc; 
 	-webkit-box-shadow: 0 0 10px #ccc; 
@@ -71,7 +74,7 @@ body {
 } 
 
 .image {
-	width: 250px;
+	width: 210px;
 	border-bottom: 1px solid #ccc;
 	padding-bottom: 15px;
 	margin-bottom: 5px;
@@ -109,6 +112,7 @@ body {
 	padding-bottom: 5px;
 	background: -webkit-linear-gradient(45deg, #FFF, #F9F9F9);
 	opacity: 1;
+	position: relative;
 	
 }
 
@@ -141,7 +145,6 @@ body {
 
 .tags {
 	float: left;
-
 }
 .tags ul {
 	display: inline;
@@ -191,15 +194,15 @@ div#DashboardProfileCard{
 	position: relative;
 	font-size: 18px;
 	color: #999999;
-	left: 160px;
-	bottom: 35px; 
+	left: 130px;
+	bottom: 30px; 
 	width: 40%;
 	z-index: 0;
 }
 
 #username{
-	left: 175px;
-	bottom: 27px; 
+	left: 125px;
+	bottom: 20px; 
 	width: 40%;
 	position: relative;
 }
