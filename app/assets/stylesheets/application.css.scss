@@ -19,6 +19,8 @@
 	background: #000;
 }
 
+/* Side Menu */
+
 #sidebar-wrapper {
   width: 225px;
   background: #000;
@@ -45,12 +47,14 @@
   margin-right: 3px;
 }
 
-#sidebar-wrapper ul.nav {
+.fanatic-menu li.nav-header{
   margin-top: 60px;
 }
+
 #userMenu li{
   text-indent: 65px;
 }
+
 #sidebar-wrapper .nav-header{
 	text-indent: 22px;
 }
@@ -123,6 +127,10 @@
 	margin-left: 250px;
 	width: 80%
 }
+
+body {
+  background-color:#E9EAED;
+} 
 
 
 

@@ -34,12 +34,6 @@ td {
 	box-shadow: 0 0 10px #ccc; 
 }
 
-.following_images{
-	width:100%;
-	margin: 0 auto;
-	display: inline-block;
-}
-
 .caption {
 	width: 90%;
 }
@@ -281,6 +275,7 @@ div#DashboardProfileCard{
 	background-color:#FFFFFF;
 	border-radius: 10px;
 	box-shadow: 0 0 5px #ccc;
+	padding-bottom: 15px;
 }
 
 ul#grid {
@@ -292,8 +287,14 @@ ul#grid {
 #grid li {
 	float: left;
 	padding: 0;
-	margin: 3px 3px 3px 3px;
+	margin: 2px 3px 2px 3px;
 } 
+
+.following_images {
+	width:100%;
+	margin: 0 auto;
+	display: inline-block;
+}
  
  /*Team Widget*/
 #team_widget {
