@@ -10,6 +10,13 @@ class User < ActiveRecord::Base
  has_and_belongs_to_many :teams
  accepts_nested_attributes_for :teams
 
+validates :uid, uniqueness: true, on: :create
+validates :email, :first_name, :last_name, :username,  presence: true, on: :update
+validates :email, :username, uniqueness: true, on: :update
+validates_format_of :email, with: /[a-zA-Z0-9._%-]+@(?:[a-zA-Z0-9-]+\.)+(com|net|org|info|biz|me|edu|gov)/i
+
+
+
  def self.create_with_omniauth(auth)
   create! do |user|
     user.provider = auth["provider"]

@@ -1,6 +1,7 @@
 $(document).ready(function() {
 	$('select#user_team_ids_').select2({
 		dropdownCssClass: "bigdrop",
+		maximumSelectionSize: 5
 	});
 	$('.onboarding-modal').modal('show');
   	$('#rootwizard').bootstrapWizard({onTabShow: function(tab, navigation, index) {
