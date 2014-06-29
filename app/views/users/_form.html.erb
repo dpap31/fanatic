@@ -1,36 +1,45 @@
 <%= form_for(@user) do |f| %>
 
 <div id= 'user_reg'>
-	<div class="form-group">
 		<label for="inputFirst">My name is</label>
-		<%= f.text_field :first_name, placeholder:' First Name', class: 'form-control'%>
+		<div class="form-group">
+		<%= f.text_field :first_name, placeholder:' First Name', class: 'form-control',
+	    'data-bv-message' => "First name is required and cannot be empty", 
+		'data-bv-notempty' => "true"%>
 	</div>
 	<div class="form-group">
-		<%= f.text_field :last_name, placeholder:' Last Name', class: 'form-control'%>
+		<%= f.text_field :last_name, placeholder:' Last Name', class: 'form-control',
+		'data-bv-message' => "Last name is required and cannot be empty", 
+		'data-bv-notempty' => "true"%>
 	</div>
 	<label for="inputEmail"> Email</label>
+	<div class="form-group">
 	<div class="input-group margin-bottom-sm">
 		<span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
-		<%= f.text_field :email, name: 'email', placeholder:' Email', class: 'form-control', id: 'email', 'required type' => 'email', 'data-bv-notempty'=> nil %>
+		<%= f.text_field :email, name: 'email', placeholder:' Email', class: 'form-control', id: 'email', 'required type' => 'email', 'data-bv-notempty'=> 'true' %>
+	</div>
 	</div>
 	<label for="inputUsername"> Username</label>
+	<div class="form-group">
 	<div class="input-group margin-bottom-sm">
 		<span class="input-group-addon"><i class="fa  fa-qq fa-fw"></i></span>
-		<%= f.text_field :username, name: 'username', placeholder:' Username', class: 'form-control' %>
+		<%= f.text_field :username, name: 'username', placeholder:' Username', class: 'form-control', 
+		'data-bv-message' => "The username is not valid", 
+		'data-bv-notempty' => "true",
+		'data-bv-regexp' => "true",
+		'data-bv-regexp-regexp' => "[a-zA-Z0-9_\.]+",
+        'data-bv-regexp-message' => "The username can only consist of letters, numbers, dots and underscores", 
+        'data-bv-stringlength' => "true",
+        'data-bv-stringlength-min' => "4",
+        'data-bv-stringlength-max' => "30",
+        'data-bv-stringlength-message' => "The username must be more than 4 and less than 30 characters long"
+                 %>
+	</div>
 	</div>
 	<label for="inputUsername"> Teams</label>
 	<div id='teams'>
 		<%= select_tag("user[team_ids][]", options_for_select(Team.all.collect { |team| [team.info.html_safe, team.id] }, @user.teams.collect { |team| team.id}), {:multiple=>true, :size=>5, :class => 'form-control', :placeholder=>"Warriors, 49ers, Giants"}) %>
 	</div>
-	<div class="form-group">
-        <label>Username</label>
-        <input type="text" class="form-control" name="username" id="username"/>
-    </div>
-    <div class="form-group">
-        <label>Email address</label>
-        <input type="text" class="form-control" name="email" id="email"
-                required type="email" data-bv-notempty />
-    </div>
 </div>
 
 
