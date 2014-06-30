@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html ng-app='onboardingApp'>
 <head>
-	<%= javascript_include_tag "onboarding"%>
-	<%= javascript_include_tag "bootstrapValidator"%>
 	<%= stylesheet_link_tag "//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css", media: "all" %>
 	<%= stylesheet_link_tag "//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" %>
 	<%= stylesheet_link_tag "onboarding" %>
 	<%= stylesheet_link_tag "bootstrapValidator" %>
+
+	<%= javascript_include_tag "onboarding"%>
+	<%= javascript_include_tag "bootstrapValidator"%>
+	<%= javascript_include_tag "validator/emailAddress"%>
+	<%= javascript_include_tag "validator/notEmpty"%>
+	<%= javascript_include_tag "validator/regexp"%>
+	<%= javascript_include_tag "validator/stringLength"%>
 </script>
 </head>
-<div class="modal fade onboarding-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+<div class="modal fade onboarding-modal" id="onboarding-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-keyboard="false" data-backdrop="static">
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
 			<div id="rootwizard">
 				<div class="navbar">
 					<div class="navbar-inner">
-							<ul>
-								<li><a href="#tab1" data-toggle="tab">Welcome</a></li>
-								<li><a href="#tab2" data-toggle="tab">Setup</a></li>
-								<li><a href="#tab3" data-toggle="tab">Personalize</a></li>
-								<li><a href="#tab4" data-toggle="tab">Sports</a></li>
-								<li><a href="#tab5" data-toggle="tab">Teams</a></li>
-							</ul>
+						<ul>
+							<li><a href="#tab1" data-toggle="tab">Welcome</a></li>
+							<li><a href="#tab2" data-toggle="tab">Setup</a></li>
+							<li><a href="#tab3" data-toggle="tab">Personalize</a></li>
+							<li><a href="#tab4" data-toggle="tab">Sports</a></li>
+							<li><a href="#tab5" data-toggle="tab">Teams</a></li>
+						</ul>
 					</div>
 				</div>
 				<div class="tab-content">
@@ -33,63 +38,75 @@
 						</div>
 					</div>
 					<div class="tab-pane" id="tab2">
-						<div id= 'user_reg'>
-							<h3>Tell us about yourself</h3>
+					<div class="modal-body">
 							<%= form_for @user, :html =>{ :multipart => true}, as: :user, url: user_path(@user), method: :patch do |f| %>
+							<div id= 'user_reg'>
+							<h3>Tell us about yourself</h3>
+
+							<label for="inputFirst">My name is</label>
 							<div class="form-group">
-								<label for="inputFirst">My name is</label>
-								<%= f.text_field :first_name, placeholder:' First Name', class: 'form-control'%>
+								<%= f.text_field :first_name, placeholder:' First Name', name: 'first_name', class: 'form-control',
+								'data-bv-message' => "First name is required and cannot be empty", 
+								'data-bv-notempty' => "true"%>
 							</div>
 							<div class="form-group">
-								<%= f.text_field :last_name, placeholder:' Last Name', class: 'form-control'%>
+								<%= f.text_field :last_name, placeholder:' Last Name', name: 'last_name', class: 'form-control',
+								'data-bv-message' => "Last name is required and cannot be empty", 
+								'data-bv-notempty' => "true"%>
 							</div>
-							<label for="inputEmail">Confirm your email</label>
-							<div class="input-group margin-bottom-sm">
-								<span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
-								<%= f.text_field :email, placeholder:' Email', class: 'form-control'%>
+							<label for="inputEmail"> Email</label>
+							<div class="form-group">
+								<div class="input-group margin-bottom-sm">
+									<span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+									<%= f.text_field :email, name: 'email', placeholder:' Email', class: 'form-control', id: 'email', 'required type' => 'email', 
+									'data-bv-notempty'=> 'true',
+									'data-bv-message' => "Email is not valid" %>
+								</div>
 							</div>
-							<label for="inputUsername">Choose a username</label>
-							<div class="input-group margin-bottom-sm">
-								<span class="input-group-addon"><i class="fa  fa-qq fa-fw"></i></span>
-								<%= f.text_field :username, name: 'username', placeholder:' Username', class: 'form-control'%>
-							</div>
-							   <div class="form-group">
-        <input type="text" class="form-control" name="username" placeholder="Username" />
-    </div>
-    <div class="form-group">
-        <input type="text" class="form-control" name="email" placeholder="Email address" />
-    </div>
-						</div>
-
-					</div>
-
-
- 
-
-					<div class="tab-pane" id="tab3">
-						<div id='personalize'>
-							<h3>Hi <%=@user.name%></h3>
-							<img class="img-circle box-shad" alt="" src="<%= @user.image %>">
-							<h4>Tell us who you root for so we can show you the content you care about.</h4>
-						</div>
-
-					</div>
-					<div class="tab-pane" id="tab4">
-						<div id='sports'>
-							<h3>Select your favorite sports</h3>
-							Insert sports CSS sprites here, like lynda free account http://www.lynda.com/quickstart:
-							<div>
-								<span class="fa-stack"><i class='maki-baseball'></i></span>
-								<span class="fa-stack"><i class='maki-basketball'></i></span>
-								<span class="fa-stack"><i class='maki-football'></i></span>
-								<span class="fa-stack"><i class='maki-soccer'></i></span>
+							<label for="inputUsername"> Username</label>
+							<div class="form-group">
+								<div class="input-group margin-bottom-sm">
+									<span class="input-group-addon"><i class="fa  fa-qq fa-fw"></i></span>
+									<%= f.text_field :username, name: 'username', placeholder:' Username', class: 'form-control', 
+									'data-bv-message' => "Username is not valid", 
+									'data-bv-notempty' => "true",
+									'data-bv-regexp' => "true",
+									'data-bv-regexp-regexp' => "[a-zA-Z0-9_\.]+",
+									'data-bv-regexp-message' => "The username can only consist of letters, numbers, dots and underscores", 
+									'data-bv-stringlength' => "true",
+									'data-bv-stringlength-min' => "4",
+									'data-bv-stringlength-max' => "30",
+									'data-bv-stringlength-message' => "The username must be more than 4 and less than 30 characters long"
+									%>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="tab-pane" id="tab5">
-						<div id='teams'>
-							<h3>Who are your favorite teams?</h3>
-							<%= select_tag("user[team_ids][]", options_for_select(Team.all.collect { |team| [team.info.html_safe, team.id] }, @user.teams.collect { |team| team.id}), {:multiple=>true, :size=>5, :class => 'form-control', :placeholder=>"Warriors, 49ers, Giants"}) %>
+						</div>
+						</div>
+						<div class="tab-pane" id="tab3">
+							<div id='personalize'>
+								<h3>Hi <%=@user.name%></h3>
+								<img class="img-circle box-shad" alt="" src="<%= @user.image %>">
+								<h4>Tell us who you root for so we can show you the content you care about.</h4>
+							</div>
+
+						</div>
+						<div class="tab-pane" id="tab4">
+							<div id='sports'>
+								<h3>Select your favorite sports</h3>
+								Insert sports CSS sprites here, like lynda free account http://www.lynda.com/quickstart:
+								<div>
+									<span class="fa-stack"><i class='maki-baseball'></i></span>
+									<span class="fa-stack"><i class='maki-basketball'></i></span>
+									<span class="fa-stack"><i class='maki-football'></i></span>
+									<span class="fa-stack"><i class='maki-soccer'></i></span>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane" id="tab5">
+							<div id='teams'>
+								<h3>Who are your favorite teams?</h3>
+								<%= select_tag("user[team_ids][]", options_for_select(Team.all.collect { |team| [team.info.html_safe, team.id] }, @user.teams.collect { |team| team.id}), {:multiple=>true, :size=>5, :class => 'form-control', :placeholder=>"Warriors, 49ers, Giants"}) %>
 
 	<!-- 			---Angular JS?----
 
@@ -107,7 +124,7 @@
 
 	<%= f.submit "Finish", :class => 'btn btn-primary btn-lg btn-block', id: "form_submit" %>
 	<% end %>
-	
+
 </div>
 </div>
 </div>
