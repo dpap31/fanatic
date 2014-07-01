@@ -16,7 +16,7 @@
 	<div class="form-group">
 	<div class="input-group margin-bottom-sm">
 		<span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
-		<%= f.text_field :email, name: 'email', placeholder:' Email', class: 'form-control', id: 'email', 'required type' => 'email', 
+		<%= f.text_field :email, placeholder:' Email', class: 'form-control', id: 'email', 'required type' => 'email', 
 		'data-bv-notempty'=> 'true',
 		'data-bv-message' => "Email is not valid" %>
 	</div>
@@ -25,7 +25,7 @@
 	<div class="form-group">
 	<div class="input-group margin-bottom-sm">
 		<span class="input-group-addon"><i class="fa  fa-qq fa-fw"></i></span>
-		<%= f.text_field :username, name: 'username', placeholder:' Username', class: 'form-control', 
+		<%= f.text_field :username, placeholder:' Username', class: 'form-control', 
 		'data-bv-message' => "Username is not valid", 
 		'data-bv-notempty' => "true",
 		'data-bv-regexp' => "true",

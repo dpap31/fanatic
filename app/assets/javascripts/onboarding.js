@@ -13,21 +13,21 @@ $(document).ready(function() {
 		},
 		threshold: 3,
 		fields: {
-			first_name: {
+			'user[first_name]': {
 				validators: {
 					notEmpty: {
 						message: 'First name is required'
 					}
 				}
 			},
-			last_name: {
+			'user[last_name]': {
 				validators: {
 					notEmpty: {
 						message: 'Last name is required'
 					}
 				}
 			},
-			 email: {
+			'user[email]': {
                 validators: {
                     notEmpty: {
                         message: 'The email is required and cannot be empty'
@@ -37,7 +37,7 @@ $(document).ready(function() {
                     }
                 }
             },
-		   username: {
+		   'user[username]': {
                 message: 'The username is not valid',
                 validators: {
                     notEmpty: {
