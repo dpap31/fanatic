@@ -7,10 +7,11 @@ $(document).ready(function() {
 	$('.edit_user').bootstrapValidator({
 		message: 'This value is not valid',
 		feedbackIcons: {
-			valid: 'glyphicon glyphicon-ok',
-			invalid: 'glyphicon glyphicon-remove',
-			validating: 'glyphicon glyphicon-refresh'
+			valid: 'glyphicon glyphicon-ok ',
+			invalid: 'glyphicon glyphicon-remove ',
+			validating: 'glyphicon glyphicon-refresh '
 		},
+		threshold: 3,
 		fields: {
 			first_name: {
 				validators: {
@@ -69,6 +70,9 @@ $(document).ready(function() {
 			$('#rootwizard').find('.pager .finish').hide();
 		}
 	}});
+	$('#form_submit').on('click', function(e) {
+      $('.edit_user').bootstrapValidator('defaultSubmit');
+    });
 });
 
 var onboardingApp = angular.module('onboardingApp',['ngResource','ngAnimate']);

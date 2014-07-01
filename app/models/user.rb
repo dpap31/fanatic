@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
  accepts_nested_attributes_for :teams
 
 validates :uid, uniqueness: true, on: :create
-validates :email, :first_name, :last_name, :username,  presence: true, on: :update
+#validates :email, :first_name, :last_name, :username,  presence: true, on: :update
 validates :email, :username, uniqueness: true, on: :update
 validates_format_of :email, with: /[a-zA-Z0-9._%-]+@(?:[a-zA-Z0-9-]+\.)+(com|net|org|info|biz|me|edu|gov)/i
 validates_format_of :username, with: /[a-zA-Z0-9_\.]+/i
