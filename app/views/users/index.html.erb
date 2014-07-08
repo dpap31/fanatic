@@ -12,7 +12,7 @@
       <input type="text" class="form-control" placeholder="Search users by name, username, email" ng-model="query">
     <ul class = 'userlist'ng-show='query'>
     <li ng-repeat="user in users | filter: query" class ="animate results"> 
-    <a href="/users/{{user.id}}/dashboard"
+    <a href="/users/{{user.id}}/posts"
     <div class= 'search_results'>    
      <img ng-src="{{user.image}}"/>
       <span id='user_details'><b>{{user.name}}</b>, <em>{{user.username}}</em>
