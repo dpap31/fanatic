@@ -22,11 +22,11 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def activities
-    @activities = PublicActivity::Activity.limit(10).order("created_at desc")
+  def activities #Used SQL so current user doesnt appear in their own activity log ("owner_id != ?", current_user.id)
+    @activities = PublicActivity::Activity.limit(10).order("created_at desc").where("owner_id != ?", current_user.id)
   end
 
-  def trending_tags
+  def trending_tags #Trending tags are identified by pulling all tags created in the last 5 days then counting the posts per tag take the top 5
     @trending_tags = ActsAsTaggableOn::Tagging.where(created_at: 5.days.ago..DateTime.now).group('tag_id').order('count_tag_id desc').count('tag_id').take(5)
   end
   
