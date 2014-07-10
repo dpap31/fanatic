@@ -23,6 +23,9 @@ class UsersController < ApplicationController
    @my_posts = current_user.posts.limit(6)
    @my_posts_count = current_user.posts.count
    @my_posts_cheers = current_user.reputation_for(:votes).to_i
+  # Used SQL so current user doesnt appear in their own activity log ("owner_id != ?", current_user.id)
+  # Mapped current_users friendships ID so only friend will appear in activity feed. 
+   @activities = PublicActivity::Activity.limit(10).order("created_at desc").where(owner_id: current_user.friendships.all.map {|x| x.friend_id}).where("owner_id != ?", current_user.id)
  end
 
   # GET /users/new
@@ -89,6 +92,7 @@ private
     def set_user
       @user = User.find(params[:id])
     end
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
