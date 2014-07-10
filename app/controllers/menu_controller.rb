@@ -3,7 +3,10 @@ class MenuController < ApplicationController
   end
   
   def headlines
-    @headlines_nba = Headline.nba
+    @headlines_nba = Headline.nba.fetch('headlines')
+    @headlines_mlb = Headline.mlb
+    @headlines_nhl = Headline.nhl
+    @headlines_nfl = Headline.nfl
 
     espn = EspnRb.headlines(:api_key =>ENV["ESPN_API_key"])
 

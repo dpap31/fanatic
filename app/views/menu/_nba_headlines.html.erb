@@ -4,8 +4,8 @@
 		<div class="panel-body">
 			<div class="ESPN_list-group"> 
 
-				<% @accordion_headlines_nba.each do |headline| %>
-				<a href="<%= headline.web_url %>" target="_blank" class="list-group-item"><%= headline.title %>
+				<% @headlines_nba.each do |headline| %>
+				<a href="<%= headline %>" target="_blank" class="list-group-item"><%= headline.fetch('headline') %>
 					<%end%> 
 				</a>
 			</div>
