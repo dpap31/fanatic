@@ -5,9 +5,9 @@
 	</div>
 	<div class="panel-body">
 		<div class="ESPN_list-group">
-			<% @accordion_headlines_nhl.each do |headline| %>
-			<a href="<%= headline.web_url %>" target="_blank" class="list-group-item"><%= headline.title %>
-				<%end%>   
+			<% @headlines_nhl.each do |headline| %>
+				<a href="<%= headline['links']['web']['href']%>" target="_blank" class="list-group-item"><%= headline['headline'] %>
+			<%end%>   
 			</a>
 		</div>
 	</div><!--/panel-->
