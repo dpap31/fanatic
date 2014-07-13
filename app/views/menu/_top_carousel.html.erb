@@ -1,32 +1,42 @@
-<div id="this-carousel-id" class="carousel slide"><!-- class of slide for animation -->
-  <div class="carousel-inner">
-    <div class="item active"><!-- class of active since it's the first item -->
-      <img src="http://placehold.it/1200x480" alt="" />
-      <div class="carousel-caption">
-        <p>Caption text here</p>
+      <div class="carousel slide" id="carousel-742688">
+        <ol class="carousel-indicators">
+          <li class="active" data-slide-to="0" data-target="#carousel-742688">
+          </li>
+          <li data-slide-to="1" data-target="#carousel-742688">
+          </li>
+          <li data-slide-to="2" data-target="#carousel-742688">
+          </li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="item active">
+          <a href = "<%= @headlines_top.slice(0)['links']['web']['href']%>">
+            <img alt="" src="<%=@headlines_top.slice(0)['images'].first['url']%>" />
+            <div class="carousel-caption">
+              <p>
+                <%=@headlines_top.slice(0)['headline']%>
+              </p>
+            </div>
+            </a>
+          </div>
+          <div class="item">
+          <a href = "<%= @headlines_top.slice(1)['links']['web']['href']%>">
+            <img alt="" src="<%=@headlines_top.slice(1)['images'].first['url']%>" />
+            <div class="carousel-caption">
+              <p>
+              <%=@headlines_top.slice(1)['headline']%>
+              </p>
+            </div>
+            </a>
+          </div>
+          <div class="item">
+            <a href = "<%= @headlines_top.slice(2)['links']['web']['href']%>">
+            <img alt="" src="<%=@headlines_top.slice(2)['images'].first['url']%>" />
+            <div class="carousel-caption">
+              <p>
+                <%=@headlines_top.slice(2)['headline']%>
+              </p>
+            </div>
+            </a>
+          </div>
+        </div> <a class="left carousel-control" href="#carousel-742688" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#carousel-742688" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
       </div>
-    </div>
-    <div class="item">
-      <img src="http://placehold.it/1200x480" alt="" />
-      <div class="carousel-caption">
-        <p>Caption text here</p>
-      </div>
-    </div>
-    <div class="item">
-      <img src="http://placehold.it/1200x480" alt="" />
-      <div class="carousel-caption">
-        <p>Caption text here</p>
-      </div>
-    </div>
-    <div class="item">
-      <img src="http://placehold.it/1200x480" alt="" />
-      <div class="carousel-caption">
-        <p>Caption text here</p>
-      </div>
-    </div>
-  </div><!-- /.carousel-inner -->
-  <!--  Next and Previous controls below
-        href values must reference the id for this carousel -->
-    <a class="carousel-control left" href="#this-carousel-id" data-slide="prev">&lsaquo;</a>
-    <a class="carousel-control right" href="#this-carousel-id" data-slide="next">&rsaquo;</a>
-</div><!-- /.carousel -->

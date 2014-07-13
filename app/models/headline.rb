@@ -21,7 +21,17 @@ class Headline
 
 	def self.top
 		path = "/news/headlines/top"
-	    api_call(@@base_url, @@params, path)
+		uri = URI(@@base_url + path)
+	    uri.query = URI.encode_www_form(@@params) 
+	    #Start request
+		request = Net::HTTP::Get.new(uri)
+		response = Net::HTTP.start(uri.hostname, uri.port) { |http| 
+			http.request(request)
+		}
+		#Parse response
+		hash = JSON.parse(response.body)
+		#Capture headlines node
+		headlines_hash = hash.fetch('headlines')
 	end
 	def self.nba
 		path = "/basketball/nba/news/headlines/top/"
