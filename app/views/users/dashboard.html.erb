@@ -254,7 +254,7 @@
 			<div class = 'following_images'>
 				<ul id="grid">
 					<% for friendship in @user.friendships.take(8) %>
-					<li><%= image_tag(friendship.friend.image, size: '40x40') %></li>
+					<li><%= image_tag(friendship.friend.image, size: '40x40', class: 'img-circle') %></li>
 					<% end %>
 				</ul>
 			</div>

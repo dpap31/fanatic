@@ -15,20 +15,29 @@ span {
 	width:80%;
 }
 
-div.item img{
+div.item img {
 	width: 100%;
 	max-height: 400px;
 }
+
+.carousel {
+  box-shadow: 5px 5px 5px #888888;
+  margin-bottom: 40px;
+  }
 
 div.carousel-caption{  
     position:absolute; /* absolute position (so we can position it where we want)*/  
     bottom:0px; /* position will be on bottom */  
     left:0px;  
     width:100%;  
-    /* styling bellow */  
+    /* styling below */  
     background-color:black;    
     font-size:15px;  
     color:white;  
     opacity:0.8; /* transparency */  
     filter:alpha(opacity=60); /* IE transparency */  
 } 
+
+.carousel-indicators{
+  bottom: 5px;
+}

@@ -6,11 +6,15 @@
           </li>
           <li data-slide-to="2" data-target="#carousel-742688">
           </li>
+          <li data-slide-to="3" data-target="#carousel-742688">
+          </li>
+          <li data-slide-to="4" data-target="#carousel-742688">
+          </li>
         </ol>
         <div class="carousel-inner">
           <div class="item active">
           <a href = "<%= @headlines_top.slice(0)['links']['web']['href']%>">
-            <img alt="" src="<%=@headlines_top.slice(0)['images'].first['url']%>" />
+            <img alt="" src="<%=@headlines_top.slice(0)['images'].second['url']%>" />
             <div class="carousel-caption">
               <p>
                 <%=@headlines_top.slice(0)['headline']%>
@@ -20,7 +24,7 @@
           </div>
           <div class="item">
           <a href = "<%= @headlines_top.slice(1)['links']['web']['href']%>">
-            <img alt="" src="<%=@headlines_top.slice(1)['images'].first['url']%>" />
+            <img alt="" src="<%=@headlines_top.slice(1)['images'].second['url']%>" />
             <div class="carousel-caption">
               <p>
               <%=@headlines_top.slice(1)['headline']%>
@@ -30,10 +34,30 @@
           </div>
           <div class="item">
             <a href = "<%= @headlines_top.slice(2)['links']['web']['href']%>">
-            <img alt="" src="<%=@headlines_top.slice(2)['images'].first['url']%>" />
+            <img alt="" src="<%=@headlines_top.slice(2)['images'].second['url']%>" />
             <div class="carousel-caption">
               <p>
                 <%=@headlines_top.slice(2)['headline']%>
+              </p>
+            </div>
+            </a>
+          </div>
+          <div class="item">
+            <a href = "<%= @headlines_top.slice(3)['links']['web']['href']%>">
+            <img alt="" src="<%=@headlines_top.slice(3)['images'].second['url']%>" />
+            <div class="carousel-caption">
+              <p>
+                <%=@headlines_top.slice(3)['headline']%>
+              </p>
+            </div>
+            </a>
+          </div>
+          <div class="item">
+            <a href = "<%= @headlines_top.slice(4)['links']['web']['href']%>">
+            <img alt="" src="<%=@headlines_top.slice(4)['images'].second['url']%>" />
+            <div class="carousel-caption">
+              <p>
+                <%=@headlines_top.slice(4)['headline']%>
               </p>
             </div>
             </a>

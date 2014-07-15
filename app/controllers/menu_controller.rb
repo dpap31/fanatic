@@ -8,5 +8,6 @@ class MenuController < ApplicationController
     @headlines_mlb = Headline.mlb
     @headlines_nhl = Headline.nhl
     @headlines_nfl = Headline.nfl
+    expires_in 10.minutes, public: true
   end
 end
