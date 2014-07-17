@@ -5,6 +5,7 @@
 	<%= stylesheet_link_tag "dashboard" %>
 	<%= javascript_include_tag "dashboard"%>
 </head>
+<body>
 <div class="row clearfix">
 	<div class="col-md-8 column">
 		<div id="title">
@@ -211,72 +212,109 @@
 					</tr>
 					<% end %>
 				</table>
+			</div>
+			<%else%>
+			<h2>My Posts</h2>
+			<%= link_to "Create Post", new_post_path, :class => 'btn btn-primary btn-block'%>
+			<% end %>
 		</div>
-		<%else%>
-		<h2>My Posts</h2>
-		<%= link_to "Create Post", new_post_path, :class => 'btn btn-primary btn-block'%>
-		<% end %>
-	</div>
-	<div class="col-md-3 column pull-left">
-		<div id = 'user_widget'>
-		<div id="DashboardProfileCard"> </div>
-		<%= image_tag(@user.image, class: 'profile_pic') %>
-		
-		<div id='first_name'><strong><%= @user.first_name %></strong></div>
-		<div id='username'> <em><%= @user.username %></em></div>
-		<div id='posts'> <%= @my_posts_count %></div>
-		<div id='cheers_count'><%= @my_posts_cheers %></div>
-		<div id='following_count'><%= @user.friendships.count%></div>
-		<br>
-		<div id='posts_label'> Posts</div>
-		<div id='cheers_label'>Cheers</div>
-		<div id='following_label'>Following</div>
-		</div>
+		<div class="col-md-3 column pull-left">
+			<div id = 'user_widget'>
+				<div id="DashboardProfileCard"> </div>
+				<%= image_tag(@user.image, class: 'profile_pic') %>
+
+				<div id='first_name'><strong><%= @user.first_name %></strong></div>
+				<div id='username'> <em><%= @user.username %></em></div>
+				<div id='posts'> <%= @my_posts_count %></div>
+				<div id='cheers_count'><%= @my_posts_cheers %></div>
+				<div id='following_count'><%= @user.friendships.count%></div>
+				<br>
+				<div id='posts_label'> Posts</div>
+				<div id='cheers_label'>Cheers</div>
+				<div id='following_label'>Following</div>
+			</div>
 
 			<div id= 'team_widget'>
-			<div id= 'widget_header'><h4>Teams</h4>
+				<div id= 'widget_header'><h4>Teams</h4>
 				</div>
 				<hr>
 				<div class = 'team_images'>
 					<% @teams.each do |team| %>
 					<%= link_to tag_path(team.name) do%>
-						<%= image_tag("logos/#{team.id}.gif", size: "80x55")%>
-						<% end %>
-						<% end %>
-					</div>
+					<%= image_tag("logos/#{team.id}.gif", size: "80x55")%>
+					<% end %>
+					<% end %>
 				</div>
+			</div>
 
-		<div id='following_widget'>
-		<div id= 'widget_header'><h4>
-			Following
-		</h4>
-		</div>
-		<hr>
+			<div id='following_widget'>
+				<div id= 'widget_header'><h4>
+					Following
+				</h4>
+			</div>
+			<hr>
 			<div class = 'following_images'>
 				<ul id="grid">
 					<% for friendship in @user.friendships.take(8) %>
-					<a href="#<%=friendship.friend.username%>" data-type="blah">
-					<li><%= image_tag(friendship.friend.image, size: '40x40', class: 'img-circle') %>
-                		</a>
+						<li><%= image_tag(friendship.friend.image, size: '40x40', class: 'img-circle') %>
+						</a>
 					</li>
 					<% end %>
 				</ul>
 			</div>
 		</div>
-
-				<div id= 'activity_widget'>
-				<div id= 'widget_header'>
-				<h4>Activity</h4>
-				</div>
-				<hr>
-				<dl>
-					<dd>
-						<%= render template: 'layouts/_activities.html.erb'%>
-					</dd>
-				</dl>
+		<div id='following_widget'>
+			<div id= 'widget_header'><h4>
+				Following
+			</h4>
 		</div>
+		<section id="cd-team" class="cd-section">
+			<div class="cd-container">
+				<h2>Our team</h2>
+				<ul>
+					<li>
+						<a href="#0" data-type="member-1">
+							<figure>Drew</figure>
+							<div class="cd-member-info"><!-- .... --></div>
+						</a>
+					</li>
+
+					<li><!-- member 2 --></li>
+
+					<li><!-- .... --></li>
+				</ul>
+				</div>
+				</section>
 	</div>
-	</html>
+
+	<div id= 'activity_widget'>
+		<div id= 'widget_header'>
+			<h4>Activity</h4>
+		</div>
+		<hr>
+		<dl>
+			<dd>
+				<%= render template: 'layouts/_activities.html.erb'%>
+			</dd>
+		</dl>
+	</div>
+</div>
+<div class="cd-overlay"></div>
+
+<div class="cd-member-bio member-1">
+		<div class="cd-member-bio-pict">
+			<img src="http://departments.fmarion.edu/mathematics/museum/stalks3/pretty.gif" alt="Member Bio image">
+		</div> <!-- cd-member-bio-pict -->
+
+		<div class="cd-bio-content">
+			<h1>Meet John Smith</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, amet, voluptatibus et omnis dolore illo saepe voluptatem qui quibusdam sunt corporis ut iure repellendus delectus voluptate explicabo temporibus quos eaque?</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, explicabo, doloribus, esse rem officia quas facilis eius alias similique ducimus amet quam odio perspiciatis dolorem ipsam! Ab, dolores, adipisci, explicabo pariatur illum deleniti quam iusto placeat nisi aliquam praesentium mollitia eligendi a! Sequi, voluptatibus sed quos possimus harum rem tempore fugiat? Corporis, officia, assumenda, asperiores blanditiis quidem aliquam fugiat vel excepturi velit provident aut omnis quos aliquid tempora eaque. Nemo, eveniet, sint maxime eum maiores totam est inventore numquam voluptatem hic nam blanditiis placeat illum nesciunt voluptatum eos cum quos magni voluptates ipsam. Perspiciatis alias ducimus libero. Quo provident omnis fugiat ut repellendus optio cum quaerat odio et ipsa. Molestias, atque repellat non maxime amet corporis magni libero quam numquam error beatae at asperiores et a porro nostrum ab necessitatibus esse aliquid iure repellendus obcaecati unde quo eius eum dolores quasi consectetur culpa velit optio! Sequi, dolor, minima, veniam doloribus in ullam cupiditate iste animi ipsum esse eaque similique illo temporibus magni et earum amet sint deleniti est reiciendis. Maxime, quis, animi, ad quasi adipisci suscipit alias iste reprehenderit ea placeat nulla commodi nobis magnam provident veniam earum odit eveniet possimus aut voluptatum dolorum culpa necessitatibus facere totam quisquam. Ipsam.</p>
+		</div> <!-- cd-bio-content -->
+	</div> <!-- cd-member-bio -->
+<a href="#0" class="cd-member-bio-close">Close</a> <!-- close the author bio section -->
+</body>
+</html>
 
 
 

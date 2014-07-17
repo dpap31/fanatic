@@ -2,7 +2,6 @@
 
 jQuery(document).ready(function($){
 	var is_firefox = navigator.userAgent.indexOf('Firefox') > -1;
-	
 	//open team-member bio
 	$('#cd-team').find('ul a').on('click', function(event){
 		event.preventDefault();
