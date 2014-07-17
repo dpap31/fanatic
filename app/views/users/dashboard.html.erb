@@ -3,6 +3,7 @@
 <head>
 	<title><%=@user.name%>'s Fanatic Dashboard</title>
 	<%= stylesheet_link_tag "dashboard" %>
+	<%= javascript_include_tag "dashboard"%>
 </head>
 <div class="row clearfix">
 	<div class="col-md-8 column">
@@ -254,7 +255,10 @@
 			<div class = 'following_images'>
 				<ul id="grid">
 					<% for friendship in @user.friendships.take(8) %>
-					<li><%= image_tag(friendship.friend.image, size: '40x40', class: 'img-circle') %></li>
+					<a href="#<%=friendship.friend.username%>" data-type="blah">
+					<li><%= image_tag(friendship.friend.image, size: '40x40', class: 'img-circle') %>
+                		</a>
+					</li>
 					<% end %>
 				</ul>
 			</div>

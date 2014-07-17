@@ -54,7 +54,7 @@
           </div>
           <div class="item">
             <a href = "<%= @headlines_top.slice(4)['links']['web']['href']%>">
-            <img alt="" src="<%=@headlines_top.slice(4)['images'].second['url']%>" />
+            <img alt="" src="<%= img_finder(4) %>">
             <div class="carousel-caption">
               <p>
                 <%=@headlines_top.slice(4)['headline']%>
