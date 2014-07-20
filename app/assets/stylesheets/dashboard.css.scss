@@ -275,29 +275,25 @@ div.col-md-3.column.pull-left  hr{
 
 /*Following Widget*/
 #following_widget {
-	margin-top: 20px;
+	margin-left: 0px;
+  margin-top: 20px;
 	background-color:#FFFFFF;
 	border-radius: 10px;
 	box-shadow: 0 0 5px #ccc;
 	padding-bottom: 15px;
+
 }
 
-ul#grid {
-	list-style: none;
-	margin: 0 auto;
-    padding: 0px 10px 0px 10px;
-    width: 90%;
-}
-#grid li {
-	float: left;
-	padding: 0;
-	margin: 2px 3px 2px 3px;
-} 
+#following_widget img {
+  margin-top: 2px;
+  margin-bottom: 2px;
 
-.following_images {
-	width:100%;
-	margin: 0 auto;
-	display: inline-block;
+}
+
+#following_widget ul {
+    padding-left: 25px;
+    padding-right: 25px;
+    list-style-type: none;
 }
  
  /*Team Widget*/
@@ -372,6 +368,10 @@ img {
   max-width: 100%;
 }
 
+#top-nav {
+  z-index: -1;
+}
+
 /* -------------------------------- 
 
 Modules - reusable parts of our design
@@ -397,7 +397,7 @@ Main components
 -------------------------------- */
 main {
   position: relative;
-  z-index: 2;
+  z-index: 5;
   -webkit-transition-property: -webkit-transform;
   -moz-transition-property: -moz-transform;
   transition-property: transform;
@@ -440,140 +440,6 @@ main.slide-out .cd-overlay {
   }
 }
 
-.cd-section {
-  padding: 2em 0;
-  text-align: center;
-}
-.cd-section .cd-container {
-  /* this modifies the .cd-container default max-width */
-  max-width: 768px;
-}
-.cd-section h2 {
-  font-family: "Droid Sans", sans-serif;
-  font-weight: bold;
-  text-transform: uppercase;
-  margin-bottom: 1em;
-  font-size: 20px;
-  font-size: 1.25rem;
-}
-.cd-section p {
-  line-height: 1.4;
-}
-@media only screen and (min-width: 768px) {
-  .cd-section {
-    padding: 4em;
-  }
-  .cd-section p {
-    line-height: 1.6;
-  }
-}
-@media only screen and (min-width: 1200px) {
-  .cd-section {
-    padding: 6em;
-  }
-  .cd-section h2 {
-    margin-bottom: 2em;
-  }
-  .cd-section p {
-    line-height: 1.8;
-    font-size: 18px;
-    font-size: 1.125rem;
-  }
-}
-
-header {
-  background: #f2ecbd;
-}
-header h1 {
-  font-size: 30px;
-  font-size: 1.875rem;
-  font-family: "Droid Sans", sans-serif;
-  font-weight: bold;
-  text-transform: uppercase;
-  margin-bottom: .4em;
-  color: #3e380c;
-}
-header p {
-  font-size: 13px;
-  font-size: 0.8125rem;
-  color: #93861d;
-}
-
-.cd-placeholder-1 {
-  background: #f25f5c;
-  color: #fdeaea;
-}
-
-.cd-placeholder-2 {
-  background: #FFF;
-}
-
-#cd-team .cd-container {
-  max-width: 1200px;
-}
-#cd-team h2 {
-  color: #1a2f2a;
-}
-#cd-team li {
-  margin-bottom: 2em;
-  border-radius: 0.25em;
-  box-shadow: 0 0 10px rgba(92, 75, 81, 0);
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  transition: all 0.3s;
-}
-.no-touch #cd-team li:hover {
-  box-shadow: 0 0 10px rgba(92, 75, 81, 0.3);
-}
-.no-touch #cd-team li:hover .cd-img-overlay {
-  opacity: 1;
-}
-#cd-team figure {
-  position: relative;
-}
-#cd-team img {
-  display: block;
-  width: 100%;
-  border-radius: .25em .25em 0 0;
-}
-#cd-team .cd-img-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(92, 75, 81, 0.9);
-  opacity: 0;
-  border-radius: .25em .25em 0 0;
-  -webkit-transition: opacity 0.3s;
-  -moz-transition: opacity 0.3s;
-  transition: opacity 0.3s;
-}
-#cd-team .cd-img-overlay span {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  bottom: auto;
-  right: auto;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  -moz-transform: translateX(-50%) translateY(-50%);
-  -ms-transform: translateX(-50%) translateY(-50%);
-  -o-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-  color: #FFF;
-}
-
-@media only screen and (min-width: 768px) {
-  #cd-team li {
-    width: 31%;
-    float: left;
-    margin-right: 3.5%;
-  }
-  #cd-team li:nth-child(3n) {
-    margin-right: 0;
-  }
-}
-
 .cd-member-bio {
   position: fixed;
   top: 0;
@@ -609,6 +475,7 @@ header p {
 .cd-member-bio .cd-member-bio-pict {
   position: relative;
 }
+
 .cd-member-bio .cd-member-bio-pict::after {
   /* gradient at the bottom of the image - same color of the background of the section */
   content: '';
@@ -620,12 +487,28 @@ header p {
   background: -webkit-linear-gradient( bottom , #5c4b51, rgba(92, 75, 81, 0));
   background: linear-gradient(to top, #5c4b51, rgba(92, 75, 81, 0));
 }
+
+.cd-profile-pic img {
+    position: absolute;
+    right: 343px;
+    top: 350px;
+    border: 5px solid white;
+    z-index: 2;
+    margin-bottom: 10px
+ }
+
+div.cd-profile-pic:after {
+  /* gradient at the bottom of the image - same color of the background of the section */
+  margin: 0 auto;
+}
+
 .no-cssgradients .cd-member-bio .cd-member-bio-pict::after {
   display: none;
 }
-.cd-member-bio img {
+.cd-member-bio-pict img {
   width: 100%;
   display: block;
+  z-index: 1;
 }
 .cd-member-bio .cd-bio-content {
   padding: 1em;
@@ -706,7 +589,7 @@ header p {
   height: 32px;
   overflow: hidden;
   position: fixed;
-  top: 10px;
+  top: 20px;
   right: 10px;
   background: url("/assets/cd-icon-close.svg") no-repeat center center;
   text-indent: 100%;
