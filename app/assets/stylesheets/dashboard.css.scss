@@ -164,7 +164,7 @@ body {
 
 /*user widget*/
 #user_widget{
-	height: auto;
+	height: 190px;
 	margin-top: 20px;
 	background-color:#FFFFFF;
 	border-radius: 10px; 
@@ -172,6 +172,7 @@ body {
 	padding: 0px;
 	position: relative;
 	z-index: -1;
+  overflow: auto;
 
 }
 
@@ -200,51 +201,67 @@ div#DashboardProfileCard{
 	width: 40%;
 	position: relative;
 }
+
+.stats {
+  position: relative;
+  width: 100%;
+  margin-bottom: 60px;
+}
+
+
 #posts{
-    width: 30%;
-	display: inline-block;
+  width: 33.33%;
 	font-size: 25px;
 	text-align: center;
-
+  float: left;
+  position: absolute;
+  left: 0;
 }
 
 #cheers_count{
-	width: 30%;
-	display: inline-block;
+	width: 33.33%;
 	font-size: 25px;
 	text-align: center;
-
+  position: absolute;
+  left: 33%;
 }
+
 #following_count{
-	width: 30%;
-	display: inline-block;
+	width: 33.33%;
 	font-size: 25px;
 	text-align: center;
+  position: absolute;
+  left: 66%;
 
 }
 #following_label{
-    width: 30%;
-    font-size: 10px;
-	display: inline-block;
+  width: 33.33%;
+  font-size: 10px;
 	text-align: center;
-	margin: 0 auto;
+  position: absolute;
+  left: 66%;
+  margin-top: 10px;
+  margin-bottom: 10px;
 
 }
 #posts_label{
-    width: 30%;
-    font-size: 10px;
-	display: inline-block;
+  width: 33.33%;
+  font-size: 10px;
 	text-align: center;
-	margin: 0 auto;
-
+  position: absolute;
+  left: 0%;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 #cheers_label{
-	width: 30%;
+	width: 33.33%;
 	font-size: 10px;
-	display: inline-block;
 	text-align: center;
-	margin: 0 auto;
+  position: absolute;
+  left: 33%;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 
@@ -344,7 +361,6 @@ Primary style
 
 -------------------------------- */
 html * {
-  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
@@ -368,8 +384,9 @@ img {
   max-width: 100%;
 }
 
+/*Stop application header from overlaping slide out drawer*/
 #top-nav {
-  z-index: -1;
+  z-index: 1;
 }
 
 /* -------------------------------- 
@@ -490,7 +507,7 @@ main.slide-out .cd-overlay {
 
 .cd-profile-pic img {
     position: absolute;
-    right: 343px;
+    right: 355px;
     top: 350px;
     border: 5px solid white;
     z-index: 2;
@@ -511,6 +528,7 @@ div.cd-profile-pic:after {
   z-index: 1;
 }
 .cd-member-bio .cd-bio-content {
+  margin-top: 30px;
   padding: 1em;
   color: #FFF;
 }
@@ -523,6 +541,7 @@ div.cd-profile-pic:after {
   font-size: 1.25rem;
 }
 .cd-member-bio .cd-bio-content p {
+  margin-top: 30px;
   font-size: 14px;
   font-size: 0.875rem;
   margin: 1em 0;

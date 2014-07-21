@@ -222,7 +222,7 @@
 			<div id = 'user_widget'>
 				<div id="DashboardProfileCard"> </div>
 				<%= image_tag(@user.image, class: 'profile_pic') %>
-
+				<div class = "user_widget_stats">
 				<div id='first_name'><strong><%= @user.first_name %></strong></div>
 				<div id='username'> <em><%= @user.username %></em></div>
 				<div id='posts'> <%= @my_posts_count %></div>
@@ -232,6 +232,7 @@
 				<div id='posts_label'> Posts</div>
 				<div id='cheers_label'>Cheers</div>
 				<div id='following_label'>Following</div>
+				</div>
 			</div>
 
 			<div id= 'team_widget'>
