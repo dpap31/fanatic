@@ -1,7 +1,7 @@
 <%  for friendship in @user.friendships.take(8) %>
 <div class="cd-member-bio member-<%= friendship.friend.id%>">
 		<div class="cd-member-bio-pict"> <!-- background image -->
-			<img src="http://gamedayr.com/wp-content/uploads/2013/05/golden-state-warriors-playoffs-denver-nuggets.jpg" alt="Member Bio image">
+			<%= image_tag("team_images/#{friendship.friend.teams.first.id}.jpg")%>
 		</div> 
 		<div class="cd-profile-pic"> <!-- profile pic -->
 			<%= link_to image_tag(friendship.friend.image, size: '100x100', class: 'img-circle'), user_posts_path(friendship.friend) %>

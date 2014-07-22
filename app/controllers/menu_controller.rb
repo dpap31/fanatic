@@ -15,10 +15,11 @@ class MenuController < ApplicationController
   
   private
   def img_finder(arr_location)
-    if @headlines_top.slice(arr_location)['images'].second['url']
-          @headlines_top.slice(arr_location)['images'].second['url']
-    else 
+    headline_img = @headlines_top.slice(arr_location)['images'].second['url']
+    if headline_img   
       @headlines_top.slice(arr_location)['images'].first['url']
+    else 
+      @headlines_top.slice(arr_location)['images'].second['url']
   end
 end
 end

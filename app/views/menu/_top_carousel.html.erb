@@ -1,3 +1,4 @@
+<%=@headlines_top.slice(0)['images'].second['url']%>
       <div class="carousel slide" id="carousel-742688">
         <ol class="carousel-indicators">
           <li class="active" data-slide-to="0" data-target="#carousel-742688">
@@ -14,7 +15,7 @@
         <div class="carousel-inner">
           <div class="item active">
           <a href = "<%= @headlines_top.slice(0)['links']['web']['href']%>">
-            <img alt="" src="<%=@headlines_top.slice(0)['images'].second['url']%>" />
+            <img alt="" src="<%=img_finder(0)%>" />
             <div class="carousel-caption">
               <p>
                 <%=@headlines_top.slice(0)['headline']%>
