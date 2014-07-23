@@ -16,6 +16,6 @@
 		<div id='cheers_label'>Cheers</div>
 		<div id='following_label'>Following</div>
 		</div>
-			<%= best_in_place current_user, :description %>
+			<%= best_in_place current_user, :description, type: :textarea, :inner_class => "input_field" %>
 		</div> <!-- cd-bio-content -->
 	</div> <!-- cd-member-bio -->

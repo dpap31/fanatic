@@ -172,7 +172,7 @@ body {
 	padding: 0px;
 	position: relative;
 	z-index: 0;
-  overflow: auto;
+  overflow: hidden;
 }
 
 div#DashboardProfileCard{
@@ -190,14 +190,12 @@ div#DashboardProfileCard{
 	color: #999999;
 	left: 130px;
 	bottom: 30px; 
-	width: 40%;
 	z-index: 0;
 }
 
 #username{
 	left: 150px;
 	bottom: 20px; 
-	width: 40%;
 	position: relative;
 }
 
@@ -608,6 +606,13 @@ div.cd-profile-pic:after {
     font-size: 16px;
     font-size: 1rem;
   }
+
+  .input_field {
+    width: 700px;
+    background-color: #d7cfd2;
+    color: black;
+  }
+
   .no-cssgradients .cd-member-bio .cd-bio-content {
     -webkit-transform: translateY(0);
     -moz-transform: translateY(0);

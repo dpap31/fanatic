@@ -1,6 +1,7 @@
 // Slide out user profile 
 
 jQuery(document).ready(function($){
+	$('.best_in_place').best_in_place();
 	var is_firefox = navigator.userAgent.indexOf('Firefox') > -1;
 	//open team-member bio
 	$('#cd-team, #user_widget').find('ul a').on('click', function(event){

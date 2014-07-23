@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy, :role]
-
+  respond_to :html, :json
   # GET /users
   # GET /users.json
   def index
@@ -36,6 +36,7 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     @user = current_user
+    respond_with @user
   end
 
   # POST /users

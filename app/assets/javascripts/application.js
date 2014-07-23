@@ -21,6 +21,7 @@
 //= require angular
 //= require angular-resource
 //= require angular-animate
+//= require jquery.purr
 //= require best_in_place
 
 
