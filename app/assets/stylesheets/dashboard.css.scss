@@ -164,16 +164,15 @@ body {
 
 /*user widget*/
 #user_widget{
-	height: 190px;
+	height: 200px;
 	margin-top: 20px;
 	background-color:#FFFFFF;
 	border-radius: 10px; 
 	box-shadow: 0 0 5px #ccc;
 	padding: 0px;
 	position: relative;
-	z-index: -1;
+	z-index: 0;
   overflow: auto;
-
 }
 
 div#DashboardProfileCard{
@@ -273,8 +272,23 @@ div#DashboardProfileCard{
 	border-radius: 10px;
 	width: 100px;
 	position: relative;
-	z-index: 1;
+	z-index: 10;
 }
+
+/*remove profile image link styling and ul indentation*/
+#user_widget > ul {
+  list-style:none;
+  padding-left:0;
+  z-index: 11;
+  position: relative;
+
+}
+#user_widget > ul > a {
+  position: relative;
+  z-index: 11;
+}
+
+
 
 /*Widget headers*/
 #widget_header{

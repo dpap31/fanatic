@@ -23,6 +23,8 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'omniauth'
 
+gem 'best_in_place', github: 'bernat/best_in_place'
+
 gem 'omniauth-twitter'
 
 gem 'omniauth-facebook'

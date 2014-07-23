@@ -14,12 +14,17 @@ class MenuController < ApplicationController
   end
   
   private
+  # This helper method counts the number of images being returned by the ESPN API
+  # for each headline and presents the highest quality image for the carousel
   def img_finder(arr_location)
-    headline_img = @headlines_top.slice(arr_location)['images'].second['url']
-    if headline_img   
-      @headlines_top.slice(arr_location)['images'].first['url']
-    else 
-      @headlines_top.slice(arr_location)['images'].second['url']
+    images = []
+    headline_img = @headlines_top.slice(arr_location)['images'].each do |image|
+      images << image['url']
+    end
+  if images.length == 1
+    images[0]
+  else
+    images[1]
   end
 end
 end

@@ -21,6 +21,8 @@
 //= require angular
 //= require angular-resource
 //= require angular-animate
+//= require best_in_place
+
 
 
 

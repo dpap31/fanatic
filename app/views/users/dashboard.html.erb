@@ -221,7 +221,11 @@
 		<div class="col-md-3 column pull-left">
 			<div id = 'user_widget'>
 				<div id="DashboardProfileCard"> </div>
-				<%= image_tag(@user.image, class: 'profile_pic') %>
+				<ul>
+				<%= link_to "##{current_user.id}", 'data-type' => "member-#{current_user.id}" do %>
+  					<%= image_tag(@user.image, class: 'profile_pic') %>
+				<% end %>
+				</ul>
 				<div class = "user_widget_stats">
 				<div id='first_name'><strong><%= @user.first_name %></strong></div>
 				<div id='username'> <em><%= @user.username %></em></div>
@@ -277,14 +281,13 @@
 	</div>
 </div>
 <div class="cd-overlay"></div>
+<%= render partial: 'current_profile' %>
 <%  for friendship in @user.friendships.take(8) %>
   <%= render partial: 'profile' %>
 <% end %>
 <a href="#0" class="cd-member-bio-close">Close</a> <!-- close the author bio section -->
 </body>
 </html>
-
-
 
 
 

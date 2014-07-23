@@ -1,6 +1,7 @@
 
 // Update Profile Teams	Token Selector
 $(document).ready(function() {
+	$('.best_in_place').best_in_place();
 	$('select#user_team_ids_').select2({
 		dropdownCssClass: "bigdrop",
 		maximumSelectionSize: 5

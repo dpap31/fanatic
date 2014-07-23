@@ -1,0 +1,21 @@
+<div class="cd-member-bio member-<%= current_user.id%>">
+		<div class="cd-member-bio-pict"> <!-- background image -->
+			<%= image_tag("team_images/#{current_user.teams.first.id}.jpg", size: "800x486")%>
+		</div> 
+		<div class="cd-profile-pic"> <!-- profile pic -->
+			<%= link_to image_tag(current_user.image, size: '100x100', class: 'img-circle'), user_posts_path(current_user) %>
+		</div>
+		<div class="cd-bio-content">
+			<h1><%= current_user.name %></h1>
+		<div class = "stats">
+		<div id='posts'> <%= current_user.posts.count %></div>
+		<div id='cheers_count'><%= current_user.reputation_for(:votes).to_i %></div>
+		<div id='following_count'><%= current_user.friendships.count%></div>
+		<br>
+		<div id='posts_label'> Posts</div>
+		<div id='cheers_label'>Cheers</div>
+		<div id='following_label'>Following</div>
+		</div>
+			<%= best_in_place current_user, :description %>
+		</div> <!-- cd-bio-content -->
+	</div> <!-- cd-member-bio -->

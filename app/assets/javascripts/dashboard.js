@@ -3,7 +3,7 @@
 jQuery(document).ready(function($){
 	var is_firefox = navigator.userAgent.indexOf('Firefox') > -1;
 	//open team-member bio
-	$('#cd-team').find('ul a').on('click', function(event){
+	$('#cd-team, #user_widget').find('ul a').on('click', function(event){
 		event.preventDefault();
 		var selected_member = $(this).data('type');
 		$('.cd-member-bio.'+selected_member+'').addClass('slide-in');

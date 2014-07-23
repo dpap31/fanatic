@@ -5,6 +5,13 @@ GIT
   specs:
     activerecord-reputation-system (2.0.2)
 
+GIT
+  remote: git://github.com/bernat/best_in_place.git
+  revision: 11805c95f7cdc32c69db8e1e110d647a79abe56d
+  specs:
+    best_in_place (3.0.0.alpha)
+      actionpack (>= 3.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -201,6 +208,7 @@ DEPENDENCIES
   acts-as-taggable-on
   angularjs-rails
   bcrypt-ruby (~> 3.1.2)
+  best_in_place!
   bootstrap-sass
   cancancan (~> 1.7)
   carrierwave
