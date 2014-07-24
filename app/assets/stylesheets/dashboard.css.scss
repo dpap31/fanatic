@@ -208,8 +208,8 @@ div#DashboardProfileCard{
 
 #posts{
   width: 33.33%;
-	font-size: 25px;
-	text-align: center;
+  font-size: 25px;
+  text-align: center;
   float: left;
   position: absolute;
   left: 0;
@@ -234,7 +234,7 @@ div#DashboardProfileCard{
 #following_label{
   width: 33.33%;
   font-size: 10px;
-	text-align: center;
+  text-align: center;
   position: absolute;
   left: 66%;
   margin-top: 10px;
@@ -244,7 +244,7 @@ div#DashboardProfileCard{
 #posts_label{
   width: 33.33%;
   font-size: 10px;
-	text-align: center;
+  text-align: center;
   position: absolute;
   left: 0%;
   margin-top: 10px;
@@ -306,10 +306,10 @@ div.col-md-3.column.pull-left  hr{
 #following_widget {
 	margin-left: 0px;
   margin-top: 20px;
-	background-color:#FFFFFF;
-	border-radius: 10px;
-	box-shadow: 0 0 5px #ccc;
-	padding-bottom: 15px;
+  background-color:#FFFFFF;
+  border-radius: 10px;
+  box-shadow: 0 0 5px #ccc;
+  padding-bottom: 15px;
 
 }
 
@@ -320,12 +320,12 @@ div.col-md-3.column.pull-left  hr{
 }
 
 #following_widget ul {
-    padding-left: 25px;
-    padding-right: 25px;
-    list-style-type: none;
+  padding-left: 25px;
+  padding-right: 25px;
+  list-style-type: none;
 }
- 
- /*Team Widget*/
+
+/*Team Widget*/
 #team_widget {
 	margin-top: 20px;
 	background-color:#FFFFFF;
@@ -518,13 +518,13 @@ main.slide-out .cd-overlay {
 }
 
 .cd-profile-pic img {
-    position: absolute;
-    right: 357px;
-    top: 350px;
-    border: 5px solid white;
-    z-index: 2;
-    margin-bottom: 10px
- }
+  position: absolute;
+  right: 357px;
+  top: 350px;
+  border: 5px solid white;
+  z-index: 2;
+  margin-bottom: 10px
+}
 
 div.cd-profile-pic:after {
   /* gradient at the bottom of the image - same color of the background of the section */
@@ -607,19 +607,39 @@ div.cd-profile-pic:after {
     font-size: 1rem;
   }
 
-  .input_field {
-    width: 700px;
-    background-color: #d7cfd2;
-    color: black;
-  }
+/*edit pencil icon on hover of description*/
+  .edit_hover_class i {
+    visibility:hidden;
+    float: right;
 
-  .no-cssgradients .cd-member-bio .cd-bio-content {
-    -webkit-transform: translateY(0);
-    -moz-transform: translateY(0);
-    -ms-transform: translateY(0);
-    -o-transform: translateY(0);
-    transform: translateY(0);
   }
+  .cd-bio-content:hover i {
+   visibility:visible;
+ }
+
+ .edit_hover_class {
+  padding: 10px;
+}
+
+/*edit back ground color on hover of description*/
+.cd-bio-content:hover .edit_hover_class {
+  background-color: #d7cfd2;
+  color:black;
+}
+
+.input_field {
+  width: 700px;
+  background-color: #d7cfd2;
+  color: black;
+}
+
+.no-cssgradients .cd-member-bio .cd-bio-content {
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
+}
 }
 
 .cd-member-bio-close {
