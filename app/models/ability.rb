@@ -19,7 +19,7 @@ class Ability
     can :update, Post do |post|
       post.try(:user) == user 
     end
-    can :delete, Post do |post|
+    can :destroy, Post do |post|
       post.try(:user) == user 
     end
     can :list, Post

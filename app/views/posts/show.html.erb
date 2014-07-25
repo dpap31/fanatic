@@ -1,4 +1,9 @@
-<%= stylesheet_link_tag "posts_show" %>
+<html>
+<head>
+	<%= javascript_include_tag "posts_show.js"  %>
+	<%= stylesheet_link_tag "posts_show" %>
+</head>
+<body>
 		<div class="row clearfix">
 			<div class="col-md-8 column">
 				<h3>
@@ -20,8 +25,16 @@
 						<dt>
 							Author
 						</dt>
+						<dd id = 'author_image' >
+						<a href="#<%=@post.user.id%>" data-type="member-<%=@post.user.id%>">
+						<%= @post.user.username%>
+						</a>
+						</dd>
+						<dt>
+							Number of Posts
+						</dt>
 						<dd>
-							<%= link_to @post.user.username, user_posts_path(@post.user) %> 
+							<%= link_to @post.user.posts.count, user_posts_path(@post.user) %>
 						</dd>
 						<%if current_user.id == @posts_user_id %>
 							<% else %>
@@ -35,12 +48,6 @@
 							<% end %>
 						</dd>
 						<% end %>
-						<dt>
-							Number of Posts
-						</dt>
-						<dd>
-							<%= pluralize @post.user.posts.count, "post" %>
-						</dd>
 						<div id="date">
 							<dt>
 								Created
@@ -82,7 +89,7 @@
 									<dd>
 										<%= link_to("", {:action => 'edit', :id => @post.slug}, :class => 'glyphicon glyphicon-edit') %>
 										<% end %>
-										<% if can? :delete, @post %>
+										<% if can? :destroy, @post %>
 										<%= link_to "", post_path(@post), :method => :delete, :class =>"glyphicon glyphicon-trash", data: { confirm: "Are you sure?" }%>
 										<% end %>
 									</dd>
@@ -119,3 +126,9 @@
 									</div>
 								</div>
 							</div>
+
+<div class="cd-overlay"></div>
+  <%= render partial: 'author_profile' %>
+  <a href="#0" class="cd-member-bio-close">Close</a> <!-- close the author bio section -->
+</body>
+</html>
