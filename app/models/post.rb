@@ -2,11 +2,13 @@ class Post < ActiveRecord::Base
   include PublicActivity::Common
   belongs_to :user
   has_many :comments, dependent: :destroy
+
+  extend FriendlyId
+  friendly_id :title, use: [:slugged, :finders, :history]
+  
   mount_uploader :image, ImageUploader
   has_reputation :votes, source: :user, aggregated_by: :sum
   acts_as_taggable
-  extend FriendlyId
-  friendly_id :title, use: [:slugged, :finders, :history]
 
   def self.popular
     reorder('votes desc').find_with_reputation(:votes, :all)

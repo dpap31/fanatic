@@ -33,7 +33,7 @@ class PostsController < ApplicationController
 
   # GET /posts/new
   def new
-    #@post = Post.new
+    @post = Post.new
   end
 
   # GET /posts/1/edit
@@ -44,19 +44,19 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    #@post = Post.new(post_params)
+    @post = Post.new(post_params)
     @post.user_id = current_user.id
     @post.user = current_user
 
     respond_to do |format|
-      if @post.save
+      if @post.save!
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
         format.json { render action: 'show', status: :created, location: @post }
+        @post.create_activity :create, owner: current_user 
       else
         format.html { render action: 'new' }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
-      @post.create_activity :create, owner: current_user 
     end
   end
 
@@ -107,7 +107,7 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :content, :visible, :url, :tag_list, :user_id, :id, :user_name, :name, :image, :remote_image_url, :user_posts)   
+      params.require(:post).permit(:title, :content, :visible, :url, :tag_list, :user_id, :id, :user_name, :name, :image, :remote_image_url)
     end
     
     def find_user
