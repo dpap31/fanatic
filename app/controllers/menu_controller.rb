@@ -22,7 +22,9 @@ class MenuController < ApplicationController
       images << image['url']
     end
   if images.length == 1
-    images[0]
+    images[0] 
+  elsif images.length == 0
+    'http://www.cootharababeefgenes.com.au/assets/placeholder-81127a71a07cd5c12cde6fc9ac9b1b6e.png'
   else
     images[1]
   end

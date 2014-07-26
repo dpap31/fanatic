@@ -1,7 +1,7 @@
 <%  for friendship in @user.friendships.take(8) %>
 <div class="cd-member-bio member-<%= friendship.friend.id%>">
 		<div class="cd-member-bio-pict"> <!-- background image -->
-			<%= image_tag("team_images/#{friendship.friend.teams.first.id}.jpg", size: "800x486")%>
+			<%= image_tag("team_images/#{friendship.friend.teams[rand(friendship.friend.teams.length)].id}.jpg", size: "800x486")%>
 		</div> 
 		<div class="cd-profile-pic"> <!-- profile pic -->
 			<%= link_to image_tag(friendship.friend.image, size: '100x100', class: 'img-circle'), user_posts_path(friendship.friend) %>
