@@ -177,6 +177,12 @@ body {
   overflow: hidden;
 }
 
+/*remove link color*/
+div.user_widget_stats > a {
+  color: inherit;
+}
+
+
 div#DashboardProfileCard{
 	width: 100%;
 	height: 50%;
@@ -215,6 +221,11 @@ div#DashboardProfileCard{
   float: left;
   position: absolute;
   left: 0;
+}
+
+/*Remove link from posts number*/
+div.cd-bio-content > div > a {
+  color:inherit;
 }
 
 #cheers_count{

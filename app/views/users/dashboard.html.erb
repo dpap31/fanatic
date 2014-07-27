@@ -229,7 +229,9 @@
 				<div class = "user_widget_stats">
 				<div id='first_name'><strong><%= @user.first_name %></strong></div>
 				<div id='username'> <em><%= @user.username %></em></div>
+				<a href= '/users/<%= @user.id %>/posts'> 
 				<div id='posts'> <%= @my_posts_count %></div>
+				</a>
 				<div id='cheers_count'><%= @my_posts_cheers %></div>
 				<div id='following_count'><%= @user.friendships.count%></div>
 				<br>

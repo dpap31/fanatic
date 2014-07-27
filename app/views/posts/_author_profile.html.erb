@@ -1,6 +1,6 @@
 <div class="cd-member-bio member-<%= @post.user.id%>">
 	<div class="cd-member-bio-pict"> <!-- background image -->
-		<%= image_tag("team_images/#{@post.user.teams.first.id}.jpg", size: "800x486")%>
+		<%= image_tag("team_images/#{@post.user.teams[rand(@post.user.teams.length)].id}.jpg", size: "800x486")%>
 	</div> 
 	<div class="cd-profile-pic"> <!-- profile pic -->
 		<%= link_to image_tag(@post.user.image, size: '100x100', class: 'img-circle'), user_posts_path(@post.user) %>
@@ -8,7 +8,12 @@
 	<div class="cd-bio-content">
 		<h1><%= @post.user.name %></h1>
 		<div class = "stats">
-			<div id='posts'> <%= @post.user.posts.count %></div>
+		
+			<div id='posts'>
+			<a href="/users/<%= @post.user.id %>/posts"> 
+			<%= @post.user.posts.count %>
+			</a></div>
+			
 			<div id='cheers_count'><%= @post.user.reputation_for(:votes).to_i %></div>
 			<div id='following_count'><%= @post.user.friendships.count%></div>
 			<br>

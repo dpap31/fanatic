@@ -9,7 +9,9 @@
 		<div class="cd-bio-content">
 			<h1><%= friendship.friend.name %></h1>
 		<div class = "stats">
+		<a href = "/users/<%= friendship.friend.id%>/posts">
 		<div id='posts'> <%= friendship.friend.posts.count %></div>
+		</a>
 		<div id='cheers_count'><%= friendship.friend.reputation_for(:votes).to_i %></div>
 		<div id='following_count'><%= friendship.friend.friendships.count%></div>
 		<br>

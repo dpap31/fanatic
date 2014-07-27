@@ -8,7 +8,9 @@
 		<div class="cd-bio-content">
 			<h1><%= current_user.name %></h1>
 		<div class = "stats">
+		<a href= "/users/<%=current_user.id%>/posts">
 		<div id='posts'> <%= current_user.posts.count %></div>
+		</a>
 		<div id='cheers_count'><%= current_user.reputation_for(:votes).to_i %></div>
 		<div id='following_count'><%= current_user.friendships.count%></div>
 		<br>
