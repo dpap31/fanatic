@@ -4,6 +4,9 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
+     @top_posters = User.all.sort_by { |u| [-u.posts.count] }
+     # Identify current_users team preferance and find authors that post about your teams.
+     @top_posts_for_user = current_user.teams.map do |t| tags = ActsAsTaggableOn::Tag.find_by name: t.name end
      @users = User.all
      respond_to do |format|
     format.json { render :json => @users.as_json(:only => [:id, :name, :username, :image]) } 

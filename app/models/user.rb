@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
  has_many :inverse_friends, :through => :inverse_friendships, :source => :user
  has_and_belongs_to_many :teams
  accepts_nested_attributes_for :teams
+ acts_as_tagger
 
 validates :uid, uniqueness: true, on: :create
 #validates :email, :first_name, :last_name, :username,  presence: true, on: :update

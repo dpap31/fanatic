@@ -7,7 +7,12 @@
 </head>
 
 <h2>Search Users</h2>
+<% @top_posters.each do |u|%>
+ <%= u.name %>
+ <%= u.posts.count %>
+  <% end %>
 
+   <%= @top_posts_for_user %>
   <div ng-controller="UserCtrl">
       <input type="text" class="form-control" placeholder="Search users by name, username, email" ng-model="query">
     <ul class = 'userlist'ng-show='query'>
@@ -21,3 +26,4 @@
     </a>
     </li>
     </ul>
+
