@@ -4,9 +4,13 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-     @top_posters = User.all.sort_by { |u| [-u.posts.count] }
+     @trending_authors = User.all.sort_by { |u| [-u.reputation_for(:votes).to_i] }
+     @top_authors = User.all.sort_by { |u| [-u.posts.count] }
      # Identify current_users team preferance and find authors that post about your teams.
-     @top_posts_for_user = current_user.teams.map do |t| tags = ActsAsTaggableOn::Tag.find_by name: t.name end
+     @top_posts_for_user = current_user.teams.map do |t| tag_by_name = ActsAsTaggableOn::Tag.find_by name: t.name 
+       tag_by_name.class
+      # tag_id = tags.map do |t|  t.ActsAsTaggableOn::Taggable.taggable_id end
+     end 
      @users = User.all
      respond_to do |format|
     format.json { render :json => @users.as_json(:only => [:id, :name, :username, :image]) } 
@@ -93,6 +97,7 @@ private
     def hottness(post)
       post.sort_by {|p| (((p.reputation_for(:votes).to_i + p.comments.count)-1)/((Time.now - p.created_at) / 1.hour.round+2)**1.5)}.reverse
     end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])

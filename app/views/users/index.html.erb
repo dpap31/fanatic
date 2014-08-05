@@ -7,12 +7,6 @@
 </head>
 
 <h2>Search Users</h2>
-<% @top_posters.each do |u|%>
- <%= u.name %>
- <%= u.posts.count %>
-  <% end %>
-
-   <%= @top_posts_for_user %>
   <div ng-controller="UserCtrl">
       <input type="text" class="form-control" placeholder="Search users by name, username, email" ng-model="query">
     <ul class = 'userlist'ng-show='query'>
@@ -26,4 +20,22 @@
     </a>
     </li>
     </ul>
+    <h3>Top Authors All Time</h3>
+<ul>
+    <% @top_authors.first(5).each do |u|%>
+ <li> 
+      <%= u.name %>
+      <%= u.posts.count %> 
+  </li>
+  <% end %>
+  </ul>
 
+     <h3>Trending Authors</h3>
+<ul>
+    <% @trending_authors.first(5).each do |u|%>
+ <li> 
+      <%= u.name %>
+      <%= u.reputation_for(:votes).to_i %> 
+  </li>
+  <% end %>
+</ul>
