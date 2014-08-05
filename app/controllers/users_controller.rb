@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
      @trending_authors = User.all.sort_by { |u| [-u.reputation_for(:votes).to_i] }
+     @followed_authors = User.all.sort_by { |u| [-u.friendships.count] }
      @top_authors = User.all.sort_by { |u| [-u.posts.count] }
      # Identify current_users team preferance and find authors that post about your teams.
      @top_posts_for_user = current_user.teams.map do |t| tag_by_name = ActsAsTaggableOn::Tag.find_by name: t.name 

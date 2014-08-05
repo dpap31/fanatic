@@ -39,3 +39,13 @@
   </li>
   <% end %>
 </ul>
+     <h3>Authors by Followers</h3>
+<ul>
+    <% @followed_authors.first(5).each do |u|%>
+ <li> 
+      <%= u.name %>
+      <%= u.friendships.count%> 
+  </li>
+  <% end %>
+</ul>
+
