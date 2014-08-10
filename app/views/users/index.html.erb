@@ -26,32 +26,61 @@
     <h4><i class="fa fa-trophy"></i> Top Contributors</h4>
   </div>
   <ul>
-    <% @top_authors.first(5).each do |u|%>
-    <a href = ""><li class ="list-unstyled"> 
+    <% @top_authors.first(5).each do |u| %>
+      <a href = ""><li class ="list-unstyled"> 
       <span class="profile_pic"><img src="<%= u.image %>" class="img-circle"></span>
       <span class="uname"><%= u.username %></span>
       <span class="count"><%= u.posts.count %> </span>
       <div class="teams"><% u.teams.each do |team| %>
           <%= image_tag("logos/#{team.id}.png")%>
-          <% end %></div>
+          <% end %>
+      </div>
+    </li></a>
+    <hr>
+    <% end %>
+  </ul>
+  </div>
+  <div class ="top_users">
+  <div class ='widget_header'>
+    <h4><i class="glyphicon glyphicon-stats"></i> Trending Authors</h4>
+  </div>
+  <ul>
+    <% @trending_authors.first(5).each do |u|%>
+      <a href = ""><li class ="list-unstyled"> 
+      <span class="profile_pic"><img src="<%= u.image %>" class="img-circle"></span>
+      <span class="uname"><%= u.username %></span>
+      <span class="count"><%= u.reputation_for(:votes).to_i %> </span>
+      <div class="teams"><% u.teams.each do |team| %>
+          <%= image_tag("logos/#{team.id}.png")%>
+          <% end %>
+      </div>
+    </li></a>
+    <hr>
+    <% end %>
+  </ul>
+  </div>
+</div>
+<div class="col-md-5 col-centered">
+  <div class ="top_users">
+  <div class ='widget_header'>
+    <h4><i class="glyphicon glyphicon-star-empty"></i> Popular Authors</h4>
+  </div>
+  <ul>
+    <% @followed_authors.first(5).each do |u|%>
+      <a href = ""><li class ="list-unstyled"> 
+      <span class="profile_pic"><img src="<%= u.image %>" class="img-circle"></span>
+      <span class="uname"><%= u.username %></span>
+      <span class="count"><%= u.friendships.count%></span>
+      <div class="teams"><% u.teams.each do |team| %>
+          <%= image_tag("logos/#{team.id}.png")%>
+          <% end %>
+      </div>
     </li></a>
     <hr>
     <% end %>
   </ul>
   </div>
 
-  <h3>Trending Authors</h3>
-  <ul>
-    <% @trending_authors.first(5).each do |u|%>
-    <li> 
-      <%= u.name %>
-      <%= u.reputation_for(:votes).to_i %> 
-    </li>
-  </ul>
-  <% end %>
-</ul>
-</div>
-<div class="col-md-5 col-centered">
  <h3>Popular Authors</h3>
  <ul>
   <% @followed_authors.first(5).each do |u|%>
