@@ -1,3 +1,4 @@
+/*Search Box Styling*/
 h2 {
 	text-align: center;
 }
@@ -19,7 +20,7 @@ label {
 
 /* Angular User Search */
 
-ul img{
+div.ng-scope ul img{
   display:block;
   height: 80px;
   width: 80px;
@@ -60,3 +61,61 @@ a.search_results {
  display: inline-block;
  width: 100%;
 }
+
+/*Top Users Widegts*/
+.top_users {
+  margin-top: 20px;
+  background-color:#FFFFFF;
+  border-radius: 10px; 
+  box-shadow: 0 0 5px #ccc;
+}
+
+.top_users .widget_header {
+  width:100%;
+  height: 100%;
+  padding-top:10px;
+  padding-bottom:10px;
+  border-radius: 10px 10px 0px 0px;
+  margin:0px auto;
+  text-align: center;
+  background-color: #F6F7F8;
+}
+
+.top_users img {
+  height: 50px;
+  width: 50px;
+  text-align: left;
+  margin-right: 15px;
+}
+
+.top_users ul {
+  padding: 0px;
+}
+
+.top_users li {
+  padding: 10px;
+}
+
+.top_users hr {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.top_users a :hover{
+  background-color: #F0F0F0;
+}
+.top_users a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.top_users .uname {
+  font-size: 20px;
+}
+
+.top_users .count {
+  font-size: 30px;
+  float: right;
+  margin-right :30px;
+}
+
