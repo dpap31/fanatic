@@ -31,10 +31,7 @@
       <span class="profile_pic"><img src="<%= u.image %>" class="img-circle"></span>
       <span class="uname"><%= u.username %></span>
       <span class="count"><%= u.posts.count %> </span>
-      <div class="teams"><% u.teams.each do |team| %>
-          <%= image_tag("logos/#{team.id}.png")%>
-          <% end %>
-      </div>
+      <div class= "sport"> sport </div>
     </li></a>
     <hr>
     <% end %>
@@ -50,10 +47,7 @@
       <span class="profile_pic"><img src="<%= u.image %>" class="img-circle"></span>
       <span class="uname"><%= u.username %></span>
       <span class="count"><%= u.reputation_for(:votes).to_i %> </span>
-      <div class="teams"><% u.teams.each do |team| %>
-          <%= image_tag("logos/#{team.id}.png")%>
-          <% end %>
-      </div>
+      <div class="sport"> sport </div>
     </li></a>
     <hr>
     <% end %>
@@ -68,13 +62,18 @@
   <ul>
     <% @followed_authors.first(5).each do |u|%>
       <a href = ""><li class ="list-unstyled"> 
+      <span class="follow">
+        <% if current_user.friends.exists?(u.id)%>
+          <i class="fa fa-check-square fa-2x"></i>
+        <% else %>
+          <%= link_to("<i class='fa fa-plus-square fa-2x'></i>".html_safe, friendships_path(:friend_id => u.id), :method => :post) %>
+        <% end %>
+      </span>
+
       <span class="profile_pic"><img src="<%= u.image %>" class="img-circle"></span>
       <span class="uname"><%= u.username %></span>
       <span class="count"><%= u.friendships.count%></span>
-      <div class="teams"><% u.teams.each do |team| %>
-          <%= image_tag("logos/#{team.id}.png")%>
-          <% end %>
-      </div>
+      <div class="sport"> sport </div>
     </li></a>
     <hr>
     <% end %>

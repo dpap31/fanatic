@@ -81,6 +81,14 @@ a.search_results {
   background-color: #F6F7F8;
 }
 
+.top_users li i{
+  float: left;
+  margin-left: 5px;
+  margin-right: 25px;
+  margin-top: 10px;'
+  color: yellow !important;
+}
+
 .top_users .profile_pic img {
   height: 50px;
   width: 50px;
@@ -88,14 +96,9 @@ a.search_results {
   margin-right: 15px;
 }
 
-.top_users .teams {
+.top_users .sport {
   margin-top: 5px;
 
-}
-
- .top_users li .teams img{
-  height: 20px;
-  width: 30px;
 }
 
 .top_users ul {
