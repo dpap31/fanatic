@@ -81,11 +81,21 @@ a.search_results {
   background-color: #F6F7F8;
 }
 
-.top_users img {
+.top_users .profile_pic img {
   height: 50px;
   width: 50px;
-  text-align: left;
+  float: left;
   margin-right: 15px;
+}
+
+.top_users .teams {
+  margin-top: 5px;
+
+}
+
+ .top_users li .teams img{
+  height: 20px;
+  width: 30px;
 }
 
 .top_users ul {
@@ -114,8 +124,8 @@ a.search_results {
 }
 
 .top_users .count {
-  font-size: 30px;
   float: right;
+  font-size: 40px;
   margin-right :30px;
 }
 
