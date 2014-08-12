@@ -63,14 +63,8 @@
   </div>
   <ul>
     <% @followed_authors.first(5).each do |u|%>
-      <span class = "background" onclick="javascript:clicked()">
+      <span class = "background">
         <li class ="list-unstyled">
-        <script>
-          var id = <%=u.id%>;
-            function clicked(id){
-            window.location.href="/users/id/posts";
-            }
-          </script>
       <span class="follow">
         <% if current_user.friends.exists?(u.id)%>
           <i class="fa fa-check-square fa-2x"></i>
@@ -78,6 +72,7 @@
           <%= link_to("<i class='fa fa-plus-square fa-2x'></i>".html_safe, friendships_path(:friend_id => u.id), :method => :post, :id => 'follow-link') %>
         <% end %>
       </span>
+      <a href = "/users/<%=u.id%>/posts" id = 'posts-link'>
       <span class="profile_pic"><img src="<%= u.image %>" class="img-circle"></span>
       <span class="uname"><%= u.username %></span>
       <span class="count"><%= u.friendships.count%></span>
