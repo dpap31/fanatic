@@ -1,12 +1,13 @@
 /*Search Box Styling*/
-h2 {
-	text-align: center;
+
+h2{
+  text-align: center; 
 }
 
 .form-control {
   width:80%;
   text-align: center;
-  margin: 0 auto;
+  margin-left: 15px;
 }
 
 .row {
@@ -86,7 +87,15 @@ a.search_results {
   margin-left: 5px;
   margin-right: 25px;
   margin-top: 10px;'
-  color: yellow !important;
+}
+
+.top_users .fa-plus-square{
+  color: #E8E8E8;
+  position: relative;
+}
+
+.top_users .fa-check-square{
+  color: #E8E8E8;
 }
 
 .top_users .profile_pic img {
@@ -114,12 +123,20 @@ a.search_results {
   margin-bottom: 0px;
 }
 
-.top_users a :hover{
+.top_users .background :hover{
   background-color: #F0F0F0;
 }
+.top_users .background :hover .fa {
+    color: black;
+}
+
 .top_users a {
   text-decoration: none;
   color: inherit;
+}
+
+.top_users .background{
+  cursor:pointer;
 }
 
 .top_users .uname {
@@ -131,4 +148,5 @@ a.search_results {
   font-size: 40px;
   margin-right :30px;
 }
+
 

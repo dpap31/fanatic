@@ -6,9 +6,11 @@
 </script>
 </head>
 <div class ="row">
-  <h2>Search Users</h2>
+<div class="col-md-10">
+    <h2>Search Users</h2>
+  </div>
   <div ng-controller="UserCtrl">
-    <input type="text" class="form-control" placeholder="Search users by name, username, email" ng-model="query">
+    <input type="text" class="form-control" placeholder="" ng-model="query">
     <ul class = 'userlist'ng-show='query'>
       <li ng-repeat="user in users | filter: query" class ="animate results"> 
         <a href="/users/{{user.id}}/posts"
@@ -61,20 +63,26 @@
   </div>
   <ul>
     <% @followed_authors.first(5).each do |u|%>
-      <a href = ""><li class ="list-unstyled"> 
+      <span class = "background" onclick="javascript:clicked()">
+        <li class ="list-unstyled">
+        <script>
+          var id = <%=u.id%>;
+            function clicked(id){
+            window.location.href="/users/id/posts";
+            }
+          </script>
       <span class="follow">
         <% if current_user.friends.exists?(u.id)%>
           <i class="fa fa-check-square fa-2x"></i>
         <% else %>
-          <%= link_to("<i class='fa fa-plus-square fa-2x'></i>".html_safe, friendships_path(:friend_id => u.id), :method => :post) %>
+          <%= link_to("<i class='fa fa-plus-square fa-2x'></i>".html_safe, friendships_path(:friend_id => u.id), :method => :post, :id => 'follow-link') %>
         <% end %>
       </span>
-
       <span class="profile_pic"><img src="<%= u.image %>" class="img-circle"></span>
       <span class="uname"><%= u.username %></span>
       <span class="count"><%= u.friendships.count%></span>
       <div class="sport"> sport </div>
-    </li></a>
+    </li></span></a>
     <hr>
     <% end %>
   </ul>
@@ -91,4 +99,6 @@
 </ul>
 </div>
 </div>
+</div>
+
 
