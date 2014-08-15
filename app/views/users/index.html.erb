@@ -102,13 +102,13 @@
   </div>
 
     <!-- add current users team ids to array -->
-<%= user_team_ids = current_user.teams.map{|x| x.id} %>
+<% user_team_ids = current_user.teams.map{|x| x.id} %>
 <!-- iteriate through the array -->
 <%user_team_ids.each do |x| %>
     <!-- Select other users with the same team ID and capture their user ID -->
-    <%=  User.select(:id, :include => :teams, :conditions => { "teams_users.team_id" => x}).inspect%>
+    <%=  User.select(:id, :include => :teams, :conditions => { "teams_users.team_id" => x}).sort_by{|u| ((-u.reputation_for(:votes).to_i - u.posts.count)-1)}.map{ |z| z.id} %>
     <!-- Select other users with the same team ID and capture all user info -->
-    <%=  User.find(:all, :include => :teams, :conditions => { "teams_users.team_id" => x}).inspect%>
+    <%= User.find(:all, :include => :teams, :conditions => { "teams_users.team_id" => x}).sort_by{|u| ((u.reputation_for(:votes).to_i + u.posts.count)-1)}.map{|z| z.username} %>
   <% end %>
 
 

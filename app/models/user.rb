@@ -54,6 +54,13 @@ def self.role_symbols
   User.role.to_sym
 end
 
+def self.recommended_authors (team_ids)
+  team_ids.each do |x|
+    #User.select(:id, :include => :teams, :conditions => { "teams_users.team_id" => x}.sort_by{|u| ((reputation_for(:votes).to_i + u.posts.count)-1)}.reverse
+    #User.find(:all, :include => :teams, :conditions => { "teams_users.team_id" => x})
+  end
+end
+
 
 def voted_for?(post)
   evaluations.where(target_type: post.class, target_id: post.id).present?
