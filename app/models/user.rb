@@ -54,11 +54,18 @@ def self.role_symbols
   User.role.to_sym
 end
 
-def self.recommended_authors (team_ids)
+def self.recommended_authors(user_id)
+  # add users team ids to the array
+  team_ids = user_id.teams.map{|x| x.id}
+  recommended_authors = []
+  #iteriate through the array find other users that like the same teams
   team_ids.each do |x|
-    #User.select(:id, :include => :teams, :conditions => { "teams_users.team_id" => x}.sort_by{|u| ((reputation_for(:votes).to_i + u.posts.count)-1)}.reverse
-    #User.find(:all, :include => :teams, :conditions => { "teams_users.team_id" => x})
+    recommended_authors << User.select(:id, :include => :teams, :conditions => { "teams_users.team_id" => x})
   end
+  #make it into one array and remove duplicates
+  recommended_authors = recommended_authors.flatten!.uniq.map{ |z| User.find_by_id(z.id)}
+  # sort by popularity and number of posts
+  recommended_authors = recommended_authors.sort_by{ |u| ((-u.reputation_for(:votes).to_i - u.posts.count)-1)}
 end
 
 
