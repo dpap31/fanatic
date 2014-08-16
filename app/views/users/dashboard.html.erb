@@ -223,7 +223,7 @@
 				<div id="DashboardProfileCard"> </div>
 				<ul>
 				<%= link_to "##{current_user.id}", 'data-type' => "member-#{current_user.id}" do %>
-  					<%= image_tag(@user.image, class: 'profile_pic') %>
+  					<%= image_tag(@user.image, class: 'profile_pic', size: "80") %>
 				<% end %>
 				</ul>
 				<div class = "user_widget_stats">
