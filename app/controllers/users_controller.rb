@@ -4,34 +4,33 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-     @trending_authors = User.all.sort_by { |u| [-u.reputation_for(:votes).to_i] }.first(5)
-     @followed_authors = User.all.sort_by { |u| [-u.friendships.count] }.first(5)
-     @top_authors = User.all.sort_by { |u| [-u.posts.count] }.first(5)
-     @users = User.all
-     @recommended_authors = recommended_authors(current_user).first(5)
-     respond_to do |format|
-    format.json { render :json => @users.as_json(:only => [:id, :name, :username, :image]) } 
-    format.html { render :html => @users  }
-  end
+   @user = current_user
+   @trending_authors = User.all.sort_by { |u| [-u.reputation_for(:votes).to_i] }.first(5)
+   @followed_authors = User.all.sort_by { |u| [-u.friendships.count] }.first(5)
+   @top_authors = User.all.sort_by { |u| [-u.posts.count] }.first(5)
+   @recommended_authors = recommended_authors(current_user).first(5)
+   @users = User.all
+   respond_to do |format|
+     format.json { render :json => @users.as_json(:only => [:id, :name, :username, :image])} 
+     format.html { render :html => @users}
+   end
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
-
   end
 
   def dashboard
-   @user = current_user
-   @teams = current_user.teams
-   @my_posts = current_user.posts.limit(6)
-   @my_posts_count = current_user.posts.count
-   @my_posts_cheers = current_user.reputation_for(:votes).to_i
-  # Used SQL so current user doesnt appear in their own activity log ("owner_id != ?", current_user.id)
-  # Mapped current_users friendships ID so only friend will appear in activity feed. 
+    @user = current_user
+    @teams = current_user.teams
+    @my_posts = current_user.posts.limit(6)
+    @my_posts_count = current_user.posts.count
+    @my_posts_cheers = current_user.reputation_for(:votes).to_i
+    # Used SQL so current user doesnt appear in their own activity log ("owner_id != ?", current_user.id)
+    # Mapped current_users friendships ID so only friend will appear in activity feed. 
    @activities = PublicActivity::Activity.limit(10).order("created_at desc").where(owner_id: current_user.friendships.all.map {|x| x.friend_id}).where("owner_id != ?", current_user.id)
-
- end
+  end
 
   # GET /users/new
   def new
@@ -48,7 +47,6 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }
@@ -85,10 +83,10 @@ class UsersController < ApplicationController
   end
 
 # Used to get all posts created by a specific user
-def posts
-  @user = User.find_by_id(params[:id])
-  @posts = @user.posts.page(params[:page]).per_page(12)
-end
+  def posts
+    @user = User.find_by_id(params[:id])
+    @posts = @user.posts.page(params[:page]).per_page(12)
+  end
 
 private
     def hottness(post)
@@ -106,3 +104,4 @@ private
       params[:user].permit(:id, :username, :first_name, :last_name, :email, :name, :image, :search, :role, :description, team_ids: [])
     end
   end
+

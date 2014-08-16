@@ -42,7 +42,7 @@
       <a href = "/users/<%=u.id%>/posts" id = 'posts-link'>
       <span class="profile_pic"><img src="<%= u.image %>" class="img-circle"></span>
       <span class="uname"><%= u.username %></span>
-      <span class="count"><%= u.posts.count%></span>
+      <span class="count"><%= u.posts.count + u.reputation_for(:votes).to_i %></span>
       <div class="sport"> sport </div>
     </li></span></a>
     <hr>
