@@ -23,6 +23,7 @@ class PostsController < ApplicationController
 
   def list
     @posts = @posts.where(:user_id => current_user.id).order("created_at DESC").paginate(page: params[:page], :per_page => 12)
+    @teams = current_user.teams
   end
   # GET /posts/1
   # GET /posts/1.json

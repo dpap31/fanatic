@@ -56,12 +56,17 @@ body {
 
 #title {
 	float: left;
-	
+	margin-bottom: 40px;
 }
 #new_button {
 	float: right;
-
+	margin-bottom: 40px;
 }
+
+.content strong{
+color:white;
+}
+
 .post-info {
 	width:100%;
 	display: inline-block;
@@ -91,11 +96,47 @@ body {
 	margin-top: 5px;
 	float: right;
 }
-.sort_menu{
+.sort_menu {
 	float:right;
-	
+}
+.content {
+	top: 310px;
 }
 
+/*header image*/
+.cd-member-bio-pict {
+  position: absolute;
+}
 
+.cd-member-bio-pict {
+  /* gradient at the bottom of the image - same color of the background of the section */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: -webkit-linear-gradient( bottom , #5c4b51, rgba(92, 75, 81, 0));
+  background: linear-gradient(to top, #5c4b51, rgba(92, 75, 81, 0));
+}
 
+.cd-profile-pic img {
+  top: 225px;
+  left: 430px;
+  position: absolute;
+  border: 5px solid white;
+  z-index: 2;
+  margin-bottom: 10px
+}
+
+div.cd-profile-pic{
+  /* gradient at the bottom of the image - same color of the background of the section */
+  margin: 0 auto;
+}
+
+.cd-member-bio-pict img {
+  width: 100%;
+  display: block;
+  z-index: 0;
+  background-position:center;
+}
 
