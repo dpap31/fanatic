@@ -54,18 +54,25 @@ body {
 	opacity: 0.6;
 }
 
-#title {
-	float: left;
-	margin-bottom: 40px;
-}
-#new_button {
+#new_button > a {
+	text-decoration: none;
 	float: right;
-	margin-bottom: 40px;
+	margin-bottom: 60px;
+	margin-right: 15px;
+	color: white;
 }
 
-.content strong{
-color:white;
+
+#title > a{
+  text-decoration: none;
+  float: left;
+  margin-bottom: 60px;
+  margin-left: 15px;
+  color:white;
 }
+
+
+
 
 .post-info {
 	width:100%;
@@ -100,43 +107,51 @@ color:white;
 	float:right;
 }
 .content {
-	top: 310px;
+	top: 320px;
 }
 
-/*header image*/
+/*header container*/
 .cd-member-bio-pict {
-  position: absolute;
-}
-
-.cd-member-bio-pict {
-  /* gradient at the bottom of the image - same color of the background of the section */
+  max-height: 350px;
+  overflow: hidden;
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  background: -webkit-linear-gradient( bottom , #5c4b51, rgba(92, 75, 81, 0));
-  background: linear-gradient(to top, #5c4b51, rgba(92, 75, 81, 0));
+  box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
 }
 
-.cd-profile-pic img {
-  top: 225px;
-  left: 430px;
-  position: absolute;
-  border: 5px solid white;
-  z-index: 2;
-  margin-bottom: 10px
-}
-
-div.cd-profile-pic{
-  /* gradient at the bottom of the image - same color of the background of the section */
-  margin: 0 auto;
-}
-
+/*header image*/
 .cd-member-bio-pict img {
   width: 100%;
   display: block;
+  max-width: 100%;
+  height: auto !important;
+  -ms-interpolation-mode: bicubic;
   z-index: 0;
-  background-position:center;
+  margin: auto;
+
+
 }
+
+.flip {
+  -webkit-transform: rotate(180deg);
+  -moz-transform:    rotate(180deg);
+  -ms-transform:     rotate(180deg);
+  -o-transform:      rotate(180deg);
+  transform:         rotate(180deg);
+}
+
+/*profile pic*/
+.cd-profile-pic img {	
+  top: 290px;
+  left: 45%;
+  position: absolute;
+  border: 5px solid #E9EAED;
+  z-index: 2;
+  margin-bottom: 10px;
+}
+
+
 
