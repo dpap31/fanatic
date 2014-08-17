@@ -15,7 +15,7 @@
       <li ng-repeat="user in users | filter: query" class ="animate results"> 
         <a href="/users/{{user.id}}/posts"
         <div class= 'search_results'>    
-         <img ng-src="{{user.image}}"/>
+         <img id='user_image' ng-src="{{user.image}}"/>
          <span id='user_details'><b>{{user.name}}</b>, <em>{{user.username}}</em>
          </span>
        </div>
@@ -25,7 +25,7 @@
  <div class="col-md-5 col-centered">
  <div class ="top_users">
   <div class ='widget_header'>
-    <h4><i class="fa fa-heart"></i> Recommended Authors</h4>
+    <h4><i class="fa fa-heart"></i> Recommended</h4>
   </div>
   <ul>
     <% @recommended_authors.each do |u| %>
@@ -51,7 +51,7 @@
   </div>
   <div class ="top_users">
   <div class ='widget_header'>
-    <h4><i class="glyphicon glyphicon-stats"></i> Trending Authors</h4>
+    <h4><i class="glyphicon glyphicon-stats"></i> Trending</h4>
   </div>
   <ul>
     <% @trending_authors.each do |u|%>
@@ -78,7 +78,7 @@
 <div class="col-md-5 col-centered">
   <div class ="top_users">
   <div class ='widget_header'>
-    <h4><i class="glyphicon glyphicon-star-empty"></i> Popular Authors</h4>
+    <h4><i class="glyphicon glyphicon-star-empty"></i> Popular</h4>
   </div>
   <ul>
     <% @followed_authors.each do |u|%>
@@ -103,7 +103,7 @@
   </div>
   <div class ="top_users">
   <div class ='widget_header'>
-    <h4><i class="fa fa-trophy"></i> Top Contributors</h4>
+    <h4><i class="fa fa-trophy"></i> Top</h4>
   </div>
   <ul>
     <% @top_authors.each do |u| %>
