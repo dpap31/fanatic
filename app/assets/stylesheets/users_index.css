@@ -22,12 +22,17 @@ label {
 /* Angular User Search */
 
 div.ng-scope ul { text-indent: 0;
-padding: 0px;
+ padding: 0px;
  list-style-type: none
  }
 
+ div.ng-scope li{
+  display: block;
+  width: 80%;
+ }
+
 div.ng-scope ul img{
-  display:block;
+  display: block;
   height: 80px;
   width: 80px;
   margin-top: 10px;
@@ -45,9 +50,9 @@ a.search_results {
 }
 
 #user_details {
-   display: inline-block;
-   text-align: center;
-   width: 80%;
+  display: block;
+  text-align: center;
+  margin: 10px;
 }
 
 .form-control {

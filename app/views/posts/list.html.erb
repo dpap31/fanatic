@@ -1,24 +1,23 @@
 <%= stylesheet_link_tag "posts" %>
- <div class="row">
+<div class="row">
  <div class="col-md-10 column header">
-       <div class="cd-member-bio-pict flip"> <!-- background image -->
-      <%= image_tag("team_images/#{@teams[rand(@teams.length)].id}.jpg", size: "800x350", class:'flip')%>
-    </div> 
-    <div class="cd-profile-pic"> <!-- profile pic -->
-      <%= link_to image_tag(current_user.image, size: '100x100', class: 'img-circle'), user_posts_path(current_user) %>
-    </div>
-    </div>
+   <div class="cd-member-bio-pict flip"> <!-- background image -->
+    <%= image_tag("team_images/#{@teams[rand(@teams.length)].id}.jpg", size: "800x350", class:'flip')%>
+  </div> 
+  <div class="cd-profile-pic"> <!-- profile pic -->
+    <%= link_to image_tag(current_user.image, size: '100x100', class: 'img-circle'), user_posts_path(current_user) %>
+  </div>
+  <div id="title">
+   <a href="/posts"><strong><i class="glyphicon glyphicon-star-empty"></i>  My Posts</strong></a>  
+ </div>
+ <% if can? :create, Post %>
+ <div id="new_button">
+   <a href="/posts/new"><strong><i class="glyphicon glyphicon-plus-sign"></i>  New Post</strong></a>
+ </div>
+ <% end %>
+</div>
 <div class="col-md-10 column content">
-   <div id="title">
-     <a href="/posts"><strong><i class="glyphicon glyphicon-star-empty"></i>  My Posts</strong></a>  
-   </div>
-   <% if can? :create, Post %>
-   <div id="new_button">
-     <a href="/posts/new"><strong><i class="glyphicon glyphicon-plus-sign"></i>  New Post</strong></a>
-   </div>
-   <% end %>
-    <%= render partial:'postPreview'%>
-
+  <%= render partial:'postPreview'%>
 </div>
 </div>
 </div>

@@ -1,31 +1,31 @@
 <%= stylesheet_link_tag "posts" %>
 <%= javascript_include_tag "post_index" %>
  <div class="row">
-  <div class="col-md-10">
-    <div id="title">
-     <a href="/users/<%=@user.id%>/posts"><strong><i class="glyphicon glyphicon-star-empty"></i> Posts by <%=@user.name%></strong></a> 
-   </div> 
-   <div id="new_button">
-
+  <div class="col-md-10 column header">
+   <div class="cd-member-bio-pict flip"> <!-- background image -->
+    <%= image_tag("team_images/#{@teams[rand(@teams.length)].id}.jpg", size: "800x350", class:'flip')%>
+  </div> 
+  <div class="cd-profile-pic"> <!-- profile pic -->
+    <%= link_to image_tag(@user.image, size: '100x100', class: 'img-circle'), user_posts_path(@user) %>
+  </div>
+   <div id="title">
+     <a href="/users/<%=@user.id%>/posts"><strong><i class="glyphicon glyphicon-star-empty"></i> <%=@user.username%>'s Posts</strong></a> 
+   </div>  
+    <div id="new_button">
    <!-- Based on current_users relationship to users#post ID being viewed different options will be displayed -->
    <% if @user == current_user%>
      <a href="/posts/new"><strong><i class="glyphicon glyphicon-plus-sign"></i>  New Post</strong></a>
   <% elsif current_user.friends.exists?(@user.id)%>
-  
+   <a href="/posts/new"><strong><i class="glyphicon glyphicon-ok-circle"></i>  Following</strong></a>
   <% else %>
   <strong><%= link_to("<i class='glyphicon glyphicon-plus-sign'></i>"" Follow #{@user.name}".html_safe, friendships_path(:friend_id => @user.id), :method => :post) %></strong>
   <% end %>
-
-   </div>  
-   <br>  
-   <hr>
-   <br>
-   <div>
-
+   </div> 
+</div>
+  <div class="col-md-10 content">
+<!--    <div>
     <input type="hidden" id="dropdown" style="width:300px" class="input-xlarge" />
-
-  </div>
-  <br>
+  </div> -->
     <%= render partial:'posts/postPreview'%>
   </div>
 </div>
