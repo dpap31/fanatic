@@ -2,38 +2,41 @@
  * of the key things about the widget is that it allows you to do your own styling!
  */
  
- .image_tools {
-    float: right;
-    width: 300px;
- }
- .post_fields {
-    float:left;
- }
- #fileupload{
+.image_tools {
+  float: right;
+  width: 300px;
+}
+.post_fields {
+  float:left;
+}
+.col-md-10{
+  margin-bottom: 30px;
+}
+#fileupload{
   float: right;
 }
- #post_remote_image_url{
+#post_remote_image_url{
   float: right;
   display: block;
- }
- .upload-bar{
+}
+.upload-bar{
   margin-top: 30px;
- }
- .bar {
-    height: 18px;
-    background: blue;
+}
+.bar {
+  height: 18px;
+  background: blue;
 
 }
 #files {
   float: right;
 }
- input {
-    margin: 10px 0px;
- }
- .btn-toolbar{
+input {
+  margin: 10px 0px;
+}
+.btn-toolbar{
   padding-top:160px;
 
- }
+}
 
 #editor {
 	max-height: 250px;

@@ -15,7 +15,12 @@ class Headline
 	  #Parse response
 	  hash = JSON.parse(response.body)
 	  #Capture headlines node
-	  headlines_hash = hash.fetch('headlines')
+	    begin
+	       headlines_hash = hash.fetch('headlines')
+	  #Exception handling headlines hash is empty
+	    rescue => e
+	    	headlines_hash = []
+	    end
     end
 
 	def self.top
@@ -23,7 +28,6 @@ class Headline
 		path = "/news/headlines/top/"
 		api_call(@@base_url, params, path)
 	end
-
 	def self.nba
 		path = "/basketball/nba/news/headlines/top/"
 	    api_call(@@base_url, @@params, path)

@@ -17,23 +17,41 @@
     <div id="top-nav" class="navbar navbar-inverse navbar-static-top">
       <div class="container">
         <div class="navbar-header">
-          <a class="navbar-brand" href="/users/<%=current_user.id%>/dashboard">Fanatic</a>
+           
+          <% if current_user.nil? %>
+                  <a class= 'navbar-brand' href='/'>
+               <% else %>
+                  <a class= 'navbar-brand' href= '/users/<%=current_user.id%>/dashboard'>
+          <% end %>
+                Fanatic</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
               <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#"><i class="glyphicon glyphicon-user"></i> 
                 <%= if current_user.nil? 
-                  "user"
+                  "Guest User"
                 else current_user.username
                  end%>
+                 <% if current_user.nil? %>
                  <span class="caret"></span></a>
                  <ul id="g-account-menu" class="dropdown-menu" role="menu">
+                  <% else %>
+                  <ul id="g-account-menu" class="dropdown-menu" role="menu">
                   <li><a href="/users/<%=current_user.id%>/dashboard"><i class="fa fa-tachometer"></i> Dashboard</a></li>
+                  <% end %>
+
+                  <% if current_user.nil? %>
+                  <% else %>
                   <li><a href="/users/<%=current_user.id%>/edit"><i class="fa fa-cogs"></i> Settings</a></li>
+                  <% end %>
                  </ul>
                </li>
-               <li><a href="/signout"><i class="glyphicon glyphicon-lock"></i> Logout</a></li>
+              <% if current_user.nil? %>
+                <li><a href="/"><i class="fa fa-unlock"></i> Sign Up</a></li>
+                <% else %>
+                <li><a href="/signout"><i class="glyphicon glyphicon-lock"></i> Logout</a></li>
+              <% end %>
              </ul>
            </div>
          </div>
@@ -45,7 +63,10 @@
             <div class="col-sm-2 pull-left sidebar-nav" id="sidebar-wrapper">          
               <ul class="nav nav-pills nav-stacked fanatic-menu">
                 <li class="nav-header"></li>
-                <li><a href="/users/<%=current_user.id%>/dashboard"><i class="fa fa-tachometer"></i> Dashboard</a></li>
+                <% if current_user.nil? %>
+                  <% else %>
+                  <li><a href="/users/<%=current_user.id%>/dashboard"><i class="fa fa-tachometer"></i> Dashboard</a></li>
+                <% end %>
                 <li><a href="/posts"><i class="glyphicon glyphicon-th"></i> All Posts</a></li>
                 <li><a href="/menu/headlines"><i class="glyphicon glyphicon-book"></i> Headlines</a></li>
                  <li><a href="/users">

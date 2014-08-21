@@ -36,7 +36,8 @@
 						<dd>
 							<%= link_to @post.user.posts.count, user_posts_path(@post.user) %>
 						</dd>
-						<%if current_user.id == @posts_user_id %>
+						<% if can? :create, @post %>
+						<%if current_user.nil? || current_user.id = @posts_user_id %>
 							<% else %>
 						<dt>
 						</dt>
@@ -47,6 +48,7 @@
 							<%= link_to("<i class='fa fa-plus-circle'></i>"" Follow".html_safe, friendships_path(:friend_id => @post.user), :method => :post, :class => 'btn btn-default btn-block') %>
 							<% end %>
 						</dd>
+						<% end %>
 						<% end %>
 						<div id="date">
 							<dt>

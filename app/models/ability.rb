@@ -26,7 +26,7 @@ class Ability
     can :tags, Post
     can :vote, Post
     can :sort_created, Post
-  else
+  else user.role.to_sym == :guest
     can :read, :all
   end
     # user ||= User.new # guest user

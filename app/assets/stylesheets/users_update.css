@@ -8,6 +8,9 @@ h2 {
 }
 
 label {
-	margin-top: 10px
+	margin-top: 10px;
 }
 
+.actions{
+	margin-bottom: 30px;
+}
