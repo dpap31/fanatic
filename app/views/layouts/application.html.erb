@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>FanaticV2</title>
+  <title>Fanatic Sports</title>
   <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
     <![endif]-->
@@ -17,7 +17,7 @@
     <div id="top-nav" class="navbar navbar-inverse navbar-static-top">
       <div class="container">
         <div class="navbar-header">
-           
+           <!-- Fanatic header link -->
           <% if current_user.nil? %>
                   <a class= 'navbar-brand' href='/'>
                <% else %>
@@ -28,27 +28,23 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
-              <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#"><i class="glyphicon glyphicon-user"></i> 
-                <%= if current_user.nil? 
-                  "Guest User"
-                else current_user.username
-                 end%>
-                 <% if current_user.nil? %>
-                 <span class="caret"></span></a>
+            <!-- username header dropdown -->
+                <% if current_user.nil? %>
+                  <a class="dropdown-toggle" role="button" href="#"><i class="glyphicon glyphicon-user"></i> 
+                  Guest User
+                <% else %>
+                <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#"><i class="glyphicon glyphicon-user"></i> 
+                  <%= current_user.username %>
+                  <span class="caret"></span></a>
                  <ul id="g-account-menu" class="dropdown-menu" role="menu">
-                  <% else %>
-                  <ul id="g-account-menu" class="dropdown-menu" role="menu">
-                  <li><a href="/users/<%=current_user.id%>/dashboard"><i class="fa fa-tachometer"></i> Dashboard</a></li>
-                  <% end %>
-
-                  <% if current_user.nil? %>
-                  <% else %>
-                  <li><a href="/users/<%=current_user.id%>/edit"><i class="fa fa-cogs"></i> Settings</a></li>
-                  <% end %>
+                 <li><a href="/users/<%=current_user.id%>/dashboard"><i class="fa fa-tachometer"></i> Dashboard</a></li>
+                 <li><a href="/users/<%=current_user.id%>/edit"><i class="fa fa-cogs"></i> Settings</a></li>
                  </ul>
-               </li>
+                 </li>
+                 <%end%>
+          <!-- login/logout header -->
               <% if current_user.nil? %>
-                <li><a href="/"><i class="fa fa-unlock"></i> Sign Up</a></li>
+                <li><a href="/"><i class="glyphicon glyphicon-log-in "></i> Sign Up</a></li>
                 <% else %>
                 <li><a href="/signout"><i class="glyphicon glyphicon-lock"></i> Logout</a></li>
               <% end %>
