@@ -15,7 +15,6 @@ FanaticV2::Application.routes.draw do
   resources :activities
   resources :friendships
   resources :users
-  match "users/:id/dashboard" => 'users#dashboard', via: [:get, :post], as: :user_dashboard
   resources :friendships
   resources :teams
   resources :search_suggestions

@@ -1,156 +1,298 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="">
-	<meta name="author" content="">
-	<link rel="shortcut icon" href="assets/ico/favicon.png">
+	<title><%=@user.name%>'s Fanatic Dashboard</title>
+	<%= stylesheet_link_tag "dashboard" %>
+	<%= javascript_include_tag "dashboard"%>
+</head>
+<body>
+<div class="row clearfix">
+	<div class="col-md-8 column">
+		<div id="title">
+			<a href="/posts"><strong><i class="glyphicon glyphicon-star-empty"></i>  All Posts</strong></a> 
+		</div> 
 
-	<title>Profile</title>
+		<div id="new_button">
+			<%if can? :create, Post %>
+			<a href="/posts/new"><strong><i class="glyphicon glyphicon-plus-sign"></i>  New Post</strong></a>
+			<% end %>
+		</div>  
+		<br>  
+		<hr>
+		<div id='user_teams'>
+			<%if @teams.first%>
+			<div class='teamname'>
+				<h4><%= link_to "#{@teams.first.location} #{@teams.first.name}",tag_path(@teams.first.name)%></h4>
+			</div>
+			<table>
+				<tr>
+					<% hottness(Post.tagged_with(@teams.first.name)).take(3).each do |post| %>
+					<div class="pin">
+						<div class="image">
+							<a href="/posts/<%=post.slug%>"><img class= "img-responsive" src="<%= post.image %>" /></a>
+						</div>
 
-	<!-- Custom styles for this template -->
-	<%= stylesheet_link_tag "profile.css" %>
-	
-	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+						<div class="caption">
+							<h4>
+								<%= post.title %>
+							</h4>
+							<div class = 'post-info'>
+								<div class = 'tags'>
+									<ul class="token-input-token-facebook">
+										<li class="token-input-token-facebook"><%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join('<li class="token-input-token-facebook"> ') %></li></ul>
+									</div>
+									<div id = 'cheers'>
+										<%= pluralize post.reputation_for(:votes).to_i, "cheer" %> 
+									</div>
+								</div>
+							</div>
+						</div>
+					</td>
+				</tr>
+				<% end %>
+				<% end %>
+			</table>
+			<%if @teams.second%>
+			<div class='teamname'>
+				<h4><%= link_to "#{@teams.second.location} #{@teams.second.name}", tag_path(@teams.second.name)%></h4>
+			</div>
+			<table>
+				<tr>
+					<% hottness(Post.tagged_with(@teams.second.name)).take(3).each do |post| %>
+					<div class="pin">
+						<div class="image">
+							<a href="/posts/<%=post.slug%>"><img class= "img-responsive" src="<%= post.image %>" /></a>
+						</div>
 
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="assets/js/html5shiv.js"></script>
-      <script src="assets/js/respond.min.js"></script>
-      <![endif]-->
-  </head>
+						<div class="caption">
+							<h4>
+								<%= post.title %>
+							</h4>
+							<div class = 'post-info'>
+								<div class = 'tags'>
+									<ul class="token-input-token-facebook">
+										<li class="token-input-token-facebook"><%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join('<li class="token-input-token-facebook"> ') %></li></ul>
+									</div>
+									<div id = 'cheers'>
+										<%= pluralize post.reputation_for(:votes).to_i, "cheer" %> 
+									</div>
+								</div>
+							</div>
+						</div>
+					</td>
+				</tr>
+				<% end %>
+				<% end %>
+			</table>
+			<%if @teams.third%>
+			<div class='teamname'>
+				<h4><%= link_to "#{@teams.third.location} #{@teams.third.name}", tag_path(@teams.third.name)%></h4>
+			</div>
+			<table>
+				<tr>
+					<% hottness(Post.tagged_with(@teams.third.name)).take(3).each do |post| %>
+					<div class="pin">
+						<div class="image">
+							<a href="/posts/<%=post.slug%>"><img class= "img-responsive" src="<%= post.image %>" /></a>
+						</div>
 
-  <body>
+						<div class="caption">
+							<h4>
+								<%= post.title %>
+							</h4>
+							<div class = 'post-info'>
+								<div class = 'tags'>
+									<ul class="token-input-token-facebook">
+										<li class="token-input-token-facebook"><%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join('<li class="token-input-token-facebook"> ') %></li></ul>
+									</div>
+									<div id = 'cheers'>
+										<%= pluralize post.reputation_for(:votes).to_i, "cheer" %> 
+									</div>
+								</div>
+							</div>
+						</div>
+					</td>
+				</tr>
+				<% end %>
+				<% end %>
+			</table>
+			<%if @teams.fourth%>
+			<div class='teamname'>
+				<h4><%= link_to "#{@teams.fourth.location} #{@teams.fourth.name}", tag_path(@teams.fourth.name)%></h4>
+			</div>
+			<table>
+				<tr>
+					<% hottness(Post.tagged_with(@teams.fourth.name)).take(3).each do |post| %>
+					<div class="pin">
+						<div class="image">
+							<a href="/posts/<%=post.slug%>"><img class= "img-responsive" src="<%= post.image %>" /></a>
+						</div>
 
+						<div class="caption">
+							<h4>
+								<%= post.title %>
+							</h4>
+							<div class = 'post-info'>
+								<div class = 'tags'>
+									<ul class="token-input-token-facebook">
+										<li class="token-input-token-facebook"><%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join('<li class="token-input-token-facebook"> ') %></li></ul>
+									</div>
+									<div id = 'cheers'>
+										<%= pluralize post.reputation_for(:votes).to_i, "cheer" %> 
+									</div>
+								</div>
+							</div>
+						</div>
+					</td>
+				</tr>
+				<% end %>
+				<% end %>
+			</table>
+			<%if @teams.fifth%>
+			<div class='teamname'>
+				<h4><%= link_to "#{@teams.fifth.location} #{@teams.fifth.name}", tag_path(@teams.fifth.name)%></h4>
+			</div>
+			<table>
+				<tr>
+					<% hottness(Post.tagged_with(@teams.fifth.name)).take(3).each do |post| %>
+					<div class="pin">
+						<div class="image">
+							<a href="/posts/<%=post.slug%>"><img class= "img-responsive" src="<%= post.image %>" /></a>
+						</div>
 
-  	<div class="col-md-6 col-lg-offset-1">
-  		
-  		<!-- ===== vCard Navigation ===== -->
-  		<div class="row w">
-  			<div class="col-md-4">
-  				<img class="img-responsive" src=<%= @user.image %> height="100" width="100"/>
-  				<ul class="nav nav-tabs nav-stacked" id="myTab">
-  					<li class="active"><a href="#about">About</a></li>
-  					<li><a href="/users/<%= current_user.id %>/#profile">Profile</a></li>
-  					<li><a href="#portfolio">Friends</a></li>
-  					<li><a href="/users/<%= current_user.id %>/#contact">Contact</a></li>
-  				</ul>    			
-  			</div><!-- col-md-4 -->
+						<div class="caption">
+							<h4>
+								<%= post.title %>
+							</h4>
+							<div class = 'post-info'>
+								<div class = 'tags'>
+									<ul class="token-input-token-facebook">
+										<li class="token-input-token-facebook"><%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join('<li class="token-input-token-facebook"> ') %></li></ul>
+									</div>
+									<div id = 'cheers'>
+										<%= pluralize post.reputation_for(:votes).to_i, "cheer" %> 
+									</div>
+								</div>
+							</div>
+						</div>
+					</td>
+				</tr>
+				<% end %>
+				<% end %>
+			</table>
+			<%if Post.all.where(:user_id => current_user.id)%>
+			<h4><%= link_to "My Posts", user_posts_path(@current_user)%></h4>
+			<table>
+				<% @my_posts.each_slice(3) do |slice| %>
+				<tr>
+					<% slice.each do |post| %>
+					<td>
+						<div class="pin">
+							<div class="image">
+								<a href="/posts/<%=post.slug%>"><img class= "img-responsive" src="<%= post.image %>" /></a>
+							</div>
 
-  			<!-- ===== vCard Content ===== -->
-  			<div class="col-md-8">
-  				<div class="tab-content">
-  					
-  					<!-- ===== First Tab ===== -->
-  					<div class="tab-pane active" id="about">
-  						<h3><%= @user.name %></h3>
-  						<h5><%= @user.location %></h5>
-  						<hr>
-  						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p> 
-  						<p>Has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it.</p>
-  						<p class="pull-right red"><i class="icon-heart"></i></p>
-  					</div><!-- tab about -->
-  					
-  					<!-- ===== Second Tab ===== -->
-  					<div class="tab-pane" id="profile">
-  						<h4><i class="icon-briefcase"></i> Job Experience</h4>
-  						<p class="sm">
-  							<grey>Black Tie Corp.</grey> | June 2013 - Actual.<br/>
-  							<grey>Other Corp.</grey> | January 2011 - May 2013.<br/>
-  						</p>
-  						
-  						<h4><i class="icon-file-text-alt"></i> Education</h4>
-  						<p class="sm">
-  							<grey>Web Designer</grey> | Greenville University.<br/>
-  							<grey>Business Master</grey> | Loyal Univesrity.<br/>
-  						</p>
-  						
-  						<h4><i class="icon-trophy"></i> Awards</h4>
-  						<p class="sm">
-  							<grey>Best Web Design</grey> | Black Tie Site.<br/>
-  							<grey>Designer of the Year</grey> | 2012.<br/>
-  						</p>
-  					</div><!-- Tab Profile -->
-  					
-  					<!-- ===== Third Tab ===== -->
-  					<div class="tab-pane" id="portfolio">
-  						<div class="row">
-  							<p id="notice"><%= notice %></p>
-  							<h3>Friends</h3>
-  							<hr>
-  							<ul>
-  								<% for friendship in @user.friendships %>
-  								<li>
-  									<%=h friendship.friend.name %>
-  									(<%= link_to "remove", friendship, :method => :delete %>)
-  								</li>
-  								<% end %>
-  							</ul>
-  							<ul>
-  								<% for user in @user.inverse_friends %>
-  								<li><%= user.name %></li>
-  								<% end %>
-  							</ul>
-  							<p><%= link_to "Find Friends", users_path %></p>
-  							<div class="col-xs-6 centered">
-  								
-  							</div><!-- col-xs-6 -->
-  						</div><!-- row -->
-  					</div><!-- /Tab Portfolio -->
-  					
-  					<!-- ===== Fourth Tab ===== -->
-  					<div class="tab-pane" id="contact">
-  						<h4>Contact Information</h4>
-  						<hr>
-  						<div class="row">
-  							<div class="col-xs-6">
-  								<p class="sm">
-  									<i class="icon-globe"></i> - BlackTie.co <br/>
-  									<i class="icon-envelope"></i> - victoria@blacktie.co  
-  								</p>
-  							</div><!-- col-xs-6 -->
-  							
-  							<div class="col-xs-6">
-  								<p class="sm">
-  									<i class="icon-phone"></i> - +44 2009-4839 <br/>
-  									<i class="icon-apple"></i> - 902 3940-4439  
-  								</p>
-  							</div><!-- col-xs-6 -->
-  						</div><!-- row -->
-  						
-  						<h4>Social Links</h4>
-  						<hr>
-  						<div class="row">
-  							<div class="col-xs-6">
-  								<p class="sm">
-  									<i class="icon-facebook"></i> - Vicky.Wallberg <br/>
-  									<i class="icon-tumblr"></i> - Love-Vicky-Site  
-  								</p>
-  							</div><!-- col-xs-6 -->
-  							
-  							<div class="col-xs-6">
-  								<p class="sm">
-  									<i class="icon-dribbble"></i> - Vicoooria <br/>
-  									<i class="icon-twitter"></i> - @BlackTie_co  
-  								</p>
-  							</div><!-- col-xs-6 -->
-  						</div><!-- row -->
-  					</div><!-- Tab Contact -->
-  					
-  				</div><!-- Tab Content -->
-  			</div><!-- col-md-8 -->
-  		</div><!-- row w -->
-  	</div><!-- col-lg-6 -->
-  </div><!-- /.container -->
+							<div class="caption">
+								<h4>
+									<%= post.title %>
+								</h4>
+								<div class = 'post-info'>
+									<div class = 'tags'>
+										<ul class="token-input-token-facebook">
+											<li class="token-input-token-facebook"><%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join('<li class="token-input-token-facebook"> ') %></li></ul>
+										</div>
+										<div id = 'cheers'>
+											<%= pluralize post.reputation_for(:votes).to_i, "cheer" %> 
+										</div>
+									</div>
+								</div>
+							</div>
+						</td>
+						<% end %>
+					</tr>
+					<% end %>
+				</table>
+			</div>
+			<%else%>
+			<h2>My Posts</h2>
+			<%= link_to "Create Post", new_post_path, :class => 'btn btn-primary btn-block'%>
+			<% end %>
+		</div>
+		<div class="col-md-3 column pull-left">
+			<div id = 'user_widget'>
+				<div id="DashboardProfileCard"> </div>
+				<ul>
+				<%= link_to "##{current_user.id}", 'data-type' => "member-#{current_user.id}" do %>
+  					<%= image_tag(@user.image, class: 'profile_pic', size: "80") %>
+				<% end %>
+				</ul>
+				<div class = "user_widget_stats">
+				<div id='first_name'><strong><%= @user.first_name %></strong></div>
+				<div id='username'> <em><%= @user.username %></em></div>
+				<a href= '/users/<%= @user.id %>/posts'> 
+				<div id='posts'> <%= @my_posts_count %></div>
+				</a>
+				<div id='cheers_count'><%= @my_posts_cheers %></div>
+				<div id='following_count'><%= @user.friendships.count%></div>
+				<br>
+				<div id='posts_label'> Posts</div>
+				<div id='cheers_label'>Cheers</div>
+				<div id='following_label'>Following</div>
+				</div>
+			</div>
+
+			<div id= 'team_widget'>
+				<div id= 'widget_header'><h4>Teams</h4>
+				</div>
+				<hr>
+				<div class = 'team_images'>
+					<% @teams.each do |team| %>
+					<%= link_to tag_path(team.name) do%>
+					<%= image_tag("logos/#{team.id}.png", size: "80x55")%>
+					<% end %>
+					<% end %>
+				</div>
+			</div>
+		<div id='following_widget'>
+			<div id= 'widget_header'><h4>
+				Following
+			</h4>
+		</div>
+		<hr>
+		<section id="cd-team" class='following_images'>
+				
+				<ul>
+				<%  for friendship in @user.friendships.take(8) %>
+						<a href="#<%=friendship.friend.id%>" data-type="member-<%=friendship.friend.id%>">
+						<%= image_tag(friendship.friend.image, size: '40x40', class: 'img-circle') %></a>
+					<% end %>
+				</ul>
+		</section>
+	</div>
+
+	<div id= 'activity_widget'>
+		<div id= 'widget_header'>
+			<h4>Activity</h4>
+		</div>
+		<hr>
+		<dl>
+			<dd>
+				<%= render template: 'layouts/_activities.html.erb'%>
+			</dd>
+		</dl>
+	</div>
+</div>
+<div class="cd-overlay"></div>
+<%= render partial: 'current_profile' %>
+<%  for friendship in @user.friendships.take(8) %>
+  <%= render partial: 'profile' %>
+<% end %>
+<a href="#0" class="cd-member-bio-close">Close</a> <!-- close the author bio section -->
 </body>
-<script>
-	$(document).ready(function() {
-		$('#myTab a').click(function (e) {
-			e.preventDefault()
-			$(this).tab('show')
-		})	
-	});
-</script> 
 </html>
+
+
+
+
+
+

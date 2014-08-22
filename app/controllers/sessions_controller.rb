@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     if user.login_count == 1
       redirect_to controller: 'onboarding', action: 'index'
     else  
-      redirect_to controller: 'users', action: 'dashboard', id: user.id, :notice => "Signed in!"
+      redirect_to controller: 'users', action: 'show', id: user.id, :notice => "Signed in!"
     end
   end
 

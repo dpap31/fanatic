@@ -83,6 +83,9 @@ a.search_results {
   background-color:#FFFFFF;
   border-radius: 10px; 
   box-shadow: 0 0 5px #ccc;
+  margin-bottom: 30px;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .top_users .widget_header {

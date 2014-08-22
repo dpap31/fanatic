@@ -1,20 +1,24 @@
 <%= javascript_include_tag "post_index" %>
 <%= stylesheet_link_tag "posts" %>
-  <div class="col-md-10 column">
-    <div id="title">
-     <a href="/posts"><strong><i class="glyphicon glyphicon-star-empty"></i>  All Posts</strong></a> 
+<div class="col-md-10 column header">
+   <div class="cd-member-bio-pict flip"> <!-- background image -->
+    <%= image_tag("team_images/#{@all_teams[rand(@all_teams.length)].id}.jpg", size: "800x350", class:'flip')%>
+  </div> 
+  <div class="cd-profile-pic"> <!-- profile pic -->
+    <%= link_to image_tag(current_user.image, size: '100x100', class: 'img-circle'), user_posts_path(current_user) %>
+  </div>
+      <div id="title">
+     <a href="/posts"><strong><i class="glyphicon glyphicon-star-empty"></i>  All Posts</strong></a>
    </div> 
 
    <div id="new_button">
      <%if can? :create, Post %>
      <a href="/posts/new"><strong><i class="glyphicon glyphicon-plus-sign"></i>  New Post</strong></a>
      <% end %>
-   </div>  
-   <br>  
-   <hr>
-   <br>
-   <div>
-
+   </div> 
+</div>
+  <div class="col-md-10 column content"> 
+  <div>
     <input type="hidden" id="dropdown" style="width:300px" class="input-xlarge" />
     <ul class="nav nav-pills sort_menu">
       <li class="inactive">

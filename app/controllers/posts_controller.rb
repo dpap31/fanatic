@@ -14,6 +14,7 @@ class PostsController < ApplicationController
   end
 
   def sort_created
+    @all_teams = Team.all
     if params[:tag]
       @posts = Post.order('created_at DESC').tagged_with(params[:tag]).paginate(page: params[:page], :per_page => 12)
     else

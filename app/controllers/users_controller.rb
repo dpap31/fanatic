@@ -19,9 +19,6 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-  end
-
-  def dashboard
     @user = current_user
     @teams = current_user.teams
     @my_posts = current_user.posts.limit(6)
@@ -63,7 +60,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to :user_dashboard, notice: 'User was successfully updated.' }
+        format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

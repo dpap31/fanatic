@@ -21,7 +21,7 @@
           <% if current_user.nil? %>
                   <a class= 'navbar-brand' href='/'>
                <% else %>
-                  <a class= 'navbar-brand' href= '/users/<%=current_user.id%>/dashboard'>
+                  <a class= 'navbar-brand' href= '/users/<%=current_user.id%>'>
           <% end %>
                 Fanatic</a>
         </div>
@@ -37,7 +37,7 @@
                   <%= current_user.username %>
                   <span class="caret"></span></a>
                  <ul id="g-account-menu" class="dropdown-menu" role="menu">
-                 <li><a href="/users/<%=current_user.id%>/dashboard"><i class="fa fa-tachometer"></i> Dashboard</a></li>
+                 <li><a href="/users/<%=current_user.id%>"><i class="fa fa-tachometer"></i> Dashboard</a></li>
                  <li><a href="/users/<%=current_user.id%>/edit"><i class="fa fa-cogs"></i> Settings</a></li>
                  </ul>
                  </li>
@@ -61,7 +61,7 @@
                 <li class="nav-header"></li>
                 <% if current_user.nil? %>
                   <% else %>
-                  <li><a href="/users/<%=current_user.id%>/dashboard"><i class="fa fa-tachometer"></i> Dashboard</a></li>
+                  <li><a href="/users/<%=current_user.id%>"><i class="fa fa-tachometer"></i> Dashboard</a></li>
                 <% end %>
                 <li><a href="/posts"><i class="glyphicon glyphicon-th"></i> All Posts</a></li>
                 <li><a href="/menu/headlines"><i class="glyphicon glyphicon-book"></i> Headlines</a></li>
@@ -69,10 +69,14 @@
                  <i class="fa fa-users"></i> Users</a></li>
                  <li><a href="/posts/list"><i class="glyphicon glyphicon-heart-empty"></i> My Posts</a></li>
                </ul>
-               
-               
-               <hr>
-               <ul class="list-unstyled" id="userMenu">
+              <ul class="list-unstyled" id="userMenu">
+              <hr>
+                <li class="nav-header"> <a href="#" data-target="#trending_tags">
+              <h5><strong><i class="fa fa-tags"></i> Trending Tags</strong></h5></a></li>
+              <% @trending_tags.each do|tag_id, tag_count|%>
+              <li><%= link_to ActsAsTaggableOn::Tag.find_by_id(tag_id).name, tag_path(ActsAsTaggableOn::Tag.find_by_id(tag_id).name)%></li>
+                <% end %>
+              <hr>
                 <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#userMenu">
                   <h5><strong><i class="glyphicon glyphicon-link"></i> The Pros</strong>
                   </a></li>
@@ -81,13 +85,6 @@
                     <li><a href="http://bleacherreport.com" target="_blank"> Bleacher Report</a></li>
                     <li><a href="http://sports.yahoo.com" target="_blank"> Yahoo Sports</a></li>
                     <li><a href="http://deadspin.com" target="_blank"> Dead Spin</a></li>
-              <hr>
-              
-                <li class="nav-header"> <a href="#" data-target="#trending_tags">
-              <h5><strong><i class="fa fa-tags"></i> Trending Tags</strong></h5></a></li>
-              <% @trending_tags.each do|tag_id, tag_count|%>
-              <li><%= link_to ActsAsTaggableOn::Tag.find_by_id(tag_id).name, tag_path(ActsAsTaggableOn::Tag.find_by_id(tag_id).name)%></li>
-                <% end %>
                 </ul>
             </div>
             <div class="col-md-9 column">   
