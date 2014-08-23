@@ -262,8 +262,7 @@
 		<section id="cd-team" class='following_images'>
 				
 				<ul>
-				<%  for friendship in @user.friendships.take(8) %>
-						<a href="#<%=friendship.friend.id%>" data-type="member-<%=friendship.friend.id%>">
+				<%  for friendship in @user.friendships.take(8) %> <a href="#<%=friendship.friend.id%>" data-type="member-<%=friendship.friend.id%>">
 						<%= image_tag(friendship.friend.image, size: '40x40', class: 'img-circle') %></a>
 					<% end %>
 				</ul>

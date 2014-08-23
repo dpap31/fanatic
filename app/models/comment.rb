@@ -1,5 +1,6 @@
 class Comment < ActiveRecord::Base
-	include PublicActivity::Common
+	#Track comments using public activity gem
+	include PublicActivity::Common 
 	belongs_to :post
 	belongs_to :user
 end

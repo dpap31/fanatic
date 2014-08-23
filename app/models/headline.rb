@@ -1,5 +1,6 @@
 class Headline	
-    #Global variables for espn
+	#Call to ESPN REST API. Capture headlines and URLs for each major sport
+    #Global variables for ESPN
     @@base_url = "http://api.espn.com/v1/sports/"
     @@params = {:disable => "audio,categories,keywords,mobileStory,related", :limit => 10, :apikey => ENV["ESPN_API_key"]}
 
@@ -14,15 +15,16 @@ class Headline
 	    http.request(request)}
 	  #Parse response
 	  hash = JSON.parse(response.body)
-	  #Capture headlines node
+	    #Capture headlines node
 	    begin
 	       headlines_hash = hash.fetch('headlines')
-	  #Exception handling headlines hash is empty
+	    #Exception handling headlines hash is empty
 	    rescue => e
 	    	headlines_hash = []
 	    end
     end
 
+    #Response used for carousel
 	def self.top
 		params = {:disable => "audio,categories,keywords,mobileStory,related", :limit => 5, :apikey => ENV["ESPN_API_key"]}
 		path = "/news/headlines/top/"
