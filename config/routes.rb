@@ -17,7 +17,6 @@ FanaticV2::Application.routes.draw do
   resources :users
   resources :friendships
   resources :teams
-  resources :search_suggestions
   resources :posts do
     collection do
       get :list
