@@ -1,3 +1,4 @@
+Application Template  -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,6 +6,7 @@
   <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
     <![endif]-->
+    <!-- load external cdns -->
     <%= stylesheet_link_tag "//ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/ui-lightness/jquery-ui.css" %>
     <%= stylesheet_link_tag "//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" %>
     <%= stylesheet_link_tag "//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" %>
@@ -14,6 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
+
     <div id="top-nav" class="navbar navbar-inverse navbar-static-top">
       <div class="container">
         <div class="navbar-header">
@@ -71,12 +74,14 @@
                </ul>
               <ul class="list-unstyled" id="userMenu">
               <hr>
+              <!-- Trending Tags in side bar -->
                 <li class="nav-header"> <a href="#" data-target="#trending_tags">
               <h5><strong><i class="fa fa-tags"></i> Trending Tags</strong></h5></a></li>
               <% @trending_tags.each do|tag_id, tag_count|%>
               <li><%= link_to ActsAsTaggableOn::Tag.find_by_id(tag_id).name, tag_path(ActsAsTaggableOn::Tag.find_by_id(tag_id).name)%></li>
                 <% end %>
               <hr>
+              <!-- Links to External Sports sites -->
                 <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#userMenu">
                   <h5><strong><i class="glyphicon glyphicon-link"></i> The Pros</strong>
                   </a></li>
@@ -87,6 +92,7 @@
                     <li><a href="http://deadspin.com" target="_blank"> Dead Spin</a></li>
                 </ul>
             </div>
+            <!-- Flash hash and error messages handling -->
             <div class="col-md-9 column">   
               <% flash.each do |name, msg| %>
               <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
@@ -130,4 +136,4 @@
       }
     });
     });
-  </script> -->
+  </script>

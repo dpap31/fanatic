@@ -4,7 +4,9 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
+    #used to randomize team image display
     @all_teams = Team.all
+    #if a params tag is passed filter results based on tag else dispay all by hottness
     if params[:tag]
       @posts = hottness(@posts.tagged_with(params[:tag])).paginate(page: params[:page], :per_page => 12)
     else
@@ -14,7 +16,9 @@ class PostsController < ApplicationController
   end
 
   def sort_created
+    #used to randomize team image display
     @all_teams = Team.all
+    #if a params tag is passed filter results based on tag else dispay all by date created
     if params[:tag]
       @posts = Post.order('created_at DESC').tagged_with(params[:tag]).paginate(page: params[:page], :per_page => 12)
     else
@@ -24,7 +28,9 @@ class PostsController < ApplicationController
   end
 
   def list
+    #Display all posts created by user
     @posts = @posts.where(:user_id => current_user.id).order("created_at DESC").paginate(page: params[:page], :per_page => 12)
+    #used to randomize team image display based on users preferences
     @teams = current_user.teams
   end
   # GET /posts/1
@@ -55,6 +61,7 @@ class PostsController < ApplicationController
       if @post.save!
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
         format.json { render action: 'show', status: :created, location: @post }
+        #Create new post activity for feed
         @post.create_activity :create, owner: current_user 
       else
         format.html { render action: 'new' }
@@ -73,6 +80,7 @@ class PostsController < ApplicationController
       else
         format.html { render action: 'edit' }
       end
+      #Create update post activity for feed
       @post.create_activity :update, owner: current_user 
     end
   end
@@ -88,6 +96,7 @@ class PostsController < ApplicationController
     end
   end
 
+  #Cheers Count
   def vote
     value = params[:type] == "up" ? 1 : -1
     @post = Post.friendly.find(params[:id])
@@ -95,6 +104,7 @@ class PostsController < ApplicationController
     redirect_to :back, notice: "Thank you for voting"
   end
 
+  #Format tag results in JSON to be used by select2 drop down search
   def tags 
     @tags = ActsAsTaggableOn::Tag.where("tags.name LIKE ?", "%#{params[:q]}%") 
     respond_to do |format|
@@ -118,5 +128,4 @@ class PostsController < ApplicationController
         @user = User.find_by_id(params[:user_id, :user_name])
       end
     end
-
   end

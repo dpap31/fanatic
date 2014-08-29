@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
   load_and_authorize_resource
   before_action :find_user
   
+  
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.create(comment_params)

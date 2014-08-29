@@ -5,14 +5,12 @@ FanaticV2::Application.routes.draw do
   get "posts/sort_created" => "posts#sort_created"
   get 'tags/:tag', to: 'posts#index', as: :tag
   get 'users/:id/posts' => 'users#posts', :as => :user_posts
-  match "menu" => 'menu#index', via: [:get, :post]
   match "menu/headlines" => 'menu#headlines', via: [:get, :post]
   match "/auth/:provider/callback" => "sessions#create", via: [:get, :post]
   match "onboarding" => 'onboarding#index', via: [:get, :post]
   get "sessions/authentications"
   match "/signout" => "sessions#destroy", :as => :signout, via: [:get, :post]
 
-  resources :activities
   resources :friendships
   resources :users
   resources :friendships
