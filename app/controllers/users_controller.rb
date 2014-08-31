@@ -26,7 +26,7 @@ class UsersController < ApplicationController
     @my_posts_cheers = current_user.reputation_for(:votes).to_i
     # Used SQL so current user doesnt appear in their own activity log ("owner_id != ?", current_user.id)
     # Mapped current_users friendships ID so only friend will appear in activity feed. 
-   @activities = PublicActivity::Activity.limit(10).order("created_at desc").where(owner_id: current_user.friendships.all.map {|x| x.friend_id}).where("owner_id != ?", current_user.id)
+   @activities = PublicActivity::Activity.limit(15).order("created_at desc").where(owner_id: current_user.friendships.all.map {|x| x.friend_id}).where("owner_id != ?", current_user.id)
   end
 
   # GET /users/new
