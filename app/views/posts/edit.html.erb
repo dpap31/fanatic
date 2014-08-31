@@ -9,7 +9,7 @@
   <%= stylesheet_link_tag "post_new.css" %> 
 
 </head>
-
+<!-- Hero unit -->
 <div class="col-md-10">
   <div class="hero-unit">
     <div class="pull-right"></div><br/>
@@ -17,12 +17,13 @@
     <hr/>
   </div>
   <div id="alerts"></div>
+  <!-- Edit posts form -->
   <%= form_for @post, :html =>{ :multipart => true}, as: :post, url: post_path(@post), method: :patch do |f| %>
   
   <div class = "all_fields">
     <div class = "post_fields">
       <%= f.text_field :title, placeholder:' Title'%>
-
+      <!-- Auto complete Tag field -->
       <%= f.text_field :tag_list,
       "data-role"=>"tagsinput",
       :id => "post_tags",
@@ -37,10 +38,12 @@
     </span>
     <br>
     <br>
+    <!-- Remote image URL -->
     <div class="sr-only"><%= f.label :remote_image_url %>
     </div><%= f.text_field :remote_image_url, placeholder: ' Image URL' %>
     <%= f.hidden_field :user_id %>
     <br>
+    <!-- image upload progress bar -->
     <div class='upload-bar'>
       <div id="progress" class="progress">
         <div class="progress-bar progress-bar-primary"></div>
@@ -49,6 +52,7 @@
     </div>
   </div>
 </div>
+<!-- WIZWIG Editor -->
 <div class="btn-toolbar" data-role="editor-toolbar" data-target="#editor">
   <div class="btn-group">
     <a class="btn dropdown-toggle" data-toggle="dropdown" title="Font"><i class="icon-font"></i><b class="caret"></b></a>

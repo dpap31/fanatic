@@ -19,7 +19,9 @@
 </div>
   <div class="col-md-10 column content"> 
   <div>
+   <!-- Select2 tag search -->
     <input type="hidden" id="dropdown" style="width:300px" class="input-xlarge" />
+    <!-- Recent & Hot posts toggle -->
     <ul class="nav nav-pills sort_menu">
       <li class="inactive">
         <%= link_to "Hot", controller: 'posts', action:'index', params: params.merge(:limit => 5) %>

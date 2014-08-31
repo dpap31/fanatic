@@ -1,3 +1,4 @@
+<!-- Author slide out partial used on posts#show  -->
 <div class="cd-member-bio member-<%= @post.user.id%>">
 	<div class="cd-member-bio-pict"> <!-- background image -->
 		<%= image_tag("team_images/#{@post.user.teams[rand(@post.user.teams.length)].id}.jpg", size: "800x486")%>

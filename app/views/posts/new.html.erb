@@ -9,7 +9,7 @@
   <%= stylesheet_link_tag "post_new.css" %> 
 
 </head>
-
+<!-- Hero unit -->
 <div class="col-md-10">
   <div class="hero-unit">
     <div class="pull-right"></div><br/>
@@ -30,6 +30,7 @@
     <div class = "image_tools">              
      <span class="btn btn-primary fileinput-button" id="fileupload">
       <i class="glyphicon glyphicon-plus"></i>
+      <!-- Remote image URL -->
       <span>Add Image</span>
       <!-- The file input field used as target for the file upload widget -->
       <%= f.file_field :image %>
@@ -40,6 +41,7 @@
     </div><%= f.text_field :remote_image_url, placeholder: ' Image URL' %>
     <%= f.hidden_field :user_id %>
     <br>
+    <!-- image upload progress bar -->
     <div class='upload-bar'>
       <div id="progress" class="progress">
         <div class="progress-bar progress-bar-primary"></div>
@@ -48,6 +50,7 @@
     </div>
   </div>
 </div>
+<!-- WIZWIG Editor -->
 <div class="btn-toolbar" data-role="editor-toolbar" data-target="#editor">
   <div class="btn-group">
     <a class="btn dropdown-toggle" data-toggle="dropdown" title="Font"><i class="icon-font"></i><b class="caret"></b></a>

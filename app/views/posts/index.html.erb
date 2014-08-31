@@ -1,11 +1,13 @@
 <%= javascript_include_tag "post_index" %>
 <%= stylesheet_link_tag "posts" %>
 <div class="col-md-10 column header">
-   <div class="cd-member-bio-pict flip"> <!-- background image -->
+<!-- background image -->
+   <div class="cd-member-bio-pict flip"> 
     <%= image_tag("team_images/#{@all_teams[rand(@all_teams.length)].id}.jpg", size: "800x350", class:'flip')%>
   </div> 
-  <div class="cd-profile-pic"> <!-- profile pic -->
-    <%= link_to image_tag("fanatic_logos/fanatic_finger.png", size: '100x100', class: 'img-circle'), user_posts_path(current_user) %>
+<!-- profile pic -->
+  <div class="cd-profile-pic">
+    <%= link_to image_tag("fanatic_logos/fanatic_circle_logo.png", size: '100x100', class: 'img-circle'), user_posts_path(current_user) %>
   </div>
       <div id="title">
      <a href="/posts"><strong><i class="glyphicon glyphicon-star-empty"></i>  All Posts</strong></a>
@@ -19,7 +21,9 @@
 </div>
   <div class="col-md-10 column content"> 
    <div>
+   <!-- Select2 tag search -->
     <input type="hidden" id="dropdown" style="width:300px" class="input-xlarge" />
+    <!-- Recent & Hot posts toggle -->
    <ul class="nav nav-pills sort_menu">
       <li class="active">
         <%= link_to "Hot", controller: 'posts', action:'index', :params => params.merge(:limit => 5)%>
