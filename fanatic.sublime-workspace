@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"padding",
+				"padding-left: "
+			],
+			[
+				"paddin",
+				"padding-top: "
+			],
+			[
+				"ma",
+				"margin-top: "
+			],
+			[
 				"crea",
 				"created_at"
 			],
@@ -18,10 +30,6 @@
 			[
 				"mar",
 				"margin-right"
-			],
-			[
-				"ma",
-				"margin-left"
 			],
 			[
 				"margi",
@@ -47,13 +55,65 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "app/views/users/show.html.erb",
+			"settings":
+			{
+				"buffer_size": 8879,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/layouts/application.html.erb",
+			"settings":
+			{
+				"buffer_size": 6442,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/assets/stylesheets/dashboard.css.scss",
+			"settings":
+			{
+				"buffer_size": 16591,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/dpappas/Documents/Shib Shared/Attribute Map.xml",
+			"settings":
+			{
+				"buffer_size": 5573,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/assets/stylesheets/application.css.scss",
+			"settings":
+			{
+				"buffer_size": 3020,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/posts/sort_created.html.erb",
+			"settings":
+			{
+				"buffer_size": 1452,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 367.0,
+		"height": 392.0,
 		"selected_items":
 		[
+			[
+				"ruby",
+				"Set Syntax: Ruby"
+			],
 			[
 				"css",
 				"Set Syntax: CSS"
@@ -113,13 +173,9 @@
 			[
 				"sideba",
 				"View: Toggle Side Bar"
-			],
-			[
-				"ruby",
-				"Set Syntax: Ruby"
 			]
 		],
-		"width": 530.0
+		"width": 40.0
 	},
 	"console":
 	{
@@ -138,140 +194,148 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
+	"expanded_folders":
+	[
+		"/Users/dpappas/Sites/fanatic_v2",
+		"/Users/dpappas/Sites/fanatic_v2/app",
+		"/Users/dpappas/Sites/fanatic_v2/app/views",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/onboarding",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/posts"
+	],
 	"file_history":
 	[
-		"/Users/dpappas/Sites/fanatic_v2/app/views/users/index.html.erb",
-		"/Users/dpappas/Sites/fanatic_v2/app/views/users/dashboard.html.erb",
-		"/Users/dpappas/Sites/fanatic_v2/app/controllers/users_controller.rb",
-		"/Users/dpappas/Sites/fanatic_v2/app/controllers/posts_controller.rb",
-		"/Users/dpappas/Sites/fanatic_v2/Gemfile",
 		"/Users/dpappas/Sites/fanatic_v2/app/controllers/application_controller.rb",
-		"/Users/dpappas/Sites/fanatic_v2/app/assets/javascripts/posts.js",
-		"/Users/dpappas/Sites/fanatic_v2/test/fixtures/posts.yml",
-		"/Users/dpappas/Sites/fanatic_v2/app/models/post.rb",
+		"/Users/dpappas/Sites/fanatic_v2/app/assets/stylesheets/application.css.scss",
+		"/Users/dpappas/Sites/fanatic_v2/app/controllers/users_controller.rb",
+		"/Users/dpappas/Sites/fanatic_v2/app/assets/stylesheets/posts.css.scss",
+		"/Users/dpappas/Sites/fanatic_v2/app/assets/stylesheets/dashboard.css.scss",
+		"/Users/dpappas/Sites/fanatic_v2/public/assets/application-ce39b93aaf536f2f3d5cb70c087c3228.js",
+		"/Users/dpappas/Sites/fanatic_v2/app/helpers/application_helper.rb",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/layouts/application.html.erb",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/users/index.html.erb",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/posts/index.html.erb",
 		"/Users/dpappas/Sites/fanatic_v2/app/assets/javascripts/posts_show.js",
+		"/Users/dpappas/Sites/fanatic_v2/app/helpers/posts_helper.rb",
+		"/Users/dpappas/Sites/fanatic_v2/app/controllers/posts_controller.rb",
+		"/Users/dpappas/Sites/fanatic_v2/config/initializers/will_paginate_array_fix.rb",
+		"/Users/dpappas/Sites/fanatic_v2/app/assets/javascripts/dashboard.js",
+		"/Users/dpappas/Sites/fanatic_v2/config/database.yml",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/users/show.html.erb",
+		"/Users/dpappas/Sites/fanatic_v2/test/helpers/users_helper_test.rb",
+		"/Users/dpappas/Sites/fanatic_v2/app/assets/stylesheets/users_index.css",
+		"/Users/dpappas/Sites/fanatic_v2/app/models/identity.rb",
+		"/Users/dpappas/Sites/fanatic_v2/config/initializers/inflections.rb",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/identities/new.html.erb",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/posts/edit.html.erb",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/onboarding/index.html.erb",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/posts/_author_profile.html.erb",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/posts/_postPreview.html.erb",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/posts/list.html.erb",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/posts/new.html.erb",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/posts/show.html.erb",
+		"/Users/dpappas/Sites/fanatic_v2/tmp/miniprofiler/mp_timers_dxp9pru7mayvi81vyafq",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/posts/index.json.jbuilder",
+		"/Users/dpappas/Sites/fanatic_v2/app/helpers/users_helper.rb",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/public_activity/post/_update.html.erb",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/users/_profile.html.erb",
+		"/Users/dpappas/Sites/fanatic_v2/app/assets/stylesheets/_new_form.css",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/comments/_comment.html.erb",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/menu/_top_carousel.html.erb",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/menu/_nhl_headlines.html.erb",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/menu/_nfl_headlines.html.erb",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/menu/_nba_headlines.html.erb",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/menu/_mlb_headlines.html.erb",
+		"/Users/dpappas/Sites/fanatic_v2/app/controllers/friendships_controller.rb",
+		"/Users/dpappas/Sites/fanatic_v2/app/controllers/menu_controller.rb",
+		"/Users/dpappas/Sites/fanatic_v2/config/routes.rb",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/comments/_form.html.erb",
+		"/Users/dpappas/Sites/fanatic_v2/public/assets/application-5777edbf4c402b5567955c1db5b97780.css",
+		"/Users/dpappas/Sites/fanatic_v2/app/assets/javascripts/application.js",
+		"/Users/dpappas/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/dpappas/Sites/scripts/marc-generator/keys.yml",
+		"/Users/dpappas/Sites/fanatic_v2/config/application.yml",
+		"/Users/dpappas/Sites/fanatic_v2/app/assets/javascripts/external/google-code-prettify/lang-yaml.js",
+		"/Users/dpappas/Sites/fanatic_v2/test/fixtures/posts.yml",
+		"/Users/dpappas/Sites/fanatic_v2/test/fixtures/teams.yml",
+		"/Users/dpappas/Sites/fanatic_v2/test/fixtures/identities.yml",
+		"/Users/dpappas/Sites/fanatic_v2/test/fixtures/friendships.yml",
+		"/Users/dpappas/Sites/fanatic_v2/test/fixtures/comments.yml",
+		"/Users/dpappas/Sites/fanatic_v2/config/locales/en.yml",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/menu/index.html.erb",
+		"/Users/dpappas/Sites/fanatic_v2/app/controllers/comments_controller.rb",
+		"/Users/dpappas/Sites/fanatic_v2/app/controllers/activities_controller.rb",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/activities/index.html.erb",
+		"/Users/dpappas/Sites/fanatic_v2/db/migrate/20140216202243_create_activities.rb",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/layouts/_activities.html.erb",
+		"/Users/dpappas/Sites/fanatic_v2/test/helpers/activities_helper_test.rb",
+		"/Users/dpappas/Sites/fanatic_v2/test/controllers/activities_controller_test.rb",
+		"/Users/dpappas/Sites/fanatic_v2/app/assets/stylesheets/activities.css.scss",
+		"/Users/dpappas/Sites/fanatic_v2/app/assets/javascripts/activities.js.coffee",
+		"/Users/dpappas/Sites/fanatic_v2/app/helpers/activities_helper.rb",
+		"/Users/dpappas/Downloads/AbsorbIDPmetadata.xml",
+		"/Users/dpappas/Sites/fanatic_v2/app/controllers/sessions_controller.rb",
+		"/Users/dpappas/Sites/fanatic_v2/app/models/user.rb",
+		"/Users/dpappas/Sites/fanatic_v2/app/assets/javascripts/post_index.js",
+		"/Users/dpappas/Sites/fanatic_v2/db/migrate/20140510005300_add_login_count_to_users.rb",
+		"/Users/dpappas/Sites/fanatic_v2/app/assets/javascripts/external/google-code-prettify/lang-lisp.js",
+		"/Users/dpappas/Sites/fanatic_v2/config/application.rb",
 		"/Users/dpappas/Sites/fanatic_v2/app/assets/javascripts/menu.js",
+		"/Users/dpappas/Sites/fanatic_v2/tmp/miniprofiler/mp_timers_i3kdpzil4t8webr84kiu",
+		"/Users/dpappas/Sites/fanatic_v2/tmp/miniprofiler/mp_timers_ddzqbbaunot04r5m75ym",
+		"/Users/dpappas/Sites/fanatic_v2/db/migrate/20140511005050_add_email_and_first_name_and_last_name_and_username_to_user.rb",
+		"/Users/dpappas/Sites/fanatic_v2/tmp/miniprofiler/mp_timers_fdkld9e08swxtdbc0gjj",
+		"/Users/dpappas/Sites/fanatic_v2/Rakefile",
+		"/Users/dpappas/Sites/fanatic_v2/tmp/miniprofiler/mp_timers_ac6ykjnz54b59gnxyqxm",
+		"/Users/dpappas/Sites/fanatic_v2/app/helpers/search_suggestions_helper.rb",
+		"/Users/dpappas/Sites/fanatic_v2/test/fixtures/search_suggestions.yml",
+		"/Users/dpappas/Sites/fanatic_v2/test/helpers/search_suggestions_helper_test.rb",
+		"/Users/dpappas/Sites/fanatic_v2/app/middleware/search_suggestions.rb",
+		"/Users/dpappas/Sites/fanatic_v2/app/controllers/search_suggestions_controller.rb",
+		"/Users/dpappas/Sites/fanatic_v2/test/models/search_suggestion_test.rb",
+		"/Users/dpappas/Sites/fanatic_v2/app/assets/javascripts/search_suggestions.js.coffee",
+		"/Users/dpappas/Sites/fanatic_v2/app/assets/stylesheets/search_suggestions.css.scss",
+		"/Users/dpappas/Sites/fanatic_v2/test/controllers/search_suggestions_controller_test.rb",
+		"/Users/dpappas/Sites/fanatic_v2/tmp/cache/61D/6B0/search-terms%2FPa",
+		"/Users/dpappas/Sites/fanatic_v2/config.ru",
+		"/Users/dpappas/Sites/fanatic_v2/tmp/miniprofiler/mp_timers_o05sbn7owvtq9n0qxk3v",
+		"/Users/dpappas/Sites/fanatic_v2/tmp/cache/assets/development/sass/9b3cc909620bd4b6b08606bb02d05b3f21ae7acc/_modals.scssc",
+		"/Users/dpappas/Sites/fanatic_v2/db/seeds.rb",
+		"/Users/dpappas/Sites/fanatic_v2/db/schema.rb",
+		"/Users/dpappas/Sites/fanatic_v2/app/models/search_suggestion.rb",
+		"/Users/dpappas/Sites/fanatic_v2/app/views/users/dashboard.html.erb",
+		"/Users/dpappas/Sites/fanatic_v2/Gemfile",
+		"/Users/dpappas/Sites/fanatic_v2/app/assets/javascripts/posts.js",
+		"/Users/dpappas/Sites/fanatic_v2/app/models/post.rb",
 		"/Users/dpappas/Sites/fanatic_v2/tmp/miniprofiler/mp_timers_obm3vtk2zjic5zftc323",
 		"/Users/dpappas/Sites/fanatic_v2/tmp/miniprofiler/mp_timers_od7wga389samd5avwcu",
 		"/Users/dpappas/Sites/fanatic_v2/app/models/.keep",
 		"/Users/dpappas/Sites/fanatic_v2/app/assets/javascripts/validator/vat.js",
-		"/Users/dpappas/Sites/fanatic_v2/app/views/onboarding/index.html.erb",
-		"/Users/dpappas/Sites/fanatic_v2/app/views/menu/_top_carousel.html.erb",
 		"/Users/dpappas/Sites/fanatic_v2/app/assets/javascripts/validator/notEmpty.js",
-		"/Users/dpappas/Sites/fanatic_v2/app/models/user.rb",
-		"/Users/dpappas/Sites/fanatic_v2/config/application.rb",
 		"/Users/dpappas/Sites/scripts/marc-playground.rb",
-		"/Users/dpappas/Sites/fanatic_v2/app/assets/javascripts/application.js",
-		"/Users/dpappas/Sites/fanatic_v2/config/application.yml",
-		"/Users/dpappas/Sites/fanatic_v2/app/views/posts/_author_profile.html.erb",
 		"/Users/dpappas/Sites/fanatic_v2/db/teamdata.json",
 		"/Users/dpappas/Sites/fanatic_v2/tmp/miniprofiler/mp_timers_r63hwudz53uwvlskgrkd",
 		"/Users/dpappas/Sites/fanatic_v2/tmp/cache/assets/development/sass/9b3cc909620bd4b6b08606bb02d05b3f21ae7acc/_responsive-utilities.scssc",
 		"/Users/dpappas/Sites/fanatic_v2/tmp/miniprofiler/mp_timers_enwipela4t1nrdqp8u54",
-		"/Users/dpappas/Sites/fanatic_v2/test/fixtures/friendships.yml",
 		"/Users/dpappas/Sites/fanatic_v2/test/functional/friendships_controller_test.rb",
 		"/Users/dpappas/Sites/fanatic_v2/db/migrate/20140413175335_add_taggings_counter_cache_to_tags.acts_as_taggable_on_engine.rb",
 		"/Users/dpappas/Sites/fanatic_v2/tmp/miniprofiler/mp_timers_agk3si2mk3xe4oe0v3i1",
 		"/Users/dpappas/Sites/fanatic_v2/tmp/miniprofiler/mp_timers_a3i7fokoqiux355zmq8r",
 		"/Users/dpappas/Sites/fanatic_v2/db/migrate/20140413175333_acts_as_taggable_on_migration.acts_as_taggable_on_engine.rb",
-		"/Users/dpappas/Sites/fanatic_v2/test/controllers/activities_controller_test.rb",
-		"/Users/dpappas/Sites/fanatic_v2/app/controllers/activities_controller.rb",
 		"/Users/dpappas/Sites/fanatic_v2/app/assets/javascripts/ng-tags-input.js",
 		"/Users/dpappas/Sites/fanatic_v2/tmp/miniprofiler/mp_timers_g130fl2rc7bvcmcu1wl3",
 		"/Users/dpappas/Sites/fanatic_v2/tmp/cache/assets/development/sass/9b3cc909620bd4b6b08606bb02d05b3f21ae7acc/_grid.scssc",
-		"/Users/dpappas/Sites/fanatic_v2/app/assets/stylesheets/dashboard.css.scss",
-		"/Users/dpappas/Sites/fanatic_v2/app/assets/javascripts/dashboard.js",
-		"/Users/dpappas/Sites/fanatic_v2/config/database.yml",
 		"/Users/dpappas/Sites/fanatic_v2/db/migrate/20140203054918_add_user_id_to_comments.rb",
-		"/Users/dpappas/Sites/fanatic_v2/app/assets/stylesheets/users_index.css",
 		"/Users/dpappas/Sites/fanatic_v2/app/views/users/index.json.jbuilder",
-		"/Users/dpappas/Sites/fanatic_v2/app/views/menu/index.html.erb",
-		"/Users/dpappas/Sites/fanatic_v2/app/views/activities/index.html.erb",
-		"/Users/dpappas/Sites/fanatic_v2/app/views/identities/new.html.erb",
-		"/Users/dpappas/Sites/fanatic_v2/config/initializers/inflections.rb",
-		"/Users/dpappas/Sites/fanatic_v2/app/models/identity.rb",
 		"/Users/dpappas/Sites/fanatic_v2/db/migrate/20140517050838_create_teams_users_join.rb",
 		"/Users/dpappas/Sites/fanatic_v2/test/fixtures/users.yml",
 		"/Users/dpappas/Sites/fanatic_v2/fanatic.sublime-project",
 		"/Users/dpappas/Sites/fanatic_v2/app/models/friendship.rb",
 		"/Users/dpappas/Sites/fanatic_v2/tmp/cache/assets/development/sass/f1a96e1e95a7726cdb7d3c5dbf2bd299a869fb68/_responsive-utilities.scssc",
-		"/Users/dpappas/Sites/fanatic_v2/app/views/users/show.html.erb",
-		"/Users/dpappas/Sites/fanatic_v2/app/views/layouts/application.html.erb",
-		"/Users/dpappas/Sites/fanatic_v2/app/views/users/edit.html.erb",
-		"/Users/dpappas/Sites/fanatic_v2/app/views/users/_form.html.erb",
-		"/Users/dpappas/Sites/fanatic_v2/app/views/posts/edit.html.erb",
-		"/Users/dpappas/Sites/fanatic_v2/db/migrate/20140405194322_change_evaluations_index_to_unique.rb",
-		"/Users/dpappas/Sites/dash_things/db/migrate/20140530035809_add_devise_to_users.rb",
-		"/Users/dpappas/Sites/fanatic_v2/db/migrate/20140511005050_add_email_and_first_name_and_last_name_and_username_to_user.rb",
-		"/Users/dpappas/Sites/fanatic_v2/app/helpers/users_helper.rb",
-		"/Users/dpappas/Sites/fanatic_v2/app/views/users/new.html.erb",
-		"/Users/dpappas/Sites/dash_things/app/models/user.rb",
-		"/Users/dpappas/Sites/fanatic_v2/app/assets/stylesheets/users_update.css",
-		"/Users/dpappas/Sites/fanatic_v2/app/views/public_activity/comment/_update.html.erb",
-		"/Users/dpappas/Sites/dash_things/config/environments/production.rb",
-		"/Users/dpappas/Sites/fanatic_v2/app/assets/stylesheets/profile.css",
-		"/Users/dpappas/Sites/dash_things/app/models/dashboard.rb",
-		"/Users/dpappas/Sites/dash_things/spec/models/dashboard_spec.rb",
-		"/Users/dpappas/Sites/dash_things/config/database.yml",
-		"/Users/dpappas/Sites/fanatic_v2/app/controllers/friendships_controller.rb",
-		"/Users/dpappas/Sites/fanatic_v2/app/views/posts/_postPreview.html.erb",
-		"/Users/dpappas/Sites/fanatic_v2/.gitignore",
-		"/Users/dpappas/Sites/fanatic_v2/.gitattributes",
-		"/Users/dpappas/Sites/dash_things/.gitignore",
-		"/Users/dpappas/Sites/fanatic_v2/app/views/posts/index.html.erb",
-		"/Users/dpappas/Sites/fanatic_v2/tmp/miniprofiler/mp_timers_eaaj2p193c1y1haq7chy",
-		"/Users/dpappas/Sites/fanatic_v2/test/helpers/activities_helper_test.rb",
-		"/Users/dpappas/Sites/fanatic_v2/app/helpers/activities_helper.rb",
-		"/Users/dpappas/Sites/fanatic_v2/app/controllers/teams_controller.rb",
-		"/Users/dpappas/Sites/fanatic_v2/tmp/cache/assets/development/sprockets/ea1a7ef58a616f9c5a331ede5e943638",
-		"/Users/dpappas/Sites/fanatic_v2/tmp/cache/assets/development/sass/83bb5b4d31cd6a4470eb777d4fbf65af2db096d1/application.css.scssc",
-		"/Users/dpappas/Sites/fanatic_v2/tmp/cache/assets/development/sass/9d0c34e4c79ddaebefa2a317ec16a32db57dfb0a/application.css.scssc",
-		"/Users/dpappas/Sites/dash_things/config/application.rb",
-		"/Users/dpappas/Sites/fanatic_v2/config.ru",
-		"/Users/dpappas/Sites/dash_things/db/migrate/20140519023253_create_users.rb",
-		"/Users/dpappas/Sites/fanatic_v2/app/assets/javascripts/external/google-code-prettify/run_prettify.js",
-		"/Users/dpappas/Sites/fanatic_v2/config/initializers/friendly_id.rb",
-		"/Users/dpappas/Sites/fanatic_v2/config/routes.rb",
-		"/Users/dpappas/FederationMetadata.xml",
-		"/Users/dpappas/Sites/dash_things/app/views/layouts/application.html.erb",
-		"/Users/dpappas/Sites/dash_things/Gemfile",
-		"/Users/dpappas/Sites/dash_things/config/initializers/omniauth.rb",
-		"/Users/dpappas/Sites/dash_things/app/controllers/application_controller.rb",
-		"/Users/dpappas/Sites/dash_things/app/controllers/sessions_controller.rb",
-		"/Users/dpappas/Sites/fanatic_v2/config/initializers/session_store.rb",
-		"/Users/dpappas/Sites/dash_things/config/initializers/session_store.rb",
-		"/Users/dpappas/Sites/fanatic_v2/app/controllers/sessions_controller.rb",
-		"/Users/dpappas/Sites/fanatic_v2/db/seeds.rb",
-		"/Users/dpappas/Sites/fanatic_v2/tmp/miniprofiler/mp_timers_apppb5ldnvxw1d9do8ba",
-		"/Users/dpappas/Sites/dash_things/app/helpers/application_helper.rb",
-		"/Users/dpappas/Sites/fanatic_v2/app/assets/javascripts/users.js.coffee",
-		"/Users/dpappas/Sites/dash_things/config/routes.rb",
-		"/Users/dpappas/Sites/dash_things/spec/models/user_spec.rb",
-		"/Users/dpappas/Sites/fanatic_v2/test/models/user_test.rb",
-		"/Users/dpappas/Sites/dash_things/db/migrate/20140519022940_create_users.rb",
-		"/Users/dpappas/Sites/fanatic_v2/app/views/posts/show.html.erb",
-		"/Users/dpappas/Sites/fanatic_v2/log/development (dpappas-lt's conflicted copy 2014-01-04).log",
-		"/Users/dpappas/Sites/fanatic_v2/app/assets/stylesheets/onboarding.css.scss",
-		"/Users/dpappas/Sites/fanatic_v2/app/assets/javascripts/onboarding.js",
-		"/Users/dpappas/Sites/fanatic_v2/app/assets/stylesheets/posts_show.css.scss",
-		"/Users/dpappas/Sites/fanatic_v2/app/models/team.rb",
-		"/Users/dpappas/Sites/fanatic_v2/test/controllers/users_controller_test.rb",
-		"/Users/dpappas/Sites/fanatic_v2/tmp/miniprofiler/mp_timers_e0mp794kmgjujl5g6ieq",
-		"/Users/dpappas/Sites/fanatic_v2/private_pub.ru",
-		"/Users/dpappas/Sites/fanatic_v2/tmp/cache/assets/development/sass/9d0c34e4c79ddaebefa2a317ec16a32db57dfb0a/posts#show.css.scssc",
-		"/Users/dpappas/Sites/fanatic_v2/tmp/cache/assets/development/sass/9d0c34e4c79ddaebefa2a317ec16a32db57dfb0a/posts_show.css.scssc",
-		"/Users/dpappas/Sites/fanatic_v2/test/models/team_test.rb",
-		"/Users/dpappas/Sites/fanatic_v2/tmp/miniprofiler/mp_timers_e0itc76g466ryfoxl6r1",
-		"/Users/dpappas/Sites/fanatic_v2/app/assets/javascripts/jquery.tokeninput.js",
-		"/Users/dpappas/Sites/fanatic_v2/tmp/miniprofiler/mp_timers_jsf391qcj8vy1rdf5dc1",
-		"/Users/dpappas/Sites/fanatic_v2/test/fixtures/teams.yml",
-		"/Users/dpappas/Sites/fanatic_v2/tmp/miniprofiler/mp_timers_e08b1nktvjyueputpnei",
-		"/Users/dpappas/Sites/fanatic_v2/app/assets/javascripts/teamdata.json",
-		"/Users/dpappas/Sites/fanatic_v2/app/views/posts/new.html.erb"
+		"/Users/dpappas/Sites/fanatic_v2/app/views/users/edit.html.erb"
 	],
 	"find":
 	{
-		"height": 37.0
+		"height": 39.0
 	},
 	"find_in_files":
 	{
@@ -285,6 +349,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"%",
+			"3",
+			"pat",
+			"dl",
 			"for",
 			"taggable",
 			"tags",
@@ -375,8 +443,187 @@
 	"groups":
 	[
 		{
+			"selected": 3,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "app/views/users/show.html.erb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8879,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								400,
+								400
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 7010.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/views/layouts/application.html.erb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6442,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5169,
+								5153
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2648.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/assets/stylesheets/dashboard.css.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 16591,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								14912,
+								14912
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Syntax Highlighting for Sass/Syntaxes/SCSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 18747.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/Users/dpappas/Documents/Shib Shared/Attribute Map.xml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5573,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4914,
+								4898
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1911.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/assets/stylesheets/application.css.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3020,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2975,
+								2347
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Syntax Highlighting for Sass/Syntaxes/SCSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2737.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/views/posts/sort_created.html.erb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1452,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1015,
+								1015
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 961.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -427,32 +674,80 @@
 		"selected_items":
 		[
 			[
-				"ge",
-				"Gemfile"
+				"application",
+				"app/assets/stylesheets/application.css.scss"
+			],
+			[
+				"dash",
+				"app/assets/stylesheets/dashboard.css.scss"
+			],
+			[
+				"applicationh",
+				"app/views/layouts/application.html.erb"
+			],
+			[
+				"usercon",
+				"app/controllers/users_controller.rb"
 			],
 			[
 				"posts",
-				"app/controllers/posts_controller.rb"
+				"app/assets/stylesheets/posts.css.scss"
+			],
+			[
+				"usercont",
+				"app/controllers/users_controller.rb"
+			],
+			[
+				"usershow",
+				"app/views/users/show.html.erb"
+			],
+			[
+				"userindex",
+				"app/views/users/index.html.erb"
+			],
+			[
+				"postsin",
+				"app/views/posts/index.html.erb"
+			],
+			[
+				"user",
+				"app/views/users/index.html.erb"
+			],
+			[
+				"route",
+				"config/routes.rb"
+			],
+			[
+				"yml",
+				"config/application.yml"
+			],
+			[
+				"applic",
+				"app/controllers/application_controller.rb"
+			],
+			[
+				"searh",
+				"app/helpers/search_suggestions_helper.rb"
+			],
+			[
+				"searc",
+				"test/fixtures/search_suggestions.yml"
+			],
+			[
+				"sessi",
+				"app/controllers/sessions_controller.rb"
+			],
+			[
+				"ge",
+				"Gemfile"
 			],
 			[
 				"applica",
 				"app/controllers/application_controller.rb"
 			],
 			[
-				"application",
-				"app/controllers/application_controller.rb"
-			],
-			[
-				"dash",
-				"app/views/users/dashboard.html.erb"
-			],
-			[
 				"userin",
 				"app/views/users/index.html.erb"
-			],
-			[
-				"usercon",
-				"app/controllers/users_controller.rb"
 			],
 			[
 				"usersin",
@@ -487,20 +782,12 @@
 				"fanatic_v2/app/controllers/application_controller.rb"
 			],
 			[
-				"user",
-				"dash_things/app/models/user.rb"
-			],
-			[
 				"frie",
 				"fanatic_v2/app/controllers/friendships_controller.rb"
 			],
 			[
 				"frien",
 				"fanatic_v2/app/models/friendship.rb"
-			],
-			[
-				"route",
-				"fanatic_v2/config/routes.rb"
 			],
 			[
 				"session",
@@ -525,10 +812,6 @@
 			[
 				"application_",
 				"fanatic_v2/app/controllers/application_controller.rb"
-			],
-			[
-				"usercont",
-				"fanatic_v2/app/controllers/users_controller.rb"
 			],
 			[
 				"conf",
@@ -731,10 +1014,6 @@
 				"fanatic_v2/config/initializers/omniauth.rb"
 			],
 			[
-				"sessi",
-				"fanatic_v2/app/controllers/sessions_controller.rb"
-			],
-			[
 				"userhso",
 				"fanatic_v2/app/views/users/show.html.erb"
 			],
@@ -805,10 +1084,6 @@
 			[
 				"nef",
 				"fanatic_v2/app/views/posts/_new_form.html.erb"
-			],
-			[
-				"postsin",
-				"fanatic_v2/app/views/posts/index.html.erb"
 			],
 			[
 				"posts.css",
@@ -909,34 +1184,6 @@
 			[
 				"postindex",
 				"fanatic_v2/app/views/posts/index.html.erb"
-			],
-			[
-				"rout",
-				"fanatic_v2/config/routes.rb"
-			],
-			[
-				"search",
-				"fanatic_v2/app/middleware/search_suggestions.rb"
-			],
-			[
-				"post/inde",
-				"fanatic_v2/app/views/posts/index.html.erb"
-			],
-			[
-				"updat",
-				"fanatic_v2/app/views/public_activity/comment/_update.html.erb"
-			],
-			[
-				"pos",
-				"fanatic_v2/app/models/post.rb"
-			],
-			[
-				"g",
-				"fanatic_v2/Gemfile"
-			],
-			[
-				"application.",
-				"fanatic_v2/app/views/layouts/application.html.erb"
 			]
 		],
 		"width": 0.0
@@ -957,6 +1204,7 @@
 		],
 		"width": 0.0
 	},
+	"selected_group": 0,
 	"settings":
 	{
 	},

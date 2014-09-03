@@ -47,10 +47,6 @@ td {
 	text-align: center;
 	width: 100%;
 }
-.col-md-3{
-	margin-left: 1%;
-	width: 23%
-}
 
 .col-md-8{
 	width: 75%;
@@ -167,11 +163,11 @@ body {
 
 /*right column divs*/
 .user_column {
-  margin-right: 1%;
   margin-left: 1%;
+  margin-right: 1%;
   position: absolute;
   right: 0%;
-  top:0%;
+  max-width: 20%;
 }
 /*user widget*/
 #user_widget{
@@ -834,19 +830,19 @@ xkeyframes
 
 // Responsive design media queries based on screen size
 
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1350px) {
 .header .cd-profile-pic img { 
   top: 310px;
   left: 45%;
 }
 
 .header #new_button > a {
-  top: 225px;
+  top: 215px;
   margin-right: 30px;
 }
 
 .header #title > a{
-  top: 225px;
+  top: 215px;
   margin-left: 30px;
 }
 }
@@ -893,6 +889,9 @@ xkeyframes
 }
 .content {
   top: 180px;
+}
+.user_column {
+  visibility: hidden;
 }
 }
 
