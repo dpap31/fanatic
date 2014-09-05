@@ -16,9 +16,9 @@
    <% if @user == current_user%>
      <a href="/posts/new"><strong><i class="glyphicon glyphicon-plus-sign"></i>  New Post</strong></a>
   <% elsif current_user.friends.exists?(@user.id)%>
-   <a href="/posts/new"><strong><i class="glyphicon glyphicon-ok-circle"></i>  Following</strong></a>
+   <a href="/users/<%=@user.id%>/posts"><strong><i class="glyphicon glyphicon-ok-circle"></i>  Following</strong></a>
   <% else %>
-  <strong><%= link_to("<i class='glyphicon glyphicon-plus-sign'></i>"" Follow #{@user.name}".html_safe, friendships_path(:friend_id => @user.id), :method => :post) %></strong>
+  <%= link_to("<i class='glyphicon glyphicon-plus-sign'></i>""<strong> Follow #{@user.name}</strong>".html_safe, friendships_path(:friend_id => @user.id), :method => :post) %>
   <% end %>
    </div> 
 </div>
