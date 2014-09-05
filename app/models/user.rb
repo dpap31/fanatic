@@ -21,8 +21,8 @@ class User < ActiveRecord::Base
   validates :uid, uniqueness: true, on: :create
   #validates :email, :first_name, :last_name, :username,  presence: true, on: :update
   validates :email, :username, uniqueness: true, on: :update
-  validates_format_of :email, with: /[a-zA-Z0-9._%-]+@(?:[a-zA-Z0-9-]+\.)+(com|net|org|info|biz|me|edu|gov)/i
-  validates_format_of :username, with: /[a-zA-Z0-9_\.]+/i
+  validates_format_of :email, with: /[a-zA-Z0-9._%-]+@(?:[a-zA-Z0-9-]+\.)+(com|net|org|info|biz|me|edu|gov)/i, on: :update
+  validates_format_of :username, with: /[a-zA-Z0-9_\.]+/i, on: :update
 
   #Method to increase the login count on authentication
   def self.increase_login_count(user)
@@ -45,6 +45,19 @@ class User < ActiveRecord::Base
         user.image = auth['info']['image']
       end
     end
+  end
+
+  #Update user attributes on each login
+  def self.assign_from_omniauth(auth, user)
+      user.location = auth["info"]["location"]
+      user.name = auth["info"]["name"]
+       if  user.provider == 'twitter'
+        user.image = auth['info']['image'].sub("_normal", "")
+      end
+      if user.provider == 'facebook'
+        user.image = auth['info']['image']
+      end
+      user.save!
   end
 
   #User has many evaluations used for cheers and Active Record Reputation System

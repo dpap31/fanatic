@@ -9,7 +9,8 @@ class SessionsController < ApplicationController
     User.increase_login_count(user)
     if user.login_count == 1
       redirect_to controller: 'onboarding', action: 'index'
-    else  
+    else
+      User.assign_from_omniauth(auth, user)
       redirect_to controller: 'users', action: 'show', id: user.id, :notice => "Signed in!"
     end
   end

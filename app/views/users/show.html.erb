@@ -259,16 +259,31 @@
 </div>
 <div id='following_widget'>
  <div id= 'widget_header'><h4>
-  Following
+  <%if @user.friendships.count < 6 %>
+    Recommended 
+  <% else %>
+    Following
+  <% end %>
 </h4>
 </div>
 <hr>
 <section id="cd-team" class='following_images'>
 
   <ul>
-    <%  for friendship in @user.friendships.take(8) %> <a href="#<%=friendship.friend.id%>" data-type="member-<%=friendship.friend.id%>">
-    <%= image_tag(friendship.friend.image, size: '40x40', class: 'img-circle') %></a>
-    <% end %>
+  <%if @user.friendships.count < 6 %>
+        <% @recommended_authors.each do |u| %>
+        <% u = User.find_by_id(u)%>
+        <a href = "/users/<%=u.id%>/posts">
+        <img src="<%= u.image %>" class="img-circle">
+        </a>
+      <% end %>
+  <% else %>
+      <%  for friendship in @user.friendships.take(8) %> 
+        <a href="#<%=friendship.friend.id%>" id = "following_thumbnails" data-type="member-<%=friendship.friend.id%>">
+        <%= image_tag(friendship.friend.image, class: 'img-circle') %>
+        </a>
+      <% end %>
+  <% end %>
   </ul>
 </section>
 </div>
