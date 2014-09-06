@@ -28,6 +28,7 @@ class UsersController < ApplicationController
     # Mapped current_users friendships ID so only friend will appear in activity feed. 
     @activities = PublicActivity::Activity.limit(15).order("created_at desc").where(owner_id: current_user.friendships.all.map {|x| x.friend_id}).where("owner_id != ?", current_user.id)
     @recommended_authors = recommended_authors(current_user).first(8)
+    @hot_posts = hottness(Post.all).first(6)
   end
 
   # GET /users/new

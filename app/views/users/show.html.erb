@@ -26,7 +26,36 @@
   </div> 
 </div> 
   <div class="col-md-8 column content">
-    <div id='user_teams'>
+  <div id='user_teams'>
+      <div class='teamname'>
+        <h4><%= link_to "Popular", posts_path%></h4>
+      </div>
+    <table>
+      <tr>
+        <% @hot_posts.each do |post| %>
+        <div class="pin">
+          <div class="image">
+            <a href="/posts/<%=post.slug%>"><img class= "img-responsive" src="<%= post.image %>" /></a>
+          </div>
+          <div class="caption">
+            <h4>
+             <%= post.title %>
+           </h4>
+           <div class = 'post-info'>
+             <div class = 'tags'>
+              <ul class="token-input-token-facebook">
+                <li class="token-input-token-facebook"><%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join('<li class="token-input-token-facebook"> ') %></li>
+              </ul>
+            </div>
+            <div id = 'cheers'>
+              <%= pluralize post.reputation_for(:votes).to_i, "cheer" %> 
+            </div>
+          </div>
+        </div>
+      </div>
+  </tr>
+  <% end %>
+</table>
       <%if @teams.first%>
       <div class='teamname'>
         <h4><%= link_to "#{@teams.first.location} #{@teams.first.name}",tag_path(@teams.first.name)%></h4>
