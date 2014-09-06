@@ -9,6 +9,7 @@ class PostsController < ApplicationController
     #if a params tag is passed filter results based on tag else dispay all by hottness
     if params[:tag]
       @posts = hottness(@posts.tagged_with(params[:tag])).paginate(page: params[:page], :per_page => 12)
+      @current_team = @all_teams.where(:name => params[:tag].capitalize).first
     else
       @tags_all = ActsAsTaggableOn::Tag.all
       @posts = hottness(Post.all).paginate(page: params[:page], :per_page => 12)
