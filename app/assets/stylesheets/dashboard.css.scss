@@ -204,14 +204,14 @@ div#DashboardProfileCard{
 	position: relative;
 	font-size: 18px;
 	color: #999999;
-	left: 130px;
-	bottom: 30px; 
+  left: 105px;
+  bottom: 35px; 
 	z-index: 0;
 }
 
 #username{
-	left: 150px;
-	bottom: 20px; 
+	left: 120px;
+  bottom: 28px;
 	position: relative;
 }
 
@@ -336,15 +336,16 @@ div.col-md-3.column.pull-left  hr{
 #following_widget img {
   margin-top: 2px;
   margin-bottom: 2px;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
 
 }
 
 #following_widget ul {
-  padding-left: 25px;
-  padding-right: 25px;
   list-style-type: none;
+  padding-left: 17%;
+  padding-right: 17%;
+  text-align: center;
 }
 
 /*Team Widget*/

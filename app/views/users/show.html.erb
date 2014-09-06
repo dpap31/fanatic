@@ -298,7 +298,7 @@
 <hr>
 <section id="cd-team" class='following_images'>
 
-  <ul>
+  <ul class = "unstyled">
   <%if @user.friendships.count < 6 %>
         <% @recommended_authors.each do |u| %>
         <% u = User.find_by_id(u)%>
