@@ -3,7 +3,7 @@ body {
 } 
 
 .image {
- 	width: 250px;
+ 	width: 100%;
 	border-bottom: 1px solid #ccc;
 	padding-bottom: 15px;
 	margin-bottom: 5px;
@@ -162,7 +162,7 @@ body {
   height: 110px;
   background-color: white;
   position: absolute;
-  border-radius: 10%;
+  border-radius: 30%;
   box-shadow: 0px 2px 2px #888;
   z-index: 0;
   margin-left: 17px;
@@ -172,6 +172,153 @@ div.cd-team-logo > img {
   position: absolute;
   z-index: 1;
   padding: 4px;
+}
+
+table{
+  min-width: 0;
+  table-layout: fixed;
+  word-wrap: break-word;
+}
+@-moz-document url-prefix() {
+  fieldset { display: table-cell; }
+}
+
+
+// Responsive header
+
+@media only screen and (min-width: 1350px) {
+.header .cd-profile-pic img { 
+  top: 310px;
+  left: 45%;
+}
+
+.header #new_button > a {
+  top: 320px;
+  margin-right: 30px;
+}
+
+.header #title > a{
+  top: 320px;
+  margin-left: 30px;
+}
+}
+
+@media only screen and (max-width: 1200px) {
+.header .cd-profile-pic img { 
+  top: 310px;
+  left: 45%;
+}
+
+.header #new_button > a {
+  top: 317px;
+  margin-right: 30px;
+}
+
+.header #title > a{
+  top: 317px;
+  margin-left: 30px;
+}
+.content {
+  top: 420px;
+}
+}
+
+@media only screen and (max-width: 1024px) {
+/*header container*/
+.header .cd-profile-pic img { 
+  top: 270px;
+  left: 45%;
+}
+
+.header #new_button > a {
+  top: 285px;
+  margin-right: 30px;
+}
+
+.cd-member-bio .cd-profile-pic img { 
+  right: 250px
+}
+
+.header #title > a{
+  top: 285px;
+  margin-left: 30px;
+}
+.content {
+  top: 395px;
+}
+.user_column {
+  visibility: hidden;
+}
+}
+
+@media only screen and (max-width: 900px) {
+.header .cd-profile-pic img { 
+  top: 280px;
+  left: 42%;
+  display: relative;
+}
+
+.header #new_button > a {
+  top: 285px;
+  margin-right: 20px;
+}
+
+.header #title > a{
+  top: 285px;
+  margin-left: 20px;
+}
+.content {
+  top: 395px;
+
+}
+}
+@media only screen and (max-width: 700px) {
+.header .cd-profile-pic img { 
+  top: 100px;
+  left: 37%;
+}
+
+.cd-member-bio .cd-profile-pic img { 
+  right: 100px
+}
+
+.header #new_button > a {
+  top: 30px;
+  margin-right: 20px;
+}
+
+.header #title > a{
+  top: 30px;
+  margin-left: 20px;
+}
+.content {
+  top: 100px;
+
+}
+}
+
+
+@media only screen and (max-width: 600px) {
+.header .cd-profile-pic img { 
+  top: 50px;
+  left: 25%;
+}
+
+.header #new_button > a {
+  top: 45px;
+  margin-right: 0px;
+  color: black;
+}
+
+.header #title > a{
+  top: 45px;
+  margin-left: 0px;
+  color: black;
+}
+.content {
+  top: 50px;
+
+}
 }
 
 
