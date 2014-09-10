@@ -15,6 +15,10 @@
 *= require jquery.fileupload-ui
 */
 
+html{
+  overflow: hidden;
+}
+
 #top-nav{
 	background: #000;
 }
@@ -131,6 +135,7 @@
 .application_column {
   margin-left: 220px;
   position: relative;
+  overflow: hidden;
 }
 
 @media only screen and (max-width: 1200px) {
