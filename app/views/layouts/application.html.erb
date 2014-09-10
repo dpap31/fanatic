@@ -59,7 +59,7 @@
            <!-- <a id="menu-toggle" href="#" class="btn btn-primary btn-lg toggle"><i class="fa fa-bars"></i></a>
             <a id="menu-close" href="#" class="btn btn-default btn-lg pull-left toggle"><i class="fa fa-times"></i></a>-->
             <!-- sidebar -->
-            <div class="col-sm-2 pull-left sidebar-nav" id="sidebar-wrapper">          
+            <div class="col-sm-2 pull-left sidebar-nav" id="sidebar-wrapper">    
               <ul class="nav nav-pills nav-stacked fanatic-menu">
                 <li class="nav-header"></li>
                 <% if current_user.nil? %>
@@ -83,7 +83,7 @@
               <hr>
               <!-- Links to External Sports sites -->
                 <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#userMenu">
-                  <h5><strong><i class="glyphicon glyphicon-link"></i> The Pros</strong>
+                  <h5><strong><i class="glyphicon glyphicon-link"></i> The Pros</strong></h5>
                   </a></li>
                     <li><a href="http://www.espn.com" target="_blank"> ESPN</a></li>
                     <li><a href="http://grantland.com" target="_blank"> Grantland</a></li>
@@ -93,7 +93,7 @@
                 </ul>
             </div>
             <!-- Flash hash and error messages handling -->
-            <div class="col-md-10 column application_column">   
+            <div class="col-md-10 application_column">   
               <% flash.each do |name, msg| %>
               <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
                 <a class="close" data-dismiss="alert">×</a>
@@ -101,11 +101,9 @@
               </div>
               <% end %>
               <%= yield %>
-            </div>
-            </div>
-          </div>
-      </body>
-      </html>
+              </div>
+          </body>
+        </html>
 <!-- Colapsable Side bar -->
     <!--    <script>
     $("#menu-close").click(function(e) {
