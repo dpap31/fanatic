@@ -1,7 +1,6 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Fanatic Sports is web application designed to socialize sports blogging. Users can follow their favorite teams, create posts and read other sports fans posts.
 
 Things you may want to cover:
 
