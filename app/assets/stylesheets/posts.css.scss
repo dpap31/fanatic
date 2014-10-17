@@ -41,7 +41,7 @@ body {
 	padding-bottom: 5px;
 	background: -webkit-linear-gradient(45deg, #FFF, #F9F9F9);
 	opacity: 1;
-	
+	width: 100%;
 }
 
 .pin p {
@@ -55,7 +55,6 @@ body {
 }
 
 .header #new_button > a {
-	top: 250px;
 	margin-right: 30px;
 	position: relative;
 	text-decoration: none;
