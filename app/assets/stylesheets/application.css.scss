@@ -15,8 +15,17 @@
 *= require jquery.fileupload-ui
 */
 
-#top-nav{
+
+#top-nav {
 	background: #000;
+}
+
+body {
+  background-color:#E9EAED;
+} 
+
+.application_column{
+  width: 80%;
 }
 
 
@@ -127,50 +136,34 @@
   margin: 5px 5px 0 0;
 }
 
-
-.application_column {
-  margin-left: 235px;
-  position: relative;
-}
-
 @media only screen and (max-width: 1200px) {
-.application_column {
-}
+
 }
 
 @media only screen and (max-width: 1024px) {
-.application_column {
-}
+
 }
 
 @media only screen and (max-width: 850px) {
-.application_column {
-}
+
 #sidebar-wrapper{
   width: 200px;
 }
 }
 @media only screen and (max-width: 700px) {
-.application_column {
-}
+
 #sidebar-wrapper{
   width: 170px;
 }
 }
 
 @media only screen and (max-width: 500px) {
-.application_column {
-}
+
 #sidebar-wrapper{
   width: 170px;
 }
 }
 
-
-
-body {
-  background-color:#E9EAED;
-} 
 
 
 

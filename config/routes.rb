@@ -11,6 +11,8 @@ FanaticV2::Application.routes.draw do
   get "sessions/authentications"
   match "/signout" => "sessions#destroy", :as => :signout, via: [:get, :post]
 
+  match "users/dashboardtest" => "users#dashboardtest", via: [:get]
+
   resources :friendships
   resources :users
   resources :friendships
