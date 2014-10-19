@@ -55,6 +55,7 @@ body {
 }
 
 .header #new_button > a {
+  top: 250px;
 	margin-right: 30px;
 	position: relative;
 	text-decoration: none;
@@ -185,9 +186,9 @@ table{
 
 // Responsive header
 
-@media only screen and (min-width: 1350px) {
+@media only screen and (max-width: 1350px) {
 .header .cd-profile-pic img { 
-  top: 240px;
+  top: 250px;
   left: 45%;
 }
 
