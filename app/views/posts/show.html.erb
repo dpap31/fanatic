@@ -92,14 +92,14 @@
 		<!-- Post actions  -->
 		<div class = 'post-actions'>
 		  <div class = 'buttons'>
-		    <% if  can? :author, @post %>
+		    <% if can? :edit, @current_user %>
 			<dt>
 			  Actions
 			</dt>
 			<dd>
 			  <%= link_to("", {:action => 'edit', :id => @post.slug}, :class => 'glyphicon glyphicon-edit') %>
 			  <% end %>
-			  <% if can? :author, @post %>
+			  <% if can? :destroy,  @current_user %>
 			  <%= link_to "", post_path(@post), :method => :delete, :class =>"glyphicon glyphicon-trash", data: { confirm: "Are you sure?" }%>
 			  <% end %>
 			</dd>

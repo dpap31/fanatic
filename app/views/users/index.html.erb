@@ -5,8 +5,8 @@
   <%= stylesheet_link_tag "users_index" %>
 </script>
 </head>
+ <div>
     <h2>Search Users</h2>
-  </div>
   <div ng-controller="UserCtrl">
     <input type="text" class="form-control" placeholder="" ng-model="query">
     <ul class = 'userlist'ng-show='query'>
@@ -20,6 +20,7 @@
      </a>
    </li>
  </ul>
+ </div>
  <div class="col-md-5 col-centered">
  <div class ="top_users">
   <div class ='widget_header'>
