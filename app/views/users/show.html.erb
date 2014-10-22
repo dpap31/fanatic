@@ -256,7 +256,7 @@
  <div id = 'user_widget'>
   <div id="DashboardProfileCard"> </div>
   <ul>
-    <%= link_to "##{current_user.id}", 'data-type' => "member-#{current_user.id}" do %>
+    <%= link_to "##{current_user.id}", 'id' => "following_thumbnails", 'data-type' => "member-#{current_user.id}" do %>
     <%= image_tag(@user.image, class: 'profile_pic', size: "80") %>
     <% end %>
   </ul>
@@ -308,7 +308,7 @@
         </a>
       <% end %>
   <% else %>
-      <%  for friendship in @user.friendships.take(8) %> 
+      <%  for friendship in @current_user.friendships.take(8) %> 
         <a href="#<%=friendship.friend.id%>" id = "following_thumbnails" data-type="member-<%=friendship.friend.id%>">
         <%= image_tag(friendship.friend.image, class: 'img-circle') %>
         </a>
@@ -332,9 +332,7 @@
 </div>
 <div class="cd-overlay"></div>
 <%= render partial: 'current_profile' %>
-<%  for friendship in @user.friendships.take(8) %>
 <%= render partial: 'profile' %>
-<% end %>
 <a href="#0" class="cd-member-bio-close">Close</a> <!-- close the author bio section -->
 </body>
 </html>

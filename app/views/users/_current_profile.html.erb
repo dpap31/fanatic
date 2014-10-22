@@ -1,4 +1,4 @@
-<div class="cd-member-bio member-<%= current_user.id%>">
+<div class="cd-member-bio member-<%=current_user.id%>">
 		<div class="cd-member-bio-pict"> <!-- background image -->
 			<%= image_tag("team_images/#{@teams[rand(@teams.length)].id}.jpg", size: "800x486")%>
 		</div> 
