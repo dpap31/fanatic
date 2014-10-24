@@ -1,7 +1,5 @@
 <!-- Partial used to present posts preview tiles on posts#index,posts#list, and posts#sort_created -->
-<div class="row" id= "postsrow">
 <% @posts.each do |post| %>
-<div class="col-md-12 col-xs-12 col-sm-6">
 <!-- Post Preview Tile -->
 <div class="pin">
   <div class="pin_contents">
@@ -25,11 +23,4 @@
     </div>
     </div>
   </div>
-  </div>
   <% end %>
-  </div>
-  <!-- Paginiation -->
-<div class="text-center">
-  <%= will_paginate @posts, renderer: BootstrapPagination::Rails%>
-</div>
-  </div>
