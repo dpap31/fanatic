@@ -1,30 +1,37 @@
 <%= stylesheet_link_tag "posts" %>
 <%= javascript_include_tag "post_index" %>
-  <div class="col-md-10 column header">
-   <div class="cd-member-bio-pict flip"> <!-- background image -->
-    <%= image_tag("team_images/#{@teams[rand(@teams.length)].id}.jpg", size: "800x350", class:'flip')%>
-  </div> 
-  <div class="cd-profile-pic"> <!-- profile pic -->
-    <%= link_to image_tag(@user.image, size: '100x100', class: 'img-circle'), user_posts_path(@user) %>
-  </div>
-   <div id="title">
-     <a href="/users/<%=@user.id%>/posts"><strong><i class="glyphicon glyphicon-star-empty"></i> <%=@user.username%>'s Posts</strong></a> 
-   </div>  
-    <div id="new_button">
-   <!-- Based on current_users relationship to users#post ID being viewed different options will be displayed -->
-   <% if @user == current_user%>
-     <a href="/posts/new"><strong><i class="glyphicon glyphicon-plus-sign"></i>  New Post</strong></a>
-  <% elsif current_user.friends.exists?(@user.id)%>
-   <a href="/users/<%=@user.id%>/posts"><strong><i class="glyphicon glyphicon-ok-circle"></i>  Following</strong></a>
-  <% else %>
-  <%= link_to("<i class='glyphicon glyphicon-plus-sign'></i>""<strong> Follow #{@user.name}</strong>".html_safe, friendships_path(:friend_id => @user.id), :method => :post) %>
-  <% end %>
-   </div> 
+<%= javascript_include_tag "external/masonry" %>
+<div class="col-md-10 column header">
+ <div class="cd-member-bio-pict flip"> <!-- background image -->
+  <%= image_tag("team_images/#{@teams[rand(@teams.length)].id}.jpg", size: "800x350", class:'flip')%>
+</div> 
+<div class="cd-profile-pic"> <!-- profile pic -->
+  <%= link_to image_tag(@user.image, size: '100x100', class: 'img-circle'), user_posts_path(@user) %>
 </div>
-  <div class="col-md-10 content">
+<div id="title">
+ <a href="/users/<%=@user.id%>/posts"><strong><i class="glyphicon glyphicon-star-empty"></i> <%=@user.username%>'s Posts</strong></a> 
+</div>  
+<div id="new_button">
+ <!-- Based on current_users relationship to users#post ID being viewed different options will be displayed -->
+ <% if @user == current_user%>
+ <a href="/posts/new"><strong><i class="glyphicon glyphicon-plus-sign"></i>  New Post</strong></a>
+ <% elsif current_user.friends.exists?(@user.id)%>
+ <a href="/users/<%=@user.id%>/posts"><strong><i class="glyphicon glyphicon-ok-circle"></i>  Following</strong></a>
+ <% else %>
+ <%= link_to("<i class='glyphicon glyphicon-plus-sign'></i>""<strong> Follow #{@user.name}</strong>".html_safe, friendships_path(:friend_id => @user.id), :method => :post) %>
+ <% end %>
+</div> 
+</div>
+<div class="col-md-10 content">
 <!--    <div>
     <input type="hidden" id="dropdown" style="width:300px" class="input-xlarge" />
   </div> -->
-    <%= render partial:'posts/postPreview'%>
-  </div>
+  <div id="masonry" class="js-masonry"
+  data-masonry-options='{ "columnWidth": 30, "itemSelector": ".pin" }'>
+  <%= render partial:'/posts/postPreview'%>
+</div>
+<div class="text-center">
+  <%= will_paginate @posts, renderer: BootstrapPagination::Rails%>
+</div>
+</div>
 </div>

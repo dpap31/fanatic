@@ -1,4 +1,5 @@
 <%= stylesheet_link_tag "posts" %>
+<%= javascript_include_tag "external/masonry" %>
  <div class="col-md-10 column header">
    <div class="cd-member-bio-pict flip"> 
    <!-- background image -->
@@ -18,7 +19,12 @@
  <% end %>
 </div>
 <div class="col-md-10 column content">
-  <%= render partial:'postPreview'%>
-</div>
+  <div id="masonry" class="js-masonry"
+  data-masonry-options='{ "columnWidth": 30, "itemSelector": ".pin" }'>
+    <%= render partial:'postPreview'%>
+ </div>
+    <!-- Paginiation -->
+<div class="text-center">
+  <%= will_paginate @posts, renderer: BootstrapPagination::Rails%>
 </div>
 </div>
