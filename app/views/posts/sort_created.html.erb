@@ -1,6 +1,8 @@
 <%= javascript_include_tag "post_index" %>
 <%= stylesheet_link_tag "posts" %>
-<%= javascript_include_tag "external/masonry" %>
+<%= javascript_include_tag "posts/masonry" %>
+<%= javascript_include_tag "posts/images_loaded" %>
+
 <div class="col-md-10 column header">
  <div class="cd-member-bio-pict flip"> <!-- background image -->
   <%= image_tag("team_images/#{@all_teams[rand(@all_teams.length)].id}.jpg", size: "800x350", class:'flip')%>

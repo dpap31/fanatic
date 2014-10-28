@@ -1,4 +1,16 @@
 $(document).ready(function(){
+  // Masonry & images loaded
+  $(function(){
+
+    var $container = $('#masonry');
+    $container.imagesLoaded( function() {
+        $container.masonry({
+          "isFitWidth": true,
+          "itemSelector": ".pin"
+        });
+    });  
+  });
+
 // Select 2 With AJAX
     $('#dropdown').select2({
         placeholder: "Filter Posts",

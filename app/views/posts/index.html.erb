@@ -1,5 +1,6 @@
 <%= javascript_include_tag "post_index" %>
-<%= javascript_include_tag "external/masonry" %>
+<%= javascript_include_tag "posts/masonry" %>
+<%= javascript_include_tag "posts/images_loaded" %>
 <%= stylesheet_link_tag "posts" %>
 <div class="col-md-10 column header">
 <!-- background image -->
@@ -58,8 +59,7 @@
     </ul>
   </div>
   <br>
-  <div id="masonry" class="js-masonry"
-  data-masonry-options='{ "columnWidth": 30, "itemSelector": ".pin" }'>
+  <div id="masonry">
     <%= render partial:'postPreview'%>
   </div>
     <!-- Paginiation -->
