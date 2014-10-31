@@ -9,6 +9,13 @@
 .post_fields {
   float:left;
 }
+
+#post_title{
+  width: 600px;
+  font-size: 24px;
+  margin-bottom: 24px;
+
+}
 .col-md-10{
   margin-bottom: 30px;
 }
@@ -39,8 +46,8 @@ input {
 }
 
 #editor {
-	max-height: 250px;
-	height: 250px;
+	max-height: 400px;
+	height: 400px;
 	background-color: white;
 	border-collapse: separate; 
 	border: 1px solid rgb(204, 204, 204); 

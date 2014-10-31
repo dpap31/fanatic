@@ -59,7 +59,7 @@ class PostsController < ApplicationController
     @post.user = current_user
 
     respond_to do |format|
-      if @post.save!
+      if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
         format.json { render action: 'show', status: :created, location: @post }
         #Create new post activity for feed
@@ -79,7 +79,7 @@ class PostsController < ApplicationController
       if @post.update(post_params)
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
       else
-        format.html { render action: 'edit' }
+        format.html { render action: 'edit'}
       end
       #Create update post activity for feed
       @post.create_activity :update, owner: current_user 

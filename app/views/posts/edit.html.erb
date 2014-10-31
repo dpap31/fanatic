@@ -16,7 +16,9 @@
     <h1>Update your Post <br/> <small>Bring out your Inner Sports Writer</small></h1>
     <hr/>
   </div>
-  <div id="alerts"></div>
+  <div id="alerts">
+    <%= flash[:error]%>
+  </div>
   <!-- Edit posts form -->
   <%= form_for @post, :html =>{ :multipart => true}, as: :post, url: post_path(@post), method: :patch do |f| %>
   
@@ -30,7 +32,7 @@
       "data-pre" => @post.tags.map(&:attributes).to_json %>
     </div>
     <div class = "image_tools">              
-     <span class="btn btn-primary fileinput-button" id="fileupload">
+     <span class="btn btn-default fileinput-button" id="fileupload">
       <i class="glyphicon glyphicon-plus"></i>
       <span>Add Image</span>
       <!-- The file input field used as target for the file upload widget -->
@@ -104,7 +106,7 @@
   <%= raw @post.content %>
 </div>
 <p></p>
-<%= f.submit "Publish", class: "form-buttons", :class => 'btn btn-default', id: "form_submit" %>
+<%= f.submit "Publish", class: "form-buttons", :class => 'btn btn-primary', id: "form_submit" %>
 <% end %>
 
 </div>

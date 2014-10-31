@@ -17,6 +17,12 @@ class Post < ActiveRecord::Base
   #use acts_as_taggable gem to enable tagging on posts
   acts_as_taggable
 
+  #Post Validations
+  validates :id, :user_id, :title, :content, :image, presence: true, on: :create
+  #validates :email, :first_name, :last_name, :username,  presence: true, on: :update
+  validates :id, :user_id, :title, :content, :image, presence: true, on: :update
+  #Validate tags
+  validate :required_info
   #use these model methods to create popularity algorithm
   # reorder posts based on cheers count
   def self.popular
@@ -33,7 +39,13 @@ class Post < ActiveRecord::Base
   def self.time_delta
     ((Time.now - Post.all.created_at) / 1.hour).round
   end
-
+  
+  private
+  def required_info
+    if( tag_list.empty? ) 
+      errors[:base] << "Please add a tag"
+    end
+  end
   # def self.hot
   # 	#comment_count = Post.comments.count
   # 	p = most_voted

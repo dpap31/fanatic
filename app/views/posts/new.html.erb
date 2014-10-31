@@ -28,7 +28,7 @@
       "data-pre" => @post.tags.map(&:attributes).to_json %>
     </div>
     <div class = "image_tools">              
-     <span class="btn btn-primary fileinput-button" id="fileupload">
+     <span class="btn btn-default fileinput-button" id="fileupload">
       <i class="glyphicon glyphicon-plus"></i>
       <!-- Remote image URL -->
       <span>Add Image</span>
@@ -101,7 +101,7 @@
 <div id="editor" contenteditable ="true">
 </div>
 <p></p>
-<%= f.submit "Publish", class: "form-buttons", :class => 'btn btn-default', id: "form_submit" %>
+<%= f.submit "Publish", class: "form-buttons", :class => 'btn btn-primary', id: "form_submit" %>
 <% end %>
 
 </div>
