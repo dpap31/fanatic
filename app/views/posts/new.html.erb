@@ -11,12 +11,22 @@
 </head>
 <!-- Hero unit -->
 <div class="col-md-10">
+  <% if @post.errors.any? %>
+  <div class="alert alert-danger">
+    <a class="close" data-dismiss="alert">×</a>
+    <ul>
+    <% @post.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
   <div class="hero-unit">
     <div class="pull-right"></div><br/>
     <h1>Create a New Post <br/> <small>Bring out your Inner Sports Writer</small></h1>
     <hr/>
   </div>
-  <div id="alerts"></div>
+  <div>
   <%= form_for( @post, :html =>{ :multipart => true}, :url => {:controller => "posts", :action => "create"}) do |f| %>
   <div class = "all_fields">
     <div class = "post_fields">

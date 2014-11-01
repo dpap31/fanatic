@@ -94,7 +94,7 @@
                 <div class= "col-md-12">
                   <!-- Flash hash and error messages handling -->   
                   <% flash.each do |name, msg| %>
-                  <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
+                  <div class="alert alert-<%= name == :notice ? "success" : "danger" %>">
                     <a class="close" data-dismiss="alert">×</a>
                     <%= msg %>
                   </div>

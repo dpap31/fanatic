@@ -18,7 +18,7 @@ class Post < ActiveRecord::Base
   acts_as_taggable
 
   #Post Validations
-  validates :id, :user_id, :title, :content, :image, presence: true, on: :create
+  validates :user_id, :title, :content, :image, presence: true, on: :create
   #validates :email, :first_name, :last_name, :username,  presence: true, on: :update
   validates :id, :user_id, :title, :content, :image, presence: true, on: :update
   #Validate tags

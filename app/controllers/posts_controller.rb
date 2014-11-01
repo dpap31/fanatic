@@ -65,7 +65,7 @@ class PostsController < ApplicationController
         #Create new post activity for feed
         @post.create_activity :create, owner: current_user 
       else
-        format.html { render action: 'new' }
+        format.html { render action: 'new', alert: @post.errors.full_messages.pop }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
@@ -79,7 +79,7 @@ class PostsController < ApplicationController
       if @post.update(post_params)
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
       else
-        format.html { render action: 'edit'}
+        format.html { redirect_to edit_post_path(@post), alert: @post.errors.full_messages.pop }
       end
       #Create update post activity for feed
       @post.create_activity :update, owner: current_user 

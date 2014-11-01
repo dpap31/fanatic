@@ -16,9 +16,6 @@
     <h1>Update your Post <br/> <small>Bring out your Inner Sports Writer</small></h1>
     <hr/>
   </div>
-  <div id="alerts">
-    <%= flash[:error]%>
-  </div>
   <!-- Edit posts form -->
   <%= form_for @post, :html =>{ :multipart => true}, as: :post, url: post_path(@post), method: :patch do |f| %>
   
