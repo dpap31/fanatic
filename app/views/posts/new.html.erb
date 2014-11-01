@@ -7,9 +7,9 @@
   <%= javascript_include_tag "external/jquery.hotkeys.js" %> 
   <%= javascript_include_tag "external/bootstrap-wysiwyg.js" %> 
   <%= stylesheet_link_tag "post_new.css" %> 
-
 </head>
 <!-- Hero unit -->
+<%= @post.inspect %>
 <div class="col-md-10">
   <% if @post.errors.any? %>
   <div class="alert alert-danger">
@@ -118,5 +118,11 @@
 </div>
 </div>
 </div>
-
+<%= javascript_tag do %>
+  window.content = '<%= j @post.content %>';
+  if(! window.content){
+  } else {
+  $('[contenteditable=true]').append(window.content)
+  };
+<% end %>
 
