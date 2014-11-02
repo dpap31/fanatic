@@ -6,7 +6,7 @@ class FriendshipsController < ApplicationController
      redirect_to :back, :notice => "You are now following #{User.find(@friendship.friend_id).name}"
    else
      flash[:error] = "Unable to add friend."
-     redirect_to root_url
+     redirect_to :back
    end
   end
 
