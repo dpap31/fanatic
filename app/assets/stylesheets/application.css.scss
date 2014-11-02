@@ -15,12 +15,16 @@
 *= require jquery.fileupload-ui
 */
 
-html 
- {
- height: 100%;
- margin-bottom: 1px;
- overflow-x: none;
- overflow-y: none;
+html {
+  height: 100%;
+  margin-bottom: 1px;
+  overflow-x: none;
+  overflow-y: none;
+  font-weight: 200;
+ }
+
+ h4{
+  font-weight: 200;
  }
 
 

@@ -124,9 +124,11 @@ a.search_results {
   margin-right: 15px;
 }
 
-.top_users .sport {
+.top_users .type {
   margin-top: 5px;
-
+  margin-right :8%;
+  text-align: right;
+  position: inline-block;
 }
 
 .top_users ul {
@@ -156,13 +158,15 @@ a.search_results {
 
 
 .top_users .uname {
-  font-size: 20px;
+  font-size: 30px;
 }
 
 .top_users .count {
   float: right;
-  font-size: 40px;
-  margin-right :30px;
+  font-size: 33px;
+  margin-right :8%;
+  width: 40px;
+  text-align: center;
 }
 
 

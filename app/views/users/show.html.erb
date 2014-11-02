@@ -39,7 +39,7 @@
           </div>
           <div class="caption">
             <h4>
-             <%= post.title %>
+             <%= post.title.truncate(25, separator: ' ') %>
            </h4>
            <div class = 'post-info'>
              <div class = 'tags'>
@@ -69,7 +69,7 @@
           </div>
           <div class="caption">
             <h4>
-             <%= post.title %>
+             <%= post.title.truncate(25, separator: ' ') %>
            </h4>
            <div class = 'post-info'>
              <div class = 'tags'>
@@ -100,7 +100,7 @@
     </div>
     <div class="caption">
      <h4>
-      <%= post.title %>
+      <%= post.title.truncate(25, separator: ' ') %>
     </h4>
     <div class = 'post-info'>
      <div class = 'tags'>
@@ -133,7 +133,7 @@
 
    <div class="caption">
      <h4>
-      <%= post.title %>
+      <%= post.title.truncate(25, separator: ' ') %>
     </h4>
     <div class = 'post-info'>
       <div class = 'tags'>
@@ -164,7 +164,7 @@
 
    <div class="caption">
      <h4>
-      <%= post.title %>
+      <%= post.title.truncate(25, separator: ' ') %>
     </h4>
     <div class = 'post-info'>
       <div class = 'tags'>
@@ -195,7 +195,7 @@
 
    <div class="caption">
      <h4>
-      <%= post.title %>
+      <%= post.title.truncate(25, separator: ' ') %>
     </h4>
     <div class = 'post-info'>
       <div class = 'tags'>
@@ -225,7 +225,7 @@
 
     <div class="caption">
       <h4>
-       <%= post.title %>
+       <%= post.title.truncate(25, separator: ' ') %>
      </h4>
      <div class = 'post-info'>
        <div class = 'tags'>
@@ -290,7 +290,7 @@
 <div id='following_widget'>
  <div id= 'widget_header'><h4>
   <%if @user.friendships.count < 6 %>
-    Recommended 
+    Recommended Authors 
   <% else %>
     Following
   <% end %>

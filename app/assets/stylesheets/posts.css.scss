@@ -41,6 +41,11 @@ body {
 	margin: 0;
 }
 
+div.tags > ul > li > a{
+  text-decoration: none;
+  color: inherit;
+}
+
 #columns:hover .pin:not(:hover) {
 	opacity: 0.6;
 }
@@ -73,12 +78,17 @@ body {
 }
 
 .tags {
-	float: left;
-
+  padding: 0;
+  width: 70%;
+  line-height: 15px;
 }
 .tags ul {
-	display: inline;
+  padding: 0;
 }
+.tags li {
+  float: left;
+}
+
 #cheers {
 	float: right;
 	display: inline;
