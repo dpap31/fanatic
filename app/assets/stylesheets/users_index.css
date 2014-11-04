@@ -2,11 +2,10 @@
 
 h2{
   text-align: center; 
-  width: 80%;
 }
 
 .form-control {
-  width:80%;
+  width:100%;
   text-align: center;
   margin-left: 15px;
 }
@@ -76,6 +75,10 @@ a.search_results {
 #user li {
  display: inline-block;
  width: 100%;
+}
+
+.col-md-6{
+  min-width: 350px;
 }
 
 /*Top Users Widegts*/

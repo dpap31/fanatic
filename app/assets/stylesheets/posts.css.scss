@@ -21,7 +21,7 @@ body {
 	background: #FEFEFE;
 	border: 2px solid #FAFAFA;
 	box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
-	margin: 5px;
+	margin: 7px;
 	-webkit-column-break-inside: avoid;
   -moz-border-radius: 4px;
 	-moz-column-break-inside: avoid;
@@ -31,8 +31,8 @@ body {
   padding-bottom: 5px;
 	background: -webkit-linear-gradient(45deg, #FFF, #F9F9F9);
 	opacity: 1;
-	width: 31%;
   min-width: 250px;
+  max-width: 250px;
 }
 
 .pin p {
@@ -121,6 +121,7 @@ div.tags > ul > li > a{
 /*header container*/
 .cd-member-bio-pict {
   max-height: 300px;
+  max-width: 1200px;
   overflow: hidden;
   content: '';
   position: absolute;
