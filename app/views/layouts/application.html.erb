@@ -17,12 +17,15 @@
   <body>
     <div id="top-nav" class="navbar navbar-inverse navbar-static-top">
       <div class="navbar-header">
+      <!--  Menu hide and show buttons -->
+          <a id="menu-toggle" href="#" class="btn btn-primary btn-lg toggle"><i class="fa fa-bars"></i></a>
        <!-- Fanatic header link -->
-       <% if current_user.nil? %>
-       <a class= 'navbar-brand' href='/'>
-         <% else %>
+      <% if current_user.nil? %>
+         <a class= 'navbar-brand' href='/'>
+         Fanatic</a>
+      <% else %>
          <a class= 'navbar-brand' href= '/users/<%=current_user.id%>'>
-          <% end %>
+      <% end %>
           Fanatic</a>
         </div>
         <div class="navbar-collapse collapse">
@@ -51,9 +54,6 @@
              </ul>
            </div>
          </div>
-         <!-- Menu hide and show buttons -->
-           <!-- <a id="menu-toggle" href="#" class="btn btn-primary btn-lg toggle"><i class="fa fa-bars"></i></a>
-           <a id="menu-close" href="#" class="btn btn-default btn-lg pull-left toggle"><i class="fa fa-times"></i></a>-->
            <!-- sidebar -->
            <div class="col-sm-2 pull-left sidebar-nav" id="sidebar-wrapper">    
             <ul class="nav nav-pills nav-stacked fanatic-menu">
@@ -106,33 +106,17 @@
           </body>
           </html>
           <!-- Colapsable Side bar -->
-    <!--    <script>
+     <script>
     $("#menu-close").click(function(e) {
       e.preventDefault();
       $("#sidebar-wrapper").toggleClass("active");
+      $(".app-wrapper").toggleClass("active");
     });
   </script>
   <script>
     $("#menu-toggle").click(function(e) {
       e.preventDefault();
       $("#sidebar-wrapper").toggleClass("active");
-    });
-  </script>
-    <script>
-    $(function() {
-      $('a[href*=#]:not([href=#])').click(function() {
-        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
-          || location.hostname == this.hostname) {
-
-          var target = $(this.hash);
-        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-        if (target.length) {
-          $('html,body').animate({
-            scrollTop: target.offset().top
-          }, 1000);
-          return false;
-        }
-      }
-    });
+      $(".app-wrapper").toggleClass("active");
     });
   </script>

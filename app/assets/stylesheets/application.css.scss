@@ -30,6 +30,7 @@ html {
 
 #top-nav {
 	background: #000;
+  z-index: 1001;
 }
 
 body {
@@ -40,6 +41,13 @@ body {
   margin-right: 0px
 }
 
+a.navbar-brand{
+  float: left;
+  padding-left: 75px;
+  padding-top: 12px;
+  font-size: 18px;
+  height: 20px;
+}
 
 
 #sidebar-wrapper {
@@ -69,6 +77,11 @@ body {
   padding-left: 250px;
   max-width: 1600px;
 }
+
+.app-wrapper.active {
+    padding-left: 0px;
+    max-width: 1600px;
+  }
 
 .application_column{
   float:left;
@@ -138,10 +151,13 @@ body {
 }
 
 #menu-toggle {
-  top: 50px;
-  left: 165px;
-  position: fixed;
-  z-index: 1;
+  visibility: hidden;
+  background-color: #999999;
+  border-color: #999999;
+  margin: 2px;
+  top: 0px;
+  left: 0px;
+  position: absolute;
 }
 
 #sidebar-wrapper.active {
@@ -159,8 +175,21 @@ body {
 }
 
 
+@media only screen and (max-width: 825px) {
+  #sidebar-wrapper {
+    width: 200px;
+  }
+  .app-wrapper {
+    padding-left: 200px
+  }
+}
 
-
+@media only screen and (max-width: 825px) {
+  #menu-toggle{
+    visibility: visible;
+    z-index: 1001;
+  }
+  }
 
 
 

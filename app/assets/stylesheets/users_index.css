@@ -21,14 +21,15 @@ label {
 
 /* Angular User Search */
 
-div.ng-scope ul { text-indent: 0;
+div.ng-scope ul { 
+ text-indent: 0;
  padding: 0px;
  list-style-type: none
  }
 
  div.ng-scope li{
   display: block;
-  width: 80%;
+  width: 100%;
  }
 
 div.ng-scope ul img{

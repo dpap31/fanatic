@@ -103,6 +103,13 @@ div.tags > ul > li > a{
 	float: right;
 }
 
+.filter_sort_row{
+  display: inline-block;
+  height: 20px;
+  width: 100%;
+  margin-bottom: 10px
+}
+
 .sort_menu {
 	float:right;
   vertical-align: center;
@@ -111,7 +118,7 @@ div.tags > ul > li > a{
 .select2-container{
   float:left;
   vertical-align: center;
-  margin: 3px;
+  margin: 0px;
 }
 
 .content {
@@ -137,6 +144,7 @@ div.tags > ul > li > a{
   width: 100%;
   display: block;
   max-width: 100%;
+  min-width: 485px;
   height: auto !important;
   -ms-interpolation-mode: bicubic;
   z-index: 0;
