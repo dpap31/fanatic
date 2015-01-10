@@ -74,3 +74,5 @@ gem 'will_paginate-bootstrap'
 # gem 'debugger', group: [:development, :test]
 
 gem "mocha", group: :test
+gem 'rails_12factor', group: :production
+ruby '2.1.5'
