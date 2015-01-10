@@ -14,7 +14,6 @@ gem "rack"
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'jquery-fileupload-rails'
-gem 'twitter-bootstrap-rails'
 gem 'select2-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 
@@ -48,7 +47,6 @@ gem 'friendly_id'
 
     gem 'coffee-rails', '~> 4.0.1'
     gem 'uglifier', '>= 1.2.4'
-    gem 'bootstrap-sass'
     gem 'sass-rails'
     gem 'rack-mini-profiler'
 
@@ -61,7 +59,7 @@ gem 'acts-as-taggable-on'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 # Use ActiveModel has_secure_password
- gem 'bcrypt-ruby', '~> 3.1.2'
+ gem 'bcrypt', '~> 3.1.2'
  gem 'activerecord-reputation-system', github: 'NARKOZ/activerecord-reputation-system', branch: 'rails4'
 
 # Use unicorn as the app server
@@ -75,4 +73,4 @@ gem 'will_paginate-bootstrap'
 
 gem "mocha", group: :test
 gem 'rails_12factor', group: :production
-ruby '2.1.5'
+ruby '2.2.0'
