@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140723010602) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "activities", force: true do |t|
     t.integer  "trackable_id"
     t.string   "trackable_type"
@@ -26,9 +29,9 @@ ActiveRecord::Schema.define(version: 20140723010602) do
     t.datetime "updated_at"
   end
 
-  add_index "activities", ["owner_id", "owner_type"], name: "index_activities_on_owner_id_and_owner_type"
-  add_index "activities", ["recipient_id", "recipient_type"], name: "index_activities_on_recipient_id_and_recipient_type"
-  add_index "activities", ["trackable_id", "trackable_type"], name: "index_activities_on_trackable_id_and_trackable_type"
+  add_index "activities", ["owner_id", "owner_type"], name: "index_activities_on_owner_id_and_owner_type", using: :btree
+  add_index "activities", ["recipient_id", "recipient_type"], name: "index_activities_on_recipient_id_and_recipient_type", using: :btree
+  add_index "activities", ["trackable_id", "trackable_type"], name: "index_activities_on_trackable_id_and_trackable_type", using: :btree
 
   create_table "comments", force: true do |t|
     t.string   "commenter"
@@ -39,7 +42,7 @@ ActiveRecord::Schema.define(version: 20140723010602) do
     t.integer  "user_id"
   end
 
-  add_index "comments", ["post_id"], name: "index_comments_on_post_id"
+  add_index "comments", ["post_id"], name: "index_comments_on_post_id", using: :btree
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
@@ -49,10 +52,10 @@ ActiveRecord::Schema.define(version: 20140723010602) do
     t.datetime "created_at"
   end
 
-  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
-  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
-  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
-  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true, using: :btree
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
+  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
+  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
   create_table "friendships", force: true do |t|
     t.integer  "user_id"
@@ -81,7 +84,7 @@ ActiveRecord::Schema.define(version: 20140723010602) do
     t.string   "slug"
   end
 
-  add_index "posts", ["slug"], name: "index_posts_on_slug"
+  add_index "posts", ["slug"], name: "index_posts_on_slug", using: :btree
 
   create_table "rs_evaluations", force: true do |t|
     t.string   "reputation_name"
@@ -94,10 +97,10 @@ ActiveRecord::Schema.define(version: 20140723010602) do
     t.datetime "updated_at"
   end
 
-  add_index "rs_evaluations", ["reputation_name", "source_id", "source_type", "target_id", "target_type"], name: "index_rs_evaluations_on_reputation_name_and_source_and_target", unique: true
-  add_index "rs_evaluations", ["reputation_name"], name: "index_rs_evaluations_on_reputation_name"
-  add_index "rs_evaluations", ["source_id", "source_type"], name: "index_rs_evaluations_on_source_id_and_source_type"
-  add_index "rs_evaluations", ["target_id", "target_type"], name: "index_rs_evaluations_on_target_id_and_target_type"
+  add_index "rs_evaluations", ["reputation_name", "source_id", "source_type", "target_id", "target_type"], name: "index_rs_evaluations_on_reputation_name_and_source_and_target", unique: true, using: :btree
+  add_index "rs_evaluations", ["reputation_name"], name: "index_rs_evaluations_on_reputation_name", using: :btree
+  add_index "rs_evaluations", ["source_id", "source_type"], name: "index_rs_evaluations_on_source_id_and_source_type", using: :btree
+  add_index "rs_evaluations", ["target_id", "target_type"], name: "index_rs_evaluations_on_target_id_and_target_type", using: :btree
 
   create_table "rs_reputation_messages", force: true do |t|
     t.integer  "sender_id"
@@ -108,9 +111,9 @@ ActiveRecord::Schema.define(version: 20140723010602) do
     t.datetime "updated_at"
   end
 
-  add_index "rs_reputation_messages", ["receiver_id", "sender_id", "sender_type"], name: "index_rs_reputation_messages_on_receiver_id_and_sender", unique: true
-  add_index "rs_reputation_messages", ["receiver_id"], name: "index_rs_reputation_messages_on_receiver_id"
-  add_index "rs_reputation_messages", ["sender_id", "sender_type"], name: "index_rs_reputation_messages_on_sender_id_and_sender_type"
+  add_index "rs_reputation_messages", ["receiver_id", "sender_id", "sender_type"], name: "index_rs_reputation_messages_on_receiver_id_and_sender", unique: true, using: :btree
+  add_index "rs_reputation_messages", ["receiver_id"], name: "index_rs_reputation_messages_on_receiver_id", using: :btree
+  add_index "rs_reputation_messages", ["sender_id", "sender_type"], name: "index_rs_reputation_messages_on_sender_id_and_sender_type", using: :btree
 
   create_table "rs_reputations", force: true do |t|
     t.string   "reputation_name"
@@ -123,9 +126,9 @@ ActiveRecord::Schema.define(version: 20140723010602) do
     t.datetime "updated_at"
   end
 
-  add_index "rs_reputations", ["reputation_name", "target_id", "target_type"], name: "index_rs_reputations_on_reputation_name_and_target", unique: true
-  add_index "rs_reputations", ["reputation_name"], name: "index_rs_reputations_on_reputation_name"
-  add_index "rs_reputations", ["target_id", "target_type"], name: "index_rs_reputations_on_target_id_and_target_type"
+  add_index "rs_reputations", ["reputation_name", "target_id", "target_type"], name: "index_rs_reputations_on_reputation_name_and_target", unique: true, using: :btree
+  add_index "rs_reputations", ["reputation_name"], name: "index_rs_reputations_on_reputation_name", using: :btree
+  add_index "rs_reputations", ["target_id", "target_type"], name: "index_rs_reputations_on_target_id_and_target_type", using: :btree
 
   create_table "search_suggestions", force: true do |t|
     t.string   "term"
@@ -144,14 +147,14 @@ ActiveRecord::Schema.define(version: 20140723010602) do
     t.datetime "created_at"
   end
 
-  add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
+  add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true, using: :btree
 
   create_table "tags", force: true do |t|
     t.string  "name"
     t.integer "taggings_count", default: 0
   end
 
-  add_index "tags", ["name"], name: "index_tags_on_name", unique: true
+  add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
 
   create_table "teams", force: true do |t|
     t.string   "espn_uid"
@@ -167,7 +170,7 @@ ActiveRecord::Schema.define(version: 20140723010602) do
     t.integer "user_id"
   end
 
-  add_index "teams_users", ["team_id", "user_id"], name: "index_teams_users_on_team_id_and_user_id"
+  add_index "teams_users", ["team_id", "user_id"], name: "index_teams_users_on_team_id_and_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "provider"
@@ -183,7 +186,7 @@ ActiveRecord::Schema.define(version: 20140723010602) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "username"
-    t.text     "description", default: "Cred YOLO mlkshk flexitarian, mustache beard Cosby sweater crucifix farm-to-table 3 wolf moon dreamcatcher asymmetrical gastropub swag. Flexitarian art party slow-carb food truck, ethical Blue Bottle twee 90's VHS messenger bag 8-bit. Photo booth vinyl bespoke you probably haven't heard of them. Etsy tousled four loko YOLO, pickled tote bag Williamsburg. High Life squid ethnic, Schlitz chillwave cliche American Apparel pour-over pop-up quinoa. Mixtape disrupt selvage, pop-up Shoreditch keffiyeh ethical Intelligentsia Brooklyn direct trade locavore Thundercats banjo. Swag mlkshk post-ironic, messenger bag viral art party Schlitz. Disrupt leggings Pinterest post-ironic wolf Tumblr. Craft beer iPhone actually Thundercats keytar raw denim. Hella Cosby sweater letterpress, Kickstarter kitsch gentrify kale chips lomo aesthetic Etsy Pinterest plaid. Brunch bicycle rights deep v church-key. Sriracha raw denim authentic try-hard umami whatever. Ethnic fingerstache twee, narwhal occupy fap butcher XOXO keytar selfies you probably haven't heard of them craft beer roof party crucifix normcore. Tattooed Truffaut Pinterest cardigan art party, craft beer Helvetica Godard typewriter synth fingerstache lo-fi distillery meh Marfa"
+    t.text     "description", default: "Cred YOLO mlkshk flexitarian, mustache beard Cosby sweater crucifix farm-to-table 3 wolf moon dreamcatcher asymmetrical gastropub swag. Flexitarian art party slow-carb food truck, ethical Blue Bottle twee 90''s VHS messenger bag 8-bit. Photo booth vinyl bespoke you probably haven''t heard of them. Etsy tousled four loko YOLO, pickled tote bag Williamsburg. High Life squid ethnic, Schlitz chillwave cliche American Apparel pour-over pop-up quinoa. Mixtape disrupt selvage, pop-up Shoreditch keffiyeh ethical Intelligentsia Brooklyn direct trade locavore Thundercats banjo. Swag mlkshk post-ironic, messenger bag viral art party Schlitz. Disrupt leggings Pinterest post-ironic wolf Tumblr. Craft beer iPhone actually Thundercats keytar raw denim. Hella Cosby sweater letterpress, Kickstarter kitsch gentrify kale chips lomo aesthetic Etsy Pinterest plaid. Brunch bicycle rights deep v church-key. Sriracha raw denim authentic try-hard umami whatever. Ethnic fingerstache twee, narwhal occupy fap butcher XOXO keytar selfies you probably haven''t heard of them craft beer roof party crucifix normcore. Tattooed Truffaut Pinterest cardigan art party, craft beer Helvetica Godard typewriter synth fingerstache lo-fi distillery meh Marfa"
   end
 
 end
