@@ -32,9 +32,9 @@ td {
 }
 
 .thumbnail:hover {
-	-moz-box-shadow: 0 0 10px #ccc; 
-	-webkit-box-shadow: 0 0 10px #ccc; 
-	box-shadow: 0 0 10px #ccc; 
+	-moz-box-shadow: 0 0 10px #ccc;
+	-webkit-box-shadow: 0 0 10px #ccc;
+	box-shadow: 0 0 10px #ccc;
 }
 
 .caption {
@@ -57,7 +57,7 @@ td {
 
 #title {
 	float: left;
-	
+
 }
 #new_button {
 	float: right;
@@ -67,7 +67,7 @@ td {
 
 body {
 	background-color:#E9EAED;
-} 
+}
 
 .image {
 	width: 210px;
@@ -110,7 +110,7 @@ body {
 	opacity: 1;
 	position: relative;
   width: 235px;
-	
+
 }
 
 .pin p {
@@ -125,7 +125,7 @@ body {
 
 #title {
 	float: left;
-	
+
 }
 #new_button {
 	float: right;
@@ -160,7 +160,7 @@ body {
 	float: right;
 }
 .sort_menu{
-	float:right;	
+	float:right;
 }
 
 /*right column divs*/
@@ -181,7 +181,7 @@ body {
 #user_widget{
 	height: 200px;
 	background-color:#FFFFFF;
-	border-radius: 10px; 
+	border-radius: 10px;
 	box-shadow: 0 0 5px #ccc;
 	padding: 0px;
 	position: relative;
@@ -206,14 +206,14 @@ div#DashboardProfileCard{
 	position: absolute;
 	border-radius: 10px 10px 0px 0px;
 	z-index: 0;
-	
+
 }
 #first_name{
 	position: relative;
 	font-size: 18px;
 	color: #999999;
   left: 105px;
-  bottom: 35px; 
+  bottom: 35px;
 	z-index: 0;
 }
 
@@ -360,7 +360,7 @@ div.col-md-3.column.pull-left  hr{
 #team_widget {
 	margin-top: 20px;
 	background-color:#FFFFFF;
-	border-radius: 10px; 
+	border-radius: 10px;
 	box-shadow: 0 0 5px #ccc;
 	padding: 0px;
 }
@@ -381,7 +381,7 @@ div.col-md-3.column.pull-left  hr{
 	background-color:#FFFFFF;
 	border-radius: 10px;
 	box-shadow: 0 0 5px #ccc;
-	padding: 0px; 
+	padding: 0px;
 }
 
 
@@ -398,7 +398,7 @@ div.col-md-3.column.pull-left  hr{
 
 /* Profile Drawer Styling*/
 
-/* -------------------------------- 
+/* --------------------------------
 
 Primary style
 
@@ -429,7 +429,7 @@ img {
   z-index: 1;
 }
 
-/* -------------------------------- 
+/* --------------------------------
 
 Modules - reusable parts of our design
 
@@ -447,9 +447,9 @@ Modules - reusable parts of our design
   clear: both;
 }
 
-/* -------------------------------- 
+/* --------------------------------
 
-Main components 
+Main components
 
 -------------------------------- */
 main {
@@ -549,7 +549,6 @@ main.slide-out .cd-overlay {
   position: absolute;
   right: 357px;
   top: 350px;
-  border: 5px solid white;
   z-index: 2;
   margin-bottom: 10px
 }
@@ -707,9 +706,9 @@ div.cd-profile-pic:after {
   display: none;
 }
 
-/* -------------------------------- 
+/* --------------------------------
 
-xkeyframes 
+xkeyframes
 
 -------------------------------- */
 @-webkit-keyframes cd-fade-in {
@@ -808,13 +807,11 @@ xkeyframes
 }
 
 /*profile pic*/
-.header .cd-profile-pic img { 
+.header .cd-profile-pic img {
   top: 250px;
   left: 45%;
   position: relative;
-  border: 5px solid white;
   z-index: 0;
-  box-shadow: 0px 5px 5px #888,
 }
 
 .header #new_button > a {
@@ -844,7 +841,7 @@ xkeyframes
 // Responsive design media queries based on screen size
 
 @media only screen and (min-width: 1350px) {
-.header .cd-profile-pic img { 
+.header .cd-profile-pic img {
   top: 250px;
   left: 45%;
 }
@@ -861,7 +858,7 @@ xkeyframes
 }
 
 @media only screen and (max-width: 1200px) {
-.header .cd-profile-pic img { 
+.header .cd-profile-pic img {
   top: 225px;
   left: 45%;
 }
@@ -882,7 +879,7 @@ xkeyframes
 
 @media only screen and (max-width: 1024px) {
 /*header container*/
-.header .cd-profile-pic img { 
+.header .cd-profile-pic img {
   top: 200px;
   left: 43%;
 }
@@ -905,7 +902,7 @@ xkeyframes
 }
 
 @media only screen and (max-width: 900px) {
-.header .cd-profile-pic img { 
+.header .cd-profile-pic img {
   top: 150px;
   left: 42%;
 }
@@ -925,12 +922,12 @@ xkeyframes
 }
 }
 @media only screen and (max-width: 700px) {
-.header .cd-profile-pic img { 
+.header .cd-profile-pic img {
   top: 100px;
   left: 37%;
 }
 
-.cd-member-bio .cd-profile-pic img { 
+.cd-member-bio .cd-profile-pic img {
   right: 100px
 }
 
@@ -951,7 +948,7 @@ xkeyframes
 
 
 @media only screen and (max-width: 600px) {
-.header .cd-profile-pic img { 
+.header .cd-profile-pic img {
   top: 50px;
   left: 25%;
 }

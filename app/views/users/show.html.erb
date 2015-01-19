@@ -8,23 +8,23 @@
 <body>
 <div class="col-md-8 column header">
 <!-- background image -->
-  <div class="cd-member-bio-pict flip"> 
+  <div class="cd-member-bio-pict flip">
     <%= image_tag("team_images/#{@teams[rand(@teams.length)].id}.jpg", size: "600x350", class:'flip')%>
-  </div> 
+  </div>
   <!-- profile pic -->
   <div class="cd-profile-pic">
-    <%= link_to image_tag("fanatic_logos/fanatic_circle_logo.png", size: '100x100', class: 'img-circle'), user_posts_path(current_user) %>
-  </div> 
+    <%= link_to image_tag("fanatic_logos/fanatic_shield.png", size: '125x100'), user_posts_path(current_user) %>
+  </div>
   <div id="title">
      <a href="/posts"><strong><i class="glyphicon glyphicon-star-empty"></i>  All Posts</strong></a>
-  </div> 
+  </div>
 
   <div id="new_button">
      <%if can? :create, Post %>
      <a href="/posts/new"><strong><i class="glyphicon glyphicon-plus-sign"></i>  New Post</strong></a>
      <% end %>
-  </div> 
-</div> 
+  </div>
+</div>
   <div class="col-md-8 column content">
   <div id='user_teams'>
       <div class='teamname'>
@@ -48,7 +48,7 @@
               </ul>
             </div>
             <div id = 'cheers'>
-              <%= pluralize post.reputation_for(:votes).to_i, "cheer" %> 
+              <%= pluralize post.reputation_for(:votes).to_i, "cheer" %>
             </div>
           </div>
         </div>
@@ -78,7 +78,7 @@
               </ul>
             </div>
             <div id = 'cheers'>
-              <%= pluralize post.reputation_for(:votes).to_i, "cheer" %> 
+              <%= pluralize post.reputation_for(:votes).to_i, "cheer" %>
             </div>
           </div>
         </div>
@@ -110,7 +110,7 @@
       </ul>
     </div>
     <div id = 'cheers'>
-      <%= pluralize post.reputation_for(:votes).to_i, "cheer" %> 
+      <%= pluralize post.reputation_for(:votes).to_i, "cheer" %>
     </div>
   </div>
 </div>
@@ -141,7 +141,7 @@
         <li class="token-input-token-facebook"><%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join('<li class="token-input-token-facebook"> ') %></li></ul>
       </div>
       <div id = 'cheers'>
-        <%= pluralize post.reputation_for(:votes).to_i, "cheer" %> 
+        <%= pluralize post.reputation_for(:votes).to_i, "cheer" %>
       </div>
     </div>
   </div>
@@ -172,7 +172,7 @@
         <li class="token-input-token-facebook"><%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join('<li class="token-input-token-facebook"> ') %></li></ul>
       </div>
       <div id = 'cheers'>
-        <%= pluralize post.reputation_for(:votes).to_i, "cheer" %> 
+        <%= pluralize post.reputation_for(:votes).to_i, "cheer" %>
       </div>
     </div>
   </div>
@@ -203,7 +203,7 @@
         <li class="token-input-token-facebook"><%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join('<li class="token-input-token-facebook"> ') %></li></ul>
       </div>
       <div id = 'cheers'>
-        <%= pluralize post.reputation_for(:votes).to_i, "cheer" %> 
+        <%= pluralize post.reputation_for(:votes).to_i, "cheer" %>
       </div>
     </div>
   </div>
@@ -233,7 +233,7 @@
          <li class="token-input-token-facebook"><%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join('<li class="token-input-token-facebook"> ') %></li></ul>
        </div>
        <div id = 'cheers'>
-         <%= pluralize post.reputation_for(:votes).to_i, "cheer" %> 
+         <%= pluralize post.reputation_for(:votes).to_i, "cheer" %>
        </div>
      </div>
    </div>
@@ -263,7 +263,7 @@
   <div class = "user_widget_stats">
     <div id='first_name'><strong><%= @user.first_name %></strong></div>
     <div id='username'> <em><%= @user.username %></em></div>
-    <a href= '/users/<%= @user.id %>/posts'> 
+    <a href= '/users/<%= @user.id %>/posts'>
       <div id='posts'> <%= @my_posts_count %></div>
     </a>
     <div id='cheers_count'><%= @my_posts_cheers %></div>
@@ -290,7 +290,7 @@
 <div id='following_widget'>
  <div id= 'widget_header'><h4>
   <%if @user.friendships.count < 6 %>
-    Recommended Authors 
+    Recommended Authors
   <% else %>
     Following
   <% end %>
@@ -308,7 +308,7 @@
         </a>
       <% end %>
   <% else %>
-      <%  for friendship in @current_user.friendships.take(8) %> 
+      <%  for friendship in @current_user.friendships.take(8) %>
         <a href="#<%=friendship.friend.id%>" id = "following_thumbnails" data-type="member-<%=friendship.friend.id%>">
         <%= image_tag(friendship.friend.image, class: 'img-circle') %>
         </a>
