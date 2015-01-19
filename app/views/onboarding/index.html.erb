@@ -32,9 +32,7 @@
 				<div class="tab-content">
 					<div class="tab-pane" id="tab1">
 						<div id='welcome'>
-							<h3> Welcome to Fanatic </h3>
-							--- Awesome Welcome Graphic Here ----
-							like Beats Streaming service onboarding http://uxarchive.com/apps/beats_music
+							<%= image_tag("fanatic_logos/fanatic_shield.png", size: '450x400')%>
 						</div>
 					</div>
 					<!-- User Reg Form Tab2 -->
@@ -47,19 +45,19 @@
 							<label for="inputFirst">My name is</label>
 							<div class="form-group">
 								<%= f.text_field :first_name, placeholder:' First Name', class: 'form-control',
-								'data-bv-message' => "First name is required and cannot be empty", 
+								'data-bv-message' => "First name is required and cannot be empty",
 								'data-bv-notempty' => "true"%>
 							</div>
 							<div class="form-group">
 								<%= f.text_field :last_name, placeholder:' Last Name', class: 'form-control',
-								'data-bv-message' => "Last name is required and cannot be empty", 
+								'data-bv-message' => "Last name is required and cannot be empty",
 								'data-bv-notempty' => "true"%>
 							</div>
 							<label for="inputEmail"> Email</label>
 							<div class="form-group">
 								<div class="input-group margin-bottom-sm">
 									<span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
-									<%= f.text_field :email, placeholder:' Email', class: 'form-control', id: 'email', 'required type' => 'email', 
+									<%= f.text_field :email, placeholder:' Email', class: 'form-control', id: 'email', 'required type' => 'email',
 									'data-bv-notempty'=> 'true',
 									'data-bv-message' => "Email is not valid" %>
 								</div>
@@ -68,12 +66,12 @@
 							<div class="form-group">
 								<div class="input-group margin-bottom-sm">
 									<span class="input-group-addon"><i class="fa  fa-qq fa-fw"></i></span>
-									<%= f.text_field :username, placeholder:' Username', class: 'form-control', 
-									'data-bv-message' => "Username is not valid", 
+									<%= f.text_field :username, placeholder:' Username', class: 'form-control',
+									'data-bv-message' => "Username is not valid",
 									'data-bv-notempty' => "true",
 									'data-bv-regexp' => "true",
 									'data-bv-regexp-regexp' => "[a-zA-Z0-9_\.]+",
-									'data-bv-regexp-message' => "The username can only consist of letters, numbers, dots and underscores", 
+									'data-bv-regexp-message' => "The username can only consist of letters, numbers, dots and underscores",
 									'data-bv-stringlength' => "true",
 									'data-bv-stringlength-min' => "4",
 									'data-bv-stringlength-max' => "30",
@@ -90,7 +88,7 @@
 							<div id='personalize'>
 								<h3>Hi <%=@user.name%></h3>
 								<img class="img-circle box-shad" alt="" src="<%= @user.image %>">
-								<h4>Tell us who you root for so we can show you the content you care about.</h4>
+								<h4>You are almost done! Now just tell us about your favorite teams so we can show you the content you care about.</h4>
 							</div>
 
 						</div>
@@ -110,7 +108,7 @@
 <ul class="pager wizard">
 	<li class="next"><a href="#">Next</a></li>
 </ul>
-</div>		
+</div>
 </div>
 </div>
 </div>

@@ -9,6 +9,20 @@
   font-family: 'maki', sans-serif;
 }
 
+.modal-content {
+  color: #fff;
+}
+
+.nav-pills a {
+ color: #fff;
+ font-weight: bold;
+}
+
+.next {
+ font-weight: bold;
+}
+
+
 h3 {
 	padding-bottom: 3%;
 	margin-left:auto;
@@ -18,14 +32,14 @@ h3 {
 #welcome {
 	width: 80%;
 	margin-left:auto;
-	margin-right:auto;	
+	margin-right:auto;
 
 }
 
 #user_reg {
 	width: 80%;
 	margin-left:auto;
-	margin-right:auto;	
+	margin-right:auto;
 }
 
 div.form-group i{
@@ -34,7 +48,7 @@ div.form-group i{
 #personalize {
 	width: 70%;
 	margin-left:auto;
-	margin-right:auto;	
+	margin-right:auto;
 
 }
 #personalize h3{
@@ -51,7 +65,7 @@ div.form-group i{
 #sports{
 	width: 80%;
 	margin-left:auto;
-	margin-right:auto;	
+	margin-right:auto;
 }
 
 #sports span {
@@ -74,7 +88,11 @@ div.form-group i{
 #teams {
 	width: 80%;
 	margin-left:auto;
-	margin-right:auto;	
+	margin-right:auto;
+}
+
+.modal-content{
+  background-color: #000000
 }
 
 .btn-block {
@@ -98,10 +116,10 @@ div.form-group i{
 }
 
 
-#teams ul{  
+#teams ul{
   list-style: none;
-  width: 100; 
-  margin: 0 auto; 
+  width: 100;
+  margin: 0 auto;
   padding: 0;
 }
 
@@ -113,7 +131,7 @@ ul img{
   margin-bottom: 10px;
   margin-left: auto;
   margin-right: auto;
-} 
+}
 
 #team_details {
    display: inline-block;
