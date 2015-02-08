@@ -74,3 +74,4 @@ gem 'will_paginate-bootstrap'
 gem "mocha", group: :test
 gem 'rails_12factor', group: :production
 ruby '2.2.0'
+gem 'puma'
