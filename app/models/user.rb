@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_many :posts
   has_many :comments
-   
+
   #Friendship/Following details
   has_many :friendships
   has_many :friends, :through => :friendships
@@ -9,14 +9,14 @@ class User < ActiveRecord::Base
   has_many :friends, :through => :friendships
   has_many :inverse_friendships, :class_name => "Friendship", :foreign_key => "friend_id"
   has_many :inverse_friends, :through => :inverse_friendships, :source => :user
-  
+
   #User has and belongs to many teams
   has_and_belongs_to_many :teams
   accepts_nested_attributes_for :teams
-  
+
   #Specifies user as the tagger in acts_as_taggable gem
   acts_as_tagger
-  
+
   #User Validations
   validates :uid, uniqueness: true, on: :create
   #validates :email, :first_name, :last_name, :username,  presence: true, on: :update
@@ -30,7 +30,7 @@ class User < ActiveRecord::Base
     user.save
   end
 
-  #Create user based on information in the omniauth hash 
+  #Create user based on information in the omniauth hash
   def self.create_with_omniauth(auth)
     create! do |user|
       user.provider = auth["provider"]
@@ -62,12 +62,12 @@ class User < ActiveRecord::Base
 
   #User has many evaluations used for cheers and Active Record Reputation System
   has_many :evaluations, class_name: "RSEvaluation", as: :source
-  
+
   #This method instructs the Reputation System to delegate this to the reputation called votes in the posts model
-  has_reputation :votes, 
+  has_reputation :votes,
   :source => {reputation: :votes, of: :posts}, aggregated_by: :sum
   end
-  
+
   #Model constant which defines user roles required by CanCanCan
   ROLES = %w[admin moderator author]
 
@@ -83,12 +83,12 @@ class User < ActiveRecord::Base
     recommended_authors = []
     #iteriate through the array find other users that like the same teams
     team_ids.each do |x|
-      recommended_authors << User.select(:id, :include => :teams, :conditions => { "teams_users.team_id" => x})
+      recommended_authors << User.select(:id, :include => :teams, :conditions => { "teams_users.team_id" => x}).where.not(id: user.id)
     end
     #make it into one array and remove duplicates
     recommended_authors = recommended_authors.flatten!.uniq.map{ |z| (z.id)}
     # sort by popularity and number of posts
-    recommended_authors = recommended_authors.sort_by{ |u| (-(User.find_by_id(u).reputation_for(:votes).to_i + User.find_by_id(u).posts.count.to_i))}
+    recommended_authors = recommended_authors.sort_by{ |u| (-(User.find_by_id(u).reputation_for(:votes).to_i + User.find_by_id(u).posts.count.to_i))}.first(6)
   end
 
    #Determine if a user has cheered for a specific post
