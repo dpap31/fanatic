@@ -77,7 +77,6 @@ gem 'puma'
 gem 'sprockets_better_errors'
 
 group :production, :staging do
-  gem 'pg'
   gem 'rails_12factor'
 end
 

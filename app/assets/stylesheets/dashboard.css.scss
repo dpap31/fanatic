@@ -110,7 +110,8 @@ body {
 	opacity: 1;
 	position: relative;
   width: 235px;
-
+  overflow:hidden;
+  height:1%;
 }
 
 .pin p {
@@ -134,6 +135,7 @@ body {
 .post-info {
 	width: 100%;
 	display: inline-block;
+  min-height: 45px;
 }
 .post-actions {
 	width:100%;
@@ -144,7 +146,10 @@ body {
 	float: left;
 }
 .tags ul {
-	display: inline;
+	padding: 0;
+  display: inline;
+  position: absolute;
+  width: 50%;
 }
 #cheers {
 	float: right;

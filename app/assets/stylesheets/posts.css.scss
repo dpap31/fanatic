@@ -1,7 +1,7 @@
 
 body {
 	background-color:#E9EAED;
-} 
+}
 
 .image {
  	width: 100%;
@@ -31,8 +31,8 @@ body {
   padding-bottom: 5px;
 	background: -webkit-linear-gradient(45deg, #FFF, #F9F9F9);
 	opacity: 1;
-  min-width: 250px;
-  max-width: 250px;
+  width: 250px;
+  overflow: hidden;
 }
 
 .pin p {
@@ -69,8 +69,7 @@ div.tags > ul > li > a{
 }
 
 .post-info {
-	width:100%;
-	display: inline-block;
+  min-height: 45px
 }
 .post-actions {
 	width:100%;
@@ -84,6 +83,9 @@ div.tags > ul > li > a{
 }
 .tags ul {
   padding: 0;
+  display: inline;
+  position: absolute;
+  width: 50%;
 }
 .tags li {
   float: left;
@@ -161,7 +163,7 @@ div.tags > ul > li > a{
 }
 
 /*profile pic*/
-.header .cd-profile-pic img {	
+.header .cd-profile-pic img {
   top: 240px;
   left: 45%;
   position: absolute;
