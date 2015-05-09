@@ -2,13 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@import url(http://weloveiconfonts.com/api/?family=maki);
-
-/* maki */
-[class*="maki-"]:before {
-  font-family: 'maki', sans-serif;
-}
-
 .modal-content {
   color: #fff;
 }
