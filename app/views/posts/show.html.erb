@@ -1,6 +1,6 @@
 <html>
 <head>
-	<%= javascript_include_tag "posts_show.js"  %>
+	<%= javascript_include_tag "posts_show"  %>
 	<%= stylesheet_link_tag "posts_show" %>
 </head>
   <!-- Post header info -->
@@ -8,7 +8,7 @@
 	  <h3>
 		<%= @post.title %>
 	  </h3>
-	  <h3><small>By <%= @post.user.name %>,</small> 
+	  <h3><small>By <%= @post.user.name %>,</small>
 	  <small><em> <%= @post.created_at.strftime("%B %d, %Y")%></em></small></h3>
 	  <hr>
 	    <!-- Post Content  -->
@@ -77,13 +77,13 @@
 		  Cheers
 		</dt>
 		<dd>
-			<%= pluralize @post.reputation_for(:votes).to_i, "cheer" %>  
+			<%= pluralize @post.reputation_for(:votes).to_i, "cheer" %>
 		  <div class = 'votes'>
 		    <% if can? :vote, @post %>
-		    <%= link_to("", vote_post_path(@post, type: "up"), method: "post", :class => 'glyphicon glyphicon-thumbs-up') %> 
+		    <%= link_to("", vote_post_path(@post, type: "up"), method: "post", :class => 'glyphicon glyphicon-thumbs-up') %>
 		    <% end %>
 		    <% if can? :vote, @post %>
-		    <%= link_to("", vote_post_path(@post, type: "down"), method: "post", :class => 'glyphicon glyphicon-thumbs-down') %> 
+		    <%= link_to("", vote_post_path(@post, type: "down"), method: "post", :class => 'glyphicon glyphicon-thumbs-down') %>
 		    <% end %>
 		  </div>
 		</dd>
@@ -102,7 +102,7 @@
 			  <% end %>
 			</dd>
 		  </div>
-		</div> 
+		</div>
 		<!-- Post Share  -->
 	    <div class="share">
 		  <dt>
@@ -110,27 +110,27 @@
 		  </dt>
 		  <dd>
 		    <span class="fa-stack fa-lg">
-		      <a href= "http://twitter.com/share?text=Fanatic.com&url=http://fanatic.com  &hashtags=fanatic,sports,">
+		      <a href= "http://twitter.com/share?text=<%= @post.title %>&url=<%=request.original_url%>&hashtags=<%=@post.tag_list.join(',')%>">
 		      <i class="fa fa-circle fa-stack-2x"></i>
 		      <i class="fa fa-twitter fa-stack-1x fa-inverse"></i></a>
 		    </span>
 			<span class="fa-stack fa-lg">
-			  <a href= "https://www.facebook.com/sharer.php?u=123.abc.com&t=Test">
+			  <a href= "https://www.facebook.com/sharer.php?u=<%=request.original_url%>&t=<%= @post.title %>">
 			  <i class="fa fa-circle fa-stack-2x"></i>
 			  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i></a>
 			</span>
 			<span class="fa-stack fa-lg">
-			  <a href= "http://www.reddit.com/submit?url=your_url&title=your_title">
+			  <a href= "http://www.reddit.com/submit?url=<%=request.original_url%>&title=<%= @post.title %>">
 			  <i class="fa fa-circle fa-stack-2x"></i>
 			  <i class="fa fa-reddit fa-stack-1x fa-inverse"></i></a>
 			</span>
 			<span class="fa-stack fa-lg">
-			  <a href= "mailto:?subject=look at this website&body=Hi,I found this website and thought you might like it http://www.geocities.com/wowhtml/">
+			  <a href= "mailto:?subject=Fanatic Sports: <%= @post.title %>&body=Hi,I found this website and thought you might like it <%=request.original_url%>">
 			  <i class="fa fa-circle fa-stack-2x"></i>
 			  <i class="fa fa fa-envelope-o fa-stack-1x fa-inverse"></i></a>
 		    </span>
 		  </dd>
-	    </div> 
+	    </div>
 	  </dl>
 	</div>
   </div>
