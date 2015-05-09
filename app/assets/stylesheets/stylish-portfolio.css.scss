@@ -17,7 +17,7 @@ body {
   margin: 0;
   font-size: 4.5em;
   font-weight: 700;
-  color: #F8F8FF; 
+  color: #F8F8FF;
 }
 
 .vert-text h3 {
@@ -70,7 +70,7 @@ body {
   line-height: 40px;
   text-indent: 20px;
 }
- 
+
  #sidebar-wrapper .nav-header a:hover{
   background: #000;
 }
@@ -135,7 +135,7 @@ body {
   height: 100%;
   width: 100%;
   position: relative;
-  background: url(public_index/Fanatic-Stadium.jpg) no-repeat center center fixed; 
+  background: url(public_index/Fanatic-Stadium.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -168,7 +168,7 @@ i.service-icon {
   width: 140px;
   height: 140px;
   line-height: 136px;
-  vertical-align: middle; 
+  vertical-align: middle;
   text-align: center;
 }
 
@@ -179,7 +179,7 @@ i.service-icon {
   display: table;
   height: 400px;
   width: 100%;
-  background: url(../img/callout.jpg) no-repeat center center fixed; 
+  background: url(../img/callout.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -244,13 +244,13 @@ i.scroll:hover {
 /* Responsive */
 
 @media (max-width: 768px) {
-	
+
   .header {
-	background: url(../img/bg.jpg) no-repeat center center scroll; 
+	background: url(../img/bg.jpg) no-repeat center center scroll;
   }
 
   .callout {
-	background: url(../img/callout.jpg) no-repeat center center scroll; 
+	background: url(../img/callout.jpg) no-repeat center center scroll;
   }
 
   .map {
