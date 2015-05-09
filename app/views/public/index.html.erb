@@ -10,47 +10,10 @@
   <%= stylesheet_link_tag "//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css", media: "all" %>
   <!-- Add custom CSS here -->
   <%= stylesheet_link_tag 'stylish-portfolio' %>
-  <%= stylesheet_link_tag "//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" %>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
 
 <body>
-  <!-- Side Menu -->
-  <!-- <a id="menu-toggle" href="#" class="btn btn-primary btn-lg toggle"><i class="fa fa-bars"></i></a>
-  <div id="sidebar-wrapper">
-    <ul class="sidebar-nav">
-      <a id="menu-close" href="#" class="btn btn-default btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
-      <ul class="nav nav-pills nav-stacked fanatic-menu">
-        <li class="nav-header"></li>
-        <li><a href="/posts"><i class="glyphicon glyphicon-th"> </i> All Posts</a></li>
-        <li><a href="/menu/headlines"><i class="glyphicon glyphicon-book"> </i> Headlines</a></li>
-        <li><a href="/users">
-         <i class="fa fa-users"></i> Users</a></li>
-       </ul>
-
-
-       <hr>
-       <ul class="list-unstyled" id="userMenu">
-        <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#userMenu">
-          <h5><strong><i class="glyphicon glyphicon-link"> </i> The Pros</strong>
-          </a></li>
-          <li><a href="http://www.espn.com" target="_blank"> ESPN</a></li>
-          <li><a href="http://grantland.com" target="_blank"> Grantland</a></li>
-          <li><a href="http://bleacherreport.com" target="_blank"> Bleacher Report</a></li>
-          <li><a href="http://sports.yahoo.com" target="_blank"> Yahoo Sports</a></li>
-          <li><a href="http://deadspin.com" target="_blank"> Dead Spin</a></li>
-          <hr>
-
-          <li class="nav-header"> <a href="#" data-target="#trending_tags">
-            <h5><strong><i class="fa fa-tags"></i> Trending Tags</strong></h5></a></li>
-            <% @trending_tags.each do|tag_id, tag_count|%>
-            <li><%= link_to ActsAsTaggableOn::Tag.find_by_id(tag_id).name, tag_path(ActsAsTaggableOn::Tag.find_by_id(tag_id).name)%></li>
-            <% end %>
-          </ul>
-        </div> -->
-  <!-- /Side Menu -->
-
-  <!-- Full Page Image Header Area -->
-  <!-- Full Page Image Header Area -->
   <div id="top" class="header">
     <div class="vert-text">
       <h1>Fanatic Sports</h1>
@@ -68,12 +31,21 @@
   </div>
   <!-- /Full Page Image Header Area -->
 
+
   <!-- Intro -->
   <div id="about" class="intro">
     <div class="container">
       <div class="row">
         <div class="col-md-6 col-md-offset-3 text-center">
-          <h2>Leaving the Commentating to the Fans</h2>
+          <h2 class='headline slide'>
+            <span>Leaving the</span>
+            <span class= "animated-words-wrapper">
+            <b class="is-visible">Commentating</b>
+            <b>Cheering</b>
+            <b>Sharing</b>
+            </span>
+            <span>to the Fans</span>
+          </h2>
           <p class="lead">Create and share posts while connecting with other fans. Get breaking news on your favorite teams.</p>
         </div>
       </div>
@@ -100,9 +72,9 @@
         </div>
         <div class="col-md-2 text-center">
           <div class="service-item">
-            <i class="service-icon fa fa-comments"></i>
-            <h4>Comment</h4>
-            <p>Argue, debate, state your feelings.. Call it what you want but we know you won't agree with everyone's opinions.</p>
+            <i class="service-icon fa fa-share-alt"></i>
+            <h4>Connect</h4>
+            <p>Discover and follow other fanatic sports bloggers. Cheer them  on and leave comments.</p>
           </div>
         </div>
         <div class="col-md-2 text-center">
@@ -143,44 +115,36 @@
       </div>
     </div>
   </footer>
-  <!-- /Footer -->
-
-  <!-- JavaScript -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <%= javascript_include_tag "//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"  %>
+   <%= javascript_include_tag "//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"  %>
+  <script type="text/javascript">
+    var animationDelay = 2500;
 
-  <!-- Custom JavaScript for the Side Menu and Smooth Scrolling -->
-  <script>
-    $("#menu-close").click(function(e) {
-      e.preventDefault();
-      $("#sidebar-wrapper").toggleClass("active");
-    });
-  </script>
-  <script>
-    $("#menu-toggle").click(function(e) {
-      e.preventDefault();
-      $("#sidebar-wrapper").toggleClass("active");
-    });
-  </script>
-  <script>
-    $(function() {
-      $('a[href*=#]:not([href=#])').click(function() {
-        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
-          || location.hostname == this.hostname) {
+    animateHeadline($('.headline'));
 
-          var target = $(this.hash);
-        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-        if (target.length) {
-          $('html,body').animate({
-            scrollTop: target.offset().top
-          }, 1000);
-          return false;
-        }
-      }
-    });
-    });
-  </script>
+    function animateHeadline($headlines) {
+      $headlines.each(function(){
+        var headline = $(this);
+        //trigger animation
+        setTimeout(function(){ hideWord( headline.find('.is-visible') ) }, animationDelay);
+        //other checks here ...
+      });
+    }
+    function hideWord($word) {
+      var nextWord = takeNext($word);
+      switchWord($word, nextWord);
+      setTimeout(function(){ hideWord(nextWord) }, animationDelay);
+    }
 
+    function takeNext($word) {
+      return (!$word.is(':last-child')) ? $word.next() : $word.parent().children().eq(0);
+    }
+
+    function switchWord($oldWord, $newWord) {
+      $oldWord.removeClass('is-visible').addClass('is-hidden');
+      $newWord.removeClass('is-hidden').addClass('is-visible');
+    }
+  </script>
 </body>
 
 </html>
