@@ -75,5 +75,9 @@ gem "mocha", group: :test
 ruby '2.2.0'
 gem 'puma'
 gem 'sprockets_better_errors'
-gem 'rails_12factor', group: :production
+
+group :production, :staging do
+  gem 'pg'
+  gem 'rails_12factor'
+end
 
