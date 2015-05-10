@@ -61,13 +61,13 @@ $(document).ready(function() {
 	});
 });
 
-
-
 var onboardingApp = angular.module('userSearchApp',['ngResource','ngAnimate']);
 
-onboardingApp.controller('UserCtrl', function($scope, $resource) {
-	User = $resource('/users/:id.json', {id: '@id'})
-	$scope.users = User.query();
-	});
+function UserCtrl ($scope, $resource) {
+  User = $resource('/users/:id.json', {id: '@id'})
+  $scope.users = User.query();
+  };
+UserCtrl.$inject = ['$scope', '$resource'];
+onboardingApp.controller('UserCtrl', UserCtrl)
 
 
