@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     session[:user_id] = user.id
     #Call User model method then increase login count and pass local model variable user
     User.increase_login_count(user)
-    if user.login_count == 1
+    if user.login_count < 1
       redirect_to controller: 'onboarding', action: 'index'
     else
       User.assign_from_omniauth(auth, user)

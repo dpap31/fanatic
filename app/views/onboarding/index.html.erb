@@ -14,7 +14,7 @@
 	<%= javascript_include_tag "validator/stringLength"%>
 </script>
 </head>
-<div class="modal fade onboarding-modal" id="onboarding-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+<div class="modal fade modal-dialog onboarding-modal" id="onboarding-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-keyboard="false" data-backdrop="static">
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
 			<div id="rootwizard">
@@ -32,12 +32,12 @@
 				<div class="tab-content">
 					<div class="tab-pane" id="tab1">
 						<div id='welcome'>
-							<%= image_tag("fanatic_logos/fanatic_shield.png", size: '450x400')%>
+							<%= image_tag("fanatic_logos/fanatic_shield.png", class: 'img-responsive')%>
 						</div>
 					</div>
 					<!-- User Reg Form Tab2 -->
 					<div class="tab-pane" id="tab2">
-					<div class="modal-body">
+					<div class="modal-body col-sm-12">
 							<%= form_for(@user) do |f| %>
 							<div id= 'user_reg'>
 							<h3>Tell us about yourself</h3>

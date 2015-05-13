@@ -15,18 +15,14 @@
 
 <body>
   <div id="top" class="header">
-    <div class="vert-text">
+    <div class="welcome-text">
       <h1>Fanatic Sports</h1>
       <h3>Socializing Sports Blogging</h3>
-      <p></p>
-      <p></p>
-      <p></p>
-      <p></p>
+      <div class="social-login">
+        <%= link_to image_tag("public_index/sign_in_facebook_flat.png", :border=>0), "/auth/facebook" %>
 
-      <%= link_to image_tag("public_index/sign_in_facebook_flat.png", :border=>0), "/auth/facebook" %>
-
-      <%= link_to image_tag("public_index/sign_in_twitter_flat.png", :border=>0), "/auth/twitter" %>
-
+        <%= link_to image_tag("public_index/sign_in_twitter_flat.png", :border=>0), "/auth/twitter" %>
+      </div>
     </div>
   </div>
   <!-- /Full Page Image Header Area -->

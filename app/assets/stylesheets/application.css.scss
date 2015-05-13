@@ -35,7 +35,7 @@ html {
 
 body {
   background-color:#E9EAED;
-} 
+}
 
 .navbar-nav.navbar-right:last-child{
   margin-right: 0px
@@ -190,6 +190,19 @@ a.navbar-brand{
     z-index: 1001;
   }
   }
+
+  @media only screen and (max-width: 400px) {
+  #menu-toggle{
+    visibility: visible;
+    z-index: 1001;
+  }
+  #sidebar-wrapper {
+    width: 0px;
+  }
+  .app-wrapper {
+    padding-left: 0px
+  }
+}
 
 
 
