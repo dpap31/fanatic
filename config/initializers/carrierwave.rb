@@ -1,5 +1,4 @@
 CarrierWave.configure do |config|
-  config.fog_provider = 'fog'
   config.fog_credentials = {
     # Configuration for Amazon S3 should be made available through an Environment variable.
     # For local installations, export the env variable through the shell OR
@@ -15,15 +14,6 @@ CarrierWave.configure do |config|
     :aws_secret_access_key => 'of5ryRY2BNQCOt3sW1qfS5jH8tiBbinJs+AfqyaJ',
     :region                => 'us-west-1'
   }
-
-  # For testing, upload files to local `tmp` folder.
-  if Rails.env.test? || Rails.env.cucumber?
-    config.storage = :file
-    config.enable_processing = false
-    config.root = "#{Rails.root}/tmp"
-  else
-    config.storage = :fog
-  end
-
+  config.fog_directory = 'fanatic-sports'
   config.cache_dir = "#{Rails.root}/tmp/uploads"                  # To let CarrierWave work on heroku
 end

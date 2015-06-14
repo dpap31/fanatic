@@ -324,7 +324,6 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 4.0.1)
   fog
-  fog-aws
   friendly_id
   jbuilder (~> 1.2)
   jquery-fileupload-rails
