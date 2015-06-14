@@ -3,17 +3,17 @@ class Post < ActiveRecord::Base
   include PublicActivity::Common
   belongs_to :user
   has_many :comments, dependent: :destroy
-  
+
   #Use Friendly ID to use Slugs instead of IDs in posts URLS
   extend FriendlyId
   friendly_id :title, use: [:slugged, :finders, :history]
-  
+
   #Use carrier wave to upload images
   mount_uploader :image, ImageUploader
 
   #use activerecord-reputation-system to handle cheers
   has_reputation :votes, source: :user, aggregated_by: :sum
-  
+
   #use acts_as_taggable gem to enable tagging on posts
   acts_as_taggable
 
@@ -27,8 +27,8 @@ class Post < ActiveRecord::Base
   # reorder posts based on cheers count
   def self.popular
     reorder('votes desc').find_with_reputation(:votes, :all)
-  end 
-  
+  end
+
   #find all votes for a post
   def self.most_voted
     find_with_reputation(:votes, :all)
@@ -39,10 +39,10 @@ class Post < ActiveRecord::Base
   def self.time_delta
     ((Time.now - Post.all.created_at) / 1.hour).round
   end
-  
+
   private
   def required_info
-    if( tag_list.empty? ) 
+    if( tag_list.empty? )
       errors[:base] << "Please add a tag"
     end
   end

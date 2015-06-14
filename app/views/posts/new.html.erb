@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <link href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">   
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
   <%= javascript_include_tag "posts" %>
-  <%= javascript_include_tag "external/jquery.hotkeys.js" %> 
-  <%= javascript_include_tag "external/bootstrap-wysiwyg.js" %> 
-  <%= stylesheet_link_tag "post_new.css" %> 
+  <%= javascript_include_tag "external/jquery.hotkeys.js" %>
+  <%= javascript_include_tag "external/bootstrap-wysiwyg.js" %>
+  <%= stylesheet_link_tag "post_new" %>
 </head>
 <!-- Hero unit -->
 <%= @post.inspect %>
@@ -37,7 +37,7 @@
       :id => "post_tags",
       "data-pre" => @post.tags.map(&:attributes).to_json %>
     </div>
-    <div class = "image_tools">              
+    <div class = "image_tools">
      <span class="btn btn-default fileinput-button" id="fileupload">
       <i class="glyphicon glyphicon-plus"></i>
       <!-- Remote image URL -->

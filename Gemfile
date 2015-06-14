@@ -38,6 +38,7 @@ gem 'angularjs-rails'
 gem 'activeresource'
 
 gem 'nifty-generators'
+gem 'fog', require: 'fog/aws'
 gem 'carrierwave'
 gem 'mini_magick'
 
