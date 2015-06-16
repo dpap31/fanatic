@@ -10,9 +10,9 @@
   <div ng-controller="UserCtrl">
     <input type="text" class="form-control" placeholder="" ng-model="query">
     <ul class = 'userlist'ng-show='query'>
-      <li ng-repeat="user in users | filter: query" class ="animate results"> 
+      <li ng-repeat="user in users | filter: query" class ="animate results">
         <a href="/users/{{user.id}}/posts"
-        <div class= 'search_results'>    
+        <div class= 'search_results'>
          <img id='user_image' ng-src="{{user.image}}"/>
          <span id='user_details'><b>{{user.name}}</b>, <em>{{user.username}}</em>
          </span>
@@ -40,7 +40,7 @@
       </span>
       <a href = "/users/<%=u.id%>/posts" id = 'posts-link'>
       <span class="profile_pic"><img src="<%= u.image %>" class="img-circle"></span>
-      <span class="uname"><%= u.username %></span>
+      <span class="uname"><%= u.username.truncate(9) %></span>
       <span class="count"><%= u.posts.count + u.reputation_for(:votes).to_i %></span>
       <div class="type">Points</div>
     </li></span></a>
@@ -117,7 +117,7 @@
       </span>
       <a href = "/users/<%=u.id%>/posts" id = 'posts-link'>
       <span class="profile_pic"><img src="<%= u.image %>" class="img-circle"></span>
-      <span class="uname"><%= u.username %></span>
+      <span class="uname"><%= u.username.truncate(9) %></span>
       <span class="count"><%= u.posts.count%></span>
       <div class="type"> Posts </div>
     </li></span></a>

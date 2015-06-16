@@ -49,19 +49,24 @@ a.navbar-brand{
   height: 20px;
 }
 
+#wrapper {
+  padding-left: 250px;
+  transition: all 0.4s ease 0s;
+}
+
 
 #sidebar-wrapper {
+  margin-left: -250px;
+  left: 250px;
   width: 250px;
   background: #000;
   position: fixed;
   height: 100%;
   overflow-y: auto;
   z-index: 1000;
-  -webkit-transition: all 0.4s ease 0s;
-  -moz-transition: all 0.4s ease 0s;
-  -ms-transition: all 0.4s ease 0s;
-  -o-transition: all 0.4s ease 0s;
   transition: all 0.4s ease 0s;
+  margin-top: -80px;
+  padding-top: 80px;
 }
 
 .sidebar-nav {
@@ -91,7 +96,7 @@ a.navbar-brand{
   margin-right: 3px;
 }
 
-.fanatic-menu li.nav-header{
+.sidebar-wrapper li.nav-header{
   margin-top: 60px;
 }
 
@@ -189,10 +194,10 @@ a.navbar-brand{
     float: left;
   }
   #sidebar-wrapper {
-    width: 165px;
+    display: none
   }
   .app-wrapper {
-    padding-left: 140px
+    padding-left: 0px;
   }
 }
 

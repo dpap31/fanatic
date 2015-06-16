@@ -6,30 +6,30 @@
 	<%= javascript_include_tag "dashboard"%>
 </head>
 <body>
-<div class="col-md-8 column header">
-<!-- background image -->
-  <div class="cd-member-bio-pict flip">
-    <%= image_tag("team_images/#{@teams[rand(@teams.length)].id}.jpg", size: "600x350", class:'flip')%>
-  </div>
-  <!-- profile pic -->
-  <div class="cd-profile-pic">
-    <%= link_to image_tag("fanatic_logos/fanatic_shield.png", size: '125x100'), user_posts_path(current_user) %>
-  </div>
-  <div id="title">
+  <div class="col-md-8 column header">
+    <!-- background image -->
+    <div class="cd-member-bio-pict flip">
+      <%= image_tag("team_images/#{@teams[rand(@teams.length)].id}.jpg", size: "600x350", class:'flip')%>
+    </div>
+    <!-- profile pic -->
+    <div class="cd-profile-pic">
+      <%= link_to image_tag("fanatic_logos/fanatic_shield.png", size: '125x100'), user_posts_path(current_user) %>
+    </div>
+    <div id="title">
      <a href="/posts"><strong><i class="glyphicon glyphicon-star-empty"></i>  All Posts</strong></a>
-  </div>
+   </div>
 
-  <div id="new_button">
+   <div id="new_button">
      <%if can? :create, Post %>
      <a href="/posts/new"><strong><i class="glyphicon glyphicon-plus-sign"></i>  New Post</strong></a>
      <% end %>
-  </div>
-</div>
-  <div class="col-md-8 column content">
+   </div>
+ </div>
+ <div class="col-md-8 column content">
   <div id='user_teams'>
-      <div class='teamname'>
-        <h4><%= link_to "Popular", posts_path%></h4>
-      </div>
+    <div class='teamname'>
+      <h4><%= link_to "Popular", posts_path%></h4>
+    </div>
     <table>
       <tr>
         <% @hot_posts.each do |post| %>
@@ -53,36 +53,36 @@
           </div>
         </div>
       </div>
-  </tr>
-  <% end %>
-</table>
-      <%if @teams.first%>
-      <div class='teamname'>
-        <h4><%= link_to "#{@teams.first.location} #{@teams.first.name}",tag_path(@teams.first.name)%></h4>
-      </div>
-    <table>
-      <tr>
-        <% hottness(Post.tagged_with(@teams.first.name)).take(3).each do |post| %>
-        <div class="pin">
-          <div class="image">
-            <a href="/posts/<%=post.slug%>"><img class= "img-responsive" src="<%= post.image %>" /></a>
+    </tr>
+    <% end %>
+  </table>
+  <%if @teams.first%>
+  <div class='teamname'>
+    <h4><%= link_to "#{@teams.first.location} #{@teams.first.name}",tag_path(@teams.first.name)%></h4>
+  </div>
+  <table>
+    <tr>
+      <% hottness(Post.tagged_with(@teams.first.name)).take(3).each do |post| %>
+      <div class="pin">
+        <div class="image">
+          <a href="/posts/<%=post.slug%>"><img class= "img-responsive" src="<%= post.image %>" /></a>
+        </div>
+        <div class="caption">
+          <h4>
+           <%= post.title.truncate(25, separator: ' ') %>
+         </h4>
+         <div class = 'post-info'>
+           <div class = 'tags'>
+            <ul class="token-input-token-facebook">
+              <li class="token-input-token-facebook"><%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join('<li class="token-input-token-facebook"> ') %></li>
+            </ul>
           </div>
-          <div class="caption">
-            <h4>
-             <%= post.title.truncate(25, separator: ' ') %>
-           </h4>
-           <div class = 'post-info'>
-             <div class = 'tags'>
-              <ul class="token-input-token-facebook">
-                <li class="token-input-token-facebook"><%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join('<li class="token-input-token-facebook"> ') %></li>
-              </ul>
-            </div>
-            <div id = 'cheers'>
-              <%= pluralize post.reputation_for(:votes).to_i, "cheer" %>
-            </div>
+          <div id = 'cheers'>
+            <%= pluralize post.reputation_for(:votes).to_i, "cheer" %>
           </div>
         </div>
       </div>
+    </div>
   </tr>
   <% end %>
   <% end %>
@@ -218,7 +218,7 @@
   <% @my_posts.each_slice(3) do |slice| %>
   <tr>
    <% slice.each do |post| %>
-    <div class="pin">
+   <div class="pin">
      <div class="image">
       <a href="/posts/<%=post.slug%>"><img class= "img-responsive" src="<%= post.image %>" /></a>
     </div>
@@ -238,82 +238,81 @@
      </div>
    </div>
  </div>
-<% end %>
+ <% end %>
 </tr>
 <% end %>
 </div>
 </table>
 <%else%>
 <div>
-<h2>My Posts</h2>
-<%= link_to "Create Post", new_post_path, :class => 'btn btn-primary btn-block'%>
-<% end %>
-</div>
+  <h2>My Posts</h2>
+  <%= link_to "Create Post", new_post_path, :class => 'btn btn-primary btn-block'%>
+  <% end %>
 </div>
 </div>
 <div class= "user_column_wrapper">
-<div class="col-md-3 column user_column">
- <div id = 'user_widget'>
-  <div id="DashboardProfileCard"> </div>
-  <ul>
-    <%= link_to "##{current_user.id}", 'id' => "following_thumbnails", 'data-type' => "member-#{current_user.id}" do %>
-    <%= image_tag(@user.image, class: 'profile_pic', size: "80") %>
-    <% end %>
-  </ul>
-  <div class = "user_widget_stats">
-    <div id='first_name'><strong><%= @user.first_name %></strong></div>
-    <div id='username'> <em><%= @user.username %></em></div>
-    <a href= '/users/<%= @user.id %>/posts'>
-      <div id='posts'> <%= @my_posts_count %></div>
-    </a>
-    <div id='cheers_count'><%= @my_posts_cheers %></div>
-    <div id='following_count'><%= @user.friendships.count%></div>
-    <br>
-    <div id='posts_label'> Posts</div>
-    <div id='cheers_label'>Cheers</div>
-    <div id='following_label'>Following</div>
+  <div class="col-md-3 column user_column">
+   <div id = 'user_widget'>
+    <div id="DashboardProfileCard"> </div>
+    <ul>
+      <%= link_to "##{current_user.id}", 'id' => "following_thumbnails", 'data-type' => "member-#{current_user.id}" do %>
+      <%= image_tag(@user.image, class: 'profile_pic', size: "80") %>
+      <% end %>
+    </ul>
+    <div class = "user_widget_stats">
+      <div id='first_name'><strong><%= @user.first_name %></strong></div>
+      <div id='username'> <em><%= @user.username %></em></div>
+      <a href= '/users/<%= @user.id %>/posts'>
+        <div id='posts'> <%= @my_posts_count %></div>
+      </a>
+      <div id='cheers_count'><%= @my_posts_cheers %></div>
+      <div id='following_count'><%= @user.friendships.count%></div>
+      <br>
+      <div id='posts_label'> Posts</div>
+      <div id='cheers_label'>Cheers</div>
+      <div id='following_label'>Following</div>
+    </div>
   </div>
-</div>
 
-<div id= 'team_widget'>
-  <div id= 'widget_header'><h4>Teams</h4>
-  </div>
-  <hr>
-  <div class = 'team_images'>
-   <% @teams.each do |team| %>
-   <%= link_to tag_path(team.name) do%>
-   <%= image_tag("logos/#{team.id}.png", size: "80x55")%>
-   <% end %>
-   <% end %>
+  <div id= 'team_widget'>
+    <div id= 'widget_header'><h4>Teams</h4>
+    </div>
+    <hr>
+    <div class = 'team_images'>
+     <% @teams.each do |team| %>
+     <%= link_to tag_path(team.name) do%>
+     <%= image_tag("logos/#{team.id}.png", size: "80x55")%>
+     <% end %>
+     <% end %>
+   </div>
  </div>
-</div>
-<div id='following_widget'>
- <div id= 'widget_header'><h4>
-  <%if @user.friendships.count < 6 %>
+ <div id='following_widget'>
+   <div id= 'widget_header'><h4>
+    <%if @user.friendships.count < 6 %>
     Recommended Authors
-  <% else %>
+    <% else %>
     Following
-  <% end %>
-</h4>
+    <% end %>
+  </h4>
 </div>
 <hr>
 <section id="cd-team" class='following_images'>
 
   <ul class = "unstyled">
-  <%if @user.friendships.count < 6 %>
-        <% @recommended_authors.each do |u| %>
-        <% u = User.find_by_id(u)%>
-        <a href = "/users/<%=u.id%>/posts">
-        <img src="<%= u.image %>" class="img-circle">
-        </a>
-      <% end %>
-  <% else %>
-      <%  for friendship in @current_user.friendships.take(8) %>
-        <a href="#<%=friendship.friend.id%>" id = "following_thumbnails" data-type="member-<%=friendship.friend.id%>">
-        <%= image_tag(friendship.friend.image, class: 'img-circle') %>
-        </a>
-      <% end %>
-  <% end %>
+    <%if @user.friendships.count < 6 %>
+    <% @recommended_authors.each do |u| %>
+    <% u = User.find_by_id(u)%>
+    <a href = "/users/<%=u.id%>/posts">
+      <img src="<%= u.image %>" class="img-circle">
+    </a>
+    <% end %>
+    <% else %>
+    <%  for friendship in @current_user.friendships.take(8) %>
+    <a href="#<%=friendship.friend.id%>" id = "following_thumbnails" data-type="member-<%=friendship.friend.id%>">
+      <%= image_tag(friendship.friend.image, class: 'img-circle') %>
+    </a>
+    <% end %>
+    <% end %>
   </ul>
 </section>
 </div>
@@ -327,6 +326,7 @@
     <%= render template: 'layouts/_activities.html.erb'%>
   </dd>
 </dl>
+</div>
 </div>
 </div>
 </div>

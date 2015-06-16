@@ -13,6 +13,7 @@ rerun.txt
 pickle-email-*.html
 .DS_Store
 /config/database.yml
+/config/local_env.yml
 .env
 
 # TODO Comment out this rules if you are OK with secrets been uploaded to the repo

@@ -16,107 +16,105 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-    <div id="top-nav" class="navbar navbar-inverse navbar-static-top">
-      <div class="navbar-header">
-      <!--  Menu hide and show buttons -->
-          <a id="menu-toggle" href="#" class="btn btn-primary btn-lg toggle"><i class="fa fa-bars"></i></a>
-       <!-- Fanatic header link -->
-      <% if current_user.nil? %>
-         <a class= 'navbar-brand' href='/'>
-         Fanatic</a>
-      <% else %>
-         <a class= 'navbar-brand' href= '/users/<%=current_user.id%>'>
+  <!-- Header -->
+  <div id="top-nav" class="navbar navbar-inverse navbar-static-top">
+    <div class="navbar-header">
+    <!--  Menu hide and show buttons -->
+        <a id="menu-toggle" href="#" class="btn btn-primary btn-lg toggle"><i class="fa fa-bars"></i></a>
+     <!-- Fanatic header link -->
+    <% if current_user.nil? %>
+       <a class= 'navbar-brand' href='/'>
+       Fanatic</a>
+    <% else %>
+       <a class= 'navbar-brand' href= '/users/<%=current_user.id%>'>
+    <% end %>
+        Fanatic</a>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <!-- username header dropdown -->
+          <% if current_user.nil? %>
+          <a class="dropdown-toggle" role="button" href="#"><i class="glyphicon glyphicon-user"></i>
+            Guest User
+            <% else %>
+            <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#"><i class="glyphicon glyphicon-user"></i>
+            <%= current_user.username %>
+            <span class="caret"></span>
+          </a>
+          <ul id="g-account-menu" class="dropdown-menu" role="menu">
+            <li><a href="/users/<%=current_user.id%>"><i class="fa fa-tachometer"></i> Dashboard</a></li>
+            <li><a href="/users/<%=current_user.id%>/edit"><i class="fa fa-cogs"></i> Settings</a></li>
+          </ul>
+        </li>
+        <%end%>
+        <!-- login/logout header -->
+        <% if current_user.nil? %>
+        <li><a href="/"><i class="glyphicon glyphicon-log-in "></i> Sign Up</a></li>
+        <% else %>
+        <li><a href="/signout"><i class="glyphicon glyphicon-lock"></i> Logout</a></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <div id="wrapper">
+
+  <!-- Sidebar -->
+  <div id="sidebar-wrapper">
+    <nav id="spy">
+      <ul class="sidebar-nav nav">
+        <li class="nav-header"></li>
+        <% if current_user.nil? %>
+        <% else %>
+        <li><a href="/users/<%=current_user.id%>"><i class="fa fa-tachometer"></i> Dashboard</a></li>
+        <% end %>
+        <li>
+          <a href="/posts"><i class="glyphicon glyphicon-th"></i> All Posts</a>
+        </li>
+        <li>
+          <a href="/users"> <i class="fa fa-users"></i> Users</a>
+        </li>
+        <li>
+        <a href="/posts/list"><i class="glyphicon glyphicon-heart-empty"></i> My Posts</a>
+        </li>
+      </ul>
+      <ul class="list-unstyled sidebar-nav" id="userMenu">
+        <hr>
+        <!-- Trending Tags in side bar -->
+        <li class="nav-header">
+          <a href="#" data-target="#trending_tags">
+          <h5><strong><i class="fa fa-tags"></i> Trending Tags</strong></h5></a>
+        </li>
+        <% @trending_tags.each do|tag_id, tag_count|%>
+        <li><%= link_to ActsAsTaggableOn::Tag.find_by_id(tag_id).name, tag_path(ActsAsTaggableOn::Tag.find_by_id(tag_id).name)%>
+        </li>
+        <% end %>
+        <hr>
+        <!-- Links to External Sports sites -->
+        <li class="nav-header">
+          <a href="#" data-toggle="collapse" data-target="#userMenu">
+          <h5><strong><i class="glyphicon glyphicon-link"></i> The Pros</strong></h5>
+          </a>
+        </li>
+        <li><a href="http://www.espn.com" target="_blank"> ESPN</a></li>
+        <li><a href="http://grantland.com" target="_blank"> Grantland</a></li>
+        <li><a href="http://bleacherreport.com" target="_blank"> Bleacher Report</a></li>
+        <li><a href="http://sports.yahoo.com" target="_blank"> Yahoo Sports</a></li>
+        <li><a href="http://deadspin.com" target="_blank"> Dead Spin</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div id="page-content-wrapper">
+    <div class="col-md-12">
+      <!-- Flash hash and error messages handling -->
+      <% flash.each do |name, msg| %>
+      <div class="alert alert-<%= name == :notice ? "success" : "danger" %>">
+        <a class="close" data-dismiss="alert">×</a>
+        <%= msg %>
+      </div>
       <% end %>
-          Fanatic</a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="dropdown">
-              <!-- username header dropdown -->
-              <% if current_user.nil? %>
-              <a class="dropdown-toggle" role="button" href="#"><i class="glyphicon glyphicon-user"></i>
-                Guest User
-                <% else %>
-                <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#"><i class="glyphicon glyphicon-user"></i>
-                  <%= current_user.username %>
-                  <span class="caret"></span></a>
-                  <ul id="g-account-menu" class="dropdown-menu" role="menu">
-                   <li><a href="/users/<%=current_user.id%>"><i class="fa fa-tachometer"></i> Dashboard</a></li>
-                   <li><a href="/users/<%=current_user.id%>/edit"><i class="fa fa-cogs"></i> Settings</a></li>
-                 </ul>
-               </li>
-               <%end%>
-               <!-- login/logout header -->
-               <% if current_user.nil? %>
-               <li><a href="/"><i class="glyphicon glyphicon-log-in "></i> Sign Up</a></li>
-               <% else %>
-               <li><a href="/signout"><i class="glyphicon glyphicon-lock"></i> Logout</a></li>
-               <% end %>
-             </ul>
-           </div>
-         </div>
-           <!-- sidebar -->
-           <div class="col-sm-2 pull-left sidebar-nav" id="sidebar-wrapper">
-            <ul class="nav nav-pills nav-stacked fanatic-menu">
-              <li class="nav-header"></li>
-              <% if current_user.nil? %>
-              <% else %>
-              <li><a href="/users/<%=current_user.id%>"><i class="fa fa-tachometer"></i> Dashboard</a></li>
-              <% end %>
-              <li><a href="/posts"><i class="glyphicon glyphicon-th"></i> All Posts</a></li>
-              <li><a href="/users">
-               <i class="fa fa-users"></i> Users</a></li>
-               <li><a href="/posts/list"><i class="glyphicon glyphicon-heart-empty"></i> My Posts</a></li>
-             </ul>
-             <ul class="list-unstyled" id="userMenu">
-              <hr>
-              <!-- Trending Tags in side bar -->
-              <li class="nav-header"> <a href="#" data-target="#trending_tags">
-                <h5><strong><i class="fa fa-tags"></i> Trending Tags</strong></h5></a></li>
-                <% @trending_tags.each do|tag_id, tag_count|%>
-                <li><%= link_to ActsAsTaggableOn::Tag.find_by_id(tag_id).name, tag_path(ActsAsTaggableOn::Tag.find_by_id(tag_id).name)%></li>
-                <% end %>
-                <hr>
-                <!-- Links to External Sports sites -->
-                <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#userMenu">
-                  <h5><strong><i class="glyphicon glyphicon-link"></i> The Pros</strong></h5>
-                </a></li>
-                <li><a href="http://www.espn.com" target="_blank"> ESPN</a></li>
-                <li><a href="http://grantland.com" target="_blank"> Grantland</a></li>
-                <li><a href="http://bleacherreport.com" target="_blank"> Bleacher Report</a></li>
-                <li><a href="http://sports.yahoo.com" target="_blank"> Yahoo Sports</a></li>
-                <li><a href="http://deadspin.com" target="_blank"> Dead Spin</a></li>
-              </ul>
-            </div>
-            <div class = "app-wrapper">
-            <div class="container-fluid">
-              <div class= "row center-block">
-                <div class= "col-md-12">
-                  <!-- Flash hash and error messages handling -->
-                  <% flash.each do |name, msg| %>
-                  <div class="alert alert-<%= name == :notice ? "success" : "danger" %>">
-                    <a class="close" data-dismiss="alert">×</a>
-                    <%= msg %>
-                  </div>
-                  <% end %>
-                  <%= yield %>
-                </div>
-              </div>
-            </div>
-          </body>
-          </html>
-          <!-- Colapsable Side bar -->
-     <script>
-    $("#menu-close").click(function(e) {
-      e.preventDefault();
-      $("#sidebar-wrapper").toggleClass("active");
-      $(".app-wrapper").toggleClass("active");
-    });
-  </script>
-  <script>
-    $("#menu-toggle").click(function(e) {
-      e.preventDefault();
-      $("#sidebar-wrapper").toggleClass("active");
-      $(".app-wrapper").toggleClass("active");
-    });
-  </script>
+      <%= yield %>
+    </div>
+  </div>
+</div>
+

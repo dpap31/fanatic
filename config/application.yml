@@ -1,8 +1,6 @@
 defaults: &defaults
   email: dev@example.com
   secret: foo123
-  ESPN_API_key: 'vdhtysj45gz85qzqn9japepp'
-  #makes 'ESPN_API_key' available as ENV["ESPN_API_key"]
 
 development:
   <<: *defaults
