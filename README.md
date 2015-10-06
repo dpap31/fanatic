@@ -1,6 +1,16 @@
 # Fanatic Sports
 
+## Overview
+
 Fanatic Sports is a rails based web application designed to socialize sports blogging. Users can follow their favorite teams, create posts and read other sports fans posts.
+
+## Technologies
+* Rails (Web Application Framework)
+* Postgres (Database)
+* OAuth (Authentication)
+* JQuery (Interactive Post Tagging, WYSIWYG Editor, Onboarding)
+* Angular JS (Team Tags, User Search)
+* Amazon S3 (Image Storage)
 
 ## Developer Environment Setup
 
